@@ -1,11 +1,11 @@
 ### your site title here
 
-title: Your Name
-description: subtitle | affiliations | motto
+title: Samarjeet Kumar Singh
+description: IISc | Builiding TestUrSelf & Padhekeba | Chai
 
 baseurl: /website #name of GitHub repository
 url: "" #custom url to be used instead of GitHub repository
-email: #
+email: samarjeet.xyz@gmail.com
 
 
 highlighter: rouge
@@ -17,7 +17,7 @@ permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
 # Social media links in footer
-facebook: "#"
+facebook: "samarjeetkumarsingh"
 twitter: "#"
 linkedin: "#"
 github: "#"
