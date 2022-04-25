@@ -3,8 +3,8 @@
 title: Samarjeet Kumar Singh
 description: IISc | Builiding TestUrSelf & Padhekeba | Chai
 
-baseurl:  / #name of GitHub repository
-url: "https://samarjeet.xyz" 
+baseurl: 
+url: https://samarjeet.xyz 
 email: samarjeet.xyz@gmail.com
 
 
