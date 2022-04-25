@@ -1,6 +1,6 @@
 ---
 layout: post
 title: padhekeba
-description: with no page entry here
+description: Click here to go to website
 redirect: https://www.padhekeba.com
 ---
