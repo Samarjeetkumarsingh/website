@@ -1,7 +1,7 @@
 ### your site title here
 
 title: Samarjeet Kumar Singh
-description: IISc | Builiding TestUrSelf & Padhekeba | Chai
+description: IISc | Building TestUrSelf, TestUrExam & Padhekeba | Chai
 
 baseurl: /website
 url: "" 
@@ -18,11 +18,11 @@ paginate_path: /blog/page:num/
 
 # Social media links in footer
 facebook: "samarjeetkumarsingh"
-twitter: "#"
-linkedin: "#"
-github: "#"
+twitter: "samarjeetksingh"
+linkedin: "samarjeetkumarsingh"
+github: "samarjeetkumarsingh"
 researchgate: "#"
-orcid: "#"
+orcid: "https://orcid.org/0000-0002-7828-175X"
 
 highlighter: rouge
 markdown: kramdown
