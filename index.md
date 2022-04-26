@@ -11,4 +11,4 @@ The idea and implementation of [**TestUrSelf**](https://www.testurself.in){:targ
 
 The destiny has something else in his mind. Due to some personal issues and limited resources, he had to leave the IIIT-A in between. Later, he completed B.Tech in Metallurgical Engineering. He decided to write a book dedicated to Metallurgical engineering, which proved to be a turning point in his life. He got this book published while doing his Masters from IISc Bangalore. After this, he started TestUrSelf in 2017 from a tiny little room. He single handedly made all the study materials, test papers and solutions, a herculean task in itself. This shows his sheer grit and dedication.
 
-Want to reach out me? [Just mail me] (mailto: samarjeet.xyz@gmail.com) 
+Want to reach out me? [Just mail me] (mailto: samarjeet.xyz@gmail.com){:target="_blank"}
