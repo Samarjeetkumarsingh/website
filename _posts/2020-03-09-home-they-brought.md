@@ -15,4 +15,4 @@ We all have grown in such families that are at least able to help reach to this 
 
 Here are some great moments of my life.
 
-![imgae] (/assets/imgaes/imgae1.png.jpg)
+![image] (/assets/images/image1.png.jpg)
