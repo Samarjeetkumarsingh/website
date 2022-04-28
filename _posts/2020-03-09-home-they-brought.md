@@ -3,7 +3,7 @@ layout: post
 title: What is it like working at Kartavya (NGO)? 
 ---
 
-First of all I would like to share, why I became part of  KARTAVYA, RANCHI CHAPTER.
+**First of all I would like to share, why I became part of  KARTAVYA, RANCHI CHAPTER**.
 
 **I become emotional when I see children on footpaths, near stations begging for food, money, etc. Sometimes I cried to see them so and thought I could help all of them. There might be hidden Dr. A. P. J. Abdul Kalam or another great engineer, doctor, teacher, etc in one of them. I think education is the only way to solve all the problems which we are facing in the society today.**
 
@@ -13,5 +13,5 @@ We all have grown in such families that are at least able to help reach to this 
 
 ***They changed my life and the duration for which I stayed there with those kids where the best days of life. And I hope, I will continue help them to succeed their life.!!***
 
-*Here are some great moments of my life.*
+Here are some great moments of my life.
 
