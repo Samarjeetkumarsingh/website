@@ -7,7 +7,7 @@ profile:
 published: true
 ---
 
-**I write about Education, Exams, & Learning from my journey along the way**. 
+**I write about Education system, Exams, Math, Materials Engineering, & Learning from my journey along the way**. 
 
 The idea and implementation of [**TestUrSelf**](https://www.testurself.in){:target="_blank"} is the brainchild of me. I secured **AIR-7** from Metallurgical Engineering in GATE 2016 in my first attempt. I come from a very humble background where getting education is dream for thousands. I cleared **IIT-JEE** with very limited resources. <br> However, due to not getting any good streams, I opted for **IIIT-Allahabad**. 
 
