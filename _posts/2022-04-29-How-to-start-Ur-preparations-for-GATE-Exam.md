@@ -2,11 +2,10 @@
 layout: post
 title: How to start Ur preparations for GATE Exam? 
 ---
-![image](/assets/images/image10.png)
-
 Dear aspirants, 
 
 **Here are fruitful tips to start Ur preparations for GATE Exam!!**
+![image](/assets/images/image10.png)
 
 **Set Ur goals:** 
 
