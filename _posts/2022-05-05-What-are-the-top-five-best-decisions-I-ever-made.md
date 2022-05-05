@@ -16,7 +16,7 @@ title: What are the top five decisions I ever made??
 
 ![image](/assets/images/Image11.png)
 
-5. Last but not the least just started answering on quora because I want to explore myself.
+5. Last but not the least just started posting on social medias platform because I want to explore myself.
 
 
 Thank you :)
