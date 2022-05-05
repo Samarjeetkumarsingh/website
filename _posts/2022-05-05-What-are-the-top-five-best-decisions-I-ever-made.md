@@ -10,7 +10,7 @@ title: What are the top five decisions I ever made??
 
 2. Took Metallurgy and Materials Engineering in B.Tech even though I was not aware about it before and Today I am pursuing my Masters degree in Materials Engineering from one of the prestigious college of our country, IISC Bangalore .
 
-3. Decided to write books because of wanted to dedicate this to my beloved father despites that my English is so terrible and today I have published my very first book on GATE for Metallurgical Engineering and it's going good. You can check it, the link is here,https://notionpress.com/author/sujit_samarjeet.
+3. Decided to write books because of wanted to dedicate this to my beloved father despites that my English is so terrible and today I have published my very first book on GATE for Metallurgical Engineering and it's going good.
 
 4. Decided to start my own venture which can provide quality contents for GATE aspirants for streams and see our students are secruing **AIR-1** since GATE 2019. You can go through it, [Click Here](https://www.testurself.in).
 
