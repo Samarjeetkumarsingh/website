@@ -3,6 +3,7 @@
 layout: post
 title: What are the top five decisions I ever made?? 
 ---
+
 **These are my 5 best decisions which I have taken till now.**
 
 
@@ -14,7 +15,7 @@ title: What are the top five decisions I ever made??
 
 4. Decided to start my own venture which can provide quality contents for GATE aspirants for streams and see our students are secruing **AIR-1** since GATE 2019. You can go through it, [Click Here](https://www.testurself.in).
 
-![image](/assets/images/image11.png)
+![image](/assets/images/Image11.png)
 
 5. Last but not the least just started answering on quora because I want to explore myself.
 
