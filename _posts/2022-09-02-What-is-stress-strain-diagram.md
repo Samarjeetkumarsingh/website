@@ -26,7 +26,7 @@ Where, $E$ is proportionality constant which is known as **Young’s** **modulus
 
 **Young’s** **modulus of elasticity **$(E)$**: **It is the ratio of Longitudinal stress $(\sigma)$ to the longitudinal strain $(\epsilon)$ is defined as Young’s modulus.
 
-$E=\frac{Longitudinal stress (\sigma)}{Longitudinal strain (\epsilon)}=\frac{\frac{F}{A}}{\frac{\Delta L}{L}}$
+$E=\frac{\text{Longitudinal stress} (\sigma)}{\text{Longitudinal strain} (\epsilon)}=\frac{\frac{F}{A}}{\frac{\Delta L}{L}}$
 
 Where,
 
