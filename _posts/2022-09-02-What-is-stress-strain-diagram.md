@@ -30,8 +30,11 @@ $E=\frac{\text{Longitudinal stress} (\sigma)}{\text{Longitudinal strain} (\epsil
 Where,
 
 $F=$ force applied
+
 $A=$ area of cross section
+
 $\Delta L =$ change in length
+
 $L=$ original length
 
 **Some useful definitions:**
