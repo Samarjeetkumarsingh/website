@@ -5,7 +5,6 @@ title: What is stress-strain diagram?
 Dear learners, 
 
 **Here are fruitful informations about stress-strain diagram!!**
-![image](/assets/images/12.png)
 
 
 According to **Hooke’s experiment**, the reaction between the stress & strain for a specimen under **tensile stress** can be found **experimentally.**
@@ -36,6 +35,7 @@ $\Delta L =$ change in length
 $L=$ original length
 
 **Some useful definitions:**
+![image](/assets/images/12.png)
 
 1. **Proportional limit:** in this region, stress is proportional to strain. i.e. Region in which the curve follows Hooke’s law.
 2. **Yield point: **The point on a stress-strain curve indicates the limit of elastic behaviour and the beginning of plastic behaviour.
