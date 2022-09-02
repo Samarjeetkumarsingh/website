@@ -5,7 +5,7 @@ title: What is stress-strain diagram?
 Dear learners, 
 
 **Here are fruitful informations about stress-strain diagram!!**
-![image](/assets/images/image12.png)
+![image](/assets/images/12.png)
 
 
 According to **Hooke’s experiment**, the reaction between the stress & strain for a specimen under **tensile stress** can be found **experimentally.**
