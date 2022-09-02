@@ -7,7 +7,7 @@ Dear learners,
 **Here are fruitful informations about stress-strain diagram!!**
 
 
-According to **Hooke’s experiment**, the reaction between the stress & strain for a specimen under **tensile stress** can be found **experimentally.**
+According to **Hooke’s experiment**, the reaction between the stress & strain for a specimen under **tensile stress** can be found **experimentally**.
 
 If we draw a plot(graph) of stress $(\sigma)$ vs strain $(\epsilon)$ for any metal body, we can see an ideal curve as shown below.
 
