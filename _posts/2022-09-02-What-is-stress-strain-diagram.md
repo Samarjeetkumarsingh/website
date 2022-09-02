@@ -23,7 +23,7 @@ $\sigma =E \epsilon$
 
 Where, $E$ is proportionality constant which is known as **Young’s modulus of elasticity**. It is also determined by calculating slope of stress vs strain curve.
 
-**Young’s modulus of elasticity** $(E)$: **It is the ratio of Longitudinal stress $(\sigma)$ to the longitudinal strain $(\epsilon)$ is defined as Young’s modulus.
+**Young’s modulus of elasticity** $(E)$: It is the ratio of Longitudinal stress $(\sigma)$ to the longitudinal strain $(\epsilon)$ is defined as Young’s modulus.
 
 $E=\frac{\text{Longitudinal stress} (\sigma)}{\text{Longitudinal strain} (\epsilon)}=\frac{\frac{F}{A}}{\frac{\Delta L}{L}}$
 
@@ -35,6 +35,7 @@ $\Delta L =$ change in length
 $L=$ original length
 
 **Some useful definitions:**
+
 ![image](/assets/images/12.png)
 
 1. **Proportional limit:** in this region, stress is proportional to strain. i.e. Region in which the curve follows Hooke’s law.
