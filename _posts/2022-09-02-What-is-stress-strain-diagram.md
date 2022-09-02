@@ -11,6 +11,8 @@ According to **Hooke’s experiment**, the reaction between the stress & strain 
 
 If we draw a plot(graph) of stress $(\sigma)$ vs strain $(\epsilon)$ for any metal body, we can see an ideal curve as shown below.
 
+![image](/assets/images/12.png)
+
 This shows that as stress increases strain on the material will also increase, but after certain point the curve becomes non-uniform and (i.e., between point A & E).
 
 Thus the region between A to B stress and strain are not proportional to each other **(Hooke’s law is not valid in this zone)**. The point B in the curve is known as **yield point** (also known as **elastic limit**) and the corresponding stress is known as **yield strength** $(\sigma_y)$ of the material. Below this point the body can retain its original shape and size but if yield stress goes beyond $(\sigma_y)$ the body will start deforming and it is said to be **permanently deformation.**
@@ -39,7 +41,6 @@ $L=$ original length
 
 **Some useful definitions:**
 
-![image](/assets/images/12.png)
 
 1. **Proportional limit:** in this region, stress is proportional to strain. i.e. Region in which the curve follows Hooke’s law.
 2. **Yield point**: The point on a stress-strain curve indicates the limit of elastic behaviour and the beginning of plastic behaviour.
