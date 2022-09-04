@@ -12,7 +12,8 @@ I am going to give answer into different parts:
 2. GATE is an exam exam where syllabus is quite vast. Almost 4 years of syllabus is asked in a single 3- hour exam. The syllabus-to-exam time is highest in GATE, the syllabus is distributed across many tests.
 
 This is how a section of syllabus is going to look like:
-![image](/assets/images/13.jpg)
+
+![image](/assets/images/13.png)
 
 1. Now, as you would have noticed, there is a big problem here. The official syllabus only mentions broad topics which include many other small subtopics within themselves. For example, in the topic “Solutions”, there are a LOT of topics and concepts involved, about which there is no mention in official syllabus.
 2. And if you are not specifically aware of what to read, what not to read and how much to read, you will get diverted towards wrong direction which will not benefit you in GATE Exam. So, for new aspirants, knowing what to read, what not to read and how much to read is also struggle.
