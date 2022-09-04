@@ -42,9 +42,9 @@ While studying make a Short notes and as well as Numerical Learning notes so you
 3. *Build exam taking skills.*
 4. *Making plan for writing GATE Exam that which section are you going to attempting first, etc.*
 
-***Other than solving good questions, analysing Ur performance is equally important when GATE Exam approaches near. If you don’t understand and do not correct what you are doing wrong, how you think you can improve? And that is why many aspirants keep on attending more and more tests but not see any major improvement.
+***Other than solving good questions, analysing Ur performance is equally important when GATE Exam approaches near. If you don’t understand and do not correct what you are doing wrong, how you think you can improve? And that is why many aspirants keep on attending more and more tests but not see any major improvement.***
 
-**Analysing Ur test can be broken down into many factors:
+**Analysing Ur test can be broken down into many factors:**
 
 1. *Identifying particular mistaken pattern.*
 2. *Recognising types of mistakes you do.*
