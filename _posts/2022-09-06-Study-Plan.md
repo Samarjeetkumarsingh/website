@@ -2,6 +2,8 @@
 layout: post
 title: The Importance of Having a Study Plan!
 ---
+Dear students,
+
 ![image](/assets/images/2853E509-2574-4DB1-A249-D8BBBDE5EE11.png)
 
 **The Importance of Having a Study Plan!**
