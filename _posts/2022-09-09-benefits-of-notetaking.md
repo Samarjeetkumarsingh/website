@@ -19,4 +19,6 @@ Note taking provides several benefits beyond that record of what was taught in a
 
 📄**Creates a condensed record for study**: A set of concise, well organised notes 📝 from each class session gives us what we need for study 📚, learning, and revision after class.
 
+Happy Learning!
+
 #notetaking #notes #study #studytips #testurself #samarjeet #lectures #students #learning
