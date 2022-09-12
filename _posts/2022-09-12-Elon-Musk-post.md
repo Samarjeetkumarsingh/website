@@ -9,7 +9,7 @@ title: Materials Engineering?
 
 In a recent post, Elon Musk shared a valuable suggestion on two courses that any student wanting to learn something new could take. 
 
-**The two courses which he suggests are **
+**The two courses which he suggests are**
 
 1. Materials Science
 2. Astronomy 
