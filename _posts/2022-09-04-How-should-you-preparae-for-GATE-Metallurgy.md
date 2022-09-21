@@ -64,7 +64,7 @@ While studying make a Short notes and as well as Numerical Learning notes so you
 3. Never join a Test Series which has irrelevant questions. It will do more harm than good.
 4. If you have already join any such test series, stop writing tests from that if you want to really improve and reach Ur maximum.
 5. Keep adding good conceptual question to the Numerical Learning notes.
-6. Do not judge Ur capabilities from the marks you get. Keep working to improve them. We already gave you the example of AIR -1 in GATE 20222, 2021, 2020 and 2019.
+6. Do not judge Ur capabilities from the marks you get. Keep working to improve them. We already gave you the example of AIR -1 in GATE 2022, 2021, 2020 and 2019.
 7. Test series is all about learning and improving. Getting good rank in mock test is not Ur motive. You motive to get good marks in GATE Exam.
 
 ***I am very proud to say that TestUrSelf is the ONLY Test Series for GATE which provides not only GATE relevant questions but also very advanced performance analysis. You can search on internet about the reviews.***
