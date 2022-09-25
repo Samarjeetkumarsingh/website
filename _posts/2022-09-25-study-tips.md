@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Keep Studying & Keep Learning? 
+title: Keep Studying & Keep Learning! 
 ---
 
 **Dear aspirants,**
