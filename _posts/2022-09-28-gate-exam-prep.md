@@ -13,7 +13,7 @@ Its all depend on you that how many hours will you take to complete your target 
 
 **Like this:**
 
-\(\begin{vmatrix}\textbf{Months}& \textbf{Preparation Strategy}\\ \text{october}& \text{Complete remaining syllabus + PYQ + Revision + SectionWise Tests + PYQ}\\ \text{November}& \text{Revision + PYQ + Mixed Sections Tests + 1-2 Full Tests}\\ \text{December}& \text{Revision + PYQ + 3-4 Full Tests}\\ \text{January}& \text{Revision + 6-7 Full Tests}\\ \text{February}& \text{Revision + GATE Exam}\end{vmatrix}\)
+$\begin{matrix}\textbf{Months}& \textbf{Preparation Strategy}\\ \text{october}& \text{Complete remaining syllabus + PYQ + Revision + SectionWise Tests + PYQ}\\ \text{November}& \text{Revision + PYQ + Mixed Sections Tests + 1-2 Full Tests}\\ \text{December}& \text{Revision + PYQ + 3-4 Full Tests}\\ \text{January}& \text{Revision + 6-7 Full Tests}\\ \text{February}& \text{Revision + GATE Exam}\end{matrix}$
 
 **Some important tips:**
 
