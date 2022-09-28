@@ -12,7 +12,7 @@ Its all depend on you that how many hours will you take to complete your target 
 ***Remember: A goal without a plan is just a wish so prepare your strategy on per day/month basis.***
 
 **Like this:**
-$\begin{matrix}\textbf{Months}&\textbf{Preparation Strategy}\\ \text{October}&\text{Complete remaining syllabus + PYQ + Revision + SectionWise Tests + PYQ}\\ \text{November}&\text{Revision + PYQ + Mixed Sections Tests + 1-2 Full Tests}\\ \text{December}&\text{Revision + PYQ + 3-4 Full Tests}\\ \text{January}&\text{Revision + 6-7 Full Tests}\\ \text{February}&\text{Revision + GATE Exam}\end{matrix}$
+$\begin{matrix}\textbf{Months}& \textbf{Preparation Strategy}\\ \text{october}&\text{Complete remaining syllabus + PYQ + Revision + SectionWise Tests + PYQ}\\ \text{November}& \text{Revision + PYQ + Mixed Sections Tests + 1-2 Full Tests}\\ \text{December}& \text{Revision + PYQ + 3-4 Full Tests}\\ \text{January}&\text{Revision + 6-7 Full Tests}\\ \text{February}& \text{Revision + GATE Exam}\end{matrix}$
 
 **Some important tips:**
 
@@ -31,4 +31,5 @@ $\begin{matrix}\textbf{Months}&\textbf{Preparation Strategy}\\ \text{October}&\t
 4. Generally we do mistakes in numerical portions so whenever you do practices numerical try to use virtual calculator. which will increase your speed and accuracy.
 
 ***“Don’t Stress, Do Your Best, Forget the Rest”***
+
 **Good luck for your preparation.**
