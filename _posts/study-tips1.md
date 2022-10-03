@@ -1,0 +1,20 @@
+---
+layout: post
+title: 𝐓𝐡𝐞 𝐛𝐞𝐬𝐭 𝐩𝐥𝐚𝐧 𝐭𝐨 𝐬𝐭𝐮𝐝𝐲\𝐰𝐨𝐫𝐤\𝐝𝐨 𝐚𝐧𝐲𝐭𝐡𝐢𝐧𝐠 𝐥𝐢𝐭𝐞𝐫𝐚𝐥𝐥𝐲, 𝐤𝐢𝐧𝐝 𝐨𝐟 𝐚 𝐠𝐮𝐢𝐝𝐞 𝐭𝐨 𝐩𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐯𝐢𝐭𝐲! 
+---
+
+**𝐇𝐞𝐫𝐞 𝐚𝐫𝐞 𝐬𝐨𝐦𝐞 𝐭𝐢𝐩𝐬 𝐲𝐨𝐮 𝐦𝐚𝐲 𝐚𝐩𝐩𝐥𝐲 𝐟𝐨𝐫 𝐮𝐫 𝐬𝐭𝐮𝐝𝐲:**.
+
+![image](/assets/images/1.png)
+
+![image](/assets/images/2.png)
+
+![image](/assets/images/3.png)
+
+![image](/assets/images/4.png)
+
+![image](/assets/images/5.png)
+
+![image](/assets/images/6.png)
+
+**Keep Studying!!**
