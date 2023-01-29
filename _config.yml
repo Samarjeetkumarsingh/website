@@ -9,7 +9,7 @@ email: samarjeet.xyz@gmail.com
 
 
 highlighter: rouge
-markdown: kramdown
+markdown: gfm
 
 # Pagination
 paginate: 4
