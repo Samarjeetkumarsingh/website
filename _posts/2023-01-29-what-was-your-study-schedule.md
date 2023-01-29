@@ -9,9 +9,9 @@ When I was preparing for competitive exams like **JEE and GATE**, I had a struct
 
 |**Study Slot**| **Timing** | **Subjects & Tasks** | **Remarks** |
 | ---------|------| ---------------|-------|
-| **Slot-I** | 8.00 AM-12.00PM     | Topic-1, Topic-2 & Solving Problems | Wtite down urself |
-| **Slot-II**| 2.00 PM-5.00PM      | Topic-3, Topic-4 & Revisions | Wtite down urself|
-| **Slot-III**| 7.00 PM-10.00PM    | Topic-5, Topic-6, Solving Problems & Making Schedule | Wtite down urself|
+| **Slot-I** | 8.00 AM-12.00PM     | Topic-1, Topic-2 & Solving Problems |  |
+| **Slot-II**| 2.00 PM-5.00PM      | Topic-3, Topic-4 & Revisions | |
+| **Slot-III**| 7.00 PM-10.00PM    | Topic-5, Topic-6, Solving Problems & Making Schedule | |
 
 
 *One way to enhance your study routine is to take a few minutes before going to bed to reflect on your performance throughout the day. You can do this by keeping a "remark section" where you can write down your observations about your study sessions, including what worked well and what you struggled with. By regularly analyzing these remarks, you can identify patterns and areas for improvement.*
