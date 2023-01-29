@@ -7,7 +7,7 @@ title: What was your study schedule?
 
 When I was preparing for competitive exams like **JEE and GATE**, I had a structured approach to my studies. I used to create a study routine that included specific blocks of time for studying, breaks, and other activities. I would also set my goals for the next day before going to bed, and make a schedule that included the specific tasks or concepts I needed to study and the time I needed to dedicate to each. I prioritized my tasks and made sure to be realistic about the amount of time I could dedicate to studying. I also allowed for flexibility in my routine and took regular breaks to improve my focus and reduce fatigue. Additionally, I used to write down my observations about my study sessions, including what worked well and what I struggled with before going to bed and regularly analyze them. This helped me to identify patterns and areas for improvement, and improve my study duration and performance. I used to make study routine like this one.
 
-|**Study Slot**| **Timing** | **Subjects & Tasks** | **Remarks** |$\hline$
+|**Study Slot**| **Timing** | **Subjects & Tasks** | **Remarks** |
 | ---------|------| ---------------|-------|
 | **Slot-I** | 8.00 AM-12.00 PM     | Topic-1, Topic-2 & Solving Problems | - |
 | **Slot-II**| 2.00 PM-05.00 PM      | Topic-3, Topic-4 & Revisions | -|
