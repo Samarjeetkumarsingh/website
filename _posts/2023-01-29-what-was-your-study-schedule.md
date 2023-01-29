@@ -7,11 +7,12 @@ title: What was your study schedule?
 
 When I was preparing for competitive exams like **JEE and GATE**, I had a structured approach to my studies. I used to create a study routine that included specific blocks of time for studying, breaks, and other activities. I would also set my goals for the next day before going to bed, and make a schedule that included the specific tasks or concepts I needed to study and the time I needed to dedicate to each. I prioritized my tasks and made sure to be realistic about the amount of time I could dedicate to studying. I also allowed for flexibility in my routine and took regular breaks to improve my focus and reduce fatigue. Additionally, I used to write down my observations about my study sessions, including what worked well and what I struggled with before going to bed and regularly analyze them. This helped me to identify patterns and areas for improvement, and improve my study duration and performance. I used to make study routine like this one.
 
-| Study Slot | Timing | Subjects & Tasks | Remarks |
-| -----------|--------| -----------------|---------|
-| x          | y      | z                | t       |
+|**Study Slot**| **Timing** | **Subjects & Tasks** | **Remarks** |
+|: ---------:|:------:| :---------------:|:-------:|
+| **Slot-I**    | 8.00 AM-12.00PM      | Topic-1, Topic-2 & Solving Problems | Wtite down urself      |
+| **Slot-II**    | 2.00 PM-5.00PM      | Topic-3, Topic-4 & Revisions | Wtite down urself      |
+| **Slot-III**    | 7.00 PM-10.00PM     | Topic-5, Topic-6, Solving Problems & Making Schedule | Wtite down urself      |
 
-$\begin{matrix}\hline\textbf{Study Slot}& \textbf{Timing}& \textbf{Subjects & Tasks}&\textbf{Remarks}\\ \hline\text{Slot-I}&\text{8.00 AM-12.00PM}&\text{Topic-1, Topic-2 & Solving Problems}&-------\\\text{Slot-II}&\text{2.00 PM-5.00PM}&\text{Topic-3, Topic-4 & Revisions}&--------\\ \text{Slot-III}&\text{7.00 PM-10.00PM}&\text{Topic-5, Topic-6 & Solving Problems}&------- \end{matrix}$
 
 *One way to enhance your study routine is to take a few minutes before going to bed to reflect on your performance throughout the day. You can do this by keeping a "remark section" where you can write down your observations about your study sessions, including what worked well and what you struggled with. By regularly analyzing these remarks, you can identify patterns and areas for improvement.*
 
