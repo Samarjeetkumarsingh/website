@@ -4,7 +4,7 @@ title: What is an effective revision strategy for me?
 ---
 Dear aspirants,
 
-![image](/assets/images/Revision Strategy-2.png)
+![image](/assets/images/revision.png)
 
 The revision strategy that works best for you may depend on your learning style and the type of material you are studying. However, here are some general tips that could help you develop an effective revision strategy:
 
