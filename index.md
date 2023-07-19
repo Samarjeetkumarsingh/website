@@ -7,7 +7,7 @@ profile:
 published: true
 ---
 
-**"I document my experiences and insights on topics such as the education system, examination strategies, mathematics, materials engineering, and the process of learning through my personal journey."** 
+**"I'm a materials engineer who loves memes and learning. I document my experiences and insights on topics such as the education system, examination strategies, mathematics, and the process of learning through my personal journey."** 
 
 I am the creator of [**TestUrSelf**](https://www.testurself.in){:target="_blank"}, an innovative platform that provides educational resources for students. My passion for education and commitment to helping others led me to develop this platform. I have a strong background in education, having achieved the top rank of **AIR-7** in Metallurgical Engineering in **GATE 2016** in my first attempt. Although I came from humble beginnings and had limited resources, I managed to excel in the IIT-JEE (Advanced) and AIEEE (IIT-Mains) exams and was able to enroll in **IIIT-Allahabad** because I did not secure a desirable branch at an **IIT**, where I further honed my skills and knowledge. Driven by my personal experiences and a desire to help others, I created [**TestUrSelf**](https://www.testurself.in){:target="_blank"} to provide students with the tools and resources they need to succeed in their education.
 
