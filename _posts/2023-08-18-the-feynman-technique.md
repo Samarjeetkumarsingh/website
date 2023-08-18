@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Feynman Technique: Master the Art of Learning 
+title: The Feynman Technique-Master the Art of Learning 
 ---
 
 ![image](/assets/images/feynman.png)
