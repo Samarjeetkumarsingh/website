@@ -4,7 +4,20 @@ title: The Feynman Technique - Master the Art of Learning
 ---
 ![image](/assets/images/feynman.png)
 
+***The person who says he knows what he thinks but cannot express it usually does not know what he thinks.***
+
 The Feynman Technique, developed by Nobel laureate physicist Richard Feynman, is a powerful method to enhance your understanding of complex concepts. It involves four key steps:
+
+Feynman’s learning technique comprises four key steps:
+
+1. Select a concept to learn.
+2. Teach it to a child.
+3. Review and refine your understanding.
+4. Organize your notes and revisit them regularly.
+   
+Let’s delve deeper into these steps.
+
+Feynman’s secret lay in understanding the true essence of a concept rather than merely knowing its name, leading to his remarkable achievements. This learning technique can be applied universally, irrespective of the subject.
 
 **Step 1: Select a Concept to Learn**
 
@@ -13,6 +26,8 @@ Choose a topic that you want to deepen your understanding of. Begin by writing d
 **Step 2: Teach it to a Child**
 
 Simplify your notes so that you could explain the chosen concept to a 12-year-old. Avoid using jargon and complex language; instead, use words that a child would easily understand. The goal is to distill the concept down to its core essence. This step helps you reveal your depth of understanding and identify any areas where your grasp might be lacking.
+
+***Anyone can make a subject complicated but only someone who understands can make it simple.***
 
 **Step 3: Review and Refine**
 
