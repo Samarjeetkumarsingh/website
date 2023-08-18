@@ -26,3 +26,5 @@ To test your understanding, present your explanation to someone else. Pay attent
 Once you're satisfied with your understanding, take the sheet containing the simplified explanation and store it in a binder. By applying the Feynman Technique to every subject you learn, you can build a binder filled with organized and simplified explanations. Periodically reviewing this binder will help reinforce your understanding over time.
 
 Incorporating the Feynman Technique into your learning routine can lead to a deeper understanding of complex concepts across various subjects. This method emphasizes the importance of simplicity, clarity, and continuous reflection in the learning process.
+
+[**Click Here to start preparing for GATE Exam**](https://www.testurself.in){:target="_blank"}
