@@ -3,7 +3,6 @@ layout: post
 title: The Feynman Technique: Master the Art of Learning 
 ---
 
-![image](/assets/images/feynman.png)
 
 The Feynman Technique, developed by Nobel laureate physicist Richard Feynman, is a powerful method to enhance your understanding of complex concepts. It involves four key steps:
 
