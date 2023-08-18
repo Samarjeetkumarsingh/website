@@ -2,6 +2,7 @@
 layout: post
 title: The Feynman Technique: Master the Art of Learning 
 ---
+
 ![image](/assets/images/feynman.png)
 
 The Feynman Technique, developed by Nobel laureate physicist Richard Feynman, is a powerful method to enhance your understanding of complex concepts. It involves four key steps:
@@ -17,6 +18,7 @@ Simplify your notes so that you could explain the chosen concept to a 12-year-ol
 **Step 3: Review and Refine**
 
 Write out your simplified explanation. The process of writing enhances reflection and learning. Reflection is a crucial part of the learning process as it helps you understand what you know and what you need to further comprehend. Ensure that your notes are devoid of jargon and any confusing elements. If anything remains unclear, refine your explanation.
+
 Read your explanation aloud as if you were teaching it to a child. If any part sounds complex or confusing, it's a sign that you need to refine your understanding. Revisit the source material and focus on the parts that you find challenging. Repeat this process until you have a clear and simple explanation.
 
 **Step 4: Organize and Review**
