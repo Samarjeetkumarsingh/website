@@ -1,29 +1,60 @@
 ---
 layout: post
-title: The Feynman Technique-Master the Art of Learning 
+title: Why TestUrSelf? 
 ---
+Dear aspirants,
 
-![image](/assets/images/feynman.png)
+**TestUrSelf’s Student Performance: Highest Number of Selections with Top Rankers.**
 
-The Feynman Technique, developed by Nobel laureate physicist Richard Feynman, is a powerful method to enhance your understanding of complex concepts. It involves four key steps:
+TestUrSelf has maintained its exclusivity by consistently ensuring maximum selections and producing toppers and highest number of rank holders in GATE and PSU examinations. In GATE-2022 Examination, TestUrSelf has produced  AIR-1 rankers with a total of 65+ secured under AIR 100.
 
-**Step 1: Select a Concept to Learn**
 
-Choose a topic that you want to deepen your understanding of. Begin by writing down everything you already know about the subject on a blank sheet of paper. As you learn more about the topic, continue adding your new knowledge to the sheet. Using different colors for new information can visually highlight your growing knowledge.
+**Results Oriented** 
+	
+The result of GATE 2022 has been announced and we are extremely happy that TestUrSelf’s students did outstanding in the exam. 65+ Students secured ranks under 💯 including AIR 1. This is the 5th time that our student secured AIR 1.
 
-**Step 2: Teach it to a Child**
+![image](/assets/images/13.png)
 
-Simplify your notes so that you could explain the chosen concept to a 12-year-old. Avoid using jargon and complex language; instead, use words that a child would easily understand. The goal is to distill the concept down to its core essence. This step helps you reveal your depth of understanding and identify any areas where your grasp might be lacking.
+Within a short span of 3.5 years, TestUrSelf has become the first choice of sincere GATE aspirants. Every year, more and more aspirants excel in GATE Exam with TestUrSelf. The primary reason behind it is the content (Video Lectures, Test Series, PQS and Study Materials) that we deliver is purely crafted in such a way that it converts to marks in GATE Exam.
 
-**Step 3: Review and Refine**
+**Comprehensive Coverage**
 
-Write out your simplified explanation. The process of writing enhances reflection and learning. Reflection is a crucial part of the learning process as it helps you understand what you know and what you need to further comprehend. Ensure that your notes are devoid of jargon and any confusing elements. If anything remains unclear, refine your explanation.
+1. In-depth coverage of syllabus (both Tech. and Non-tech) with prime focus on fundamental concepts.
+2. The gradual transition from basic to advance level making it duck soup for fresher.
 
-Read your explanation aloud as if you were teaching it to a child. If any part sounds complex or confusing, it's a sign that you need to refine your understanding. Revisit the source material and focus on the parts that you find challenging. Repeat this process until you have a clear and simple explanation.
+**Focused and Comprehensive contents**
 
-**Step 4: Organize and Review**
+1. Detailed “Learn on the go” study material to utilize the time in most efficient manner without need for other resources.
+2. Well designed and easy to understand study material with ample examples and online Assignments.
+3. Designed and regularly updated with the changing trends of the exam by experienced team of TestUrSelf.
 
-To test your understanding, present your explanation to someone else. Pay attention to their reactions and the questions they ask. This will help you gauge the effectiveness of your explanation and identify any areas that might still be unclear.
-Once you're satisfied with your understanding, take the sheet containing the simplified explanation and store it in a binder. By applying the Feynman Technique to every subject you learn, you can build a binder filled with organized and simplified explanations. Periodically reviewing this binder will help reinforce your understanding over time.
+**Professionally Managed and Structured Organization**
 
-Incorporating the Feynman Technique into your learning routine can lead to a deeper understanding of complex concepts across various subjects. This method emphasizes the importance of simplicity, clarity, and continuous reflection in the learning process.
+1. Pre-planned test schedule, with the accurate implementation of time-table.
+2. Well-skilled management, serving with full dedication and commitment.
+3. Regular Assessment of Performance: Our Test Features.
+4. GATE/GPAT/and many others online test series.
+5. Same exam interface as actual exam.
+6. Detailed solution for students’ reference.
+7. Facility of Ask an Expert; where you can ask Ur doubts related to questions.
+
+**Overall Analysis report: The report will have**
+
+1. Ur Score in that test, along with the number of questions attempted.
+2. Time Taken and the Rank secured.
+3. Marks Distribution (positive, negative and unattempted questions).
+4. Time wise Pi Chart (Skipped, unproductive and productive).
+
+**Comparison Reports: Comparison reports clearly demonstrate** 
+
+1. Ur score /Toppers Score.
+2. Ur Time /Time taken by Topper.
+3. Top 3 toppers' score comparison.
+4. There is a feature that you can attempt a skipped question after test submission without seeing the solutions.
+
+**Previous Year Solved Papers**
+
+1. We provide previous year solved papers in form of Readable Mode as well as Test Mode.
+
+Happy preparations!!
+
