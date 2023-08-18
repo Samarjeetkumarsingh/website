@@ -24,4 +24,5 @@ Read your explanation aloud as if you were teaching it to a child. If any part s
 
 To test your understanding, present your explanation to someone else. Pay attention to their reactions and the questions they ask. This will help you gauge the effectiveness of your explanation and identify any areas that might still be unclear.
 Once you're satisfied with your understanding, take the sheet containing the simplified explanation and store it in a binder. By applying the Feynman Technique to every subject you learn, you can build a binder filled with organized and simplified explanations. Periodically reviewing this binder will help reinforce your understanding over time.
+
 Incorporating the Feynman Technique into your learning routine can lead to a deeper understanding of complex concepts across various subjects. This method emphasizes the importance of simplicity, clarity, and continuous reflection in the learning process.
