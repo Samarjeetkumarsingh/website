@@ -3,7 +3,7 @@ layout: post
 title: Why Do Students Fail Exams Even If They Work Hard?
 ---
 
-![image](/assets/images/fail.png)
+![image](/assets/images/Why Do Students Fail Exams Even If They Work Hard testurself.in.png)
 
 Exams are like milestones in a student's academic journey. They reflect the culmination of weeks or even months of hard work, dedication, and late-night study sessions. However, there are times when students, despite putting in their best effort, face the disheartening experience of failing an exam. This phenomenon raises an important question: Why do students fail exams even if they work hard? Let's delve into this topic to uncover the underlying factors that contribute to exam failure despite sincere efforts.
 
