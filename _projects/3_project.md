@@ -1,6 +1,6 @@
 ---
 layout: post
-title: padhekeba
+title: Mission Kartavya Foundation 
 description: Click here to go to website
-redirect: https://www.padhekeba.com
+redirect: https://www.missionkartavya.org
 ---
