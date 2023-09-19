@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Prepare Effective Notes for Competitive Exams: Tips & Tricks 
+title: How to Prepare Effective Notes for Competitive Exams: Tips & Tricks
 ---
 
 ![image](/assets/images/notes.png)
