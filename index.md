@@ -9,7 +9,7 @@ published: true
 
 **I'm a materials engineer who loves memes and learning. I document my experiences and insights on topics such as the education system, examination strategies, mathematics, and the process of learning through my personal journey.** 
 
-Welcome to my personal website! I'm the founder of [**TestUrSelf**](https://www.testurself.in){:target="_blank"}, an online platform dedicated to helping students prepare for the GATE exam. My journey has been one of resilience and determination, stemming from a humble background. Despite limited resources, I successfully cleared the IIT-JEE and achieved an impressive All India Rank of 7 in Metallurgical Engineering in the GATE exam.
+Welcome to my personal website! I'm the founder of [**TestUrSelf**](https://www.testurself.in){:target="_blank"}, an online platform dedicated to helping students prepare for the GATE exam. My journey has been one of resilience and determination, stemming from a humble background. Despite limited resources, I successfully cleared the IIT-JEE and achieved an impressive **All India Rank of 7** in Metallurgical Engineering in the GATE 2016 exam.
 
 Although I faced personal challenges that led me to leave IIIT-Allahabad, I persevered and completed my B.Tech in Metallurgical Engineering. During my studies, I authored a book on the subject, which was later published while I pursued my Masters at IISc Bangalore.
 
