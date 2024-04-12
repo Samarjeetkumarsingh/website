@@ -19,6 +19,6 @@ Since 2019, our students have consistently clinched top ranks in GATE exams, inc
 
 I am honored to announce that I have taken on the role of one of the Directors of **[Mission Kartavya Foundation](https://www.instagram.com/kartavya_niamt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==){:target="_blank"}, Ranchi**. At Kartavya, we firmly believe that education can combat poverty and improve people's lives. **[Mission Kartavya Foundation](https://https://www.instagram.com/kartavya_niamt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==){:target="_blank"}** is a non-profit organization that focuses on providing a comprehensive education to underprivileged students. Our mission is to provide a learning platform for students who lack access to quality education and to help them grow both academically and socially.
 
-**[Mission Kartavya Foundation](https://www.missionkartavya.org){:target="_blank"}** was established at NIAMT (formerly NIFFT) to address the need for educational support in the Hatia community.
+**[Mission Kartavya Foundation](https://www.instagram.com/kartavya_niamt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==){:target="_blank"}** was established at NIAMT (formerly NIFFT) to address the need for educational support in the Hatia community.
 
 Want to say hello? [Drop me an email](mailto:samarjeet.xyz@gmail.com){:target="_blank"}
