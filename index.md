@@ -28,7 +28,7 @@ I document my experiences and insights on:
 An online platform for GATE prep, started from a small room. **[Explore here](https://www.testurself.in){:target="_blank"}**.  
 
 ### 🌱 Mission Kartavya Foundation  
-As a Director at **[Mission Kartavya](https://www.instagram.com/kartavya_niamt){:target="_blank"}**, I help underprivileged students access quality education.  
+As a Director at **[Mission Kartavya](https://www.instagram.com/kartavya_niamt){:target="_blank"}**, We help underprivileged students access quality education.  
 
 ---
 
