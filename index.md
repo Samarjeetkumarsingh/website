@@ -22,7 +22,6 @@ I am honored to announce that I have taken on the role of one of the Directors o
 **[Mission Kartavya Foundation](https://www.instagram.com/kartavya_niamt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==){:target="_blank"}** was established at NIAMT (formerly NIFFT) to address the need for educational support in the Hatia community.
 
 Want to say hello? [Drop me an email](mailto:samarjeet.xyz@gmail.com){:target="_blank"}  
-📫 **Let’s connect!**  
-[Email me](mailto:samarjeet.xyz@gmail.com){:target="_blank"} | [GitHub](https://github.com/yourusername){:target="_blank"}  
+📫 **Let’s connect!**  [Email me](mailto:samarjeet.xyz@gmail.com){:target="_blank"}
 
 *"Education is the most powerful weapon to change the world."*  
