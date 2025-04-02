@@ -176,7 +176,7 @@
 <body>
     <header>
         <h1>Metallurgical Thermodynamics</h1>
-        <p>Complete Guide for GATE Metallurgy (MT) - Section 2</p>
+        <p>Complete Guide for GATE Metallurgy (MT) - Section 2 (TestUrSelf)</p>
     </header>
 
     <div class="section" id="laws">
@@ -442,7 +442,7 @@
     </div>
     
     <footer>
-        <p>© 2023 GATE Metallurgy Thermodynamics Guide | All Rights Reserved</p>
+        <p>© TestUrSelf | All Rights Reserved</p>
     </footer>
 </body>
 </html>
