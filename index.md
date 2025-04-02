@@ -3,7 +3,7 @@ layout: about
 permalink: /
 profile:
   align: right
-  image: IMG_8660.png
+  image: profile.png
 published: true
 ---
 
