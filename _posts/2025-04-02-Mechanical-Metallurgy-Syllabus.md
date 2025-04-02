@@ -270,7 +270,7 @@
 <body>
     <header>
         <h1>Mechanical Metallurgy</h1>
-        <p>Complete Guide for GATE Metallurgy (MT) - Section 6</p>
+        <p>Complete Guide for GATE Metallurgy (MT) - Section 6 (TestUrSelf)</p>
     </header>
 
     <div class="toc-container">
@@ -373,7 +373,7 @@
             <h3>Mohr's Circle Representation</h3>
             <div class="topic-card">
                 <div class="mohr-circle">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Mohr_circle.svg/500px-Mohr_circle.svg.png" alt="Mohr's Circle Diagram">
+                    <img src="Mohrs-circle-construction.png" alt="Mohr's Circle Diagram">
                     <p>Mohr's Circle for 2D stress state</p>
                 </div>
                 
