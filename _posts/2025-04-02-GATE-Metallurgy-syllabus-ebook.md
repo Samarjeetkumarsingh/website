@@ -2,111 +2,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GATE Metallurgy (MT) - Complete Study Guide</title>
+    <title>GATE MT - Complete Syllabus Coverage</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #e74c3c;
-            --accent-color: #3498db;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --highlight-color: #f1c40f;
+            --primary-color: #1a237e;
+            --secondary-color: #c62828;
+            --accent-color: #1565c0;
+            --light-color: #e3f2fd;
+            --dark-color: #0d47a1;
+            --text-color: #212121;
+            --highlight-color: #ffc107;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
             color: var(--text-color);
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #f5f5f5;
         }
         
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
-            padding: 2rem;
+            padding: 3rem;
             text-align: center;
             border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
         
         h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            font-weight: 700;
         }
         
         h2 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
+            color: var(--primary-color);
+            border-left: 6px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-top: 3rem;
+            font-size: 2rem;
         }
         
         h3 {
-            color: var(--primary-color);
+            color: var(--dark-color);
+            margin-top: 2rem;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+        
+        h4 {
+            color: #424242;
             margin-top: 1.5rem;
+            font-size: 1.3rem;
         }
         
         .section {
             background-color: white;
             border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .topic-card {
             background-color: var(--light-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
             border-left: 4px solid var(--accent-color);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 4px 4px 0;
         }
         
         .important {
-            background-color: #fffde7;
+            background-color: #fff8e1;
             border-left: 4px solid var(--highlight-color);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 4px 4px 0;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
         }
         
         .formula {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Courier New', monospace;
             background-color: #f5f5f5;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-        
-        .diagram {
-            text-align: center;
-            margin: 1.5rem 0;
             padding: 1rem;
-            background-color: #f0f8ff;
-            border-radius: 8px;
-        }
-        
-        .diagram img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border-left: 3px solid var(--accent-color);
         }
         
         .key-points {
             background-color: #e8f5e9;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        
-        .key-points h4 {
-            margin-top: 0;
-            color: #2e7d32;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
         }
         
         table {
@@ -115,13 +109,10 @@
             margin: 1.5rem 0;
         }
         
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        
         th, td {
-            padding: 0.75rem;
+            padding: 12px;
             text-align: left;
+            border-bottom: 1px solid #ddd;
         }
         
         th {
@@ -135,26 +126,27 @@
         
         .toc {
             background-color: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .toc ul {
+            columns: 2;
             list-style-type: none;
             padding: 0;
         }
         
         .toc li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+            padding: 0.7rem 0;
+            border-bottom: 1px dashed #e0e0e0;
         }
         
         .toc a {
             text-decoration: none;
-            color: var(--primary-color);
-            display: block;
+            color: var(--dark-color);
+            font-weight: 500;
             transition: color 0.3s;
         }
         
@@ -165,34 +157,33 @@
         footer {
             text-align: center;
             margin-top: 3rem;
-            padding: 1.5rem;
+            padding: 2rem;
             color: var(--primary-color);
-            border-top: 1px solid #eee;
         }
         
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
+            .toc ul {
+                columns: 1;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
-            .section {
-                padding: 1rem;
+            h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>GATE Metallurgy (MT) Comprehensive Study Guide</h1>
-        <p>Master the complete syllabus with detailed explanations, formulas, diagrams, and practice questions</p>
+        <h1>GATE Metallurgy (MT) Complete Syllabus Guide</h1>
+        <p>Every Topic Covered in Detail | Official Syllabus</p>
     </header>
     
     <div class="toc">
-        <h2>Table of Contents</h2>
+        <h2>Detailed Table of Contents</h2>
         <ul>
             <li><a href="#section1">Section 1: Engineering Mathematics</a></li>
             <li><a href="#section2">Section 2: Metallurgical Thermodynamics</a></li>
@@ -203,277 +194,368 @@
             <li><a href="#section7">Section 7: Manufacturing Processes</a></li>
         </ul>
     </div>
-    
+
+    <!-- Section 1: Engineering Mathematics -->
     <div class="section" id="section1">
         <h2>Section 1: Engineering Mathematics</h2>
         
         <div class="topic-card">
             <h3>Linear Algebra</h3>
-            <p><strong>Matrices and Determinants:</strong> Properties of matrices, special matrices (symmetric, skew-symmetric, orthogonal, etc.), determinant properties, adjoint and inverse of matrices.</p>
+            <h4>Matrices and Determinants</h4>
+            <p>Matrix operations, types of matrices (symmetric, skew-symmetric, orthogonal), properties of determinants, calculation of determinants, adjoint and inverse of matrices.</p>
             
+            <h4>Systems of Linear Equations</h4>
+            <p>Solution methods (Gaussian elimination, matrix inversion), consistency of systems, rank of a matrix.</p>
+            
+            <h4>Eigenvalues and Eigenvectors</h4>
+            <p>Characteristic equation, calculation of eigenvalues and eigenvectors, properties, diagonalization.</p>
             <div class="formula">
-                For a 2×2 matrix A = [a b; c d], det(A) = ad - bc
-            </div>
-            
-            <p><strong>Systems of linear equations:</strong> Solution methods (Gaussian elimination, matrix inversion), consistency of systems, rank of a matrix.</p>
-            
-            <p><strong>Eigen values and Eigen vectors:</strong> Characteristic equation, properties, diagonalization, Cayley-Hamilton theorem.</p>
-            
-            <div class="important">
-                <h4>Key Concept</h4>
-                <p>Eigenvalues (λ) satisfy |A - λI| = 0, and eigenvectors (v) satisfy (A - λI)v = 0</p>
+                |A - λI| = 0 (Characteristic equation)
             </div>
         </div>
         
         <div class="topic-card">
             <h3>Calculus</h3>
-            <p><strong>Limit, Continuity and Differentiability:</strong> ε-δ definition, L'Hôpital's rule, partial derivatives, chain rule.</p>
+            <h4>Limit, Continuity and Differentiability</h4>
+            <p>ε-δ definition, L'Hôpital's rule, partial derivatives, chain rule.</p>
             
-            <p><strong>Maxima and minima:</strong> Critical points, second derivative test, Lagrange multipliers.</p>
+            <h4>Maxima and Minima</h4>
+            <p>Critical points, second derivative test, Lagrange multipliers.</p>
             
-            <p><strong>Sequences and series:</strong> Convergence tests (ratio, root, comparison, integral), Taylor and Maclaurin series.</p>
+            <h4>Sequences and Series</h4>
+            <p>Convergence tests (ratio, root, comparison, integral), Taylor and Maclaurin series.</p>
             
-            <div class="formula">
-                Taylor series: f(x) = f(a) + f'(a)(x-a) + f''(a)(x-a)²/2! + ...
-            </div>
+            <h4>Fourier Series</h4>
+            <p>Periodic functions, Fourier coefficients, Dirichlet conditions.</p>
         </div>
         
         <div class="topic-card">
             <h3>Vector Calculus</h3>
-            <p><strong>Gradient, Divergence and Curl:</strong> Physical interpretations, vector identities.</p>
+            <h4>Gradient, Divergence and Curl</h4>
+            <p>Definitions, physical interpretations, vector identities.</p>
             
-            <div class="formula">
-                ∇·(∇×F) = 0 (Divergence of curl is zero)
-            </div>
+            <h4>Line, Surface and Volume Integrals</h4>
+            <p>Evaluation methods, applications.</p>
             
-            <p><strong>Integral theorems:</strong> Applications of Green's, Stokes' and Gauss' theorems.</p>
+            <h4>Stokes, Gauss and Green's Theorems</h4>
+            <p>Statement, proof and applications of each theorem.</p>
         </div>
         
-        <!-- Additional topics would continue in similar fashion -->
+        <div class="topic-card">
+            <h3>Differential Equations</h3>
+            <h4>First Order ODEs</h4>
+            <p>Linear and non-linear equations, exact equations, integrating factors.</p>
+            
+            <h4>Higher Order Linear ODEs</h4>
+            <p>Constant coefficients, complementary function, particular integral.</p>
+            
+            <h4>Cauchy's and Euler's Equations</h4>
+            <p>Solution methods, transformation techniques.</p>
+            
+            <h4>Laplace Transforms</h4>
+            <p>Definition, properties, solution of ODEs.</p>
+            
+            <h4>Partial Differential Equations</h4>
+            <p>Laplace, heat and wave equations, separation of variables.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Probability and Statistics</h3>
+            <h4>Basic Probability</h4>
+            <p>Definitions, conditional probability, Bayes' theorem.</p>
+            
+            <h4>Random Variables</h4>
+            <p>Discrete and continuous, probability distributions.</p>
+            
+            <h4>Statistical Distributions</h4>
+            <p>Poisson, normal, binomial distributions.</p>
+            
+            <h4>Data Analysis</h4>
+            <p>Mean, median, mode, standard deviation, linear least squares.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Numerical Methods</h3>
+            <h4>Root Finding</h4>
+            <p>Bisection, Secant, Newton-Raphson methods.</p>
+            
+            <h4>Numerical Integration</h4>
+            <p>Trapezoidal rule, Simpson's rule.</p>
+            
+            <h4>Differential Equations</h4>
+            <p>Single and multi-step methods for ODEs.</p>
+        </div>
     </div>
-    
+
+    <!-- Section 2: Metallurgical Thermodynamics -->
     <div class="section" id="section2">
         <h2>Section 2: Metallurgical Thermodynamics</h2>
         
         <div class="topic-card">
             <h3>Laws of Thermodynamics</h3>
-            <p><strong>First law:</strong> Energy conservation, internal energy, enthalpy, heat capacity.</p>
+            <h4>First Law</h4>
+            <p>Energy conservation, internal energy, enthalpy.</p>
             
+            <h4>Second Law</h4>
+            <p>Entropy, Carnot cycle, thermodynamic temperature.</p>
+            
+            <h4>Thermodynamic Potentials</h4>
+            <p>Gibbs and Helmholtz free energy, chemical potential.</p>
             <div class="formula">
-                ΔU = q + w (First Law)
-            </div>
-            
-            <p><strong>Second law:</strong> Entropy, Clausius inequality, Carnot cycle.</p>
-            
-            <div class="formula">
-                dS ≥ δq/T (Second Law)
-            </div>
-            
-            <div class="important">
-                <h4>Key Concept</h4>
-                <p>Gibbs free energy (G = H - TS) determines spontaneity at constant T and P</p>
+                G = H - TS (Gibbs free energy)
             </div>
         </div>
         
         <div class="topic-card">
             <h3>Solutions and Phase Equilibria</h3>
-            <p><strong>Ideal and regular solutions:</strong> Raoult's law, Henry's law, activity coefficients.</p>
+            <h4>Ideal and Regular Solutions</h4>
+            <p>Raoult's law, Henry's law, activity coefficients.</p>
             
-            <div class="formula">
-                μᵢ = μᵢ° + RTln(aᵢ) (Chemical potential)
-            </div>
+            <h4>Phase Diagrams</h4>
+            <p>Gibbs phase rule, binary systems, lever rule.</p>
             
-            <p><strong>Phase diagrams:</strong> Lever rule, eutectic, peritectic reactions, invariant points.</p>
+            <h4>Thermodynamic Diagrams</h4>
+            <p>Ellingham diagrams, phase stability diagrams.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Defects and Interfaces</h3>
+            <h4>Point Defects</h4>
+            <p>Vacancies, interstitials, thermodynamics of defects.</p>
             
-            <div class="diagram">
-                <h4>Binary Phase Diagram</h4>
-                <img src="binary_phase_diagram.png" alt="Binary Phase Diagram">
-                <p>Typical binary phase diagram showing liquidus, solidus, and various phase fields</p>
-            </div>
+            <h4>Surfaces and Interfaces</h4>
+            <p>Surface energy, adsorption, segregation.</p>
         </div>
         
         <div class="topic-card">
             <h3>Electrochemistry</h3>
-            <p><strong>Nernst equation:</strong> Relationship between cell potential and concentration.</p>
+            <h4>Electrode Potential</h4>
+            <p>Single electrode potential, standard hydrogen electrode.</p>
             
-            <div class="formula">
-                E = E° - (RT/nF)lnQ (Nernst equation)
-            </div>
+            <h4>Electrochemical Cells</h4>
+            <p>Galvanic and electrolytic cells, cell notation.</p>
             
-            <p><strong>Potential-pH diagrams:</strong> Pourbaix diagrams, corrosion immunity/passivation regions.</p>
+            <h4>Nernst Equation</h4>
+            <p>Derivation and applications.</p>
+            
+            <h4>Potential-pH Diagrams</h4>
+            <p>Pourbaix diagrams, corrosion prediction.</p>
         </div>
     </div>
-    
-    <!-- Sections 3 through 7 would follow the same pattern -->
-    
+
+    <!-- Section 3: Transport Phenomena and Rate Processes -->
     <div class="section" id="section3">
         <h2>Section 3: Transport Phenomena and Rate Processes</h2>
         
         <div class="topic-card">
             <h3>Momentum Transfer</h3>
-            <p><strong>Viscosity:</strong> Newtonian vs. non-Newtonian fluids, shell balances.</p>
+            <h4>Viscosity</h4>
+            <p>Newtonian fluids, shell balances.</p>
             
-            <div class="formula">
-                τ = -μ(du/dy) (Newton's law of viscosity)
-            </div>
-            
-            <p><strong>Bernoulli's equation:</strong> Applications in fluid flow.</p>
+            <h4>Fluid Flow</h4>
+            <p>Bernoulli's equation, mechanical energy balance.</p>
         </div>
         
         <div class="topic-card">
             <h3>Heat Transfer</h3>
-            <p><strong>Conduction:</strong> Fourier's law, thermal conductivity.</p>
+            <h4>Conduction</h4>
+            <p>Fourier's law, 1-D steady state conduction.</p>
             
-            <div class="formula">
-                q = -k(dT/dx) (Fourier's law)
-            </div>
+            <h4>Convection</h4>
+            <p>Forced convection, heat transfer coefficients.</p>
             
-            <p><strong>Convection:</strong> Nusselt number correlations.</p>
-            
-            <p><strong>Radiation:</strong> Black body radiation laws.</p>
+            <h4>Radiation</h4>
+            <p>Black body radiation, Stefan-Boltzmann law.</p>
         </div>
         
         <div class="topic-card">
             <h3>Mass Transfer</h3>
-            <p><strong>Fick's laws:</strong> Diffusion mechanisms, concentration profiles.</p>
+            <h4>Diffusion</h4>
+            <p>Fick's laws, mass transfer coefficients.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Dimensional Analysis</h3>
+            <p>Buckingham Pi theorem, dimensionless numbers.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Chemical Kinetics</h3>
+            <h4>Reaction Kinetics</h4>
+            <p>First order reactions, Arrhenius equation.</p>
             
-            <div class="formula">
-                J = -D(dC/dx) (Fick's first law)
-            </div>
+            <h4>Heterogeneous Reactions</h4>
+            <p>Oxidation kinetics, rate controlling steps.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Electrochemical Kinetics</h3>
+            <p>Polarization, overpotential, Butler-Volmer equation.</p>
         </div>
     </div>
-    
+
+    <!-- Section 4: Mineral Processing and Extractive Metallurgy -->
     <div class="section" id="section4">
         <h2>Section 4: Mineral Processing and Extractive Metallurgy</h2>
         
         <div class="topic-card">
             <h3>Mineral Beneficiation</h3>
-            <p><strong>Comminution:</strong> Crushing and grinding laws (Rittinger's, Kick's, Bond's).</p>
+            <h4>Comminution</h4>
+            <p>Crushing, grinding, size classification.</p>
             
-            <p><strong>Flotation:</strong> Froth flotation process, collectors, frothers.</p>
+            <h4>Separation Methods</h4>
+            <p>Flotation, gravity separation, magnetic separation.</p>
             
-            <div class="diagram">
-                <h4>Flotation Cell Diagram</h4>
-                <img src="flotation_cell.png" alt="Flotation Cell Diagram">
-                <p>Components of a typical flotation cell</p>
-            </div>
+            <h4>Agglomeration</h4>
+            <p>Sintering, pelletizing, briquetting.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Extractive Metallurgy</h3>
+            <h4>Non-Ferrous Metals</h4>
+            <p>Aluminum (Bayer process, Hall-Héroult), copper (smelting, refining), titanium (Kroll process).</p>
+            
+            <h4>Material and Energy Balances</h4>
+            <p>Stoichiometry, heat balances in metallurgical processes.</p>
         </div>
         
         <div class="topic-card">
             <h3>Iron and Steel Making</h3>
-            <p><strong>Blast furnace:</strong> Reactions, zones, burden materials.</p>
+            <h4>Blast Furnace</h4>
+            <p>Material and heat balance, reactions, slag properties.</p>
             
-            <div class="important">
-                <h4>Key Reactions</h4>
-                <p>C + O₂ → CO₂<br>
-                CO₂ + C → 2CO<br>
-                Fe₂O₃ + 3CO → 2Fe + 3CO₂</p>
-            </div>
+            <h4>Alternative Iron Making</h4>
+            <p>COREX, MIDREX processes.</p>
             
-            <p><strong>Basic oxygen furnace:</strong> Process dynamics, decarburization.</p>
+            <h4>Steel Making</h4>
+            <p>Basic oxygen furnace, electric arc furnace.</p>
+            
+            <h4>Secondary Steel Making</h4>
+            <p>Ladle metallurgy, degassing, inclusion control.</p>
+            
+            <h4>Continuous Casting</h4>
+            <p>Fluid flow, heat transfer, segregation control.</p>
         </div>
     </div>
-    
+
+    <!-- Section 5: Physical Metallurgy -->
     <div class="section" id="section5">
         <h2>Section 5: Physical Metallurgy</h2>
         
         <div class="topic-card">
-            <h3>Crystal Structure</h3>
-            <p><strong>BCC, FCC, HCP:</strong> Packing fractions, coordination numbers.</p>
+            <h3>Structure of Materials</h3>
+            <h4>Chemical Bonding</h4>
+            <p>Ionic, covalent, metallic, secondary bonds.</p>
             
-            <div class="key-points">
-                <h4>Crystal Structures Comparison</h4>
-                <table>
-                    <tr>
-                        <th>Structure</th>
-                        <th>APF</th>
-                        <th>CN</th>
-                        <th>Examples</th>
-                    </tr>
-                    <tr>
-                        <td>BCC</td>
-                        <td>0.68</td>
-                        <td>8</td>
-                        <td>Fe(α), W, Mo</td>
-                    </tr>
-                    <tr>
-                        <td>FCC</td>
-                        <td>0.74</td>
-                        <td>12</td>
-                        <td>Fe(γ), Al, Cu</td>
-                    </tr>
-                    <tr>
-                        <td>HCP</td>
-                        <td>0.74</td>
-                        <td>12</td>
-                        <td>Mg, Zn, Ti(α)</td>
-                    </tr>
-                </table>
+            <h4>Crystal Structure</h4>
+            <p>BCC, FCC, HCP, Miller indices, X-ray diffraction.</p>
+            <div class="formula">
+                nλ = 2d sinθ (Bragg's law)
             </div>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Crystal Defects</h3>
+            <p>Point defects, dislocations, grain boundaries.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Diffusion</h3>
+            <p>Fick's laws, Kirkendall effect, diffusion mechanisms.</p>
         </div>
         
         <div class="topic-card">
             <h3>Phase Transformations</h3>
-            <p><strong>TTT diagrams:</strong> Pearlite, bainite, martensite formation.</p>
+            <h4>Solidification</h4>
+            <p>Nucleation, growth, dendritic solidification.</p>
             
-            <div class="diagram">
-                <h4>TTT Diagram for Eutectoid Steel</h4>
-                <img src="ttt_diagram.png" alt="TTT Diagram">
-                <p>Time-Temperature-Transformation diagram showing various transformation products</p>
-            </div>
+            <h4>Solid State Transformations</h4>
+            <p>Precipitation, spinodal decomposition, martensite.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Heat Treatment</h3>
+            <h4>Steels</h4>
+            <p>TTT diagrams, CCT diagrams, hardening methods.</p>
+            
+            <h4>Other Alloys</h4>
+            <p>Cast iron, aluminum alloys.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Materials Properties</h3>
+            <p>Electronic, magnetic, optical properties, corrosion.</p>
         </div>
     </div>
-    
+
+    <!-- Section 6: Mechanical Metallurgy -->
     <div class="section" id="section6">
         <h2>Section 6: Mechanical Metallurgy</h2>
         
         <div class="topic-card">
-            <h3>Dislocation Theory</h3>
-            <p><strong>Edge, screw dislocations:</strong> Burgers vector, slip systems.</p>
-            
-            <div class="formula">
-                τ = Gb/2πr (Stress field around dislocation)
-            </div>
+            <h3>Stress and Strain</h3>
+            <p>Tensors, Mohr's circle, yield criteria.</p>
         </div>
         
         <div class="topic-card">
-            <h3>Fracture Mechanics</h3>
-            <p><strong>Griffith theory:</strong> Critical crack length, fracture toughness.</p>
-            
-            <div class="formula">
-                Kᵢ = Yσ√(πa) (Stress intensity factor)
-            </div>
+            <h3>Dislocation Theory</h3>
+            <p>Types of dislocations, multiplication, stress fields.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Strengthening Mechanisms</h3>
+            <p>Work hardening, grain refinement, precipitation.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Fracture</h3>
+            <p>Griffith theory, fracture toughness, ductile-brittle transition.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Fatigue</h3>
+            <p>S-N curves, crack growth, Paris law.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Creep</h3>
+            <p>Mechanisms, stress rupture, Larson-Miller parameter.</p>
         </div>
     </div>
-    
+
+    <!-- Section 7: Manufacturing Processes -->
     <div class="section" id="section7">
         <h2>Section 7: Manufacturing Processes</h2>
         
         <div class="topic-card">
             <h3>Metal Casting</h3>
-            <p><strong>Mold design:</strong> Gating system, risers, solidification.</p>
-            
-            <div class="important">
-                <h4>Casting Defects</h4>
-                <p>Shrinkage porosity, gas porosity, misruns, cold shuts, hot tears</p>
-            </div>
+            <p>Mold design, gating, risering, casting defects.</p>
         </div>
         
         <div class="topic-card">
-            <h3>Welding Metallurgy</h3>
-            <p><strong>Heat affected zone:</strong> Microstructural changes, weld defects.</p>
-            
-            <div class="diagram">
-                <h4>Welding Zones</h4>
-                <img src="weld_zones.png" alt="Welding Zones">
-                <p>Different microstructural zones in a weld joint</p>
-            </div>
+            <h3>Metal Forming</h3>
+            <p>Rolling, forging, extrusion, sheet metal forming.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Metal Joining</h3>
+            <p>Welding, brazing, soldering, weld defects.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Powder Metallurgy</h3>
+            <p>Powder production, compaction, sintering.</p>
+        </div>
+        
+        <div class="topic-card">
+            <h3>Non-Destructive Testing</h3>
+            <p>Ultrasonic, radiography, dye penetrant, eddy current.</p>
         </div>
     </div>
     
     <footer>
-        <p>© 2023 GATE Metallurgy Study Guide | Designed for GATE MT Aspirants</p>
-        <p>For more study materials and practice questions, visit our online portal</p>
+        <p>© 2023 GATE Metallurgy Complete Syllabus Guide | All Rights Reserved</p>
+        <p>Comprehensive coverage of every topic in the GATE MT syllabus</p>
     </footer>
 </body>
 </html>
