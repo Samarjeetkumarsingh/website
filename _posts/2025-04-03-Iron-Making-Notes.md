@@ -1258,4 +1258,4 @@
         });
     </script>
 </body>
-</html>
+</html> This is best design I want....just make sure it can adapt size of desktop/laptop....its really looking good in iPad.......keep everything same....just fix so that it also look good in laptop screen.....
