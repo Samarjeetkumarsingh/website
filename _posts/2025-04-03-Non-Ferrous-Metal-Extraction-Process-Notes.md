@@ -776,6 +776,147 @@
             </div>
         </div>
     </div>
+    <div class="test-section" id="test-yourself">
+    <div class="test-header">
+        <i class="fas fa-graduation-cap"></i>
+        <div>
+            <h2>TestUrSelf</h2>
+            <p>Evaluate your knowledge with these interactive courses</p>
+        </div>
+    </div>
+    
+    <div class="test-grid">
+        <div class="test-card">
+            <h3>Aluminium Extraction</h3>
+            <p>10 questions covering Bayer process and Hall-Héroult electrolysis</p>
+            <button class="start-btn" onclick="startQuiz('aluminium')">
+                <i class="fas fa-play"></i> Start Course
+            </button>
+        </div>
+        
+        <div class="test-card">
+            <h3>Copper Metallurgy</h3>
+            <p>8 questions on pyrometallurgical and hydrometallurgical routes</p>
+            <button class="start-btn" onclick="startQuiz('copper')">
+                <i class="fas fa-play"></i> Start Course
+            </button>
+        </div>
+        
+        <div class="test-card">
+            <h3>Titanium Production</h3>
+            <p>6 questions focusing on Kroll process and alternatives</p>
+            <button class="start-btn" onclick="startQuiz('titanium')">
+                <i class="fas fa-play"></i> Start Course
+            </button>
+        </div>
+        
+        <div class="test-card">
+            <h3>Comparative Analysis</h3>
+            <p>12 questions comparing all three extraction processes</p>
+            <button class="start-btn" onclick="startQuiz('comparative')">
+                <i class="fas fa-play"></i> Start Course
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Required CSS -->
+<style>
+    .test-section {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .test-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .test-header i {
+        font-size: 2.5rem;
+        color: #3498db;
+    }
+    
+    .test-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .test-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+    
+    .test-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .test-card h3 {
+        color: #2c3e50;
+        margin-top: 0;
+    }
+    
+    .test-card p {
+        color: #7f8c8d;
+        margin-bottom: 1.5rem;
+    }
+    
+    .start-btn {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+        transition: background 0.3s;
+    }
+    
+    .start-btn:hover {
+        background: #2980b9;
+    }
+</style>
+
+<!-- Required JavaScript -->
+<script>
+    // Make sure this function exists in your global scope
+    function startQuiz(quizType) {
+        // Check if function is being called
+        console.log(`Starting quiz: ${quizType}`);
+        
+        // Add your quiz logic here
+        switch(quizType) {
+            case 'aluminium':
+                window.location.href = '/quizzes/aluminium.html';
+                break;
+            case 'copper':
+                window.location.href = '/quizzes/copper.html';
+                break;
+            case 'titanium':
+                window.location.href = '/quizzes/titanium.html';
+                break;
+            case 'comparative':
+                window.location.href = '/quizzes/comparative.html';
+                break;
+            default:
+                console.error('Unknown quiz type');
+        }
+    }
+</script>
     <script>
         // MCQ functionality
         function checkAnswer(option, isCorrect) {
