@@ -2,527 +2,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Making - Ultimate eNotes</title>
+    <title>GATE MT - Transport Phenomena and Rate Processes</title>
     <style>
         :root {
-            --primary: #2A2F4F;
-            --secondary: #917FB3;
-            --accent: #E5BEEC;
-            --highlight: #FDE2F3;
-            --text: #2A2F4F;
-            --light-bg: #FDE2F3;
-            --card-bg: #FFFFFF;
-            --progress: #917FB3;
-            --correct: #4CAF50;
-            --incorrect: #F44336;
+            --primary-color: #6a1b9a;
+            --secondary-color: #ff9800;
+            --accent-color: #4a148c;
+            --light-color: #f3e5f5;
+            --dark-color: #4a148c;
+            --text-color: #212121;
+            --highlight-color: #ffeb3b;
+            --success-color: #388e3c;
+            --thermal-color: #e53935;
+            --fluid-color: #1e88e5;
+            --mass-color: #43a047;
+            --kinetics-color: #8e24aa;
         }
         
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background-color: var(--light-bg);
-            margin: 0;
-            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            position: relative;
             overflow-x: hidden;
         }
         
-        /* Layout Adjustments for Desktop */
-        .content-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: minmax(250px, 300px) 1fr;
-            gap: 2rem;
-        }
-        
-        .toc-container {
-            position: sticky;
-            top: 20px;
-            align-self: start;
-            height: fit-content;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        
-        .main-content {
-            grid-column: 2;
-        }
-        
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            text-align: center;
-            padding: 4rem 1rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            grid-column: 1 / -1;
-        }
-        
-        .header::before {
+        /* Animated Gradient Background */
+        body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1584811644727-e2c9d1107358?q=80&w=1000') center/cover;
-            opacity: 0.15;
-            z-index: 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 50%, #f5f5f5 100%);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -2;
         }
         
-        .header-content {
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        
+        /* Large Diagonal Watermark */
+        body::after {
+            content: "TestUrSelf";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 120px;
+            font-weight: bold;
+            color: rgba(106, 27, 154, 0.05);
+            z-index: -1;
+            pointer-events: none;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            width: 200%;
+            text-align: center;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             position: relative;
             z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
+            overflow: hidden;
         }
         
-        .header h1 {
-            font-size: 3rem;
+        header::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.1) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 6s infinite;
+        }
+        
+        @keyframes shine {
+            0% {transform: rotate(30deg) translate(-30%, -30%);}
+            100% {transform: rotate(30deg) translate(30%, 30%);}
+        }
+        
+        h1 {
             margin: 0;
+            font-size: 2.8rem;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
-        .header p {
-            font-size: 1.3rem;
-            margin: 1.5rem 0 0;
-            opacity: 0.9;
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.8rem;
+            margin-top: 3rem;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, transparent, #f3e5f5, transparent);
+            padding: 1rem 0;
+            text-align: center;
+            border-radius: 8px;
         }
         
-        /* Table of Contents */
-        .toc-container {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        h3 {
+            color: var(--dark-color);
+            margin-top: 2.5rem;
+            font-size: 1.8rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        h3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-color), transparent);
+        }
+        
+        h4 {
+            color: #424242;
+            margin-top: 1.8rem;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h4::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, currentColor, transparent);
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .subsection {
+            margin-left: 1.5rem;
+            border-left: 3px solid #e0e0e0;
+            padding-left: 2rem;
+            margin-top: 2rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .subsection:hover {
+            border-left-color: var(--accent-color);
+        }
+        
+        .topic-card {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
             position: relative;
             overflow: hidden;
         }
         
-        .toc-container::after {
+        .topic-card::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 5px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--secondary), var(--accent));
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
         }
         
-        .toc-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .toc-header h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .toc-header i {
-            color: var(--secondary);
-            font-size: 1.3rem;
-        }
-        
-        .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .toc-item {
-            margin: 0;
-        }
-        
-        .toc-link {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            background-color: rgba(145, 127, 179, 0.1);
-            border-radius: 8px;
-            color: var(--text);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        
-        .toc-link:hover, .toc-link.active {
-            background-color: rgba(145, 127, 179, 0.2);
-            transform: translateX(5px);
-        }
-        
-        .toc-link::before {
-            content: "•";
-            color: var(--secondary);
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-        
-        /* Main Content */
-        .section {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-        }
-        
-        h2 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-top: 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-        }
-        
-        h3 {
-            color: var(--secondary);
-            font-size: 1.4rem;
-            margin-top: 1.8rem;
-        }
-        
-        /* Interactive Elements */
-        .mcq {
-            background-color: rgba(229, 190, 236, 0.2);
-            border-left: 4px solid var(--secondary);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 10px 10px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .mcq:hover {
-            background-color: rgba(229, 190, 236, 0.3);
-        }
-        
-        .question {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .options {
-            display: grid;
-            gap: 10px;
-        }
-        
-        .option {
-            padding: 10px 15px;
-            background-color: rgba(255,255,255,0.7);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border: 1px solid #eee;
-        }
-        
-        .option:hover {
-            background-color: rgba(145, 127, 179, 0.1);
-            border-color: var(--secondary);
-        }
-        
-        .answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.5s ease;
-            background-color: rgba(255,255,255,0.8);
-            border-radius: 8px;
-        }
-        
-        .answer.show {
-            max-height: 500px;
-            padding: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .answer-content {
-            padding: 1rem;
-        }
-        
-        .correct {
-            color: var(--correct);
-            font-weight: 600;
-        }
-        
-        .show-answer-btn {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 1rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-        }
-        
-        .show-answer-btn:hover {
-            background-color: var(--primary);
-            transform: translateY(-2px);
-        }
-        
-        /* Diagrams */
-        .diagram {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        
-        .diagram img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            transition: transform 0.3s ease;
-        }
-        
-        .diagram img:hover {
-            transform: scale(1.02);
-        }
-        
-        .caption {
-            font-style: italic;
-            color: #666;
-            margin-top: 0.8rem;
-            font-size: 0.9rem;
-        }
-        
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        th {
-            background-color: var(--secondary);
-            color: white;
-            font-weight: 500;
-        }
-        
-        tr:nth-child(even) {
-            background-color: rgba(229, 190, 236, 0.1);
-        }
-        
-        tr:hover {
-            background-color: rgba(229, 190, 236, 0.2);
-        }
-        
-        /* Key Points */
-        .key-point {
-            background: linear-gradient(to right, rgba(253, 226, 243, 0.8), rgba(255,255,255,0.8));
-            border-left: 4px solid var(--secondary);
-            padding: 1.5rem;
-            margin: 2rem 0;
+        .important {
+            background: linear-gradient(to right, #fff8e1, #fffde7);
+            border-left: 6px solid var(--highlight-color);
+            padding: 1.8rem;
+            margin: 2.5rem 0;
             border-radius: 0 10px 10px 0;
             position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
         
-        .key-point h4 {
-            margin-top: 0;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .key-point h4 i {
-            color: var(--secondary);
-        }
-        
-        /* Process Steps */
-        .process-steps {
-            counter-reset: step;
-            margin: 2rem 0;
-        }
-        
-        .process-step {
-            position: relative;
-            padding-left: 4rem;
-            margin-bottom: 2rem;
-            min-height: 3rem;
-        }
-        
-        .process-step::before {
-            counter-increment: step;
-            content: counter(step);
+        .important::before {
+            content: "!";
             position: absolute;
-            left: 0;
-            top: 0;
-            width: 2.5rem;
-            height: 2.5rem;
-            background: linear-gradient(to bottom right, var(--secondary), var(--accent));
+            left: -15px;
+            top: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--highlight-color);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
-        /* Comparison Sections */
-        .comparison {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 2rem 0;
+        .formula {
+            font-family: 'Courier New', monospace;
+            background-color: #f5f5f5;
+            padding: 1.2rem 1.8rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-left: 5px solid var(--accent-color);
+            font-size: 1.2rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
-        .comparison-item {
-            flex: 1;
-            min-width: 300px;
-            background-color: white;
+        .formula::before {
+            content: "≡";
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+        
+        .key-points {
+            background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+            padding: 1.8rem;
             border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            margin: 2.5rem 0;
+            border-left: 6px solid var(--success-color);
+            position: relative;
         }
         
-        .comparison-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .comparison-item h4 {
-            color: var(--secondary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-        
-        /* Progress Bar */
-        .progress-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: transparent;
-            z-index: 1000;
-        }
-        
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            width: 0%;
-            transition: width 0.1s ease;
-        }
-        
-        /* Back to Top Button */
-        #back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(to bottom right, var(--secondary), var(--accent));
+        .key-points::before {
+            content: "★";
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--success-color);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 999;
-            border: none;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
-        #back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.5rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
         
-        #back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
         }
         
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .content-container {
-                grid-template-columns: 1fr;
-                padding: 0 1.5rem;
-            }
-            
-            .toc-container {
-                position: static;
-                max-height: none;
-            }
-            
-            .main-content {
-                grid-column: 1;
-            }
-            
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .header p {
-                font-size: 1.1rem;
-            }
+        th {
+            background: linear-gradient(to right, var(--primary-color), var(--dark-color));
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
         
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .toc {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2.5rem;
+            color: var(--primary-color);
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .example {
+            background-color: #e3f2fd;
+            border-left: 5px solid var(--fluid-color);
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+        }
+        
+        .example::before {
+            content: "Example";
+            position: absolute;
+            left: 0;
+            top: -12px;
+            background-color: var(--fluid-color);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .definition {
+            background-color: #f5f5f5;
+            border-left: 5px solid #9e9e9e;
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .definition::before {
+            content: "Definition";
+            position: absolute;
+            left: 0;
+            top: -12px;
+            background-color: #9e9e9e;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        /* Color-coded sections */
+        .momentum {
+            border-top: 4px solid var(--fluid-color);
+        }
+        
+        .heat {
+            border-top: 4px solid var(--thermal-color);
+        }
+        
+        .mass {
+            border-top: 4px solid var(--mass-color);
+        }
+        
+        .kinetics {
+            border-top: 4px solid var(--kinetics-color);
+        }
+        
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .header {
-                padding: 3rem 1rem;
+            body {
+                padding: 10px;
             }
             
-            .header h1 {
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            h1 {
                 font-size: 2rem;
             }
             
@@ -530,789 +418,666 @@
                 padding: 1.5rem;
             }
             
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            h3 {
-                font-size: 1.2rem;
-            }
-            
-            .comparison-item {
-                min-width: 100%;
+            .subsection {
+                margin-left: 0.5rem;
+                padding-left: 1rem;
             }
         }
         
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Animation for formulas */
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.02);}
+            100% {transform: scale(1);}
         }
         
-        .fade-in {
-            animation: fadeIn 0.6s ease forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        
-        /* Print Styles */
-        @media print {
-            .header, .toc-container, #back-to-top, .progress-container {
-                display: none;
-            }
-            
-            .answer {
-                max-height: none !important;
-                display: block !important;
-            }
-            
-            body {
-                background-color: white;
-                color: black;
-            }
-            
-            .section {
-                box-shadow: none;
-                border: 1px solid #ddd;
-                page-break-inside: avoid;
-            }
+        .formula:hover {
+            animation: pulse 1s ease;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Progress Bar -->
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
+    <header>
+        <h1>Transport Phenomena and Rate Processes</h1>
+        <p>Complete Guide for GATE Metallurgy (MT) - Section 3 (TestUrSelf)</p>
+    </header>
+
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#momentum">Momentum Transfer</a></li>
+            <li><a href="#heat">Heat Transfer</a></li>
+            <li><a href="#mass">Mass Transfer</a></li>
+            <li><a href="#dimensional">Dimensional Analysis</a></li>
+            <li><a href="#kinetics">Chemical Kinetics</a></li>
+            <li><a href="#electro-kinetics">Electrochemical Kinetics</a></li>
+        </ol>
+    </div>
+
+    <div class="section momentum" id="momentum">
+        <h2>3.1 Momentum Transfer</h2>
+        
+        <div class="subsection" id="viscosity">
+            <h3>Concept of Viscosity</h3>
+            <div class="topic-card">
+                <div class="definition">
+                    Viscosity is a measure of a fluid's resistance to deformation under shear stress.
+                </div>
+                
+                <h4>Newton's Law of Viscosity</h4>
+                <div class="formula">
+                    τ<sub>yx</sub> = -μ(∂v<sub>x</sub>/∂y)
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>τ<sub>yx</sub> = shear stress in x-direction on y-face</li>
+                    <li>μ = dynamic viscosity (Pa·s or kg/m·s)</li>
+                    <li>∂v<sub>x</sub>/∂y = velocity gradient</li>
+                </ul>
+                
+                <table>
+                    <tr>
+                        <th>Fluid</th>
+                        <th>Viscosity (Pa·s at 20°C)</th>
+                    </tr>
+                    <tr>
+                        <td>Water</td>
+                        <td>0.001</td>
+                    </tr>
+                    <tr>
+                        <td>Air</td>
+                        <td>1.8×10<sup>-5</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Molten Iron (1600°C)</td>
+                        <td>0.005</td>
+                    </tr>
+                    <tr>
+                        <td>Molten Slag</td>
+                        <td>0.1-1.0</td>
+                    </tr>
+                </table>
+                
+                <div class="important">
+                    <h4>Kinematic Viscosity</h4>
+                    <div class="formula">
+                        ν = μ/ρ
+                    </div>
+                    <p>Where ν = kinematic viscosity (m<sup>2</sup>/s) and ρ = density (kg/m<sup>3</sup>)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection" id="shell-balances">
+            <h3>Shell Balances</h3>
+            <div class="topic-card">
+                <h4>General Approach</h4>
+                <ol>
+                    <li>Select shell geometry (rectangular, cylindrical, spherical)</li>
+                    <li>Write momentum balance over thin shell</li>
+                    <li>Take limit as shell thickness → 0 to get differential equation</li>
+                    <li>Integrate with appropriate boundary conditions</li>
+                </ol>
+                
+                <h4>Example: Laminar Flow in Pipe</h4>
+                <div class="formula">
+                    (1/r)(d/dr)(rτ<sub>rz</sub>) = ΔP/L
+                </div>
+                <div class="formula">
+                    τ<sub>rz</sub> = -(ΔP/L)(r/2)
+                </div>
+                <div class="formula">
+                    v<sub>z</sub>(r) = (ΔPR<sup>2</sup>/4μL)[1 - (r/R)<sup>2</sup>]
+                </div>
+                <p>Where R = pipe radius, ΔP = pressure drop, L = pipe length</p>
+            </div>
+        </div>
+        
+        <div class="subsection" id="bernoulli">
+            <h3>Bernoulli's Equation</h3>
+            <div class="topic-card">
+                <div class="formula">
+                    P<sub>1</sub> + ½ρv<sub>1</sub><sup>2</sup> + ρgh<sub>1</sub> = P<sub>2</sub> + ½ρv<sub>2</sub><sup>2</sup> + ρgh<sub>2</sub>
+                </div>
+                <p>Assumptions:</p>
+                <ul>
+                    <li>Steady flow</li>
+                    <li>Incompressible fluid</li>
+                    <li>Inviscid (frictionless) flow</li>
+                    <li>Along a streamline</li>
+                </ul>
+                
+                <div class="example">
+                    <h5>Example: Venturi Meter</h5>
+                    <p>Given a horizontal venturi with D<sub>1</sub> = 10 cm, D<sub>2</sub> = 5 cm, ΔP = 500 Pa, ρ = 1000 kg/m<sup>3</sup>:</p>
+                    <div class="formula">
+                        v<sub>1</sub> = √[2ΔP/(ρ((A<sub>1</sub>/A<sub>2</sub>)<sup>2</sup> - 1))] = 0.57 m/s
+                    </div>
+                    <div class="formula">
+                        Q = A<sub>1</sub>v<sub>1</sub> = 0.0045 m<sup>3</sup>/s
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection" id="mechanical-energy">
+            <h3>Mechanical Energy Balance Equation</h3>
+            <div class="topic-card">
+                <div class="formula">
+                    Δ(P/ρ) + ½Δv<sup>2</sup> + gΔh + F + W<sub>s</sub> = 0
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>F = friction loss (J/kg)</li>
+                    <li>W<sub>s</sub> = shaft work (J/kg)</li>
+                </ul>
+                
+                <h4>Friction Factor Correlations</h4>
+                <p>Laminar flow (Re < 2100):</p>
+                <div class="formula">
+                    f = 16/Re
+                </div>
+                <p>Turbulent flow (Re > 4000, smooth pipes):</p>
+                <div class="formula">
+                    1/√f = 4.0 log(Re√f) - 0.4 (Prandtl equation)
+                </div>
+                <div class="formula">
+                    f ≈ 0.0791/Re<sup>0.25</sup> (Blasius equation, 4000 < Re < 10<sup>5</sup>)
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection" id="flow-past-surfaces">
+            <h3>Flow Past Plane Surfaces and Through Pipes</h3>
+            <div class="topic-card">
+                <h4>Boundary Layer Concepts</h4>
+                <div class="formula">
+                    δ ≈ 5x/√Re<sub>x</sub> (laminar)
+                </div>
+                <div class="formula">
+                    δ ≈ 0.37x/Re<sub>x</sub><sup>1/5</sup> (turbulent)
+                </div>
+                <p>Where Re<sub>x</sub> = ρv<sub>∞</sub>x/μ</p>
+                
+                <h4>Drag Coefficient</h4>
+                <table>
+                    <tr>
+                        <th>Geometry</th>
+                        <th>Laminar C<sub>D</sub></th>
+                        <th>Turbulent C<sub>D</sub></th>
+                    </tr>
+                    <tr>
+                        <td>Flat plate (parallel)</td>
+                        <td>1.328/√Re<sub>L</sub></td>
+                        <td>0.074/Re<sub>L</sub><sup>1/5</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Sphere</td>
+                        <td>24/Re</td>
+                        <td>≈0.44</td>
+                    </tr>
+                    <tr>
+                        <td>Cylinder (cross flow)</td>
+                        <td>Varies</td>
+                        <td>≈1.0</td>
+                    </tr>
+                </table>
+                
+                <div class="key-points">
+                    <h4>Pipe Flow Characteristics</h4>
+                    <ul>
+                        <li>Laminar: Re < 2100, parabolic velocity profile</li>
+                        <li>Transitional: 2100 < Re < 4000</li>
+                        <li>Turbulent: Re > 4000, flatter velocity profile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section heat" id="heat">
+        <h2>3.2 Heat Transfer</h2>
+        
+        <div class="subsection" id="conduction">
+            <h3>Conduction and Fourier's Law</h3>
+            <div class="topic-card">
+                <div class="definition">
+                    Heat conduction is the transfer of thermal energy from more energetic to less energetic particles due to interactions between particles.
+                </div>
+                
+                <h4>Fourier's Law</h4>
+                <div class="formula">
+                    q<sub>x</sub> = -k(∂T/∂x)
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>q<sub>x</sub> = heat flux (W/m<sup>2</sup>)</li>
+                    <li>k = thermal conductivity (W/m·K)</li>
+                    <li>∂T/∂x = temperature gradient</li>
+                </ul>
+                
+                <table>
+                    <tr>
+                        <th>Material</th>
+                        <th>k (W/m·K at 300K)</th>
+                    </tr>
+                    <tr>
+                        <td>Copper</td>
+                        <td>401</td>
+                    </tr>
+                    <tr>
+                        <td>Steel (304)</td>
+                        <td>16.2</td>
+                    </tr>
+                    <tr>
+                        <td>Alumina</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>Air</td>
+                        <td>0.026</td>
+                    </tr>
+                </table>
+                
+                <h4>1-D Steady State Conduction</h4>
+                <p>Planar wall:</p>
+                <div class="formula">
+                    q = (k/L)(T<sub>1</sub> - T<sub>2</sub>)
+                </div>
+                <p>Cylindrical wall:</p>
+                <div class="formula">
+                    q = (2πkL/ln(r<sub>2</sub>/r<sub>1</sub>))(T<sub>1</sub> - T<sub>2</sub>)
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection" id="convection">
+            <h3>Convection</h3>
+            <div class="topic-card">
+                <div class="definition">
+                    Convection is heat transfer between a surface and a moving fluid at different temperatures.
+                </div>
+                
+                <h4>Newton's Law of Cooling</h4>
+                <div class="formula">
+                    q = hA(T<sub>s</sub> - T<sub>∞</sub>)
+                </div>
+                <p>Where h = convective heat transfer coefficient (W/m<sup>2</sup>·K)</p>
+                
+                <h4>Forced Convection Correlations</h4>
+                <p>Flat plate (laminar, Re < 5×10<sup>5</sup>):</p>
+                <div class="formula">
+                    Nu<sub>x</sub> = 0.332Re<sub>x</sub><sup>1/2</sup>Pr<sup>1/3</sup>
+                </div>
+                <p>Flat plate (turbulent):</p>
+                <div class="formula">
+                    Nu<sub>x</sub> = 0.0296Re<sub>x</sub><sup>4/5</sup>Pr<sup>1/3</sup>
+                </div>
+                <p>Pipe flow (Re > 10<sup>4</sup>, 0.6 < Pr < 160):</p>
+                <div class="formula">
+                    Nu<sub>D</sub> = 0.023Re<sub>D</sub><sup>4/5</sup>Pr<sup>n</sup>
+                </div>
+                <p>Where n = 0.4 for heating, 0.3 for cooling</p>
+                
+                <div class="important">
+                    <h4>Nusselt Number Relationships</h4>
+                    <div class="formula">
+                        Nu = hL/k = (convective heat transfer)/(conductive heat transfer)
+                    </div>
+                    <p>Where L = characteristic length</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection" id="radiation">
+            <h3>Radiation</h3>
+            <div class="topic-card">
+                <h4>Black Body Radiation</h4>
+                <div class="formula">
+                    E<sub>b</sub> = σT<sup>4</sup> (Stefan-Boltzmann Law)
+                </div>
+                <p>Where σ = 5.67×10<sup>-8</sup> W/m<sup>2</sup>·K<sup>4</sup></p>
+                
+                <h4>Planck's Law</h4>
+                <div class="formula">
+                    E<sub>λb</sub> = (2πhc<sub>0</sub><sup>2</sup>)/(λ<sup>5</sup>[exp(hc<sub>0</sub>/λkT) - 1])
+                </div>
+                
+                <h4>Kirchhoff's Law</h4>
+                <div class="formula">
+                    α = ε (for surfaces in thermal equilibrium)
+                </div>
+                <p>Where α = absorptivity, ε = emissivity</p>
+                
+                <h4>View Factors</h4>
+                <div class="formula">
+                    F<sub>12</sub> = (1/A<sub>1</sub>)∫∫(cosθ<sub>1</sub>cosθ<sub>2</sub>/πr<sup>2</sup>)dA<sub>1</sub>dA<sub>2</sub>
+                </div>
+                
+                <div class="example">
+                    <h5>Example: Radiation Shield</h5>
+                    <p>Two large parallel plates with ε = 0.8 at T<sub>1</sub> = 800K and T<sub>2</sub> = 500K:</p>
+                    <p>Without shield: q/A = σ(T<sub>1</sub><sup>4</sup> - T<sub>2</sub><sup>4</sup>)/(1/ε<sub>1</sub> + 1/ε<sub>2</sub> - 1) = 12.2 kW/m<sup>2</sup></p>
+                    <p>With shield (ε<sub>s</sub> = 0.05): q/A = σ(T<sub>1</sub><sup>4</sup> - T<sub>2</sub><sup>4</sup>)/(1/ε<sub>1</sub> + 1/ε<sub>2</sub> + 2/ε<sub>s</sub> - 2) = 0.3 kW/m<sup>2</sup></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section mass" id="mass">
+        <h2>3.3 Mass Transfer</h2>
+        
+        <div class="subsection" id="diffusion">
+            <h3>Diffusion and Fick's Laws</h3>
+            <div class="topic-card">
+                <h4>Fick's First Law</h4>
+                <div class="formula">
+                    J<sub>A</sub> = -D<sub>AB</sub>(∂C<sub>A</sub>/∂x)
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>J<sub>A</sub> = molar flux (mol/m<sup>2</sup>·s)</li>
+                    <li>D<sub>AB</sub> = diffusion coefficient (m<sup>2</sup>/s)</li>
+                    <li>C<sub>A</sub> = concentration of A (mol/m<sup>3</sup>)</li>
+                </ul>
+                
+                <h4>Fick's Second Law</h4>
+                <div class="formula">
+                    ∂C<sub>A</sub>/∂t = D<sub>AB</sub>(∂<sup>2</sup>C<sub>A</sub>/∂x<sup>2</sup>)
+                </div>
+                
+                <table>
+                    <tr>
+                        <th>System</th>
+                        <th>D (m<sup>2</sup>/s)</th>
+                    </tr>
+                    <tr>
+                        <td>O<sub>2</sub> in air (25°C)</td>
+                        <td>2.1×10<sup>-5</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Cu in Al (500°C)</td>
+                        <td>1.3×10<sup>-14</sup></td>
+                    </tr>
+                    <tr>
+                        <td>C in γ-Fe (900°C)</td>
+                        <td>1.5×10<sup>-11</sup></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="subsection" id="mass-coeff">
+            <h3>Mass Transfer Coefficients</h3>
+            <div class="topic-card">
+                <div class="formula">
+                    N<sub>A</sub> = k<sub>c</sub>(C<sub>As</sub> - C<sub>A∞</sub>)
+                </div>
+                <p>Where k<sub>c</sub> = mass transfer coefficient (m/s)</p>
+                
+                <h4>Sherwood Number</h4>
+                <div class="formula">
+                    Sh = k<sub>c</sub>L/D<sub>AB</sub>
+                </div>
+                
+                <h4>Correlations</h4>
+                <p>Flat plate (laminar):</p>
+                <div class="formula">
+                    Sh<sub>x</sub> = 0.332Re<sub>x</sub><sup>1/2</sup>Sc<sup>1/3</sup>
+                </div>
+                <p>Pipe flow:</p>
+                <div class="formula">
+                    Sh<sub>D</sub> = 0.023Re<sub>D</sub><sup>0.8</sup>Sc<sup>1/3</sup>
+                </div>
+                <p>Where Sc = ν/D<sub>AB</sub> = Schmidt number</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="dimensional">
+        <h2>3.4 Dimensional Analysis</h2>
+        
+        <div class="subsection" id="buckingham">
+            <h3>Buckingham Pi Theorem</h3>
+            <div class="topic-card">
+                <div class="definition">
+                    If a physical process involves n variables and m fundamental dimensions, then there are n - m independent dimensionless groups that describe the process.
+                </div>
+                
+                <h4>Procedure</h4>
+                <ol>
+                    <li>List all n variables involved</li>
+                    <li>Express each variable in terms of m fundamental dimensions (M, L, T, θ)</li>
+                    <li>Select m repeating variables that include all fundamental dimensions</li>
+                    <li>Form n - m dimensionless π groups</li>
+                </ol>
+                
+                <div class="example">
+                    <h5>Example: Pipe Flow</h5>
+                    <p>Variables: ΔP, ρ, μ, v, D, L → n = 6</p>
+                    <p>Dimensions: M, L, T → m = 3</p>
+                    <p>π groups: Eu = ΔP/ρv<sup>2</sup>, Re = ρvD/μ, L/D</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection" id="dimensionless">
+            <h3>Significant Dimensionless Numbers</h3>
+            <div class="topic-card">
+                <table>
+                    <tr>
+                        <th>Number</th>
+                        <th>Formula</th>
+                        <th>Significance</th>
+                    </tr>
+                    <tr>
+                        <td>Reynolds (Re)</td>
+                        <td>ρvL/μ</td>
+                        <td>Inertial/viscous forces</td>
+                    </tr>
+                    <tr>
+                        <td>Prandtl (Pr)</td>
+                        <td>C<sub>p</sub>μ/k</td>
+                        <td>Momentum/thermal diffusivity</td>
+                    </tr>
+                    <tr>
+                        <td>Nusselt (Nu)</td>
+                        <td>hL/k</td>
+                        <td>Convection/conduction</td>
+                    </tr>
+                    <tr>
+                        <td>Schmidt (Sc)</td>
+                        <td>ν/D</td>
+                        <td>Momentum/mass diffusivity</td>
+                    </tr>
+                    <tr>
+                        <td>Sherwood (Sh)</td>
+                        <td>k<sub>c</sub>L/D</td>
+                        <td>Convective/diffusive mass transfer</td>
+                    </tr>
+                    <tr>
+                        <td>Grashof (Gr)</td>
+                        <td>gβΔTL<sup>3</sup>/ν<sup>2</sup></td>
+                        <td>Buoyancy/viscous forces</td>
+                    </tr>
+                </table>
+                
+                <div class="important">
+                    <h4>Analogies</h4>
+                    <p>Reynolds analogy:</p>
+                    <div class="formula">
+                        f/2 = St = St<sub>m</sub>
+                    </div>
+                    <p>Chilton-Colburn analogy:</p>
+                    <div class="formula">
+                        j<sub>H</sub> = j<sub>D</sub> = f/2
+                    </div>
+                    <p>Where j<sub>H</sub> = StPr<sup>2/3</sup>, j<sub>D</sub> = St<sub>m</sub>Sc<sup>2/3</sup></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section kinetics" id="kinetics">
+        <h2>3.5 Chemical Kinetics</h2>
+        
+        <div class="subsection" id="basic-laws">
+            <h3>Basic Laws of Chemical Kinetics</h3>
+            <div class="topic-card">
+                <h4>Reaction Rate</h4>
+                <div class="formula">
+                    r = (1/ν<sub>i</sub>)(dC<sub>i</sub>/dt)
+                </div>
+                <p>Where ν<sub>i</sub> = stoichiometric coefficient</p>
+                
+                <h4>First Order Reaction</h4>
+                <div class="formula">
+                    -dC<sub>A</sub>/dt = kC<sub>A</sub>
+                </div>
+                <div class="formula">
+                    ln(C<sub>A</sub>/C<sub>A0</sub>) = -kt
+                </div>
+                <p>Half-life:</p>
+                <div class="formula">
+                    t<sub>1/2</sub> = ln(2)/k
+                </div>
+                
+                <h4>Arrhenius Equation</h4>
+                <div class="formula">
+                    k = A exp(-E<sub>a</sub>/RT)
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>A = pre-exponential factor</li>
+                    <li>E<sub>a</sub> = activation energy (J/mol)</li>
+                    <li>R = gas constant (8.314 J/mol·K)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="subsection" id="heterogeneous">
+            <h3>Heterogeneous Reactions</h3>
+            <div class="topic-card">
+                <h4>Shrinking Core Model</h4>
+                <p>Three resistances in series:</p>
+                <ol>
+                    <li>Gas film diffusion</li>
+                    <li>Ash layer diffusion</li>
+                    <li>Chemical reaction</li>
+                </ol>
+                
+                <h4>Rate Controlling Steps</h4>
+                <p>Film diffusion control:</p>
+                <div class="formula">
+                    t = τ(1 - X)
+                </div>
+                <p>Ash diffusion control:</p>
+                <div class="formula">
+                    t = τ[1 - 3(1 - X)<sup>2/3</sup> + 2(1 - X)]
+                </div>
+                <p>Chemical reaction control:</p>
+                <div class="formula">
+                    t = τ[1 - (1 - X)<sup>1/3</sup>]
+                </div>
+                <p>Where τ = complete conversion time</p>
+            </div>
+        </div>
+        
+        <div class="subsection" id="oxidation">
+            <h3>Oxidation Kinetics</h3>
+            <div class="topic-card">
+                <h4>Parabolic Law</h4>
+                <div class="formula">
+                    x<sup>2</sup> = k<sub>p</sub>t
+                </div>
+                <p>Where x = oxide thickness, k<sub>p</sub> = parabolic rate constant</p>
+                
+                <h4>Linear Law</h4>
+                <div class="formula">
+                    x = k<sub>l</sub>t
+                </div>
+                <p>Where k<sub>l</sub> = linear rate constant</p>
+                
+                <table>
+                    <tr>
+                        <th>Metal</th>
+                        <th>Oxide</th>
+                        <th>Rate Law</th>
+                        <th>Activation Energy (kJ/mol)</th>
+                    </tr>
+                    <tr>
+                        <td>Copper</td>
+                        <td>Cu<sub>2</sub>O</td>
+                        <td>Parabolic</td>
+                        <td>110</td>
+                    </tr>
+                    <tr>
+                        <td>Iron</td>
+                        <td>FeO</td>
+                        <td>Parabolic</td>
+                        <td>96</td>
+                    </tr>
+                    <tr>
+                        <td>Aluminum</td>
+                        <td>Al<sub>2</sub>O<sub>3</sub></td>
+                        <td>Parabolic</td>
+                        <td>330</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="electro-kinetics">
+        <h2>3.6 Electrochemical Kinetics</h2>
+        
+        <div class="subsection" id="polarization">
+            <h3>Polarization</h3>
+            <div class="topic-card">
+                <h4>Butler-Volmer Equation</h4>
+                <div class="formula">
+                    i = i<sub>0</sub>[exp(α<sub>a</sub>Fη/RT) - exp(-α<sub>c</sub>Fη/RT)]
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>i<sub>0</sub> = exchange current density</li>
+                    <li>α = transfer coefficients</li>
+                    <li>η = overpotential</li>
+                </ul>
+                
+                <h4>Tafel Equation</h4>
+                <div class="formula">
+                    η = a + b log|i|
+                </div>
+                <p>Where:</p>
+                <div class="formula">
+                    b = ±(2.3RT/αF)
+                </div>
+                
+                <table>
+                    <tr>
+                        <th>Electrode Reaction</th>
+                        <th>i<sub>0</sub> (A/cm<sup>2</sup>)</th>
+                    </tr>
+                    <tr>
+                        <td>H<sup>+</sup>/H<sub>2</sub> on Pt</td>
+                        <td>10<sup>-3</sup></td>
+                    </tr>
+                    <tr>
+                        <td>H<sup>+</sup>/H<sub>2</sub> on Hg</td>
+                        <td>10<sup>-12</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Fe<sup>2+</sup>/Fe<sup>3+</sup> on Pt</td>
+                        <td>10<sup>-5</sup></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
     
-    <!-- Back to Top Button -->
-    <button id="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- Header Section -->
-    <header class="header fade-in">
-        <div class="header-content">
-            <h1>Iron Making</h1>
-            <p>Comprehensive Interactive eNotes on Modern Iron Production Techniques</p>
-        </div>
-    </header>
-    
-    <!-- Main Content -->
-    <main class="content-container">
-        <!-- Table of Contents -->
-        <section class="toc-container fade-in delay-1">
-            <div class="toc-header">
-                <h2><i class="fas fa-book-open"></i> Table of Contents</h2>
-            </div>
-            <ul class="toc-list">
-                <li class="toc-item"><a href="#introduction" class="toc-link">Introduction to Iron Making</a></li>
-                <li class="toc-item"><a href="#raw-materials" class="toc-link">Raw Materials for Iron Making</a></li>
-                <li class="toc-item"><a href="#blast-furnace" class="toc-link">Blast Furnace Iron Making</a></li>
-                <li class="toc-item"><a href="#alternative-processes" class="toc-link">Alternative Iron Making Processes</a></li>
-                <li class="toc-item"><a href="#physical-chemistry" class="toc-link">Physical Chemistry of Iron Making</a></li>
-                <li class="toc-item"><a href="#modern-developments" class="toc-link">Modern Developments</a></li>
-                <li class="toc-item"><a href="#quality-control" class="toc-link">Quality Control and Testing</a></li>
-                <li class="toc-item"><a href="#safety-environment" class="toc-link">Safety and Environmental Aspects</a></li>
-                <li class="toc-item"><a href="#future-trends" class="toc-link">Future Trends in Iron Making</a></li>
-            </ul>
-        </section>
-        
-        <!-- Main Content Sections -->
-        <div class="main-content">
-            <!-- Introduction Section -->
-            <section id="introduction" class="section fade-in delay-2">
-                <h2>1. Introduction to Iron Making</h2>
-                <p>Iron making is the process of producing iron from iron ore through reduction reactions in blast furnaces or direct reduction plants. Iron is one of the most important metals in modern industry, serving as the primary raw material for steel production.</p>
-                
-                <div class="key-point">
-                    <h4><i class="fas fa-lightbulb"></i> Key Historical Note</h4>
-                    <p>The production of iron dates back to around 1200 BC, marking the beginning of the Iron Age. Modern iron making began with the development of the blast furnace in the 14th century.</p>
-                </div>
-                
-                <div class="mcq">
-                    <div class="question">What is the primary purpose of iron making?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'C')">To extract pure iron from its ores</div>
-                        <div class="option" onclick="checkAnswer(this, 'C')">To produce steel directly from iron ore</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'C')">To reduce iron oxides to metallic iron</div>
-                        <div class="option" onclick="checkAnswer(this, 'C')">To alloy iron with carbon for immediate use</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer1">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: To reduce iron oxides to metallic iron</strong></p>
-                            <p>The primary purpose of iron making is the reduction of iron oxides (Fe₂O₃, Fe₃O₄) present in iron ore to metallic iron (Fe). This is typically done through chemical reduction using carbon monoxide in a blast furnace.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Raw Materials Section -->
-            <section id="raw-materials" class="section fade-in delay-3">
-                <h2>2. Raw Materials for Iron Making</h2>
-                <p>The production of iron requires several key raw materials, each playing a specific role in the process:</p>
-                
-                <h3>2.1 Iron Ores</h3>
-                <p>The principal iron ores used in iron making include:</p>
-                <ul>
-                    <li><strong>Hematite (Fe₂O₃)</strong>: Contains 50-65% iron, most abundant iron ore</li>
-                    <li><strong>Magnetite (Fe₃O₄)</strong>: Contains 60-70% iron, highly magnetic</li>
-                    <li><strong>Limonite (FeO(OH)·nH₂O)</strong>: Contains 35-50% iron</li>
-                    <li><strong>Siderite (FeCO₃)</strong>: Contains 30-40% iron</li>
-                </ul>
-                
-                <div class="diagram">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hematite.jpg/800px-Hematite.jpg" alt="Iron Ores">
-                    <div class="caption">Figure 1: Common iron ores used in iron making (Hematite shown)</div>
-                </div>
-                
-                <h3>2.2 Fluxes</h3>
-                <p>Fluxes are added to remove impurities by forming slag:</p>
-                <ul>
-                    <li><strong>Limestone (CaCO₃)</strong>: Most common flux</li>
-                    <li><strong>Dolomite (CaMg(CO₃)₂)</strong>: Provides both CaO and MgO</li>
-                </ul>
-                
-                <h3>2.3 Fuels and Reducing Agents</h3>
-                <ul>
-                    <li><strong>Coke</strong>: Primary fuel and reducing agent in blast furnaces</li>
-                    <li><strong>Coal</strong>: Used in some direct reduction processes</li>
-                    <li><strong>Natural gas</strong>: Used in direct reduction processes</li>
-                </ul>
-                
-                <div class="mcq">
-                    <div class="question">Which of the following iron ores has the highest iron content?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'B')">Hematite (Fe₂O₃)</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'B')">Magnetite (Fe₃O₄)</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">Limonite (FeO(OH)·nH₂O)</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">Siderite (FeCO₃)</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer2">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: Magnetite (Fe₃O₄)</strong></p>
-                            <p>Magnetite typically contains 60-70% iron by weight, which is higher than hematite (50-65%), limonite (35-50%), and siderite (30-40%).</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Blast Furnace Section -->
-            <section id="blast-furnace" class="section fade-in delay-4">
-                <h2>3. Blast Furnace Iron Making</h2>
-                <p>The blast furnace is the most common method for producing iron on an industrial scale. It's a counter-current reactor where iron ore, coke, and flux descend while hot gases ascend.</p>
-                
-                <div class="diagram">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Blast_furnace.svg/800px-Blast_furnace.svg.png" alt="Blast Furnace Diagram">
-                    <div class="caption">Figure 2: Schematic diagram of a blast furnace</div>
-                </div>
-                
-                <h3>3.1 Blast Furnace Zones and Reactions</h3>
-                
-                <div class="process-steps">
-                    <div class="process-step">
-                        <h4>Stack (Preheating Zone)</h4>
-                        <p>Temperature: 200-800°C</p>
-                        <p>Reactions:</p>
-                        <ul>
-                            <li>3Fe₂O₃ + CO → 2Fe₃O₄ + CO₂</li>
-                            <li>Fe₃O₄ + CO → 3FeO + CO₂</li>
-                            <li>Removal of moisture and volatile matter</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="process-step">
-                        <h4>Bosh (Reduction Zone)</h4>
-                        <p>Temperature: 800-1200°C</p>
-                        <p>Reactions:</p>
-                        <ul>
-                            <li>FeO + CO → Fe + CO₂ (indirect reduction)</li>
-                            <li>C + CO₂ → 2CO (Boudouard reaction)</li>
-                            <li>CaCO₃ → CaO + CO₂ (calcination)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="process-step">
-                        <h4>Hearth (Melting Zone)</h4>
-                        <p>Temperature: 1200-1600°C</p>
-                        <p>Reactions:</p>
-                        <ul>
-                            <li>FeO + C → Fe + CO (direct reduction)</li>
-                            <li>Formation of slag: CaO + SiO₂ → CaSiO₃</li>
-                            <li>Carburization of iron: 3Fe + C → Fe₃C</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <h3>3.2 Blast Furnace Products</h3>
-                <table>
-                    <tr>
-                        <th>Product</th>
-                        <th>Composition</th>
-                        <th>Temperature</th>
-                        <th>Use</th>
-                    </tr>
-                    <tr>
-                        <td>Hot Metal (Pig Iron)</td>
-                        <td>93-95% Fe, 3.5-4.5% C, 0.5-1.5% Si, 0.5-1% Mn, 0.05-0.1% S, 0.1-0.5% P</td>
-                        <td>1400-1500°C</td>
-                        <td>Primary product for steel making</td>
-                    </tr>
-                    <tr>
-                        <td>Slag</td>
-                        <td>30-40% CaO, 30-40% SiO₂, 5-15% Al₂O₃, 5-10% MgO</td>
-                        <td>1400-1500°C</td>
-                        <td>Cement additive, road construction</td>
-                    </tr>
-                    <tr>
-                        <td>Top Gas</td>
-                        <td>20-25% CO, 20-25% CO₂, 50-55% N₂</td>
-                        <td>100-300°C</td>
-                        <td>Fuel for stoves, power generation</td>
-                    </tr>
-                </table>
-                
-                <div class="mcq">
-                    <div class="question">Which reaction is primarily responsible for producing carbon monoxide in the blast furnace?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'B')">Fe₂O₃ + CO → 2Fe₃O₄ + CO₂</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'B')">C + CO₂ → 2CO</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">FeO + C → Fe + CO</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">CaCO₃ → CaO + CO₂</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer3">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: C + CO₂ → 2CO</strong></p>
-                            <p>This is the Boudouard reaction, which is crucial for generating the reducing gas (CO) in the blast furnace. The other options either consume CO or produce CO₂.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Alternative Processes Section -->
-            <section id="alternative-processes" class="section">
-                <h2>4. Alternative Iron Making Processes</h2>
-                <p>While blast furnaces dominate iron production, several alternative processes have been developed to address environmental concerns, reduce costs, or utilize different raw materials.</p>
-                
-                <div class="comparison">
-                    <div class="comparison-item">
-                        <h4>4.1 Direct Reduction Processes</h4>
-                        <p>Produce solid metallic iron (DRI - Direct Reduced Iron) without melting:</p>
-                        <ul>
-                            <li><strong>Midrex Process</strong>: Uses reformed natural gas (H₂ + CO) in shaft furnace</li>
-                            <li><strong>HYL Process</strong>: Uses hydrogen-rich gas in retorts</li>
-                            <li><strong>SL/RN Process</strong>: Rotary kiln using coal as reductant</li>
-                        </ul>
-                        <p><strong>Advantages:</strong></p>
-                        <ul>
-                            <li>Lower capital cost</li>
-                            <li>Flexibility in raw materials</li>
-                            <li>Lower CO₂ emissions</li>
-                        </ul>
-                        <p><strong>Disadvantages:</strong></p>
-                        <ul>
-                            <li>Requires high-grade ore</li>
-                            <li>Produces lower carbon iron</li>
-                            <li>Limited production scale</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <h4>4.2 Smelting Reduction Processes</h4>
-                        <p>Combine ore reduction and melting in single unit:</p>
-                        <ul>
-                            <li><strong>COREX Process</strong>: Two-stage process with reduction shaft and melter-gasifier</li>
-                            <li><strong>FINEX Process</strong>: Fluidized bed reduction followed by melter-gasifier</li>
-                            <li><strong>HIsarna Process</strong>: Cyclone converter furnace</li>
-                        </ul>
-                        <p><strong>Advantages:</strong></p>
-                        <ul>
-                            <li>No coking plant needed</li>
-                            <li>Can use fine ores and non-coking coal</li>
-                            <li>Lower environmental impact</li>
-                        </ul>
-                        <p><strong>Disadvantages:</strong></p>
-                        <ul>
-                            <li>Higher energy consumption</li>
-                            <li>Operational complexity</li>
-                            <li>Limited commercial adoption</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="diagram">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Midrex_Process.svg/800px-Midrex_Process.svg.png" alt="Midrex Process Diagram">
-                    <div class="caption">Figure 3: Midrex direct reduction process flow diagram</div>
-                </div>
-                
-                <div class="mcq">
-                    <div class="question">Which of the following processes produces solid metallic iron (DRI) rather than liquid iron?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'C')">COREX process</div>
-                        <div class="option" onclick="checkAnswer(this, 'C')">Blast furnace process</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'C')">Midrex process</div>
-                        <div class="option" onclick="checkAnswer(this, 'C')">HIsarna process</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer4">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: Midrex process</strong></p>
-                            <p>The Midrex process is a direct reduction process that produces solid DRI (Direct Reduced Iron), while the other options produce liquid iron.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Physical Chemistry Section -->
-            <section id="physical-chemistry" class="section">
-                <h2>5. Physical Chemistry of Iron Making</h2>
-                
-                <h3>5.1 Thermodynamics of Iron Oxide Reduction</h3>
-                <p>The reduction of iron oxides proceeds in stages:</p>
-                <p>Fe₂O₃ → Fe₃O₄ → FeO → Fe</p>
-                
-                <p>The Ellingham diagram shows the thermodynamic feasibility of reduction reactions at different temperatures. Key points:</p>
-                <ul>
-                    <li>Below 570°C: Fe₃O₄ reduces directly to Fe (FeO is unstable)</li>
-                    <li>Above 570°C: Stepwise reduction through FeO</li>
-                    <li>The Boudouard reaction (C + CO₂ ⇌ 2CO) becomes important above 700°C</li>
-                </ul>
-                
-                <div class="diagram">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ellingham_Diagram.svg/800px-Ellingham_Diagram.svg.png" alt="Ellingham Diagram">
-                    <div class="caption">Figure 4: Ellingham diagram showing iron oxide reduction thermodynamics</div>
-                </div>
-                
-                <h3>5.2 Slag Formation and Properties</h3>
-                <p>Slag performs several critical functions:</p>
-                <ul>
-                    <li>Absorbs impurities (SiO₂, Al₂O₃, S, etc.)</li>
-                    <li>Protects hot metal from reoxidation</li>
-                    <li>Controls sulfur distribution</li>
-                </ul>
-                
-                <p>Important slag properties:</p>
-                <ul>
-                    <li><strong>Basicity</strong>: Ratio of basic to acidic oxides (CaO/SiO₂)</li>
-                    <li><strong>Viscosity</strong>: Affects separation from metal and heat transfer</li>
-                    <li><strong>Melting point</strong>: Typically 1300-1400°C</li>
-                </ul>
-                
-                <div class="key-point">
-                    <h4><i class="fas fa-lightbulb"></i> Key Concept</h4>
-                    <p>The ideal slag basicity (CaO/SiO₂ ratio) for blast furnace operation is typically 1.0-1.2, providing good sulfur removal capability while maintaining proper fluidity.</p>
-                </div>
-                
-                <div class="mcq">
-                    <div class="question">Below what temperature does FeO become unstable in the iron oxide reduction sequence?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'B')">300°C</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'B')">570°C</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">900°C</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">1200°C</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer5">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: 570°C</strong></p>
-                            <p>Below 570°C, FeO is thermodynamically unstable, and Fe₃O₄ reduces directly to Fe without forming FeO as an intermediate.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Modern Developments Section -->
-            <section id="modern-developments" class="section">
-                <h2>6. Modern Developments in Iron Making</h2>
-                
-                <h3>6.1 Energy Efficiency Improvements</h3>
-                <ul>
-                    <li><strong>Top pressure recovery turbines (TRT)</strong>: Generate electricity from blast furnace top gas pressure</li>
-                    <li><strong>Pulverized coal injection (PCI)</strong>: Reduces coke consumption by up to 30%</li>
-                    <li><strong>Waste heat recovery</strong>: Utilization of slag and gas heat</li>
-                    <li><strong>Oxygen enrichment</strong>: Increases combustion efficiency</li>
-                </ul>
-                
-                <div class="diagram">
-                    <img src="https://www.researchgate.net/publication/334387343/figure/fig1/AS:779806923943936@1562868432524/Schematic-diagram-of-the-top-gas-recovery-turbine-unit-TRT.png" alt="TRT Unit Diagram">
-                    <div class="caption">Figure 5: Top gas recovery turbine unit (TRT) schematic</div>
-                </div>
-                
-                <h3>6.2 Environmental Considerations</h3>
-                <ul>
-                    <li><strong>CO₂ emissions reduction</strong>: Through process optimization and carbon capture</li>
-                    <li><strong>Slag utilization</strong>: 100% of blast furnace slag can be utilized (cement, road construction)</li>
-                    <li><strong>Dust recycling</strong>: Recycling of blast furnace and BOF dusts</li>
-                    <li><strong>Water conservation</strong>: Closed-loop cooling systems</li>
-                </ul>
-                
-                <h3>6.3 Industry 4.0 Applications</h3>
-                <ul>
-                    <li><strong>Digital twins</strong>: Virtual models of blast furnaces for optimization</li>
-                    <li><strong>AI-based process control</strong>: Predictive models for furnace operation</li>
-                    <li><strong>Automated quality control</strong>: Machine vision for slag and hot metal analysis</li>
-                    <li><strong>IoT sensors</strong>: Real-time monitoring of furnace conditions</li>
-                </ul>
-                
-                <div class="mcq">
-                    <div class="question">Which technology can reduce coke consumption in blast furnaces by injecting alternative carbon sources?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'B')">TRT (Top Recovery Turbine)</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'B')">PCI (Pulverized Coal Injection)</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">DRI (Direct Reduced Iron)</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">BOF (Basic Oxygen Furnace)</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer6">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: PCI (Pulverized Coal Injection)</strong></p>
-                            <p>PCI technology injects pulverized coal into the blast furnace tuyeres, replacing part of the coke requirement while maintaining the necessary reducing conditions.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Quality Control Section -->
-            <section id="quality-control" class="section">
-                <h2>7. Quality Control and Testing</h2>
-                
-                <h3>7.1 Hot Metal Analysis</h3>
-                <p>Key parameters monitored:</p>
-                <ul>
-                    <li><strong>Chemical composition</strong>: C, Si, Mn, P, S content</li>
-                    <li><strong>Temperature</strong>: Typically 1400-1500°C</li>
-                    <li><strong>Physical properties</strong>: Fluidity, slag separation</li>
-                </ul>
-                
-                <h3>7.2 Slag Analysis</h3>
-                <p>Important slag characteristics:</p>
-                <ul>
-                    <li><strong>Basicity ratio</strong> (CaO/SiO₂): Typically 1.0-1.2</li>
-                    <li><strong>Viscosity</strong>: Affects metal-slag separation</li>
-                    <li><strong>Sulfur capacity</strong>: Ability to absorb sulfur from metal</li>
-                </ul>
-                
-                <table>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Typical Range</th>
-                        <th>Measurement Method</th>
-                    </tr>
-                    <tr>
-                        <td>Hot Metal Temperature</td>
-                        <td>1400-1500°C</td>
-                        <td>Optical pyrometer</td>
-                    </tr>
-                    <tr>
-                        <td>Carbon Content</td>
-                        <td>3.5-4.5%</td>
-                        <td>Combustion analysis</td>
-                    </tr>
-                    <tr>
-                        <td>Silicon Content</td>
-                        <td>0.5-1.5%</td>
-                        <td>Spectroscopy</td>
-                    </tr>
-                    <tr>
-                        <td>Slag Basicity (CaO/SiO₂)</td>
-                        <td>1.0-1.2</td>
-                        <td>X-ray fluorescence</td>
-                    </tr>
-                </table>
-                
-                <div class="mcq">
-                    <div class="question">What is the typical basicity ratio (CaO/SiO₂) of blast furnace slag?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'B')">0.5-0.7</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'B')">1.0-1.2</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">1.5-1.8</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">2.0-2.5</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer7">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: 1.0-1.2</strong></p>
-                            <p>Blast furnace slag typically has a basicity ratio (CaO/SiO₂) of 1.0-1.2, which provides good sulfur removal capability while maintaining proper fluidity.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Safety Section -->
-            <section id="safety-environment" class="section">
-                <h2>8. Safety and Environmental Aspects</h2>
-                
-                <h3>8.1 Safety Considerations</h3>
-                <ul>
-                    <li><strong>High temperature hazards</strong>: Proper PPE and barriers</li>
-                    <li><strong>Gas hazards</strong>: CO poisoning prevention</li>
-                    <li><strong>Molten metal hazards</strong>: Prevention of explosions from moisture contact</li>
-                    <li><strong>Dust exposure</strong>: Respiratory protection</li>
-                    <li><strong>Noise control</strong>: Hearing protection in high-noise areas</li>
-                </ul>
-                
-                <div class="key-point">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Safety Alert</h4>
-                    <p>Carbon monoxide (CO) is particularly dangerous as it is colorless and odorless. Proper gas detection systems and ventilation are essential in all iron making facilities.</p>
-                </div>
-                
-                <h3>8.2 Environmental Impact and Mitigation</h3>
-                <ul>
-                    <li><strong>Air emissions</strong>: Particulates, CO, CO₂, SOₓ, NOₓ</li>
-                    <li><strong>Waste management</strong>: Slag, dust, and sludge utilization</li>
-                    <li><strong>Water usage</strong>: Closed-loop cooling systems</li>
-                    <li><strong>Energy efficiency</strong>: Heat recovery systems</li>
-                </ul>
-                
-                <div class="comparison">
-                    <div class="comparison-item">
-                        <h4>Environmental Challenges</h4>
-                        <ul>
-                            <li>High CO₂ emissions (1.8-2.2 tons CO₂/ton iron)</li>
-                            <li>Particulate emissions from handling raw materials</li>
-                            <li>Water consumption in cooling processes</li>
-                            <li>Solid waste generation (slag, dust)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <h4>Mitigation Strategies</h4>
-                        <ul>
-                            <li>Carbon capture and storage (CCS)</li>
-                            <li>Improved dust collection systems</li>
-                            <li>Water recycling and treatment</li>
-                            <li>Slag utilization in cement production</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="mcq">
-                    <div class="question">What is the primary gas hazard in iron making operations?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'C')">Oxygen</div>
-                        <div class="option" onclick="checkAnswer(this, 'C')">Nitrogen</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'C')">Carbon monoxide</div>
-                        <div class="option" onclick="checkAnswer(this, 'C')">Carbon dioxide</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer8">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: Carbon monoxide</strong></p>
-                            <p>CO is a colorless, odorless, and highly toxic gas produced in large quantities during iron making. It's the primary gas hazard due to its ability to form carboxyhemoglobin in blood, preventing oxygen transport.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Future Trends Section -->
-            <section id="future-trends" class="section">
-                <h2>9. Future Trends in Iron Making</h2>
-                
-                <h3>9.1 Hydrogen-Based Iron Making</h3>
-                <p>Using hydrogen as a reducing agent instead of carbon:</p>
-                <ul>
-                    <li>Fe₂O₃ + 3H₂ → 2Fe + 3H₂O</li>
-                    <li>Potential for near-zero CO₂ emissions if green hydrogen is used</li>
-                    <li>HYBRIT (Sweden) and other pilot projects underway</li>
-                    <li>Technical challenges in hydrogen storage and high-temperature reduction</li>
-                </ul>
-                
-                <div class="diagram">
-                    <img src="https://hybritdevelopment.com/wp-content/uploads/2021/03/HYBRIT-process-schematic.png" alt="HYBRIT Process">
-                    <div class="caption">Figure 6: HYBRIT hydrogen-based iron making process</div>
-                </div>
-                
-                <h3>9.2 Carbon Capture and Utilization (CCU)</h3>
-                <ul>
-                    <li>Capture of CO₂ from blast furnace gases</li>
-                    <li>Utilization in chemical synthesis or mineralization</li>
-                    <li>Storage in geological formations (CCS)</li>
-                    <li>Economic challenges in implementation</li>
-                </ul>
-                
-                <h3>9.3 Increased Use of Biomass</h3>
-                <ul>
-                    <li>Partial replacement of coke with charcoal</li>
-                    <li>Carbon-neutral if from sustainable sources</li>
-                    <li>Technical challenges in maintaining furnace permeability</li>
-                    <li>Limited availability of biomass at required scale</li>
-                </ul>
-                
-                <div class="key-point">
-                    <h4><i class="fas fa-chart-line"></i> Industry Outlook</h4>
-                    <p>The iron and steel industry is expected to undergo significant transformation in the coming decades, with hydrogen-based reduction and carbon capture technologies playing key roles in decarbonization efforts.</p>
-                </div>
-                
-                <div class="mcq">
-                    <div class="question">Which emerging iron making technology has the potential for near-zero CO₂ emissions when using renewable energy?</div>
-                    <div class="options">
-                        <div class="option" onclick="checkAnswer(this, 'B')">Increased PCI rates</div>
-                        <div class="option correct-option" onclick="checkAnswer(this, 'B')">Hydrogen-based reduction</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">Higher blast temperatures</div>
-                        <div class="option" onclick="checkAnswer(this, 'B')">Oxygen enrichment</div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Explanation</button>
-                    <div class="answer" id="answer9">
-                        <div class="answer-content">
-                            <p><strong>Correct Answer: Hydrogen-based reduction</strong></p>
-                            <p>Hydrogen-based reduction produces water vapor instead of CO₂ as the byproduct. When the hydrogen is produced via electrolysis using renewable electricity, the process can achieve near-zero CO₂ emissions.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-    
-    <script>
-        // Progress bar
-        function updateProgressBar() {
-            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPosition = window.scrollY;
-            const scrollPercentage = (scrollPosition / scrollTotal) * 100;
-            document.getElementById('progressBar').style.width = scrollPercentage + '%';
-        }
-        
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        function toggleBackToTop() {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        }
-        
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // MCQ functionality
-        function checkAnswer(option, correctAnswer) {
-            const options = option.parentElement.querySelectorAll('.option');
-            options.forEach(opt => {
-                opt.style.backgroundColor = '';
-                opt.style.borderColor = '#eee';
-            });
-            
-            if (option.classList.contains('correct-option')) {
-                option.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
-                option.style.borderColor = 'var(--correct)';
-            } else {
-                option.style.backgroundColor = 'rgba(244, 67, 54, 0.1)';
-                option.style.borderColor = 'var(--incorrect)';
-                const correctOpt = option.parentElement.querySelector('.correct-option');
-                correctOpt.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
-                correctOpt.style.borderColor = 'var(--correct)';
-            }
-        }
-        
-        function toggleAnswer(button) {
-            const answer = button.nextElementSibling;
-            answer.classList.toggle('show');
-            
-            if (answer.classList.contains('show')) {
-                button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Explanation';
-            } else {
-                button.innerHTML = '<i class="fas fa-eye"></i> Show Explanation';
-            }
-        }
-        
-        // Smooth scrolling for TOC links
-        document.querySelectorAll('.toc-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-                
-                // Update URL without page jump
-                history.pushState(null, null, targetId);
-                
-                // Highlight active TOC item
-                document.querySelectorAll('.toc-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-        
-        // Highlight active section in TOC
-        function highlightActiveTOC() {
-            const sections = document.querySelectorAll('.section');
-            const scrollPosition = window.scrollY + 150;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.id;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    document.querySelectorAll('.toc-link').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }
-        
-        // Initialize
-        window.addEventListener('scroll', function() {
-            updateProgressBar();
-            toggleBackToTop();
-            highlightActiveTOC();
-        });
-        
-        // Highlight TOC item when navigating via URL hash
-        if (window.location.hash) {
-            const targetElement = document.querySelector(window.location.hash);
-            if (targetElement) {
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                    
-                    document.querySelectorAll('.toc-link').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === window.location.hash) {
-                            link.classList.add('active');
-                        }
-                    });
-                }, 100);
-            }
-        }
-        
-        // Add animation to sections when they come into view
-        const sections = document.querySelectorAll('.section');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <footer>
+        <p>© TestUrSelf | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
