@@ -5,7 +5,7 @@
     <title>Steel Making - TestUrSelf</title>
     <style>
         :root {
-            --primary-color: #d32f2f;
+            --primary-color: #09b523;
             --secondary-color: #ffa000;
             --accent-color: #f44336;
             --light-color: #ffebee;
