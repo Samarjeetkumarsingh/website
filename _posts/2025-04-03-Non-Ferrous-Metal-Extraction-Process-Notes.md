@@ -776,50 +776,6 @@
             </div>
         </div>
     </div>
-<div class="test-section" id="test-yourself">
-        <div class="test-header">
-            <i class="fas fa-graduation-cap"></i>
-            <div>
-                <h2>TestUrSelf</h2>
-                <p>Evaluate your knowledge with these interactive courses</p>
-            </div>
-        </div>
-        
-        <div class="test-grid">
-            <div class="test-card">
-                <h3>Aluminium Extraction</h3>
-                <p>10 questions covering Bayer process and Hall-Héroult electrolysis</p>
-                <button class="start-btn" onclick="startQuiz('aluminium')">
-                    <i class="fas fa-play"></i> Start Course
-                </button>
-            </div>
-            
-            <div class="test-card">
-                <h3>Copper Metallurgy</h3>
-                <p>8 questions on pyrometallurgical and hydrometallurgical routes</p>
-                <button class="start-btn" onclick="startQuiz('copper')">
-                    <i class="fas fa-play"></i> Start Course
-                </button>
-            </div>
-            
-            <div class="test-card">
-                <h3>Titanium Production</h3>
-                <p>6 questions focusing on Kroll process and alternatives</p>
-                <button class="start-btn" onclick="startQuiz('titanium')">
-                    <i class="fas fa-play"></i> Start Course
-                </button>
-            </div>
-            
-            <div class="test-card">
-                <h3>Comparative Analysis</h3>
-                <p>12 questions comparing all three extraction processes</p>
-                <button class="start-btn" onclick="startQuiz('comparative')">
-                    <i class="fas fa-play"></i> Start Course
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script>
         // MCQ functionality
         function checkAnswer(option, isCorrect) {
