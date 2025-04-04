@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -202,7 +201,7 @@
                 <td>Fe–C System</td>
             </tr>
             <tr>
-                <td class="category-fec">$W_{\text{Fe}_3\text{C}' = \frac{C_1' - 0.76}{5.94}$</td>
+                <td class="category-fec">$W_{\text{Fe}_3\text{C}'} = \frac{C_1' - 0.76}{5.94}$</td>
                 <td>Mass fraction of proeutectoid $\text{Fe}_3\text{C}$ in a hypereutectoid Fe–C alloy</td>
                 <td>Fe–C System</td>
             </tr>
