@@ -225,24 +225,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         
-        /* Student Illustration */
-        .student-illustration {
-            position: absolute;
-            bottom: 0;
-            right: 5%;
-            width: 400px;
-            height: 300px;
-            z-index: 1;
-            opacity: 0.9;
-        }
-        
-        .student-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: bottom;
-        }
-        
         /* Floating Shapes */
         .floating-shape {
             position: absolute;
@@ -631,22 +613,6 @@
             background: var(--highlight-yellow);
         }
         
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .student-illustration {
-                width: 300px;
-                right: 0;
-                opacity: 0.7;
-            }
-            
-            .chart-container {
-                grid-template-columns: 1fr;
-            }
-        }
         
         @media (max-width: 768px) {
             .nav-links {
@@ -660,10 +626,6 @@
             
             .hero h1 {
                 font-size: 2.4rem;
-            }
-            
-            .student-illustration {
-                display: none;
             }
             
             .section {
@@ -746,11 +708,7 @@
                 </a>
             </div>
         </div>
-        
-        <!-- Student Illustration -->
-        <div class="student-illustration">
-            <img src="https://img.freepik.com/free-vector/online-test-concept-illustration_114360-8206.jpg" alt="Student preparing online" class="student-image">
-        </div>
+
     </section>
 
     <!-- Importance Section -->
@@ -1476,14 +1434,6 @@
                 opacity: 0,
                 delay: 0.6,
                 ease: 'power3.out'
-            });
-            
-            gsap.from('.student-illustration', {
-                duration: 1.5,
-                x: 100,
-                opacity: 0,
-                delay: 0.4,
-                ease: 'elastic.out(1, 0.5)'
             });
             
             // Animate section headings
