@@ -2,20 +2,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materials Science Reference | Phase Diagram Equations</title>
+    <title>Phase Diagram Equations | TestUrSelf</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #2ecc71;
-            --warning: #f39c12;
-            --info: #3498db;
-            --text: #333;
-            --light-gray: #f5f5f5;
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --highlight-color: #f39c12;
+            --success-color: #2ecc71;
+            --error-color: #e74c3c;
+            --text-color: #333;
+            --iso-color: #e74c3c;
+            --vol-color: #3498db;
+            --eutectic-color: #9b59b6;
+            --fec-color: #f39c12;
+            --thermo-color: #2ecc71;
         }
         
         * {
@@ -26,195 +31,341 @@
         
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: #f9f9f9;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Gradient Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -2;
+        }
+        
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        
+        /* Large Diagonal Watermark */
+        body::after {
+            content: "TestUrSelf";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 150px;
+            font-weight: bold;
+            color: rgba(44, 62, 80, 0.05);
+            z-index: -1;
+            pointer-events: none;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            width: 200%;
+            text-align: center;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
-            padding: 2rem 1rem;
+            padding: 3rem;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            width: 100%;
+            border-radius: 8px;
+            margin: 2rem auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
         }
         
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            flex: 1;
+        header::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.1) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 6s infinite;
+        }
+        
+        @keyframes shine {
+            0% {transform: rotate(30deg) translate(-30%, -30%);}
+            100% {transform: rotate(30deg) translate(30%, 30%);}
         }
         
         h1 {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            margin-bottom: 0.5rem;
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
         }
         
         .subtitle {
             font-weight: 300;
-            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-size: 1.2rem;
             opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         nav {
             background-color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 2rem;
         }
         
         .nav-container {
             display: flex;
             justify-content: center;
-            padding: 0.8rem 0;
-            min-width: max-content;
+            padding: 1rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
         }
         
         .nav-link {
-            padding: 0.5rem 1rem;
-            color: var(--dark);
+            padding: 0.8rem 1.5rem;
+            color: var(--dark-color);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             border-radius: 4px;
-            margin: 0 0.3rem;
+            margin: 0 0.5rem;
             white-space: nowrap;
-            font-size: clamp(0.8rem, 3vw, 1rem);
         }
         
         .nav-link:hover, .nav-link.active {
-            background-color: var(--secondary);
+            background-color: var(--secondary-color);
             color: white;
         }
         
-        main {
-            padding: 1.5rem 0;
+        .search-container {
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        #searchInput {
             width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        #searchInput:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
         }
         
         .section {
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            width: 100%;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
         h2 {
-            color: var(--secondary);
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--light);
-            font-size: clamp(1.3rem, 4vw, 1.6rem);
+            color: var(--primary-color);
+            border-bottom: 4px solid var(--highlight-color);
+            padding-bottom: 0.8rem;
+            margin-top: 0;
+            font-size: 1.8rem;
+            background: linear-gradient(to right, transparent, var(--light-color), transparent);
+            padding: 1rem 0;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+            scroll-margin-top: 120px;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -5px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--highlight-color), transparent);
         }
         
         .equation-card {
-            border-left: 4px solid var(--secondary);
-            padding: 1.2rem;
-            margin-bottom: 1.2rem;
-            background-color: #f8fafc;
-            border-radius: 0 8px 8px 0;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.8rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
-            width: 100%;
+            border-left: 5px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
         }
         
         .equation-card:hover {
             transform: translateX(5px);
-            box-shadow: 2px 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .equation-card.iso { border-left-color: var(--iso-color); }
+        .equation-card.vol { border-left-color: var(--vol-color); }
+        .equation-card.eutectic { border-left-color: var(--eutectic-color); }
+        .equation-card.fec { border-left-color: var(--fec-color); }
+        .equation-card.thermo { border-left-color: var(--thermo-color); }
+        
+        .equation-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 50px 50px 0;
+            border-color: transparent rgba(0,0,0,0.05) transparent transparent;
         }
         
         .equation {
             font-family: 'Source Code Pro', monospace;
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
-            background-color: var(--light-gray);
-            padding: 0.7rem 0.9rem;
-            border-radius: 6px;
+            font-size: 1.2rem;
+            background-color: #e9ecef;
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
             display: inline-block;
-            margin: 0.4rem 0;
-            color: var(--dark);
+            margin: 0.5rem 0;
+            color: var(--dark-color);
             width: 100%;
             overflow-x: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .equation:hover {
+            background-color: #dee2e6;
         }
         
         .equation-desc {
-            margin-top: 0.7rem;
+            margin-top: 1rem;
             color: #555;
-            font-size: clamp(0.9rem, 3vw, 1rem);
+            font-size: 1rem;
+            line-height: 1.6;
         }
         
         .category-tag {
             display: inline-block;
-            padding: 0.2rem 0.7rem;
-            border-radius: 20px;
-            font-size: clamp(0.7rem, 2.5vw, 0.8rem);
-            font-weight: 500;
-            margin-top: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            background-color: var(--light-color);
+            color: var(--dark-color);
         }
         
-        .tag-iso { background-color: #ffeceb; color: #e74c3c; }
-        .tag-vol { background-color: #ebf5ff; color: #3498db; }
-        .tag-eutectic { background-color: #f3ebff; color: #9b59b6; }
-        .tag-fec { background-color: #fff8eb; color: #f39c12; }
-        .tag-thermo { background-color: #e8f8f0; color: #27ae60; }
+        .tag-iso { background-color: rgba(231, 76, 60, 0.1); color: var(--iso-color); }
+        .tag-vol { background-color: rgba(52, 152, 219, 0.1); color: var(--vol-color); }
+        .tag-eutectic { background-color: rgba(155, 89, 182, 0.1); color: var(--eutectic-color); }
+        .tag-fec { background-color: rgba(243, 156, 18, 0.1); color: var(--fec-color); }
+        .tag-thermo { background-color: rgba(46, 204, 113, 0.1); color: var(--thermo-color); }
         
         footer {
-            background-color: var(--dark);
+            background-color: var(--dark-color);
             color: white;
             text-align: center;
-            padding: 1.5rem 0;
-            margin-top: auto;
-            width: 100%;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 5px solid var(--highlight-color);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .watermark {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            bottom: 20px;
+            right: 20px;
             opacity: 0.05;
-            font-size: clamp(4rem, 20vw, 8rem);
+            font-size: 8rem;
             font-weight: bold;
-            color: var(--dark);
+            color: var(--dark-color);
             pointer-events: none;
             transform: rotate(-15deg);
             z-index: -1;
             font-family: 'Roboto', sans-serif;
         }
         
-        .search-container {
-            margin: 1.5rem 0;
-            width: 100%;
+        /* Interactive elements */
+        .copy-btn {
+            background-color: var(--light-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
-        #searchInput {
-            width: 100%;
-            max-width: 600px;
-            padding: 0.8rem 1.2rem;
-            border: 2px solid #ddd;
-            border-radius: 30px;
-            font-size: clamp(0.9rem, 3vw, 1rem);
-            transition: all 0.3s ease;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        #searchInput:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        .copy-btn:hover {
+            background-color: var(--secondary-color);
+            color: white;
         }
         
         /* Responsive adjustments */
         @media (max-width: 768px) {
             header {
-                padding: 1.5rem 1rem;
+                padding: 2rem 1rem;
+                margin: 1rem;
+                border-radius: 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
             }
             
             .nav-container {
@@ -222,27 +373,50 @@
                 padding: 0.8rem 1rem;
             }
             
+            .nav-link {
+                padding: 0.6rem 1rem;
+                margin: 0 0.3rem;
+                font-size: 0.9rem;
+            }
+            
             .section {
-                padding: 1.2rem;
+                padding: 1.5rem;
+                margin: 1rem;
             }
             
             .equation-card {
-                padding: 1rem;
+                padding: 1.2rem;
+            }
+            
+            .equation {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+            }
+            
+            body::after {
+                font-size: 80px;
             }
         }
         
         @media (max-width: 480px) {
-            .nav-link {
-                padding: 0.5rem 0.8rem;
-                margin: 0 0.2rem;
+            header {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
             }
             
             .section {
-                padding: 1rem;
+                padding: 1.2rem;
             }
             
-            .equation-card {
-                padding: 0.8rem;
+            h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -265,121 +439,161 @@
         </div>
     </nav>
     
-    <main>
-        <div class="container">
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search equations...">
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search equations...">
+        </div>
+        
+        <section id="binary-iso" class="section">
+            <h2>Binary Isomorphous System</h2>
+            
+            <div class="equation-card iso">
+                <div class="equation">$W_L = \frac{C_a - C_0}{C_a - C_L}$</div>
+                <p class="equation-desc">Mass fraction of liquid phase in a binary isomorphous system</p>
+                <span class="category-tag tag-iso">Binary Isomorphous</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_L = \\frac{C_a - C_0}{C_a - C_L}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
             </div>
             
-            <section id="binary-iso" class="section">
-                <h2>Binary Isomorphous System</h2>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_L = \frac{C_a - C_0}{C_a - C_L}$</div>
-                    <p class="equation-desc">Mass fraction of liquid phase in a binary isomorphous system</p>
-                    <span class="category-tag tag-iso">Binary Isomorphous</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_a = \frac{C_0 - C_L}{C_a - C_L}$</div>
-                    <p class="equation-desc">Mass fraction of $\alpha$ solid-solution phase in a binary isomorphous system</p>
-                    <span class="category-tag tag-iso">Binary Isomorphous</span>
-                </div>
-            </section>
+            <div class="equation-card iso">
+                <div class="equation">$W_a = \frac{C_0 - C_L}{C_a - C_L}$</div>
+                <p class="equation-desc">Mass fraction of $\alpha$ solid-solution phase in a binary isomorphous system</p>
+                <span class="category-tag tag-iso">Binary Isomorphous</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_a = \\frac{C_0 - C_L}{C_a - C_L}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+        </section>
+        
+        <section id="volume-fractions" class="section">
+            <h2>Volume Fractions</h2>
             
-            <section id="volume-fractions" class="section">
-                <h2>Volume Fractions</h2>
-                
-                <div class="equation-card">
-                    <div class="equation">$V_a = \frac{V_a}{V_a + V_\beta}$</div>
-                    <p class="equation-desc">Volume fraction of $\alpha$ phase</p>
-                    <span class="category-tag tag-vol">Volume Fractions</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$V_a = \frac{\rho_a}{\rho_a + \rho_\beta}$</div>
-                    <p class="equation-desc">Conversion of mass fraction to volume fraction for $\alpha$ phase</p>
-                    <span class="category-tag tag-vol">Volume Fractions</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_a = \frac{V_a \rho_a}{V_a \rho_a + V_\beta \rho_\beta}$</div>
-                    <p class="equation-desc">Conversion of volume fraction to mass fraction for $\alpha$ phase</p>
-                    <span class="category-tag tag-vol">Volume Fractions</span>
-                </div>
-            </section>
+            <div class="equation-card vol">
+                <div class="equation">$V_a = \frac{V_a}{V_a + V_\beta}$</div>
+                <p class="equation-desc">Volume fraction of $\alpha$ phase</p>
+                <span class="category-tag tag-vol">Volume Fractions</span>
+                <button class="copy-btn" onclick="copyToClipboard('V_a = \\frac{V_a}{V_a + V_\\beta}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
             
-            <section id="eutectic" class="section">
-                <h2>Binary Eutectic System</h2>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_e = \frac{P}{P + Q}$</div>
-                    <p class="equation-desc">Mass fraction of eutectic microconstituent</p>
-                    <span class="category-tag tag-eutectic">Eutectic System</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_{a'} = \frac{Q}{P + Q}$</div>
-                    <p class="equation-desc">Mass fraction of primary $\alpha$ microconstituent</p>
-                    <span class="category-tag tag-eutectic">Eutectic System</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_a = \frac{Q + R}{P + Q + R}$</div>
-                    <p class="equation-desc">Mass fraction of total $\alpha$ phase</p>
-                    <span class="category-tag tag-eutectic">Eutectic System</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_\beta = \frac{P}{P + Q + R}$</div>
-                    <p class="equation-desc">Mass fraction of $\beta$ phase</p>
-                    <span class="category-tag tag-eutectic">Eutectic System</span>
-                </div>
-            </section>
+            <div class="equation-card vol">
+                <div class="equation">$V_a = \frac{\rho_a}{\rho_a + \rho_\beta}$</div>
+                <p class="equation-desc">Conversion of mass fraction to volume fraction for $\alpha$ phase</p>
+                <span class="category-tag tag-vol">Volume Fractions</span>
+                <button class="copy-btn" onclick="copyToClipboard('V_a = \\frac{\\rho_a}{\\rho_a + \\rho_\\beta}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
             
-            <section id="fec" class="section">
-                <h2>Fe–C Alloy System</h2>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_\rho = \frac{C_0' + 0.022}{0.74}$</div>
-                    <p class="equation-desc">Mass fraction of pearlite in a hypoeutectoid Fe–C alloy</p>
-                    <span class="category-tag tag-fec">Fe-C System</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_{a'} = \frac{0.76 - C_0'}{0.74}$</div>
-                    <p class="equation-desc">Mass fraction of proeutectoid $\alpha$ ferrite in a hypoeutectoid Fe–C alloy</p>
-                    <span class="category-tag tag-fec">Fe-C System</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_\rho = \frac{6.70 - C_1'}{5.94}$</div>
-                    <p class="equation-desc">Mass fraction of pearlite in a hypereutectoid Fe–C alloy</p>
-                    <span class="category-tag tag-fec">Fe-C System</span>
-                </div>
-                
-                <div class="equation-card">
-                    <div class="equation">$W_{\text{Fe}_3\text{C}'} = \frac{C_1' - 0.76}{5.94}$</div>
-                    <p class="equation-desc">Mass fraction of proeutectoid $\text{Fe}_3\text{C}$ in a hypereutectoid Fe–C alloy</p>
-                    <span class="category-tag tag-fec">Fe-C System</span>
-                </div>
-            </section>
+            <div class="equation-card vol">
+                <div class="equation">$W_a = \frac{V_a \rho_a}{V_a \rho_a + V_\beta \rho_\beta}$</div>
+                <p class="equation-desc">Conversion of volume fraction to mass fraction for $\alpha$ phase</p>
+                <span class="category-tag tag-vol">Volume Fractions</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_a = \\frac{V_a \\rho_a}{V_a \\rho_a + V_\\beta \\rho_\\beta}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+        </section>
+        
+        <section id="eutectic" class="section">
+            <h2>Binary Eutectic System</h2>
             
-            <section id="thermo" class="section">
-                <h2>Thermodynamics</h2>
-                
-                <div class="equation-card">
-                    <div class="equation">$P + F = C + N$</div>
-                    <p class="equation-desc">Gibbs phase rule (general form)</p>
-                    <span class="category-tag tag-thermo">Thermodynamics</span>
-                </div>
-            </section>
-        </div>
-    </main>
+            <div class="equation-card eutectic">
+                <div class="equation">$W_e = \frac{P}{P + Q}$</div>
+                <p class="equation-desc">Mass fraction of eutectic microconstituent</p>
+                <span class="category-tag tag-eutectic">Eutectic System</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_e = \\frac{P}{P + Q}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+            
+            <div class="equation-card eutectic">
+                <div class="equation">$W_{a'} = \frac{Q}{P + Q}$</div>
+                <p class="equation-desc">Mass fraction of primary $\alpha$ microconstituent</p>
+                <span class="category-tag tag-eutectic">Eutectic System</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_{a\\'} = \\frac{Q}{P + Q}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+            
+            <div class="equation-card eutectic">
+                <div class="equation">$W_a = \frac{Q + R}{P + Q + R}$</div>
+                <p class="equation-desc">Mass fraction of total $\alpha$ phase</p>
+                <span class="category-tag tag-eutectic">Eutectic System</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_a = \\frac{Q + R}{P + Q + R}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+            
+            <div class="equation-card eutectic">
+                <div class="equation">$W_\beta = \frac{P}{P + Q + R}$</div>
+                <p class="equation-desc">Mass fraction of $\beta$ phase</p>
+                <span class="category-tag tag-eutectic">Eutectic System</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_\\beta = \\frac{P}{P + Q + R}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+        </section>
+        
+        <section id="fec" class="section">
+            <h2>Fe–C Alloy System</h2>
+            
+            <div class="equation-card fec">
+                <div class="equation">$W_\rho = \frac{C_0' + 0.022}{0.74}$</div>
+                <p class="equation-desc">Mass fraction of pearlite in a hypoeutectoid Fe–C alloy</p>
+                <span class="category-tag tag-fec">Fe-C System</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_\\rho = \\frac{C_0\\' + 0.022}{0.74}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+            
+            <div class="equation-card fec">
+                <div class="equation">$W_{a'} = \frac{0.76 - C_0'}{0.74}$</div>
+                <p class="equation-desc">Mass fraction of proeutectoid $\alpha$ ferrite in a hypoeutectoid Fe–C alloy</p>
+                <span class="category-tag tag-fec">Fe-C System</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_{a\\'} = \\frac{0.76 - C_0\\'}{0.74}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+            
+            <div class="equation-card fec">
+                <div class="equation">$W_\rho = \frac{6.70 - C_1'}{5.94}$</div>
+                <p class="equation-desc">Mass fraction of pearlite in a hypereutectoid Fe–C alloy</p>
+                <span class="category-tag tag-fec">Fe-C System</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_\\rho = \\frac{6.70 - C_1\\'}{5.94}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+            
+            <div class="equation-card fec">
+                <div class="equation">$W_{\text{Fe}_3\text{C}'} = \frac{C_1' - 0.76}{5.94}$</div>
+                <p class="equation-desc">Mass fraction of proeutectoid $\text{Fe}_3\text{C}$ in a hypereutectoid Fe–C alloy</p>
+                <span class="category-tag tag-fec">Fe-C System</span>
+                <button class="copy-btn" onclick="copyToClipboard('W_{\\text{Fe}_3\\text{C}\\'} = \\frac{C_1\\' - 0.76}{5.94}')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+        </section>
+        
+        <section id="thermo" class="section">
+            <h2>Thermodynamics</h2>
+            
+            <div class="equation-card thermo">
+                <div class="equation">$P + F = C + N$</div>
+                <p class="equation-desc">Gibbs phase rule (general form)</p>
+                <span class="category-tag tag-thermo">Thermodynamics</span>
+                <button class="copy-btn" onclick="copyToClipboard('P + F = C + N')">
+                    <i class="far fa-copy"></i> Copy Equation
+                </button>
+            </div>
+        </section>
+    </div>
     
     <footer>
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> Join us for GATE MT Prep | TestUrSelf</p>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> Join TestUrSelf for your GATE Prep | TestUrSelf</p>
         </div>
     </footer>
     
@@ -456,6 +670,47 @@
                 }
             });
         });
+        
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show copied notification
+                const notification = document.createElement('div');
+                notification.textContent = 'Equation copied!';
+                notification.style.position = 'fixed';
+                notification.style.bottom = '20px';
+                notification.style.left = '50%';
+                notification.style.transform = 'translateX(-50%)';
+                notification.style.backgroundColor = 'var(--success-color)';
+                notification.style.color = 'white';
+                notification.style.padding = '10px 20px';
+                notification.style.borderRadius = '5px';
+                notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+                notification.style.zIndex = '1000';
+                notification.style.animation = 'fadeInOut 2s ease-in-out';
+                
+                document.body.appendChild(notification);
+                
+                // Remove notification after animation
+                setTimeout(function() {
+                    notification.remove();
+                }, 2000);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+        
+        // Add animation for notification
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                20% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
