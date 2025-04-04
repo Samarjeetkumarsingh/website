@@ -379,7 +379,7 @@
     
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year"></span> Materials Science Reference | TestUrSelf</p>
+            <p>&copy; <span id="current-year"></span> Join us for GATE MT Prep | TestUrSelf</p>
         </div>
     </footer>
     
