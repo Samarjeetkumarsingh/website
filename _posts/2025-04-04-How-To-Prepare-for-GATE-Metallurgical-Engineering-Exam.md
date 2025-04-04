@@ -1034,7 +1034,7 @@
                     <i class="fas fa-trophy"></i>
                 </div>
                 <h4>AIR-1 Every Year Since 2019</h4>
-                <p>Unmatched success with AIR 1 in GATE Metallurgy for 4 consecutive years.</p>
+                <p>Unmatched success with AIR 1 in GATE Metallurgy for 7 consecutive years.</p>
             </div>
             
             <div class="feature-card">
@@ -1069,17 +1069,17 @@
         
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number" id="studentsCount">1500</div>
+                <div class="stat-number" id="studentsCount">17490</div>
                 <div class="stat-label">Students Enrolled</div>
             </div>
             
             <div class="stat-item">
-                <div class="stat-number" id="rankersCount">32</div>
+                <div class="stat-number" id="rankersCount">466</div>
                 <div class="stat-label">Top 100 Rankers</div>
             </div>
             
             <div class="stat-item">
-                <div class="stat-number" id="air1Count">4</div>
+                <div class="stat-number" id="air1Count">8</div>
                 <div class="stat-label">AIR 1 Produced</div>
             </div>
             
@@ -1169,10 +1169,10 @@
         <p style="max-width: 700px; margin: 0 auto 2rem;">Join thousands of successful Metallurgy aspirants who trusted TestUrSelf for their GATE journey</p>
         
         <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">
+            <a href="https://online.testurself.in" class="btn btn-primary">
                 <i class="fas fa-user-graduate mr-2"></i> Enroll Now
             </a>
-            <a href="#" class="btn btn-secondary">
+            <a href="https://online.testurself.in" class="btn btn-secondary">
                 <i class="fas fa-calendar-alt mr-2"></i> Free Demo Class
             </a>
         </div>
@@ -1185,34 +1185,34 @@
                 <h3>TestUrSelf</h3>
                 <p>India's leading GATE Metallurgy preparation platform with proven results since 2018.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/Testurself.t/?ref=bookmarks&_rdr"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.quora.com/profile/Testurself"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/testurself.in/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/testurself-best-platform-for-gate-exam-4a4644165/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/UCl1LbKvfEvOU66rDa62M0Vw"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Test Series</a></li>
-                    <li><a href="#">Results</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="https://www.testurself.in">Home</a></li>
+                    <li><a href="https://www.testurself.in/about-us/">About Us</a></li>
+                    <li><a href="https://online.testurself.in">Courses</a></li>
+                    <li><a href="https://online.testurself.in">Test Series</a></li>
+                    <li><a href="https://www.testurself.in/our-rankers/">Results</a></li>
+                    <li><a href="https://online.testurself.in">Contact</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h3>Resources</h3>
                 <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Free Materials</a></li>
-                    <li><a href="#">Video Lectures</a></li>
-                    <li><a href="#">PYQ Solutions</a></li>
-                    <li><a href="#">GATE Syllabus</a></li>
+                    <li><a href="https://www.testurself.in/blogs/">Blog</a></li>
+                    <li><a href="https://www.testurself.in/study-materials/">Free Materials</a></li>
+                    <li><a href="https://www.testurself.in/video-lecture/">Video Lectures</a></li>
+                    <li><a href="https://www.testurself.in/gate-metallurgical-engineering-previous-years-papers-with-solutions/">PYQ Solutions</a></li>
+                    <li><a href="https://www.testurself.in/gate-metallurgical-engineering-syllabus-2025/">GATE Syllabus</a></li>
                     <li><a href="#">FAQs</a></li>
                 </ul>
             </div>
@@ -1220,15 +1220,15 @@
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <ul>
-                    <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Education Street, Bangalore</li>
-                    <li><i class="fas fa-phone-alt mr-2"></i> +91 9876543210</li>
-                    <li><i class="fas fa-envelope mr-2"></i> info@testurself.com</li>
+                    <li><i class="fas fa-map-marker-alt mr-2"></i> Patna, Bihar</li>
+                    <li><i class="fas fa-phone-alt mr-2"></i> +91 8709271314</li>
+                    <li><i class="fas fa-envelope mr-2"></i> info@testurself.in</li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2023 TestUrSelf. All Rights Reserved.</p>
+            <p>&copy; TestUrSelf. All Rights Reserved.</p>
         </div>
     </footer>
 
