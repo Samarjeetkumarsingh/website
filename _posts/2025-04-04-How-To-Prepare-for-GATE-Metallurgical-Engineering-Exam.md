@@ -249,6 +249,138 @@
             background: linear-gradient(to right, var(--accent-color), transparent);
         }
         
+        /* GATE Intro Section */
+        .gate-intro {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .intro-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .intro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .intro-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+            font-size: 1.5rem;
+        }
+        
+        .intro-card h3 i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        /* Key Topics Section */
+        .topics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .topic-card {
+            background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .topic-card h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .topic-card h4 i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .topic-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .topic-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .topic-card li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* Why Choose Us Section */
+        .why-us-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+        
+        .feature-card h4 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
         /* Preparation Guide */
         .preparation-steps {
             display: grid;
@@ -259,6 +391,14 @@
             display: flex;
             gap: 1.5rem;
             align-items: flex-start;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .step.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .step-number {
@@ -272,6 +412,12 @@
             justify-content: center;
             font-weight: bold;
             flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover .step-number {
+            background-color: var(--secondary-color);
+            transform: scale(1.1);
         }
         
         .step-content {
@@ -280,6 +426,11 @@
             border-radius: 8px;
             flex-grow: 1;
             position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover .step-content {
+            background-color: #e8d5f1;
         }
         
         .step-content::before {
@@ -315,6 +466,12 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
             border: 1px solid rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
         .testimonial-header {
@@ -330,6 +487,12 @@
             object-fit: cover;
             margin-right: 1rem;
             border: 3px solid var(--light-color);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover .testimonial-img {
+            border-color: var(--secondary-color);
+            transform: scale(1.05);
         }
         
         .testimonial-info h4 {
@@ -391,6 +554,11 @@
         
         .stat-item {
             padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
         }
         
         .stat-number {
@@ -426,6 +594,11 @@
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary-color);
         }
         
         .faq-question {
@@ -440,6 +613,11 @@
             align-items: center;
             font-weight: 500;
             font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f0f0;
         }
         
         .faq-answer {
@@ -489,6 +667,11 @@
         
         .footer-column li {
             margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column li:hover {
+            transform: translateX(5px);
         }
         
         .footer-column a {
@@ -510,6 +693,12 @@
         .social-links a {
             color: white;
             font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
         }
         
         .footer-bottom {
@@ -583,6 +772,91 @@
         <div class="cta-buttons">
             <a href="#cta" class="btn btn-primary">Join TestUrSelf Now</a>
             <a href="#download" class="btn btn-secondary">Download Free Material</a>
+        </div>
+    </section>
+
+    <!-- GATE Introduction Section -->
+    <section class="section">
+        <h2>What is GATE Metallurgical Engineering?</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">GATE (Graduate Aptitude Test in Engineering) for Metallurgical Engineering (MT) is the gateway to prestigious PSU jobs, M.Tech admissions in IITs/NITs, and research opportunities.</p>
+        
+        <div class="gate-intro">
+            <div class="intro-card">
+                <h3><i class="fas fa-clipboard-list"></i> Exam Structure</h3>
+                <p>65 questions worth 100 marks covering General Aptitude, Engineering Mathematics, and Metallurgy subjects.</p>
+            </div>
+            
+            <div class="intro-card">
+                <h3><i class="fas fa-star"></i> Importance</h3>
+                <p>Qualifying GATE MT opens doors to PSUs like SAIL, NALCO, HCL, and top institutes like IITs, IISc, NITs.</p>
+            </div>
+            
+            <div class="intro-card">
+                <h3><i class="fas fa-trophy"></i> Competition</h3>
+                <p>With 10,000+ aspirants each year, strategic preparation is key to securing top ranks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Topics Section -->
+    <section class="section">
+        <h2>Key Topics in GATE Metallurgy</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Focus on these high-weightage topics to maximize your score</p>
+        
+        <div class="topics-container">
+            <div class="topic-card">
+                <h4><i class="fas fa-atom" style="color: var(--thermal-color);"></i> Physical Metallurgy</h4>
+                <ul>
+                    <li>Crystal structures & defects</li>
+                    <li>Phase diagrams & transformations</li>
+                    <li>Heat treatment processes</li>
+                </ul>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-hard-hat" style="color: var(--fluid-color);"></i> Mechanical Metallurgy</h4>
+                <ul>
+                    <li>Dislocations & strengthening</li>
+                    <li>Fracture & fatigue</li>
+                    <li>Mechanical testing</li>
+                </ul>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-industry" style="color: var(--mass-color);"></i> Manufacturing Processes</h4>
+                <ul>
+                    <li>Casting & welding</li>
+                    <li>Metal forming</li>
+                    <li>Powder metallurgy</li>
+                </ul>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-fire" style="color: var(--kinetics-color);"></i> Thermodynamics & Kinetics</h4>
+                <ul>
+                    <li>Laws of thermodynamics</li>
+                    <li>Phase equilibria</li>
+                    <li>Diffusion & reactions</li>
+                </ul>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-flask" style="color: var(--thermal-color);"></i> Extractive Metallurgy</h4>
+                <ul>
+                    <li>Ore processing</li>
+                    <li>Pyrometallurgy</li>
+                    <li>Hydrometallurgy</li>
+                </ul>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-square-root-alt" style="color: var(--fluid-color);"></i> Engineering Mathematics</h4>
+                <ul>
+                    <li>Linear algebra</li>
+                    <li>Calculus & differential equations</li>
+                    <li>Probability & statistics</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -729,6 +1003,62 @@
                 <div class="slider-dot active" data-index="0"></div>
                 <div class="slider-dot" data-index="1"></div>
                 <div class="slider-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section">
+        <h2>Why TestUrSelf for GATE Metallurgy?</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">The proven platform that has consistently produced GATE MT toppers year after year</p>
+        
+        <div class="why-us-container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h4>Best Content for GATE Metallurgy</h4>
+                <p>Comprehensive study material designed by IIT & IISc experts specifically for GATE MT syllabus.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h4>Producing Top Rankers Since 2018</h4>
+                <p>Consistent track record of producing AIR 1, AIR 2, and multiple top 100 ranks every year.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h4>AIR-1 Every Year Since 2019</h4>
+                <p>Unmatched success with AIR 1 in GATE Metallurgy for 4 consecutive years.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4>Direct Questions in GATE Exam</h4>
+                <p>Our test series questions match actual GATE questions - sometimes even verbatim!</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h4>Expert Mentorship</h4>
+                <p>Live doubt-solving sessions with IIT/IISc mentors who know exactly what GATE demands.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Performance Analytics</h4>
+                <p>Detailed test analytics to track your progress and identify improvement areas.</p>
             </div>
         </div>
     </section>
@@ -1003,6 +1333,23 @@
         animateCounter(document.getElementById('rankersCount'), 32);
         animateCounter(document.getElementById('air1Count'), 4);
         animateCounter(document.getElementById('satisfactionCount'), 98);
+        
+        // Step Animation
+        const steps = document.querySelectorAll('.step');
+        
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        steps.forEach((step, index) => {
+            // Add delay based on index
+            step.style.transitionDelay = `${index * 100}ms`;
+            stepObserver.observe(step);
+        });
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
