@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -897,7 +896,6 @@
                 <div class="feedback incorrect" id="feedback4-wrong">
                     <strong>Incorrect.</strong> The determinant of identity matrix is always 1 regardless of size.
                 </div>
-            </div>
             
             <button class="submit-btn" id="submitQuiz">Submit Answers</button>
             <div class="results" id="quizResults"></div>
