@@ -651,8 +651,9 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
-        <h2 style="color: white; border-bottom-color: var(--secondary-color);">Why Our Approach Works</h2>
+<section class="stats-section">
+    <div class="section">
+        <h2 style="color: var(--primary-color); border-bottom-color: var(--accent-color);">Why Our Approach Works</h2>
         
         <div class="stats-container">
             <div class="stat-item">
@@ -675,7 +676,107 @@
                 <div class="stat-label">Student Satisfaction</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    .stats-section {
+        background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+        padding: 4rem 2rem;
+        margin: 2rem 0;
+        border-radius: 12px;
+        color: white;
+    }
+    
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+    }
+    
+    .stat-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255,255,255,0.2);
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--secondary-color);
+    }
+    
+    .stat-label {
+        font-size: 1.1rem;
+        color: white;
+    }
+    
+    @media (max-width: 768px) {
+        .stats-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .stats-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    // Counter Animation
+    function animateCounter(element, target, isDecimal = false, duration = 2000) {
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                if (isDecimal) {
+                    element.textContent = current.toFixed(1);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+                requestAnimationFrame(updateCounter);
+            } else {
+                if (isDecimal) {
+                    element.textContent = target.toFixed(1);
+                } else {
+                    element.textContent = target;
+                }
+            }
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCounter();
+                    observer.unobserve(element);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(element);
+    }
+    
+    // Initialize counters
+    animateCounter(document.getElementById('studentsCount'), 87);
+    animateCounter(document.getElementById('rankersCount'), 3.5, true);
+    animateCounter(document.getElementById('air1Count'), 92);
+    animateCounter(document.getElementById('satisfactionCount'), 4.9, true);
+</script>
 
     <!-- Final CTA -->
     <section id="cta" class="cta-section gradient">
