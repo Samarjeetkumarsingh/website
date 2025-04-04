@@ -956,7 +956,7 @@
                 <div class="testimonial">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel" class="testimonial-img">
+                            <img src="https://github.com/Samarjeetkumarsingh/website/blob/master/assets/images/1659978529404.jpeg" alt="Priya Patel" class="testimonial-img">
                             <div class="testimonial-info">
                                 <h4>Priya Patel</h4>
                                 <p>GATE MT AIR 3 (2021)</p>
