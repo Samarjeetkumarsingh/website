@@ -788,12 +788,12 @@
             
             <div class="intro-card">
                 <h3><i class="fas fa-star"></i> Importance</h3>
-                <p>Qualifying GATE MT opens doors to PSUs like SAIL, NALCO, HCL, and top institutes like IITs, IISc, NITs.</p>
+                <p>Qualifying GATE MT opens doors to PSUs like SAIL, NALCO, IOCL, DRDO, BARC, and top institutes like IITs, IISc, NITs.</p>
             </div>
             
             <div class="intro-card">
                 <h3><i class="fas fa-trophy"></i> Competition</h3>
-                <p>With 10,000+ aspirants each year, strategic preparation is key to securing top ranks.</p>
+                <p>With 3,500+ aspirants each year, strategic preparation is key to securing top ranks.</p>
             </div>
         </div>
     </section>
@@ -880,7 +880,7 @@
                 <div class="step-number">2</div>
                 <div class="step-content">
                     <h3>Collect Study Materials</h3>
-                    <p>Gather standard textbooks, TestUrSelf study materials, previous year papers, and online resources. Focus on quality over quantity.</p>
+                    <p>Gather standard textbooks, TestUrSelf study materials, previous year papers, and Video courses. Focus on quality over quantity.</p>
                 </div>
             </div>
             
@@ -907,7 +907,7 @@
                 <div class="step-number">5</div>
                 <div class="step-content">
                     <h3>Practice & Mock Tests</h3>
-                    <p>Solve previous year papers (at least 10 years) and take regular mock tests under timed conditions. Analyze performance to identify weak areas.</p>
+                    <p>Solve previous year papers (at least 10 years) and take regular mock tests from TestUrSelf under timed conditions. Analyze performance to identify weak areas.</p>
                 </div>
             </div>
             
@@ -933,10 +933,10 @@
                 <div class="testimonial">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="testimonial-img">
+                            <img src="https://drive.google.com/file/d/1grpAixEKbHslcsrrJ2NIWw2snHbN_ira/view?usp=sharing" alt="Rahul Sharma" class="testimonial-img">
                             <div class="testimonial-info">
-                                <h4>Rahul Sharma</h4>
-                                <p>GATE MT AIR 1 (2022)</p>
+                                <h4>Hrutidipan Pradhan</h4>
+                                <p>GATE MT AIR 1 (2024)</p>
                             </div>
                         </div>
                         <div class="testimonial-text">
