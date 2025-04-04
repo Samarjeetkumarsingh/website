@@ -901,7 +901,7 @@
             <div class="results" id="quizResults"></div>
         </section>
     </div>
-
+ </div>
     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
     <footer>
