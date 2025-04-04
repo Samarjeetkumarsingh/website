@@ -7,16 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #6a11cb;
-            --secondary: #2575fc;
-            --accent: #ff3e9d;
-            --text: #2d3748;
-            --light: #f7fafc;
-            --dark: #1a202c;
-            --success: #48bb78;
-            --warning: #ed8936;
-            --danger: #f56565;
-            --code-bg: #282c34;
+            --primary: #1565C0;
+            --secondary: #00897B;
+            --accent: #6A1B9A;
+            --text: #212121;
+            --light: #E3F2FD;
+            --dark: #0D47A1;
+            --highlight: #FFC107;
+            --success: #388E3C;
+            --error: #D32F2F;
         }
 
         * {
@@ -29,14 +28,22 @@
             font-family: 'Montserrat', sans-serif;
             line-height: 1.8;
             color: var(--text);
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #E3F2F 100%);
             background-attachment: fixed;
-            overflow-x: hidden;
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
             position: relative;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
 
         /* Watermark */
-        body::before {
+        body::after {
             content: "TestUrSelf";
             position: fixed;
             top: 50%;
@@ -44,7 +51,7 @@
             transform: translate(-50%, -50%) rotate(-30deg);
             font-size: 120px;
             font-weight: bold;
-            color: rgba(106, 17, 203, 0.08);
+            color: rgba(21, 101, 192, 0.08);
             z-index: -1;
             pointer-events: none;
             white-space: nowrap;
@@ -54,20 +61,22 @@
             text-align: center;
         }
 
-        .container {
+        /* Container with max-width like original */
+        .main-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 20px;
+            position: relative;
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--dark));
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem;
             text-align: center;
-            margin-bottom: 3rem;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             position: relative;
             overflow: hidden;
         }
@@ -75,28 +84,31 @@
         header::after {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
             background: linear-gradient(
                 to bottom right,
-                rgba(255,255,255,0.1) 0%,
-                rgba(255,255,255,0) 50%,
-                rgba(255,255,255,0.1) 100%
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.1) 50%,
+                rgba(255,255,255,0) 100%
             );
-            animation: shine 8s infinite;
+            transform: rotate(30deg);
+            animation: shine 6s infinite;
         }
 
         @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(30deg); }
+            0% {transform: rotate(30deg) translate(-30%, -30%);}
+            100% {transform: rotate(30deg) translate(30%, 30%);}
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 900;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
         }
 
         .subtitle {
@@ -105,297 +117,115 @@
             font-weight: 400;
         }
 
-        .gate-banner {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 1rem;
-            margin: 1.5rem 0;
-            text-align: center;
-            border-left: 5px solid var(--accent);
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-        }
-
-        .gate-banner strong {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
+        /* Table of Contents - Sticky like original */
         .toc-container {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
             position: sticky;
             top: 20px;
             z-index: 10;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ffffff, #f5f5f5);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        .toc-title {
+        .toc-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1.5rem;
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 12px;
+        }
+
+        .toc {
+            padding: 1.5rem;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
         .toc-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
         }
 
         .toc-item {
             margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
         }
 
         .toc-link {
-            color: var(--text);
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            background-color: var(--light);
+            color: var(--dark);
             text-decoration: none;
-            padding: 0.5rem 1rem;
             border-radius: 8px;
-            display: block;
             transition: all 0.3s ease;
-            background: rgba(106, 17, 203, 0.05);
+            font-weight: 500;
             border-left: 4px solid var(--primary);
+            gap: 10px;
         }
 
         .toc-link:hover {
-            background: rgba(106, 17, 203, 0.1);
-            transform: translateX(5px);
+            background-color: rgba(21, 101, 192, 0.1);
+            transform: translateX(8px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
+        /* Section styling - matches original */
         .section {
-            background: white;
-            border-radius: 15px;
+            background-color: white;
+            border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 3rem;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .section:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
         h2 {
             color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+            border-bottom: 4px solid var(--highlight);
+            padding-bottom: 0.8rem;
+            margin-top: 3rem;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, transparent, var(--light), transparent);
+            padding: 1rem 0;
+            text-align: center;
+            border-radius: 8px;
             position: relative;
-            padding-bottom: 0.5rem;
             scroll-margin-top: 120px;
         }
 
         h2::after {
             content: "";
             position: absolute;
-            bottom: 0;
             left: 0;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            border-radius: 2px;
+            right: 0;
+            bottom: -5px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--highlight), transparent);
         }
 
-        h3 {
-            color: var(--secondary);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.5rem;
-        }
+        /* Keep all your other styles for equations, quiz, etc. */
 
-        p {
-            margin-bottom: 1.5rem;
-        }
-
-        .equation {
-            font-family: 'Fira Code', monospace;
-            background: rgba(40, 44, 52, 0.05);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            overflow-x: auto;
-            border-left: 4px solid var(--accent);
-        }
-
-        .equation.large {
-            font-size: 1.2rem;
-            text-align: center;
-        }
-
-        .example {
-            background: rgba(37, 117, 252, 0.05);
-            border-left: 4px solid var(--secondary);
-            padding: 1.5rem;
-            border-radius: 0 10px 10px 0;
-            margin: 1.5rem 0;
-        }
-
-        .example-title {
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .properties {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .property-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--accent);
-            transition: all 0.3s ease;
-        }
-
-        .property-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .property-title {
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        /* Quiz Section */
-        .quiz-section {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(245,247,250,0.9));
-            border-radius: 15px;
-            padding: 2.5rem;
-            margin: 3rem 0;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            border: 2px dashed var(--accent);
-        }
-
-        .quiz-title {
-            color: var(--accent);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-
-        .quiz-question {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--secondary);
-        }
-
-        .question-text {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .options {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.8rem;
-        }
-
-        .option {
-            padding: 0.8rem 1rem;
-            background: rgba(106, 17, 203, 0.05);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-            padding-left: 2.5rem;
-        }
-
-        .option:hover {
-            background: rgba(106, 17, 203, 0.1);
-        }
-
-        .option input {
-            position: absolute;
-            opacity: 0;
-        }
-
-        .option label {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .option label::before {
-            content: "";
-            width: 1.2rem;
-            height: 1.2rem;
-            border: 2px solid var(--secondary);
-            border-radius: 50%;
-            margin-right: 1rem;
-            position: absolute;
-            left: 1rem;
-        }
-
-        .option input:checked + label::before {
-            background: var(--secondary);
-            box-shadow: inset 0 0 0 2px white;
-        }
-
-        .feedback {
-            margin-top: 1rem;
-            padding: 0.8rem;
-            border-radius: 6px;
-            display: none;
-        }
-
-        .correct {
-            background: rgba(72, 187, 120, 0.1);
-            color: var(--success);
-            border-left: 4px solid var(--success);
-        }
-
-        .incorrect {
-            background: rgba(245, 101, 101, 0.1);
-            color: var(--danger);
-            border-left: 4px solid var(--danger);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .results {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-weight: 600;
-            display: none;
-        }
-
+        /* Footer with watermark like original */
         footer {
-            background: linear-gradient(135deg, var(--dark), #2d3748);
+            background: linear-gradient(135deg, var(--dark), #0D47A1);
             color: white;
             text-align: center;
             padding: 3rem 0;
@@ -417,100 +247,60 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-        }
-
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+            .main-container {
+                padding: 10px;
             }
-
-            header {
-                padding: 3rem 1rem;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            body::before {
+            
+            body::after {
                 font-size: 60px;
             }
-
+            
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
             .toc-list {
                 grid-template-columns: 1fr;
             }
-
-            .section {
-                padding: 1.5rem;
+            
+            .toc-container {
+                position: static;
             }
-        }
-
-        /* Animation for section entrance */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section {
-            animation: fadeInUp 0.6s ease-out forwards;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="main-container">
+        <header>
             <h1>Linear Algebra</h1>
             <p class="subtitle">Matrices & Determinants</p>
             <div class="gate-banner">
-                <strong>Join TestUrSelf for your GATE MT & XE Prep</strong> - Master these concepts with our comprehensive study materials and practice tests!
+                <strong>Join TestUrSelf for your GATE MT & XE Prep</strong> - Master these concepts with our comprehensive study materials!
+            </div>
+        </header>
+
+        <div class="toc-container">
+            <div class="toc-header">
+                <i class="fas fa-list-ul"></i>
+                <span>Table of Contents</span>
+            </div>
+            <div class="toc">
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#matrices" class="toc-link"><i class="fas fa-matrix"></i> Matrices</a></li>
+                    <li class="toc-item"><a href="#determinants" class="toc-link"><i class="fas fa-calculator"></i> Determinants</a></li>
+                    <li class="toc-item"><a href="#quiz" class="toc-link"><i class="fas fa-question-circle"></i> Practice Quiz</a></li>
+                </ul>
             </div>
         </div>
-    </header>
 
-    <div class="container">
-        <div class="toc-container">
-            <h2 class="toc-title"><i class="fas fa-list-ul"></i> Table of Contents</h2>
-            <ul class="toc-list">
-                <li class="toc-item"><a href="#matrices" class="toc-link">1. Matrices Fundamentals</a></li>
-                <li class="toc-item"><a href="#operations" class="toc-link">2. Matrix Operations</a></li>
-                <li class="toc-item"><a href="#types" class="toc-link">3. Special Matrix Types</a></li>
-                <li class="toc-item"><a href="#determinants" class="toc-link">4. Determinants</a></li>
-                <li class="toc-item"><a href="#properties" class="toc-link">5. Properties of Determinants</a></li>
-                <li class="toc-item"><a href="#applications" class="toc-link">6. Applications</a></li>
-                <li class="toc-item"><a href="#quiz" class="toc-link">7. Practice Quiz</a></li>
-            </ul>
-        </div>
-
-        <!-- Previous sections remain unchanged (matrices, operations, types, determinants, properties, applications) -->
-        <!-- ... -->
+        <!-- Your content sections here -->
         <section id="matrices" class="section">
+         <section id="matrices" class="section">
             <h2>1. Matrices Fundamentals</h2>
             <p>A matrix is a rectangular array of numbers arranged in rows and columns. Matrices are fundamental objects in linear algebra and have wide applications in mathematics, physics, engineering, and computer science.</p>
             
@@ -663,7 +453,7 @@
         </section>
 
         <section id="determinants" class="section">
-            <h2>4. Determinants</h2>
+     <h2>4. Determinants</h2>
             <p>The determinant is a scalar value that can be computed from a square matrix and encodes important properties of the matrix.</p>
             
             <h3>2×2 Determinant</h3>
@@ -778,10 +568,9 @@
                 $$ \det(A - \lambda I) = 0 $$
             </div>
         </section>
-    </div>
 
-        <section id="quiz" class="quiz-section">
-            <h2 class="quiz-title"><i class="fas fa-question-circle"></i> Practice Quiz</h2>
+        <section id="quiz" class="section">
+          <h2 class="quiz-title"><i class="fas fa-question-circle"></i> Practice Quiz</h2>
             <p>Test your understanding with these GATE-style multiple choice questions:</p>
             
             <div class="quiz-question">
@@ -902,111 +691,16 @@
         </section>
     </div>
  </div>
-    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
     <footer>
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> TestUrSelf | GATE MT & XE Preparation</p>
+        <div class="main-container">
+            <p>&copy; <span id="current-year"></span> TestUrSelf | GATE Preparation</p>
             <p>Master linear algebra and other key topics with our comprehensive study materials!</p>
         </div>
         <div class="footer-watermark">TestUrSelf</div>
     </footer>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script>
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Back to top button
-        const backToTop = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-        
-        backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Smooth scrolling for TOC links
-        document.querySelectorAll('.toc-link').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Quiz functionality
-        const quizForm = document.getElementById('quizForm');
-        const submitBtn = document.getElementById('submitQuiz');
-        const resultsDiv = document.getElementById('quizResults');
-        
-        const correctAnswers = {
-            q1: 'a',
-            q2: 'b',
-            q3: 'b',
-            q4: 'b'
-        };
-        
-        submitBtn.addEventListener('click', () => {
-            let score = 0;
-            const totalQuestions = Object.keys(correctAnswers).length;
-            
-            // Check each question
-            for (const question in correctAnswers) {
-                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-                
-                if (selectedOption) {
-                    // Hide all feedback for this question
-                    document.querySelectorAll(`[id^="feedback${question.slice(1)}"]`).forEach(el => {
-                        el.style.display = 'none';
-                    });
-                    
-                    if (selectedOption.value === correctAnswers[question]) {
-                        score++;
-                        document.getElementById(`feedback${question.slice(1)}`).style.display = 'block';
-                    } else {
-                        document.getElementById(`feedback${question.slice(1)}-wrong`).style.display = 'block';
-                    }
-                }
-            }
-            
-            // Show results
-            resultsDiv.style.display = 'block';
-            resultsDiv.innerHTML = `
-                <p>You scored ${score} out of ${totalQuestions}</p>
-                <p>${score >= totalQuestions/2 ? 'Great job!' : 'Keep practicing!'} For more practice questions, join <strong>TestUrSelf</strong> GATE prep program!</p>
-            `;
-            
-            // Scroll to results
-            resultsDiv.scrollIntoView({ behavior: 'smooth' });
-        });
-        
-        // Animation for sections when they come into view
-        const sections = document.querySelectorAll('.section');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        sections.forEach(section => {
-            section.style.opacity = 0;
-            observer.observe(section);
-        });
-    </script>
+    <!-- Your scripts -->
 </body>
 </html>
