@@ -16,24 +16,29 @@
             --mark-2: #ff7b54;
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--light-bg);
             color: var(--text-dark);
-            margin: 0;
-            padding: 0;
             min-height: 100vh;
             position: relative;
+            line-height: 1.6;
         }
 
-        /* Prominent Watermark */
+        /* Responsive Watermark */
         body::before {
             content: 'TestUrSelf';
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-15deg);
-            font-size: 25vw;
+            font-size: 20vw;
             font-weight: 900;
             color: rgba(21, 52, 117, 0.08);
             z-index: 0;
@@ -43,17 +48,18 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 100%;
+            width: 100%;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem;
             position: relative;
             z-index: 1;
         }
 
         header {
             text-align: center;
-            margin-bottom: 2rem;
-            padding: 2rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
             border-radius: 10px;
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
             color: white;
@@ -69,7 +75,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-15deg);
-            font-size: 10rem;
+            font-size: 8rem;
             font-weight: 900;
             color: rgba(255,255,255,0.1);
             z-index: -1;
@@ -77,39 +83,45 @@
         }
 
         .logo {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             margin: 0.5rem 0;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
         }
 
         .stats-bar {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             background: white;
-            padding: 1rem;
+            padding: 0.8rem;
             border-radius: 10px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
+            gap: 0.5rem;
         }
 
         .stat {
             display: flex;
             align-items: center;
             font-weight: 600;
+            padding: 0.3rem 0;
+            flex: 1;
+            min-width: 120px;
+            justify-content: center;
         }
 
         .correct-stat { color: var(--primary-green); }
@@ -119,8 +131,8 @@
         .quiz-section {
             background-color: var(--card-bg);
             border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             position: relative;
             overflow: hidden;
@@ -128,7 +140,7 @@
         }
 
         .quiz-section:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 6px 16px rgba(0,0,0,0.12);
         }
 
@@ -139,7 +151,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-15deg);
-            font-size: 8rem;
+            font-size: 6rem;
             font-weight: 900;
             color: rgba(21, 52, 117, 0.05);
             z-index: 0;
@@ -156,13 +168,14 @@
             align-items: center;
             position: relative;
             z-index: 1;
+            font-size: 1.5rem;
         }
 
         .question {
             background-color: white;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             position: relative;
             overflow: hidden;
@@ -176,7 +189,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-15deg);
-            font-size: 5rem;
+            font-size: 4rem;
             font-weight: 900;
             color: rgba(21, 52, 117, 0.08);
             z-index: -1;
@@ -190,15 +203,17 @@
 
         .question-header {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
+            gap: 0.5rem;
         }
 
         .question-number {
             font-weight: 700;
             color: var(--primary-blue);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .question-marks {
@@ -233,7 +248,7 @@
         .option {
             display: block;
             margin: 0.8rem 0;
-            padding: 1rem;
+            padding: 0.8rem;
             background-color: white;
             border-radius: 8px;
             cursor: pointer;
@@ -245,7 +260,7 @@
 
         .option:hover {
             border-color: var(--primary-blue);
-            transform: translateX(5px);
+            transform: translateX(3px);
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
@@ -254,8 +269,8 @@
             top: 50%;
             left: 1rem;
             transform: translateY(-50%);
-            height: 22px;
-            width: 22px;
+            height: 20px;
+            width: 20px;
             border: 2px solid #adb5bd;
             border-radius: 50%;
             transition: all 0.2s;
@@ -273,7 +288,7 @@
         input:checked ~ .checkmark::after {
             content: '';
             position: absolute;
-            left: 6px;
+            left: 5px;
             top: 2px;
             width: 5px;
             height: 10px;
@@ -296,7 +311,8 @@
 
         /* For NAT questions */
         .nat-input {
-            width: 100px;
+            width: 100%;
+            max-width: 200px;
             padding: 0.8rem;
             border: 1px solid #dee2e6;
             border-radius: 8px;
@@ -317,7 +333,7 @@
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
             color: white;
             border: none;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             font-size: 1rem;
             font-weight: 600;
             border-radius: 8px;
@@ -353,7 +369,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 900;
             color: rgba(255,255,255,0.2);
             pointer-events: none;
@@ -388,20 +404,24 @@
         .navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             position: relative;
             z-index: 2;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .nav-btn {
             background-color: white;
             color: var(--primary-blue);
             border: 2px solid var(--primary-blue);
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s;
             font-weight: 600;
+            flex: 1;
+            min-width: 150px;
         }
 
         .nav-btn:hover {
@@ -412,8 +432,8 @@
             width: 100%;
             background-color: #e9ecef;
             border-radius: 10px;
-            margin: 1.5rem 0;
-            height: 10px;
+            margin: 1rem 0;
+            height: 8px;
             overflow: hidden;
             position: relative;
             z-index: 2;
@@ -449,7 +469,7 @@
 
         footer {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 2rem;
             padding-top: 1.5rem;
             border-top: 1px solid #dee2e6;
             color: var(--text-light);
@@ -482,40 +502,99 @@
             animation: floatUp 1s forwards;
         }
 
-        @media (max-width: 768px) {
+        /* Matrix styling */
+        .matrix {
+            display: inline-block;
+            margin-left: 0.5rem;
+            border-collapse: collapse;
+        }
+
+        .matrix td {
+            padding: 0.3rem 0.5rem;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
             .container {
-                padding: 1rem;
-            }
-            
-            body::before {
-                font-size: 20vw;
+                max-width: 900px;
+                padding: 2rem;
             }
             
             header {
-                padding: 1.5rem;
+                padding: 2rem;
+                margin-bottom: 2rem;
             }
             
-            header::after {
-                font-size: 5rem;
+            .logo {
+                font-size: 2.5rem;
             }
             
-            .quiz-section::after {
-                font-size: 4rem;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            .question::before {
-                font-size: 3rem;
+            .subtitle {
+                font-size: 1.1rem;
             }
             
             .stats-bar {
-                flex-direction: column;
-                gap: 0.8rem;
+                padding: 1rem;
             }
             
-            .question-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
+            .quiz-section {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .question {
+                padding: 1.5rem;
+            }
+            
+            .testurself-action {
+                padding: 1rem 2rem;
+            }
+            
+            .nav-btn {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .progress-container {
+                height: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body::before {
+                font-size: 15vw;
+            }
+            
+            header::after {
+                font-size: 4rem;
+            }
+            
+            .quiz-section::after {
+                font-size: 3rem;
+            }
+            
+            .question::before {
+                font-size: 2.5rem;
+            }
+            
+            .option {
+                padding: 0.7rem;
+                padding-left: 2.5rem;
+            }
+            
+            .checkmark {
+                height: 18px;
+                width: 18px;
+                left: 0.8rem;
             }
         }
     </style>
