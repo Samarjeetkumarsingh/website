@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +7,17 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -16,11 +26,16 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #3b82f6;
             --secondary: #1e3a8a;
             --accent: #f59e0b;
+            --text: #1f2937;
+            --bg: #f9fafb;
         }
         
         .dark {
@@ -33,14 +48,9 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
-            color: #111827;
-            transition: all 0.3s ease;
-        }
-        
-        body.dark {
             background-color: var(--bg);
             color: var(--text);
+            transition: all 0.3s ease;
         }
         
         .parallax {
@@ -100,6 +110,38 @@
             50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
+        
+        /* Testimonial slider */
+        .testimonial-slider {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 1rem;
+        }
+        
+        /* Hero section overlay */
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Section spacing */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 0;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -110,53 +152,62 @@
     
     <!-- Navigation -->
     <nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-40 transition-all duration-300">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400 flex items-center">
                 <i class="fas fa-graduation-cap mr-2"></i> TestUrSelf
             </a>
             
-            <div class="hidden md:flex space-x-8">
+            <div class="hidden md:flex space-x-6 lg:space-x-8">
                 <a href="#introduction" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Introduction</a>
                 <a href="#preparation" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Preparation Guide</a>
                 <a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Testimonials</a>
-                <a href="#why-us" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Why TestUrSelf</a>
+                <a href="#why-us" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Why Us</a>
                 <a href="#resources" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Resources</a>
             </div>
             
-            <button class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none">
+            <button class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none" id="mobileMenuButton">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white dark:bg-gray-800 px-4 py-2" id="mobileMenu">
+            <a href="#introduction" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Introduction</a>
+            <a href="#preparation" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Preparation Guide</a>
+            <a href="#testimonials" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Testimonials</a>
+            <a href="#why-us" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Why Us</a>
+            <a href="#resources" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Resources</a>
         </div>
     </nav>
     
     <!-- Hero Section with Parallax -->
-    <section class="parallax bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] py-32 relative">
-        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 fade-in">Master GATE Metallurgical Engineering</h1>
+    <section class="parallax bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] py-20 md:py-32 relative">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 fade-in">Master GATE Metallurgical Engineering</h1>
             <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto fade-in">The Complete Guide to Crack GATE MT with Top Ranks</p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
-                <a href="#join-now" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition transform hover:scale-105">
+                <a href="#join-now" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105">
                     Join TestUrSelf Now
                 </a>
-                <a href="#download" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition transform hover:scale-105">
+                <a href="#download" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105">
                     Download Free Material
                 </a>
             </div>
             
             <div class="mt-16 flex justify-center fade-in">
-                <div class="animate-bounce text-white text-2xl">
+                <a href="#introduction" class="animate-bounce text-white text-2xl">
                     <i class="fas fa-chevron-down"></i>
-                </div>
+                </a>
             </div>
         </div>
     </section>
     
     <!-- Introduction Section -->
-    <section id="introduction" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
+    <section id="introduction" class="section bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">What is GATE Metallurgical Engineering?</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
@@ -164,7 +215,7 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
                     <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
                         <i class="fas fa-bullseye"></i>
@@ -199,9 +250,9 @@
     </section>
     
     <!-- Preparation Guide Section -->
-    <section id="preparation" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
+    <section id="preparation" class="section bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Step-by-Step Preparation Guide</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
@@ -210,9 +261,9 @@
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <div class="progress-tracker space-y-10">
+                <div class="progress-tracker space-y-8 md:space-y-10">
                     <!-- Step 1 -->
-                    <div class="flex gap-6 fade-in">
+                    <div class="flex gap-4 md:gap-6 fade-in">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
                             <span>1</span>
                         </div>
@@ -225,7 +276,7 @@
                     </div>
                     
                     <!-- Step 2 -->
-                    <div class="flex gap-6 fade-in">
+                    <div class="flex gap-4 md:gap-6 fade-in">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
                             <span>2</span>
                         </div>
@@ -238,7 +289,7 @@
                     </div>
                     
                     <!-- Step 3 -->
-                    <div class="flex gap-6 fade-in">
+                    <div class="flex gap-4 md:gap-6 fade-in">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
                             <span>3</span>
                         </div>
@@ -251,7 +302,7 @@
                     </div>
                     
                     <!-- Step 4 -->
-                    <div class="flex gap-6 fade-in">
+                    <div class="flex gap-4 md:gap-6 fade-in">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
                             <span>4</span>
                         </div>
@@ -264,7 +315,7 @@
                     </div>
                     
                     <!-- Step 5 -->
-                    <div class="flex gap-6 fade-in">
+                    <div class="flex gap-4 md:gap-6 fade-in">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
                             <span>5</span>
                         </div>
@@ -277,7 +328,7 @@
                     </div>
                     
                     <!-- Step 6 -->
-                    <div class="flex gap-6 fade-in">
+                    <div class="flex gap-4 md:gap-6 fade-in">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
                             <span>6</span>
                         </div>
@@ -294,14 +345,14 @@
     </section>
     
     <!-- Key Topics Section with Floating Elements -->
-    <section class="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+    <section class="section bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
         <!-- Floating elements -->
-        <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-blue-200 opacity-20 floating"></div>
-        <div class="absolute bottom-1/4 right-20 w-24 h-24 rounded-full bg-orange-200 opacity-20 floating" style="animation-delay: 1s;"></div>
-        <div class="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-purple-200 opacity-20 floating" style="animation-delay: 2s;"></div>
+        <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-blue-200 opacity-20 floating hidden md:block"></div>
+        <div class="absolute bottom-1/4 right-20 w-24 h-24 rounded-full bg-orange-200 opacity-20 floating hidden md:block" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-purple-200 opacity-20 floating hidden md:block" style="animation-delay: 2s;"></div>
         
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 fade-in">
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Key Topics in GATE Metallurgy</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
@@ -440,9 +491,9 @@
     </section>
     
     <!-- Video Resources Section -->
-    <section class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
+    <section class="section bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Video Learning Resources</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
@@ -450,10 +501,10 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="rounded-xl overflow-hidden shadow-lg fade-in card-hover">
                     <div class="relative pt-[56.25%] bg-gray-200 dark:bg-gray-700">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="p-6 bg-white dark:bg-gray-800">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Phase Diagrams Explained</h3>
@@ -463,7 +514,7 @@
                 
                 <div class="rounded-xl overflow-hidden shadow-lg fade-in card-hover">
                     <div class="relative pt-[56.25%] bg-gray-200 dark:bg-gray-700">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="p-6 bg-white dark:bg-gray-800">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Heat Treatment Processes</h3>
@@ -473,7 +524,7 @@
                 
                 <div class="rounded-xl overflow-hidden shadow-lg fade-in card-hover">
                     <div class="relative pt-[56.25%] bg-gray-200 dark:bg-gray-700">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="p-6 bg-white dark:bg-gray-800">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">GATE Strategy & Tips</h3>
@@ -491,9 +542,9 @@
     </section>
     
     <!-- Testimonials Section with Slider -->
-    <section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
+    <section id="testimonials" class="section bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Success Stories</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
@@ -501,16 +552,16 @@
                 </p>
             </div>
             
-            <div class="max-w-4xl mx-auto relative">
+            <div class="max-w-4xl mx-auto relative fade-in">
                 <!-- Testimonial Slider -->
-                <div class="testimonial-slider overflow-hidden">
-                    <div class="flex transition-transform duration-300 ease-in-out">
+                <div class="testimonial-slider">
+                    <div class="slider-track" id="sliderTrack">
                         <!-- Testimonial 1 -->
-                        <div class="min-w-full px-4">
-                            <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg">
-                                <div class="flex items-center mb-6">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="w-16 h-16 rounded-full object-cover mr-4 border-4 border-blue-100 dark:border-blue-900">
-                                    <div>
+                        <div class="testimonial-slide">
+                            <div class="bg-white dark:bg-gray-700 p-6 md:p-8 rounded-xl shadow-lg">
+                                <div class="flex flex-col md:flex-row items-center mb-6">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="w-16 h-16 rounded-full object-cover mb-4 md:mb-0 md:mr-4 border-4 border-blue-100 dark:border-blue-900">
+                                    <div class="text-center md:text-left">
                                         <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Rahul Sharma</h4>
                                         <p class="text-blue-600 dark:text-blue-400">GATE MT AIR 1 (2022)</p>
                                     </div>
@@ -518,7 +569,7 @@
                                 <p class="text-gray-600 dark:text-gray-300 italic">
                                     "TestUrSelf's test series was instrumental in my GATE preparation. The questions were so similar to actual GATE that I felt completely prepared. The mentorship from IIT professors helped me clear my concepts thoroughly."
                                 </p>
-                                <div class="mt-4 flex text-yellow-400">
+                                <div class="mt-4 flex justify-center md:justify-start text-yellow-400">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -529,11 +580,11 @@
                         </div>
                         
                         <!-- Testimonial 2 -->
-                        <div class="min-w-full px-4">
-                            <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg">
-                                <div class="flex items-center mb-6">
-                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel" class="w-16 h-16 rounded-full object-cover mr-4 border-4 border-blue-100 dark:border-blue-900">
-                                    <div>
+                        <div class="testimonial-slide">
+                            <div class="bg-white dark:bg-gray-700 p-6 md:p-8 rounded-xl shadow-lg">
+                                <div class="flex flex-col md:flex-row items-center mb-6">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel" class="w-16 h-16 rounded-full object-cover mb-4 md:mb-0 md:mr-4 border-4 border-blue-100 dark:border-blue-900">
+                                    <div class="text-center md:text-left">
                                         <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Priya Patel</h4>
                                         <p class="text-blue-600 dark:text-blue-400">GATE MT AIR 3 (2021)</p>
                                     </div>
@@ -541,7 +592,7 @@
                                 <p class="text-gray-600 dark:text-gray-300 italic">
                                     "The study material from TestUrSelf covered everything in the syllabus with perfect depth. The regular doubt-solving sessions ensured I never got stuck on any topic. I recommend TestUrSelf to every GATE Metallurgy aspirant."
                                 </p>
-                                <div class="mt-4 flex text-yellow-400">
+                                <div class="mt-4 flex justify-center md:justify-start text-yellow-400">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -552,11 +603,11 @@
                         </div>
                         
                         <!-- Testimonial 3 -->
-                        <div class="min-w-full px-4">
-                            <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg">
-                                <div class="flex items-center mb-6">
-                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Amit Kumar" class="w-16 h-16 rounded-full object-cover mr-4 border-4 border-blue-100 dark:border-blue-900">
-                                    <div>
+                        <div class="testimonial-slide">
+                            <div class="bg-white dark:bg-gray-700 p-6 md:p-8 rounded-xl shadow-lg">
+                                <div class="flex flex-col md:flex-row items-center mb-6">
+                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Amit Kumar" class="w-16 h-16 rounded-full object-cover mb-4 md:mb-0 md:mr-4 border-4 border-blue-100 dark:border-blue-900">
+                                    <div class="text-center md:text-left">
                                         <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Amit Kumar</h4>
                                         <p class="text-blue-600 dark:text-blue-400">GATE MT AIR 7 (2023)</p>
                                     </div>
@@ -564,7 +615,7 @@
                                 <p class="text-gray-600 dark:text-gray-300 italic">
                                     "What sets TestUrSelf apart is their focus on Metallurgy specifically. The faculty understands exactly what's important for GATE. Their test series had several questions that appeared verbatim in my GATE paper!"
                                 </p>
-                                <div class="mt-4 flex text-yellow-400">
+                                <div class="mt-4 flex justify-center md:justify-start text-yellow-400">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -577,27 +628,27 @@
                 </div>
                 
                 <!-- Slider Controls -->
-                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-700 w-10 h-10 rounded-full shadow-md flex items-center justify-center text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-600 transition">
+                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-700 w-10 h-10 rounded-full shadow-md flex items-center justify-center text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-600 transition hidden md:flex" id="prevBtn">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-700 w-10 h-10 rounded-full shadow-md flex items-center justify-center text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-600 transition">
+                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-700 w-10 h-10 rounded-full shadow-md flex items-center justify-center text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-600 transition hidden md:flex" id="nextBtn">
                     <i class="fas fa-chevron-right"></i>
                 </button>
                 
                 <!-- Slider Indicators -->
-                <div class="flex justify-center mt-6 space-x-2">
-                    <button class="w-3 h-3 rounded-full bg-blue-600 dark:bg-blue-400"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600"></button>
+                <div class="flex justify-center mt-6 space-x-2" id="sliderIndicators">
+                    <button class="w-3 h-3 rounded-full bg-blue-600 dark:bg-blue-400 slider-indicator"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 slider-indicator"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 slider-indicator"></button>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Why TestUrSelf Section -->
-    <section id="why-us" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
+    <section id="why-us" class="section bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Why TestUrSelf for GATE Metallurgy?</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
@@ -605,8 +656,8 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover fade-in">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
                     <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
                         <i class="fas fa-book"></i>
                     </div>
@@ -616,7 +667,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
                     <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
                         <i class="fas fa-trophy"></i>
                     </div>
@@ -626,7 +677,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
                     <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
                         <i class="fas fa-medal"></i>
                     </div>
@@ -636,7 +687,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
                     <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
@@ -646,7 +697,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
                     <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
@@ -656,7 +707,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
                     <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -670,45 +721,45 @@
     </section>
     
     <!-- Stats Section -->
-    <section class="py-20 bg-blue-600 text-white">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 text-center">
+    <section class="py-16 md:py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
                 <div class="fade-in">
-                    <div class="text-4xl md:text-5xl font-bold mb-2 counter" data-target="1500">0</div>
-                    <div class="text-xl">Students Enrolled</div>
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 counter" data-target="1500">0</div>
+                    <div class="text-lg md:text-xl">Students Enrolled</div>
                 </div>
                 
                 <div class="fade-in">
-                    <div class="text-4xl md:text-5xl font-bold mb-2 counter" data-target="32">0</div>
-                    <div class="text-xl">Top 100 Rankers</div>
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 counter" data-target="32">0</div>
+                    <div class="text-lg md:text-xl">Top 100 Rankers</div>
                 </div>
                 
                 <div class="fade-in">
-                    <div class="text-4xl md:text-5xl font-bold mb-2 counter" data-target="4">0</div>
-                    <div class="text-xl">AIR 1 Produced</div>
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 counter" data-target="4">0</div>
+                    <div class="text-lg md:text-xl">AIR 1 Produced</div>
                 </div>
                 
                 <div class="fade-in">
-                    <div class="text-4xl md:text-5xl font-bold mb-2 counter" data-target="98">0</div>
-                    <div class="text-xl">% Satisfaction Rate</div>
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 counter" data-target="98">0</div>
+                    <div class="text-lg md:text-xl">% Satisfaction Rate</div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- CTA Section -->
-    <section id="join-now" class="py-20 bg-gray-900 text-white">
-        <div class="container mx-auto px-6 text-center">
+    <section id="join-now" class="py-16 md:py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Ready to Start Your GATE Metallurgy Journey?</h2>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 fade-in">
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 fade-in">
                 Join India's most trusted GATE Metallurgy preparation platform and get closer to your dream rank
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
-                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition transform hover:scale-105 text-lg">
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105 text-lg">
                     <i class="fas fa-rocket mr-2"></i> Enroll Now
                 </a>
-                <a href="#" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-4 px-8 rounded-lg transition transform hover:scale-105 text-lg">
+                <a href="#" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105 text-lg">
                     <i class="fas fa-phone-alt mr-2"></i> Talk to an Expert
                 </a>
             </div>
@@ -716,9 +767,9 @@
     </section>
     
     <!-- Free Resources Section -->
-    <section id="download" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
+    <section id="download" class="section bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Free GATE Metallurgy Resources</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
@@ -726,7 +777,7 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
                     <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-400 text-6xl">
                         <i class="fas fa-file-pdf"></i>
@@ -770,9 +821,9 @@
     </section>
     
     <!-- FAQ Section -->
-    <section class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
+    <section class="section bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Frequently Asked Questions</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
@@ -782,11 +833,11 @@
             
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <span class="text-lg font-medium text-gray-800 dark:text-white">When should I start preparing for GATE Metallurgy?</span>
                         <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
                     </button>
-                    <div class="faq-answer hidden p-6 bg-white dark:bg-gray-700">
+                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
                         <p class="text-gray-600 dark:text-gray-300">
                             Ideally, you should start your preparation 6-8 months before the exam. However, if you're targeting top ranks (AIR < 100), we recommend a 10-12 month preparation period with at least 4-5 hours of daily study.
                         </p>
@@ -794,11 +845,11 @@
                 </div>
                 
                 <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <span class="text-lg font-medium text-gray-800 dark:text-white">What's more important - concepts or practice?</span>
                         <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
                     </button>
-                    <div class="faq-answer hidden p-6 bg-white dark:bg-gray-700">
+                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
                         <p class="text-gray-600 dark:text-gray-300">
                             Both are equally important. First build strong conceptual understanding (especially for Physical Metallurgy, Thermodynamics), then practice extensively (especially for Manufacturing, Mechanical Metallurgy). Our program balances both with concept lectures followed by practice sessions.
                         </p>
@@ -806,11 +857,11 @@
                 </div>
                 
                 <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <span class="text-lg font-medium text-gray-800 dark:text-white">How many mock tests should I take?</span>
                         <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
                     </button>
-                    <div class="faq-answer hidden p-6 bg-white dark:bg-gray-700">
+                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
                         <p class="text-gray-600 dark:text-gray-300">
                             Minimum 15-20 full-length mock tests in the last 3 months before GATE. Our test series includes 25+ mocks with progressive difficulty levels. Analyze each test thoroughly to identify weak areas.
                         </p>
@@ -818,11 +869,11 @@
                 </div>
                 
                 <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <span class="text-lg font-medium text-gray-800 dark:text-white">Is coaching necessary for GATE Metallurgy?</span>
                         <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
                     </button>
-                    <div class="faq-answer hidden p-6 bg-white dark:bg-gray-700">
+                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
                         <p class="text-gray-600 dark:text-gray-300">
                             While self-study is possible, structured guidance significantly improves your chances of top ranks. Our data shows 92% of top 100 rankers had some form of coaching. TestUrSelf's program provides the right direction, saves time, and ensures you cover all important topics.
                         </p>
@@ -830,11 +881,11 @@
                 </div>
                 
                 <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <span class="text-lg font-medium text-gray-800 dark:text-white">How does TestUrSelf compare to other platforms?</span>
                         <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
                     </button>
-                    <div class="faq-answer hidden p-6 bg-white dark:bg-gray-700">
+                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
                         <p class="text-gray-600 dark:text-gray-300">
                             TestUrSelf is the only platform exclusively focused on GATE Metallurgy with IIT/IISc faculty. Our content depth, test quality, and mentorship are unmatched. The results speak for themselves - we've produced AIR 1 every year since 2019 and have 3x more top 100 rankers than any other platform.
                         </p>
@@ -846,17 +897,17 @@
     
     <!-- Final CTA -->
     <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div class="container mx-auto px-6 text-center">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Start Your GATE Metallurgy Preparation Today!</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto fade-in">
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto fade-in">
                 Join thousands of successful Metallurgy aspirants who trusted TestUrSelf for their GATE journey
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
-                <a href="#" class="bg-white hover:bg-gray-100 text-blue-600 font-semibold py-4 px-8 rounded-lg transition transform hover:scale-105 text-lg">
+                <a href="#" class="bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105 text-lg">
                     <i class="fas fa-user-graduate mr-2"></i> Enroll Now
                 </a>
-                <a href="#" class="bg-transparent hover:bg-blue-700 border-2 border-white text-white font-semibold py-4 px-8 rounded-lg transition transform hover:scale-105 text-lg">
+                <a href="#" class="bg-transparent hover:bg-blue-700 border-2 border-white text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105 text-lg">
                     <i class="fas fa-calendar-alt mr-2"></i> Free Demo Class
                 </a>
             </div>
@@ -865,7 +916,7 @@
     
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-4 sm:px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-semibold text-white mb-4">TestUrSelf</h3>
@@ -961,6 +1012,14 @@
             }
         });
         
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
         // Scroll animations
         const fadeElements = document.querySelectorAll('.fade-in');
         
@@ -1047,12 +1106,21 @@
         
         // Testimonial slider
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.testimonial-slider .min-w-full');
+        const slides = document.querySelectorAll('.testimonial-slide');
         const totalSlides = slides.length;
-        const sliderTrack = document.querySelector('.testimonial-slider .flex');
-        const indicators = document.querySelectorAll('.testimonial-slider .w-3');
+        const sliderTrack = document.getElementById('sliderTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.querySelectorAll('.slider-indicator');
         
         function goToSlide(index) {
+            // Ensure index stays within bounds
+            if (index < 0) {
+                index = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                index = 0;
+            }
+            
             sliderTrack.style.transform = `translateX(-${index * 100}%)`;
             currentSlide = index;
             
@@ -1069,16 +1137,18 @@
         }
         
         // Next slide
-        document.querySelector('.testimonial-slider button:last-of-type').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            goToSlide(currentSlide);
-        });
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                goToSlide(currentSlide + 1);
+            });
+        }
         
         // Previous slide
-        document.querySelector('.testimonial-slider button:first-of-type').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            goToSlide(currentSlide);
-        });
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                goToSlide(currentSlide - 1);
+            });
+        }
         
         // Indicator clicks
         indicators.forEach((indicator, index) => {
@@ -1089,9 +1159,20 @@
         
         // Auto slide change
         setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            goToSlide(currentSlide);
+            goToSlide(currentSlide + 1);
         }, 5000);
+        
+        // Initialize slider
+        function initSlider() {
+            sliderTrack.style.width = `${totalSlides * 100}%`;
+            slides.forEach(slide => {
+                slide.style.width = `${100 / totalSlides}%`;
+            });
+            goToSlide(0);
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', initSlider);
     </script>
 </body>
 </html>
