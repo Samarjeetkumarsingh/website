@@ -336,24 +336,88 @@
             font-family: 'Roboto', sans-serif;
         }
         
-        /* Interactive elements */
-        .copy-btn {
-            background-color: var(--light-color);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            font-size: 0.8rem;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        /* Table of Contents */
+        .toc {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
         }
         
-        .copy-btn:hover {
-            background-color: var(--secondary-color);
-            color: white;
+        .toc h2 {
+            text-align: left;
+            padding-left: 0;
+            background: none;
+            border-bottom: 2px solid var(--highlight-color);
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+        
+        .toc li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .toc li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .toc a {
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        /* Introduction section */
+        .intro {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .intro p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* Example styling */
+        .example {
+            background-color: #f0f8ff;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .example-title i {
+            font-size: 1.1rem;
         }
         
         /* Responsive adjustments */
@@ -396,6 +460,11 @@
             body::after {
                 font-size: 80px;
             }
+            
+            .toc, .intro {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -431,7 +500,9 @@
     
     <nav>
         <div class="nav-container">
-            <a href="#binary-iso" class="nav-link active">Binary Isomorphous</a>
+            <a href="#introduction" class="nav-link active">Introduction</a>
+            <a href="#toc" class="nav-link">Table of Contents</a>
+            <a href="#binary-iso" class="nav-link">Binary Isomorphous</a>
             <a href="#volume-fractions" class="nav-link">Volume Fractions</a>
             <a href="#eutectic" class="nav-link">Eutectic System</a>
             <a href="#fec" class="nav-link">Fe-C System</a>
@@ -440,6 +511,26 @@
     </nav>
     
     <div class="container">
+        <section id="introduction" class="intro">
+            <h2>Introduction to Phase Diagrams</h2>
+            <p>Phase diagrams are graphical representations of the physical states of a substance under different conditions of temperature and pressure. They are essential tools in materials science and engineering, providing valuable information about phase stability, phase transformations, and the equilibrium conditions between different phases.</p>
+            
+            <p>This reference guide covers the fundamental equations used to analyze binary phase diagrams, including isomorphous systems, eutectic systems, and the important iron-carbon system. Each equation is accompanied by a clear explanation and practical examples to help you understand and apply these concepts in your studies and research.</p>
+            
+            <p>The equations presented here are particularly relevant for students preparing for competitive exams like GATE in Materials Science and Metallurgical Engineering, as well as for professionals working in materials characterization and development.</p>
+        </section>
+        
+        <section id="toc" class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#binary-iso">Binary Isomorphous System</a></li>
+                <li><a href="#volume-fractions">Volume Fractions Calculations</a></li>
+                <li><a href="#eutectic">Binary Eutectic System</a></li>
+                <li><a href="#fec">Fe-C Alloy System</a></li>
+                <li><a href="#thermo">Thermodynamic Principles</a></li>
+            </ul>
+        </section>
+        
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search equations...">
         </div>
@@ -449,20 +540,30 @@
             
             <div class="equation-card iso">
                 <div class="equation">$W_L = \frac{C_a - C_0}{C_a - C_L}$</div>
-                <p class="equation-desc">Mass fraction of liquid phase in a binary isomorphous system</p>
+                <p class="equation-desc">The lever rule equation for calculating the mass fraction of liquid phase (W<sub>L</sub>) in a binary isomorphous system at a given temperature. Here, C<sub>a</sub> is the composition of the α phase, C<sub>0</sub> is the overall composition, and C<sub>L</sub> is the composition of the liquid phase.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Example Calculation</div>
+                    <p>For a Cu-Ni alloy with overall composition C<sub>0</sub> = 45 wt% Ni, at a temperature where the liquid composition C<sub>L</sub> = 32 wt% Ni and solid composition C<sub>a</sub> = 53 wt% Ni:</p>
+                    <p>$W_L = \frac{53 - 45}{53 - 32} = \frac{8}{21} ≈ 0.38$ or 38% liquid</p>
+                    <p>$W_a = 1 - W_L = 62%$ solid</p>
+                </div>
+                
                 <span class="category-tag tag-iso">Binary Isomorphous</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_L = \\frac{C_a - C_0}{C_a - C_L}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card iso">
                 <div class="equation">$W_a = \frac{C_0 - C_L}{C_a - C_L}$</div>
-                <p class="equation-desc">Mass fraction of $\alpha$ solid-solution phase in a binary isomorphous system</p>
+                <p class="equation-desc">Mass fraction of α solid-solution phase (W<sub>a</sub>) in a binary isomorphous system. This is the complementary equation to the liquid fraction calculation, using the same composition parameters.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Example Application</div>
+                    <p>For a 60 wt% Cu-40 wt% Ni alloy at 1300°C, where the phase compositions are C<sub>L</sub> = 35 wt% Ni and C<sub>a</sub> = 46 wt% Ni:</p>
+                    <p>$W_a = \frac{40 - 35}{46 - 35} = \frac{5}{11} ≈ 0.45$ or 45% solid</p>
+                    <p>This means 45% of the alloy is solid solution and 55% remains liquid at this temperature.</p>
+                </div>
+                
                 <span class="category-tag tag-iso">Binary Isomorphous</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_a = \\frac{C_0 - C_L}{C_a - C_L}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
         </section>
         
@@ -471,29 +572,44 @@
             
             <div class="equation-card vol">
                 <div class="equation">$V_a = \frac{V_a}{V_a + V_\beta}$</div>
-                <p class="equation-desc">Volume fraction of $\alpha$ phase</p>
+                <p class="equation-desc">Basic definition of volume fraction of α phase (V<sub>a</sub>), where V<sub>a</sub> is the volume of α phase and V<sub>β</sub> is the volume of β phase.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Practical Measurement</div>
+                    <p>If microscopic analysis reveals that in a given microstructure, the α phase occupies 12 μm<sup>3</sup> and the β phase occupies 18 μm<sup>3</sup>:</p>
+                    <p>$V_a = \frac{12}{12 + 18} = 0.4$ or 40%</p>
+                    <p>This means 40% of the total volume is α phase and 60% is β phase.</p>
+                </div>
+                
                 <span class="category-tag tag-vol">Volume Fractions</span>
-                <button class="copy-btn" onclick="copyToClipboard('V_a = \\frac{V_a}{V_a + V_\\beta}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card vol">
-                <div class="equation">$V_a = \frac{\rho_a}{\rho_a + \rho_\beta}$</div>
-                <p class="equation-desc">Conversion of mass fraction to volume fraction for $\alpha$ phase</p>
+                <div class="equation">$V_a = \frac{\frac{W_a}{\rho_a}}{\frac{W_a}{\rho_a} + \frac{W_\beta}{\rho_\beta}}$</div>
+                <p class="equation-desc">Conversion of mass fraction to volume fraction for α phase, where W<sub>a</sub> and W<sub>β</sub> are mass fractions, and ρ<sub>a</sub> and ρ<sub>β</sub> are densities of the respective phases.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Density Conversion</div>
+                    <p>For an alloy with W<sub>a</sub> = 0.3 (30% α phase) with ρ<sub>a</sub> = 8.9 g/cm<sup>3</sup> and W<sub>β</sub> = 0.7 (70% β phase) with ρ<sub>β</sub> = 7.2 g/cm<sup>3</sup>:</p>
+                    <p>$V_a = \frac{\frac{0.3}{8.9}}{\frac{0.3}{8.9} + \frac{0.7}{7.2}} = \frac{0.0337}{0.0337 + 0.0972} ≈ 0.257$ or 25.7%</p>
+                    <p>Despite having 30% by mass, the α phase occupies only about 25.7% by volume due to its higher density.</p>
+                </div>
+                
                 <span class="category-tag tag-vol">Volume Fractions</span>
-                <button class="copy-btn" onclick="copyToClipboard('V_a = \\frac{\\rho_a}{\\rho_a + \\rho_\\beta}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card vol">
                 <div class="equation">$W_a = \frac{V_a \rho_a}{V_a \rho_a + V_\beta \rho_\beta}$</div>
-                <p class="equation-desc">Conversion of volume fraction to mass fraction for $\alpha$ phase</p>
+                <p class="equation-desc">Conversion of volume fraction to mass fraction for α phase, using the densities of both phases.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Reverse Calculation</div>
+                    <p>Given a material with V<sub>a</sub> = 0.4 (40% α phase by volume), ρ<sub>a</sub> = 4.5 g/cm<sup>3</sup>, and V<sub>β</sub> = 0.6 (60% β phase by volume), ρ<sub>β</sub> = 3.2 g/cm<sup>3</sup>:</p>
+                    <p>$W_a = \frac{0.4 × 4.5}{(0.4 × 4.5) + (0.6 × 3.2)} = \frac{1.8}{1.8 + 1.92} ≈ 0.484$ or 48.4%</p>
+                    <p>The α phase accounts for 48.4% of the mass despite occupying only 40% of the volume.</p>
+                </div>
+                
                 <span class="category-tag tag-vol">Volume Fractions</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_a = \\frac{V_a \\rho_a}{V_a \\rho_a + V_\\beta \\rho_\\beta}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
         </section>
         
@@ -501,39 +617,59 @@
             <h2>Binary Eutectic System</h2>
             
             <div class="equation-card eutectic">
-                <div class="equation">$W_e = \frac{P}{P + Q}$</div>
-                <p class="equation-desc">Mass fraction of eutectic microconstituent</p>
+                <div class="equation">$W_e = \frac{P}{P + Q} = \frac{C_0 - C_a}{C_e - C_a}$</div>
+                <p class="equation-desc">Mass fraction of eutectic microconstituent (W<sub>e</sub>) in a binary eutectic system, where P and Q represent lever arms on the phase diagram, C<sub>0</sub> is the overall composition, C<sub>a</sub> is the composition of primary α, and C<sub>e</sub> is the eutectic composition.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Eutectic Calculation</div>
+                    <p>For a Pb-Sn alloy with C<sub>0</sub> = 40 wt% Sn, where the eutectic composition C<sub>e</sub> = 61.9 wt% Sn and the maximum solubility C<sub>a</sub> = 18.3 wt% Sn:</p>
+                    <p>$W_e = \frac{40 - 18.3}{61.9 - 18.3} = \frac{21.7}{43.6} ≈ 0.498$ or 49.8%</p>
+                    <p>This means about half of the alloy's mass is eutectic microstructure at room temperature.</p>
+                </div>
+                
                 <span class="category-tag tag-eutectic">Eutectic System</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_e = \\frac{P}{P + Q}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card eutectic">
-                <div class="equation">$W_{a'} = \frac{Q}{P + Q}$</div>
-                <p class="equation-desc">Mass fraction of primary $\alpha$ microconstituent</p>
+                <div class="equation">$W_{a'} = \frac{Q}{P + Q} = \frac{C_e - C_0}{C_e - C_a}$</div>
+                <p class="equation-desc">Mass fraction of primary α microconstituent (W<sub>a'</sub>) that forms before the eutectic reaction in a hypoeutectic alloy.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Primary Phase Calculation</div>
+                    <p>Using the same Pb-Sn alloy (C<sub>0</sub> = 40 wt% Sn):</p>
+                    <p>$W_{a'} = \frac{61.9 - 40}{61.9 - 18.3} = \frac{21.9}{43.6} ≈ 0.502$ or 50.2%</p>
+                    <p>This matches our previous calculation since W<sub>e</sub> + W<sub>a'</sub> should equal 1 (49.8% + 50.2% = 100%).</p>
+                </div>
+                
                 <span class="category-tag tag-eutectic">Eutectic System</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_{a\\'} = \\frac{Q}{P + Q}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card eutectic">
-                <div class="equation">$W_a = \frac{Q + R}{P + Q + R}$</div>
-                <p class="equation-desc">Mass fraction of total $\alpha$ phase</p>
+                <div class="equation">$W_a = \frac{Q + R}{P + Q + R} = \frac{C_\beta - C_0}{C_\beta - C_a}$</div>
+                <p class="equation-desc">Mass fraction of total α phase (both primary and eutectic α) in a binary eutectic system, where C<sub>β</sub> is the composition of the β phase.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Total Alpha Phase</div>
+                    <p>For our Pb-Sn example (C<sub>0</sub> = 40 wt% Sn), with C<sub>β</sub> = 97.8 wt% Sn at room temperature:</p>
+                    <p>$W_a = \frac{97.8 - 40}{97.8 - 18.3} = \frac{57.8}{79.5} ≈ 0.727$ or 72.7%</p>
+                    <p>This indicates that 72.7% of the alloy is α phase (both primary and eutectic α combined).</p>
+                </div>
+                
                 <span class="category-tag tag-eutectic">Eutectic System</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_a = \\frac{Q + R}{P + Q + R}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card eutectic">
-                <div class="equation">$W_\beta = \frac{P}{P + Q + R}$</div>
-                <p class="equation-desc">Mass fraction of $\beta$ phase</p>
+                <div class="equation">$W_\beta = \frac{P}{P + Q + R} = \frac{C_0 - C_a}{C_\beta - C_a}$</div>
+                <p class="equation-desc">Mass fraction of β phase (W<sub>β</sub>) in a binary eutectic system, which includes both eutectic β and any proeutectic β in hypereutectic alloys.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Beta Phase Fraction</div>
+                    <p>Continuing with our Pb-Sn alloy:</p>
+                    <p>$W_\beta = \frac{40 - 18.3}{97.8 - 18.3} = \frac{21.7}{79.5} ≈ 0.273$ or 27.3%</p>
+                    <p>This complements the total α phase calculation (72.7% α + 27.3% β = 100%).</p>
+                </div>
+                
                 <span class="category-tag tag-eutectic">Eutectic System</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_\\beta = \\frac{P}{P + Q + R}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
         </section>
         
@@ -541,39 +677,59 @@
             <h2>Fe–C Alloy System</h2>
             
             <div class="equation-card fec">
-                <div class="equation">$W_\rho = \frac{C_0' + 0.022}{0.74}$</div>
-                <p class="equation-desc">Mass fraction of pearlite in a hypoeutectoid Fe–C alloy</p>
+                <div class="equation">$W_\rho = \frac{C_0' - 0.022}{0.74}$</div>
+                <p class="equation-desc">Mass fraction of pearlite (W<sub>ρ</sub>) in a hypoeutectoid Fe–C alloy, where C<sub>0</sub>' is the carbon content in wt% (between 0.022 and 0.76 wt%).</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Pearlite in Steel</div>
+                    <p>For a 0.4 wt% C steel:</p>
+                    <p>$W_\rho = \frac{0.40 - 0.022}{0.74} ≈ 0.511$ or 51.1%</p>
+                    <p>This steel would consist of about 51% pearlite and 49% proeutectoid ferrite at room temperature.</p>
+                </div>
+                
                 <span class="category-tag tag-fec">Fe-C System</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_\\rho = \\frac{C_0\\' + 0.022}{0.74}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card fec">
                 <div class="equation">$W_{a'} = \frac{0.76 - C_0'}{0.74}$</div>
-                <p class="equation-desc">Mass fraction of proeutectoid $\alpha$ ferrite in a hypoeutectoid Fe–C alloy</p>
+                <p class="equation-desc">Mass fraction of proeutectoid α ferrite (W<sub>a'</sub>) that forms above the eutectoid temperature in a hypoeutectoid Fe–C alloy.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Proeutectoid Ferrite</div>
+                    <p>For the same 0.4 wt% C steel:</p>
+                    <p>$W_{a'} = \frac{0.76 - 0.40}{0.74} ≈ 0.486$ or 48.6%</p>
+                    <p>This confirms our previous calculation (51.4% pearlite + 48.6% ferrite ≈ 100%).</p>
+                </div>
+                
                 <span class="category-tag tag-fec">Fe-C System</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_{a\\'} = \\frac{0.76 - C_0\\'}{0.74}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card fec">
                 <div class="equation">$W_\rho = \frac{6.70 - C_1'}{5.94}$</div>
-                <p class="equation-desc">Mass fraction of pearlite in a hypereutectoid Fe–C alloy</p>
+                <p class="equation-desc">Mass fraction of pearlite (W<sub>ρ</sub>) in a hypereutectoid Fe–C alloy, where C<sub>1</sub>' is the carbon content in wt% (between 0.76 and 2.14 wt%).</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Hyperectoid Pearlite</div>
+                    <p>For a 1.2 wt% C steel:</p>
+                    <p>$W_\rho = \frac{6.70 - 1.20}{5.94} ≈ 0.926$ or 92.6%</p>
+                    <p>The microstructure would be about 92.6% pearlite and 7.4% proeutectoid cementite.</p>
+                </div>
+                
                 <span class="category-tag tag-fec">Fe-C System</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_\\rho = \\frac{6.70 - C_1\\'}{5.94}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
             
             <div class="equation-card fec">
                 <div class="equation">$W_{\text{Fe}_3\text{C}'} = \frac{C_1' - 0.76}{5.94}$</div>
-                <p class="equation-desc">Mass fraction of proeutectoid $\text{Fe}_3\text{C}$ in a hypereutectoid Fe–C alloy</p>
+                <p class="equation-desc">Mass fraction of proeutectoid cementite (W<sub>Fe<sub>3</sub>C'</sub>) that forms above the eutectoid temperature in a hypereutectoid Fe–C alloy.</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Proeutectoid Cementite</div>
+                    <p>For the 1.2 wt% C steel:</p>
+                    <p>$W_{\text{Fe}_3\text{C}'} = \frac{1.20 - 0.76}{5.94} ≈ 0.074$ or 7.4%</p>
+                    <p>This matches our previous pearlite calculation (92.6% + 7.4% = 100%).</p>
+                </div>
+                
                 <span class="category-tag tag-fec">Fe-C System</span>
-                <button class="copy-btn" onclick="copyToClipboard('W_{\\text{Fe}_3\\text{C}\\'} = \\frac{C_1\\' - 0.76}{5.94}')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
         </section>
         
@@ -582,11 +738,16 @@
             
             <div class="equation-card thermo">
                 <div class="equation">$P + F = C + N$</div>
-                <p class="equation-desc">Gibbs phase rule (general form)</p>
+                <p class="equation-desc">Gibbs phase rule (general form), where P is the number of phases, F is the number of degrees of freedom, C is the number of components, and N is the number of non-compositional variables (typically 2 for temperature and pressure).</p>
+                
+                <div class="example">
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Phase Rule Application</div>
+                    <p>For a single-component system (C=1) with two phases (P=2) at fixed pressure (N=1):</p>
+                    <p>$F = C + N - P = 1 + 1 - 2 = 0$</p>
+                    <p>This means there are no degrees of freedom - the temperature is fixed at the phase transition point (e.g., melting point at given pressure).</p>
+                </div>
+                
                 <span class="category-tag tag-thermo">Thermodynamics</span>
-                <button class="copy-btn" onclick="copyToClipboard('P + F = C + N')">
-                    <i class="far fa-copy"></i> Copy Equation
-                </button>
             </div>
         </section>
     </div>
@@ -670,47 +831,6 @@
                 }
             });
         });
-        
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                // Show copied notification
-                const notification = document.createElement('div');
-                notification.textContent = 'Equation copied!';
-                notification.style.position = 'fixed';
-                notification.style.bottom = '20px';
-                notification.style.left = '50%';
-                notification.style.transform = 'translateX(-50%)';
-                notification.style.backgroundColor = 'var(--success-color)';
-                notification.style.color = 'white';
-                notification.style.padding = '10px 20px';
-                notification.style.borderRadius = '5px';
-                notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
-                notification.style.zIndex = '1000';
-                notification.style.animation = 'fadeInOut 2s ease-in-out';
-                
-                document.body.appendChild(notification);
-                
-                // Remove notification after animation
-                setTimeout(function() {
-                    notification.remove();
-                }, 2000);
-            }, function(err) {
-                console.error('Could not copy text: ', err);
-            });
-        }
-        
-        // Add animation for notification
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeInOut {
-                0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-                20% { opacity: 1; transform: translateX(-50%) translateY(0); }
-                80% { opacity: 1; transform: translateX(-50%) translateY(0); }
-                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
