@@ -1,517 +1,709 @@
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Comprehensive guide to prepare for GATE Metallurgical Engineering exam with expert tips, study plan, and resources from TestUrSelf">
     <title>GATE Metallurgical Engineering Exam Preparation Guide | TestUrSelf</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    spacing: {
-                        '128': '32rem',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- GSAP for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
         :root {
-            --primary: #3b82f6;
-            --secondary: #1e3a8a;
-            --accent: #f59e0b;
-            --text: #1f2937;
-            --bg: #f9fafb;
-        }
-        
-        .dark {
-            --primary: #60a5fa;
-            --secondary: #93c5fd;
-            --accent: #fbbf24;
-            --text: #f3f4f6;
-            --bg: #111827;
+            --primary: #6a1b9a;
+            --secondary: #9c27b0;
+            --accent: #ff9800;
+            --light: #f3e5f5;
+            --dark: #4a148c;
+            --text: #333;
+            --bg: #f9f9f9;
+            --card-bg: #fff;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --info: #2196f3;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
             color: var(--text);
-            transition: all 0.3s ease;
-            overflow-x: hidden;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
         }
         
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .progress-tracker {
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
             position: relative;
+            overflow: hidden;
         }
         
-        .progress-tracker::before {
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.1) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 6s infinite;
+        }
+        
+        @keyframes shine {
+            0% {transform: rotate(30deg) translate(-30%, -30%);}
+            100% {transform: rotate(30deg) translate(30%, 30%);}
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 0 10px 10px 0;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ffab00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Preparation Guide */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 16px;
+            left: 50px;
             height: 100%;
-            width: 2px;
-            background-color: var(--primary);
-            z-index: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
         }
         
-        .counter {
-            font-variant-numeric: tabular-nums;
-        }
-        
-        /* Animation classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Floating elements */
-        .floating {
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        /* Testimonial slider */
-        .testimonial-slider {
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .slider-track {
+        .timeline-item {
             display: flex;
-            transition: transform 0.5s ease;
-        }
-        
-        .testimonial-slide {
-            min-width: 100%;
-            padding: 0 1rem;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .testimonial-slide.active {
-            opacity: 1;
-        }
-        
-        /* Hero section overlay */
-        .hero-overlay {
-            background: rgba(0, 0, 0, 0.6);
-        }
-        
-        /* Section spacing */
-        .section {
-            padding: 5rem 0;
+            margin-bottom: 40px;
             position: relative;
-            z-index: 20;
         }
         
-        .mobile-menu {
+        .timeline-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 30px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        
+        .timeline-content {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-grow: 1;
+        }
+        
+        /* Testimonials */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            margin: 0 15px;
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid var(--light);
+        }
+        
+        .testimonial-rating {
+            color: var(--accent);
+            margin: 15px 0;
+        }
+        
+        /* Stats */
+        .stats {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            margin-bottom: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border: none;
+            text-align: left;
+            font-weight: 500;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.3s, padding 0.3s;
+            background-color: #f9f9f9;
         }
         
-        .mobile-menu.open {
+        .faq-answer.active {
+            padding: 20px;
             max-height: 500px;
+        }
+        
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #ddd;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
         }
         
         @media (max-width: 768px) {
             .section {
-                padding: 3rem 0;
+                padding: 60px 0;
             }
             
-            .parallax {
-                background-attachment: scroll;
+            .hero {
+                padding: 80px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .timeline::before {
+                left: 25px;
+            }
+            
+            .timeline-number {
+                width: 40px;
+                height: 40px;
+                margin-right: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 40px 0;
             }
         }
     </style>
 </head>
-<body class="antialiased">
-    <!-- Dark mode toggle -->
-    <button id="darkModeToggle" class="fixed right-6 bottom-6 z-50 w-12 h-12 rounded-full bg-blue-500 shadow-lg flex items-center justify-center text-white text-xl">
-        <i class="fas fa-moon"></i>
-    </button>
-    
+<body>
     <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-40 transition-all duration-300">
-        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400 flex items-center">
-                <i class="fas fa-graduation-cap mr-2"></i> TestUrSelf
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i> TestUrSelf
             </a>
             
-            <div class="hidden md:flex space-x-6 lg:space-x-8">
-                <a href="#introduction" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Introduction</a>
-                <a href="#preparation" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Preparation Guide</a>
-                <a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Testimonials</a>
-                <a href="#why-us" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Why Us</a>
-                <a href="#resources" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Resources</a>
+            <div class="nav-links">
+                <a href="#introduction">Introduction</a>
+                <a href="#preparation">Preparation Guide</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#resources">Resources</a>
             </div>
             
-            <button class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none" id="mobileMenuButton">
-                <i class="fas fa-bars text-2xl"></i>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
             </button>
-        </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobileMenu" class="mobile-menu md:hidden bg-white dark:bg-gray-800 px-4">
-            <div class="flex flex-col space-y-2 py-4">
-                <a href="#introduction" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Introduction</a>
-                <a href="#preparation" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Preparation Guide</a>
-                <a href="#testimonials" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Testimonials</a>
-                <a href="#why-us" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Why Us</a>
-                <a href="#resources" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Resources</a>
-            </div>
         </div>
     </nav>
     
-    <!-- Hero Section with Parallax -->
-    <section class="parallax bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] py-20 md:py-32 relative flex items-center min-h-[80vh]">
-        <div class="absolute inset-0 hero-overlay"></div>
-        <div class="container mx-auto px-4 sm:px-6 relative z-10 text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 fade-in">Master GATE Metallurgical Engineering</h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto fade-in">The Complete Guide to Crack GATE MT with Top Ranks</p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
-                <a href="#join-now" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105">
-                    Join TestUrSelf Now
-                </a>
-                <a href="#download" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105">
-                    Download Free Material
-                </a>
-            </div>
-            
-            <div class="mt-16 flex justify-center fade-in">
-                <a href="#introduction" class="animate-bounce text-white text-2xl">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Master GATE Metallurgical Engineering</h1>
+            <p>The Complete Guide to Crack GATE MT with Top Ranks</p>
+            <div>
+                <a href="#join-now" class="btn btn-primary">Join TestUrSelf Now</a>
+                <a href="#download" class="btn btn-secondary">Download Free Material</a>
             </div>
         </div>
-    </section>
+    </header>
     
     <!-- Introduction Section -->
-    <section id="introduction" class="section bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">What is GATE Metallurgical Engineering?</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-                    GATE (Graduate Aptitude Test in Engineering) for Metallurgical Engineering (MT) is the gateway to prestigious PSU jobs, M.Tech admissions in IITs/NITs, and research opportunities.
-                </p>
+    <section id="introduction" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What is GATE Metallurgical Engineering?</h2>
+                <p>GATE (Graduate Aptitude Test in Engineering) for Metallurgical Engineering (MT) is the gateway to prestigious PSU jobs, M.Tech admissions in IITs/NITs, and research opportunities.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Exam Structure</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        65 questions worth 100 marks covering General Aptitude, Engineering Mathematics, and Metallurgy subjects.
-                    </p>
+                    <h3>Exam Structure</h3>
+                    <p>65 questions worth 100 marks covering General Aptitude, Engineering Mathematics, and Metallurgy subjects.</p>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Importance</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Qualifying GATE MT opens doors to PSUs like SAIL, NALCO, HCL, and top institutes like IITs, IISc, NITs.
-                    </p>
+                    <h3>Importance</h3>
+                    <p>Qualifying GATE MT opens doors to PSUs like SAIL, NALCO, HCL, and top institutes like IITs, IISc, NITs.</p>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Competition</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        With 10,000+ aspirants each year, strategic preparation is key to securing top ranks.
-                    </p>
+                    <h3>Competition</h3>
+                    <p>With 10,000+ aspirants each year, strategic preparation is key to securing top ranks.</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Preparation Guide Section -->
-    <section id="preparation" class="section bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Step-by-Step Preparation Guide</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-                    Follow this comprehensive 6-month plan to systematically prepare for GATE Metallurgy
-                </p>
+    <section id="preparation" class="section bg-gray-100">
+        <div class="container">
+            <div class="section-title">
+                <h2>Step-by-Step Preparation Guide</h2>
+                <p>Follow this comprehensive 6-month plan to systematically prepare for GATE Metallurgy</p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="progress-tracker space-y-8 md:space-y-10">
-                    <!-- Step 1 -->
-                    <div class="flex gap-4 md:gap-6 fade-in">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
-                            <span>1</span>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md flex-1 card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Understand Syllabus & Exam Pattern</h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Thoroughly analyze the GATE MT syllabus (Physical Metallurgy, Mechanical Metallurgy, Manufacturing Processes, etc.) and exam pattern (marks distribution, negative marking).
-                            </p>
-                        </div>
+            <div class="timeline">
+                <!-- Step 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Understand Syllabus & Exam Pattern</h3>
+                        <p>Thoroughly analyze the GATE MT syllabus (Physical Metallurgy, Mechanical Metallurgy, Manufacturing Processes, etc.) and exam pattern (marks distribution, negative marking).</p>
                     </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="flex gap-4 md:gap-6 fade-in">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
-                            <span>2</span>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md flex-1 card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Collect Study Materials</h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Gather standard textbooks, TestUrSelf study materials, previous year papers, and online resources. Focus on quality over quantity.
-                            </p>
-                        </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Collect Study Materials</h3>
+                        <p>Gather standard textbooks, TestUrSelf study materials, previous year papers, and online resources. Focus on quality over quantity.</p>
                     </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="flex gap-4 md:gap-6 fade-in">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
-                            <span>3</span>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md flex-1 card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Create Study Schedule</h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Divide syllabus into weekly targets. Allocate time for concepts, problem-solving, revision, and mock tests. Include buffer time.
-                            </p>
-                        </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Create Study Schedule</h3>
+                        <p>Divide syllabus into weekly targets. Allocate time for concepts, problem-solving, revision, and mock tests. Include buffer time.</p>
                     </div>
-                    
-                    <!-- Step 4 -->
-                    <div class="flex gap-4 md:gap-6 fade-in">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
-                            <span>4</span>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md flex-1 card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Concept Building & Notes</h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Study topics thoroughly, make concise notes, create formula sheets, and understand fundamental concepts rather than rote learning.
-                            </p>
-                        </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Concept Building & Notes</h3>
+                        <p>Study topics thoroughly, make concise notes, create formula sheets, and understand fundamental concepts rather than rote learning.</p>
                     </div>
-                    
-                    <!-- Step 5 -->
-                    <div class="flex gap-4 md:gap-6 fade-in">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
-                            <span>5</span>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md flex-1 card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Practice & Mock Tests</h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Solve previous year papers (at least 10 years) and take regular mock tests under timed conditions. Analyze performance to identify weak areas.
-                            </p>
-                        </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3>Practice & Mock Tests</h3>
+                        <p>Solve previous year papers (at least 10 years) and take regular mock tests under timed conditions. Analyze performance to identify weak areas.</p>
                     </div>
-                    
-                    <!-- Step 6 -->
-                    <div class="flex gap-4 md:gap-6 fade-in">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center z-10">
-                            <span>6</span>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md flex-1 card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Revision & Final Preparation</h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Last 1-2 months should focus on revision, formula sheets, important topics, and full-length mock tests to build stamina.
-                            </p>
-                        </div>
+                </div>
+                
+                <!-- Step 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">6</div>
+                    <div class="timeline-content">
+                        <h3>Revision & Final Preparation</h3>
+                        <p>Last 1-2 months should focus on revision, formula sheets, important topics, and full-length mock tests to build stamina.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Key Topics Section with Floating Elements -->
-    <section class="section bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
-        <!-- Floating elements -->
-        <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-blue-200 opacity-20 floating hidden md:block"></div>
-        <div class="absolute bottom-1/4 right-20 w-24 h-24 rounded-full bg-orange-200 opacity-20 floating hidden md:block" style="animation-delay: 1s;"></div>
-        <div class="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-purple-200 opacity-20 floating hidden md:block" style="animation-delay: 2s;"></div>
-        
-        <div class="container mx-auto px-4 sm:px-6 relative z-10">
-            <div class="text-center mb-12 md:mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Key Topics in GATE Metallurgy</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-                    Focus on these high-weightage topics to maximize your score
-                </p>
+    <!-- Key Topics Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Topics in GATE Metallurgy</h2>
+                <p>Focus on these high-weightage topics to maximize your score</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                        <span class="w-8 h-8 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mr-3">1</span>
-                        Physical Metallurgy
-                    </h3>
-                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Crystal structures & defects</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Phase diagrams & transformations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Heat treatment processes</span>
-                        </li>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <h3>Physical Metallurgy</h3>
+                    <ul>
+                        <li><i class="fas fa-check text-success mr-2"></i> Crystal structures & defects</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Phase diagrams & transformations</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Heat treatment processes</li>
                     </ul>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                        <span class="w-8 h-8 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mr-3">2</span>
-                        Mechanical Metallurgy
-                    </h3>
-                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Dislocations & strengthening</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Fracture & fatigue</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Mechanical testing</span>
-                        </li>
+                <div class="card">
+                    <h3>Mechanical Metallurgy</h3>
+                    <ul>
+                        <li><i class="fas fa-check text-success mr-2"></i> Dislocations & strengthening</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Fracture & fatigue</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Mechanical testing</li>
                     </ul>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                        <span class="w-8 h-8 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mr-3">3</span>
-                        Manufacturing Processes
-                    </h3>
-                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Casting & welding</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Metal forming</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Powder metallurgy</span>
-                        </li>
+                <div class="card">
+                    <h3>Manufacturing Processes</h3>
+                    <ul>
+                        <li><i class="fas fa-check text-success mr-2"></i> Casting & welding</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Metal forming</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Powder metallurgy</li>
                     </ul>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                        <span class="w-8 h-8 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mr-3">4</span>
-                        Thermodynamics & Kinetics
-                    </h3>
-                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Laws of thermodynamics</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Phase equilibria</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Diffusion & reactions</span>
-                        </li>
+                <div class="card">
+                    <h3>Thermodynamics & Kinetics</h3>
+                    <ul>
+                        <li><i class="fas fa-check text-success mr-2"></i> Laws of thermodynamics</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Phase equilibria</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Diffusion & reactions</li>
                     </ul>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                        <span class="w-8 h-8 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mr-3">5</span>
-                        Extractive Metallurgy
-                    </h3>
-                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Ore processing</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Pyrometallurgy</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Hydrometallurgy</span>
-                        </li>
+                <div class="card">
+                    <h3>Extractive Metallurgy</h3>
+                    <ul>
+                        <li><i class="fas fa-check text-success mr-2"></i> Ore processing</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Pyrometallurgy</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Hydrometallurgy</li>
                     </ul>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 card-hover fade-in">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                        <span class="w-8 h-8 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mr-3">6</span>
-                        Engineering Mathematics
-                    </h3>
-                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Linear algebra</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Calculus & differential equations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Probability & statistics</span>
-                        </li>
+                <div class="card">
+                    <h3>Engineering Mathematics</h3>
+                    <ul>
+                        <li><i class="fas fa-check text-success mr-2"></i> Linear algebra</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Calculus & differential equations</li>
+                        <li><i class="fas fa-check text-success mr-2"></i> Probability & statistics</li>
                     </ul>
                 </div>
             </div>
@@ -519,404 +711,300 @@
     </section>
     
     <!-- Video Resources Section -->
-    <section class="section bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Video Learning Resources</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-                    Watch these expert-curated videos to master complex metallurgy concepts
-                </p>
+    <section class="section bg-gray-100">
+        <div class="container">
+            <div class="section-title">
+                <h2>Video Learning Resources</h2>
+                <p>Watch these expert-curated videos to master complex metallurgy concepts</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="rounded-xl overflow-hidden shadow-lg fade-in card-hover">
-                    <div class="relative pt-[56.25%] bg-gray-200 dark:bg-gray-700">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card">
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="p-6 bg-white dark:bg-gray-800">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Phase Diagrams Explained</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Learn to interpret binary and ternary phase diagrams with practical examples.</p>
-                    </div>
+                    <h3>Phase Diagrams Explained</h3>
+                    <p>Learn to interpret binary and ternary phase diagrams with practical examples.</p>
                 </div>
                 
-                <div class="rounded-xl overflow-hidden shadow-lg fade-in card-hover">
-                    <div class="relative pt-[56.25%] bg-gray-200 dark:bg-gray-700">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="card">
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="p-6 bg-white dark:bg-gray-800">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Heat Treatment Processes</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Master annealing, normalizing, quenching, and tempering techniques.</p>
-                    </div>
+                    <h3>Heat Treatment Processes</h3>
+                    <p>Master annealing, normalizing, quenching, and tempering techniques.</p>
                 </div>
                 
-                <div class="rounded-xl overflow-hidden shadow-lg fade-in card-hover">
-                    <div class="relative pt-[56.25%] bg-gray-200 dark:bg-gray-700">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="card">
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="p-6 bg-white dark:bg-gray-800">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">GATE Strategy & Tips</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Expert tips from IIT professors on how to crack GATE Metallurgy.</p>
-                    </div>
+                    <h3>GATE Strategy & Tips</h3>
+                    <p>Expert tips from IIT professors on how to crack GATE Metallurgy.</p>
                 </div>
             </div>
             
-            <div class="text-center mt-12 fade-in">
-                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition transform hover:scale-105">
-                    View All Video Lectures
-                </a>
+            <div class="text-center mt-8">
+                <a href="#" class="btn btn-primary">View All Video Lectures</a>
             </div>
         </div>
     </section>
     
-    <!-- Testimonials Section with Slider -->
-    <section id="testimonials" class="section bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Success Stories</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-                    Hear from our GATE Metallurgy toppers who achieved their dreams with TestUrSelf
-                </p>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Hear from our GATE Metallurgy toppers who achieved their dreams with TestUrSelf</p>
             </div>
             
-            <div class="max-w-4xl mx-auto relative fade-in">
-                <!-- Testimonial Slider -->
-                <div class="testimonial-slider">
-                    <div class="slider-track" id="sliderTrack">
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial-slide active">
-                            <div class="bg-white dark:bg-gray-700 p-6 md:p-8 rounded-xl shadow-lg">
-                                <div class="flex flex-col md:flex-row items-center mb-6">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="w-16 h-16 rounded-full object-cover mb-4 md:mb-0 md:mr-4 border-4 border-blue-100 dark:border-blue-900">
-                                    <div class="text-center md:text-left">
-                                        <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Rahul Sharma</h4>
-                                        <p class="text-blue-600 dark:text-blue-400">GATE MT AIR 1 (2022)</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 dark:text-gray-300 italic">
-                                    "TestUrSelf's test series was instrumental in my GATE preparation. The questions were so similar to actual GATE that I felt completely prepared. The mentorship from IIT professors helped me clear my concepts thoroughly."
-                                </p>
-                                <div class="mt-4 flex justify-center md:justify-start text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial-slide">
-                            <div class="bg-white dark:bg-gray-700 p-6 md:p-8 rounded-xl shadow-lg">
-                                <div class="flex flex-col md:flex-row items-center mb-6">
-                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel" class="w-16 h-16 rounded-full object-cover mb-4 md:mb-0 md:mr-4 border-4 border-blue-100 dark:border-blue-900">
-                                    <div class="text-center md:text-left">
-                                        <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Priya Patel</h4>
-                                        <p class="text-blue-600 dark:text-blue-400">GATE MT AIR 3 (2021)</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 dark:text-gray-300 italic">
-                                    "The study material from TestUrSelf covered everything in the syllabus with perfect depth. The regular doubt-solving sessions ensured I never got stuck on any topic. I recommend TestUrSelf to every GATE Metallurgy aspirant."
-                                </p>
-                                <div class="mt-4 flex justify-center md:justify-start text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 3 -->
-                        <div class="testimonial-slide">
-                            <div class="bg-white dark:bg-gray-700 p-6 md:p-8 rounded-xl shadow-lg">
-                                <div class="flex flex-col md:flex-row items-center mb-6">
-                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Amit Kumar" class="w-16 h-16 rounded-full object-cover mb-4 md:mb-0 md:mr-4 border-4 border-blue-100 dark:border-blue-900">
-                                    <div class="text-center md:text-left">
-                                        <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Amit Kumar</h4>
-                                        <p class="text-blue-600 dark:text-blue-400">GATE MT AIR 7 (2023)</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 dark:text-gray-300 italic">
-                                    "What sets TestUrSelf apart is their focus on Metallurgy specifically. The faculty understands exactly what's important for GATE. Their test series had several questions that appeared verbatim in my GATE paper!"
-                                </p>
-                                <div class="mt-4 flex justify-center md:justify-start text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="testimonial-img">
+                    <h3>Rahul Sharma</h3>
+                    <p class="text-primary font-medium">GATE MT AIR 1 (2022)</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
+                    <p class="italic">"TestUrSelf's test series was instrumental in my GATE preparation. The questions were so similar to actual GATE that I felt completely prepared. The mentorship from IIT professors helped me clear my concepts thoroughly."</p>
                 </div>
                 
-                <!-- Slider Controls -->
-                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-700 w-10 h-10 rounded-full shadow-md flex items-center justify-center text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-600 transition hidden md:flex" id="prevBtn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-700 w-10 h-10 rounded-full shadow-md flex items-center justify-center text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-600 transition hidden md:flex" id="nextBtn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel" class="testimonial-img">
+                    <h3>Priya Patel</h3>
+                    <p class="text-primary font-medium">GATE MT AIR 3 (2021)</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic">"The study material from TestUrSelf covered everything in the syllabus with perfect depth. The regular doubt-solving sessions ensured I never got stuck on any topic. I recommend TestUrSelf to every GATE Metallurgy aspirant."</p>
+                </div>
                 
-                <!-- Slider Indicators -->
-                <div class="flex justify-center mt-6 space-x-2" id="sliderIndicators">
-                    <button class="w-3 h-3 rounded-full bg-blue-600 dark:bg-blue-400 slider-indicator active" data-index="0"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 slider-indicator" data-index="1"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 slider-indicator" data-index="2"></button>
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Amit Kumar" class="testimonial-img">
+                    <h3>Amit Kumar</h3>
+                    <p class="text-primary font-medium">GATE MT AIR 7 (2023)</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic">"What sets TestUrSelf apart is their focus on Metallurgy specifically. The faculty understands exactly what's important for GATE. Their test series had several questions that appeared verbatim in my GATE paper!"</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Why TestUrSelf Section -->
-    <section id="why-us" class="section bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Why TestUrSelf for GATE Metallurgy?</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-                    The proven platform that has consistently produced GATE MT toppers year after year
-                </p>
+    <section id="why-us" class="section bg-gray-100">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why TestUrSelf for GATE Metallurgy?</h2>
+                <p>The proven platform that has consistently produced GATE MT toppers year after year</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-book"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Best Content for GATE Metallurgy</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Comprehensive study material designed by IIT & IISc experts specifically for GATE MT syllabus.
-                    </p>
+                    <h3>Best Content for GATE Metallurgy</h3>
+                    <p>Comprehensive study material designed by IIT & IISc experts specifically for GATE MT syllabus.</p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Producing Top Rankers Since 2018</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Consistent track record of producing AIR 1, AIR 2, and multiple top 100 ranks every year.
-                    </p>
+                    <h3>Producing Top Rankers Since 2018</h3>
+                    <p>Consistent track record of producing AIR 1, AIR 2, and multiple top 100 ranks every year.</p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-medal"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">AIR-1 Every Year Since 2019</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Unmatched success with AIR 1 in GATE Metallurgy for 4 consecutive years.
-                    </p>
+                    <h3>AIR-1 Every Year Since 2019</h3>
+                    <p>Unmatched success with AIR 1 in GATE Metallurgy for 4 consecutive years.</p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Direct Questions in GATE Exam</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Our test series questions match actual GATE questions - sometimes even verbatim!
-                    </p>
+                    <h3>Direct Questions in GATE Exam</h3>
+                    <p>Our test series questions match actual GATE questions - sometimes even verbatim!</p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Expert Mentorship</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Live doubt-solving sessions with IIT/IISc mentors who know exactly what GATE demands.
-                    </p>
+                    <h3>Expert Mentorship</h3>
+                    <p>Live doubt-solving sessions with IIT/IISc mentors who know exactly what GATE demands.</p>
                 </div>
                 
-                <div class="bg-blue-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 card-hover fade-in">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                <div class="card">
+                    <div class="card-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Performance Analytics</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Detailed test analytics to track your progress and identify improvement areas.
-                    </p>
+                    <h3>Performance Analytics</h3>
+                    <p>Detailed test analytics to track your progress and identify improvement areas.</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Stats Section -->
-    <section class="py-16 md:py-20 bg-blue-600 text-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
-                <div class="fade-in">
-                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 counter" data-target="1500">0</div>
-                    <div class="text-lg md:text-xl">Students Enrolled</div>
+    <section class="stats">
+        <div class="container">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1500">0</div>
+                    <p>Students Enrolled</p>
                 </div>
                 
-                <div class="fade-in">
-                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 counter" data-target="32">0</div>
-                    <div class="text-lg md:text-xl">Top 100 Rankers</div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="32">0</div>
+                    <p>Top 100 Rankers</p>
                 </div>
                 
-                <div class="fade-in">
-                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 counter" data-target="4">0</div>
-                    <div class="text-lg md:text-xl">AIR 1 Produced</div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="4">0</div>
+                    <p>AIR 1 Produced</p>
                 </div>
                 
-                <div class="fade-in">
-                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 counter" data-target="98">0</div>
-                    <div class="text-lg md:text-xl">% Satisfaction Rate</div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">0</div>
+                    <p>% Satisfaction Rate</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- CTA Section -->
-    <section id="join-now" class="py-16 md:py-20 bg-gray-900 text-white">
-        <div class="container mx-auto px-4 sm:px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Ready to Start Your GATE Metallurgy Journey?</h2>
-            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 fade-in">
-                Join India's most trusted GATE Metallurgy preparation platform and get closer to your dream rank
-            </p>
+    <section id="join-now" class="cta">
+        <div class="container">
+            <h2>Ready to Start Your GATE Metallurgy Journey?</h2>
+            <p class="mb-8">Join India's most trusted GATE Metallurgy preparation platform and get closer to your dream rank</p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
-                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105 text-lg">
-                    <i class="fas fa-rocket mr-2"></i> Enroll Now
-                </a>
-                <a href="#" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105 text-lg">
-                    <i class="fas fa-phone-alt mr-2"></i> Talk to an Expert
-                </a>
+            <div>
+                <a href="#" class="btn btn-primary"><i class="fas fa-rocket mr-2"></i> Enroll Now</a>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-phone-alt mr-2"></i> Talk to an Expert</a>
             </div>
         </div>
     </section>
     
     <!-- Free Resources Section -->
-    <section id="download" class="section bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Free GATE Metallurgy Resources</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-                    Download these free resources to kickstart your preparation
-                </p>
+    <section id="download" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Free GATE Metallurgy Resources</h2>
+                <p>Download these free resources to kickstart your preparation</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
-                    <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-400 text-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card">
+                    <div class="bg-purple-100 text-purple-600 text-6xl p-8 mb-4 rounded-lg flex justify-center">
                         <i class="fas fa-file-pdf"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Complete Syllabus PDF</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Detailed GATE MT syllabus with weightage analysis for each topic.</p>
-                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold inline-flex items-center">
-                            Download Now <i class="fas fa-arrow-down ml-2"></i>
-                        </a>
-                    </div>
+                    <h3>Complete Syllabus PDF</h3>
+                    <p>Detailed GATE MT syllabus with weightage analysis for each topic.</p>
+                    <a href="#" class="text-primary font-medium inline-flex items-center mt-4">
+                        Download Now <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
-                    <div class="h-48 bg-orange-100 dark:bg-orange-900 flex items-center justify-center text-orange-600 dark:text-orange-400 text-6xl">
+                <div class="card">
+                    <div class="bg-orange-100 text-orange-600 text-6xl p-8 mb-4 rounded-lg flex justify-center">
                         <i class="fas fa-list-ol"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Previous Year Papers</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">10 years of GATE MT solved papers with detailed solutions.</p>
-                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold inline-flex items-center">
-                            Download Now <i class="fas fa-arrow-down ml-2"></i>
-                        </a>
-                    </div>
+                    <h3>Previous Year Papers</h3>
+                    <p>10 years of GATE MT solved papers with detailed solutions.</p>
+                    <a href="#" class="text-primary font-medium inline-flex items-center mt-4">
+                        Download Now <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
-                    <div class="h-48 bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-600 dark:text-purple-400 text-6xl">
+                <div class="card">
+                    <div class="bg-blue-100 text-blue-600 text-6xl p-8 mb-4 rounded-lg flex justify-center">
                         <i class="fas fa-clipboard-list"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Formula Handbook</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">All essential formulas for GATE MT in one compact document.</p>
-                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold inline-flex items-center">
-                            Download Now <i class="fas fa-arrow-down ml-2"></i>
-                        </a>
-                    </div>
+                    <h3>Formula Handbook</h3>
+                    <p>All essential formulas for GATE MT in one compact document.</p>
+                    <a href="#" class="text-primary font-medium inline-flex items-center mt-4">
+                        Download Now <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- FAQ Section -->
-    <section class="section bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-                    Get answers to common questions about GATE Metallurgy preparation
-                </p>
+    <section class="section bg-gray-100">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about GATE Metallurgy preparation</p>
             </div>
             
-            <div class="max-w-3xl mx-auto space-y-4">
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="text-lg font-medium text-gray-800 dark:text-white">When should I start preparing for GATE Metallurgy?</span>
-                        <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>When should I start preparing for GATE Metallurgy?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
-                        <p class="text-gray-600 dark:text-gray-300">
-                            Ideally, you should start your preparation 6-8 months before the exam. However, if you're targeting top ranks (AIR < 100), we recommend a 10-12 month preparation period with at least 4-5 hours of daily study.
-                        </p>
+                    <div class="faq-answer">
+                        <p>Ideally, you should start your preparation 6-8 months before the exam. However, if you're targeting top ranks (AIR < 100), we recommend a 10-12 month preparation period with at least 4-5 hours of daily study.</p>
                     </div>
                 </div>
                 
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="text-lg font-medium text-gray-800 dark:text-white">What's more important - concepts or practice?</span>
-                        <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What's more important - concepts or practice?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
-                        <p class="text-gray-600 dark:text-gray-300">
-                            Both are equally important. First build strong conceptual understanding (especially for Physical Metallurgy, Thermodynamics), then practice extensively (especially for Manufacturing, Mechanical Metallurgy). Our program balances both with concept lectures followed by practice sessions.
-                        </p>
+                    <div class="faq-answer">
+                        <p>Both are equally important. First build strong conceptual understanding (especially for Physical Metallurgy, Thermodynamics), then practice extensively (especially for Manufacturing, Mechanical Metallurgy). Our program balances both with concept lectures followed by practice sessions.</p>
                     </div>
                 </div>
                 
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="text-lg font-medium text-gray-800 dark:text-white">How many mock tests should I take?</span>
-                        <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How many mock tests should I take?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
-                        <p class="text-gray-600 dark:text-gray-300">
-                            Minimum 15-20 full-length mock tests in the last 3 months before GATE. Our test series includes 25+ mocks with progressive difficulty levels. Analyze each test thoroughly to identify weak areas.
-                        </p>
+                    <div class="faq-answer">
+                        <p>Minimum 15-20 full-length mock tests in the last 3 months before GATE. Our test series includes 25+ mocks with progressive difficulty levels. Analyze each test thoroughly to identify weak areas.</p>
                     </div>
                 </div>
                 
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="text-lg font-medium text-gray-800 dark:text-white">Is coaching necessary for GATE Metallurgy?</span>
-                        <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is coaching necessary for GATE Metallurgy?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
-                        <p class="text-gray-600 dark:text-gray-300">
-                            While self-study is possible, structured guidance significantly improves your chances of top ranks. Our data shows 92% of top 100 rankers had some form of coaching. TestUrSelf's program provides the right direction, saves time, and ensures you cover all important topics.
-                        </p>
+                    <div class="faq-answer">
+                        <p>While self-study is possible, structured guidance significantly improves your chances of top ranks. Our data shows 92% of top 100 rankers had some form of coaching. TestUrSelf's program provides the right direction, saves time, and ensures you cover all important topics.</p>
                     </div>
                 </div>
                 
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden fade-in">
-                    <button class="faq-question w-full flex justify-between items-center p-4 md:p-6 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="text-lg font-medium text-gray-800 dark:text-white">How does TestUrSelf compare to other platforms?</span>
-                        <i class="fas fa-chevron-down text-blue-600 dark:text-blue-400 transition-transform"></i>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does TestUrSelf compare to other platforms?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer hidden p-4 md:p-6 bg-white dark:bg-gray-700">
-                        <p class="text-gray-600 dark:text-gray-300">
-                            TestUrSelf is the only platform exclusively focused on GATE Metallurgy with IIT/IISc faculty. Our content depth, test quality, and mentorship are unmatched. The results speak for themselves - we've produced AIR 1 every year since 2019 and have 3x more top 100 rankers than any other platform.
-                        </p>
+                    <div class="faq-answer">
+                        <p>TestUrSelf is the only platform exclusively focused on GATE Metallurgy with IIT/IISc faculty. Our content depth, test quality, and mentorship are unmatched. The results speak for themselves - we've produced AIR 1 every year since 2019 and have 3x more top 100 rankers than any other platform.</p>
                     </div>
                 </div>
             </div>
@@ -924,268 +1012,82 @@
     </section>
     
     <!-- Final CTA -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div class="container mx-auto px-4 sm:px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Start Your GATE Metallurgy Preparation Today!</h2>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto fade-in">
-                Join thousands of successful Metallurgy aspirants who trusted TestUrSelf for their GATE journey
-            </p>
+    <section class="cta">
+        <div class="container">
+            <h2>Start Your GATE Metallurgy Preparation Today!</h2>
+            <p class="mb-8">Join thousands of successful Metallurgy aspirants who trusted TestUrSelf for their GATE journey</p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
-                <a href="#" class="bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105 text-lg">
-                    <i class="fas fa-user-graduate mr-2"></i> Enroll Now
-                </a>
-                <a href="#" class="bg-transparent hover:bg-blue-700 border-2 border-white text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition transform hover:scale-105 text-lg">
-                    <i class="fas fa-calendar-alt mr-2"></i> Free Demo Class
-                </a>
+            <div>
+                <a href="#" class="btn btn-primary"><i class="fas fa-user-graduate mr-2"></i> Enroll Now</a>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-calendar-alt mr-2"></i> Free Demo Class</a>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">TestUrSelf</h3>
-                    <p class="mb-4">India's leading GATE Metallurgy preparation platform with proven results since 2018.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TestUrSelf</h3>
+                    <p>India's leading GATE Metallurgy preparation platform with proven results since 2018.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white transition">Home</a></li>
-                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition">Courses</a></li>
-                        <li><a href="#" class="hover:text-white transition">Test Series</a></li>
-                        <li><a href="#" class="hover:text-white transition">Results</a></li>
-                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Test Series</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Resources</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="#" class="hover:text-white transition">Free Materials</a></li>
-                        <li><a href="#" class="hover:text-white transition">Video Lectures</a></li>
-                        <li><a href="#" class="hover:text-white transition">PYQ Solutions</a></li>
-                        <li><a href="#" class="hover:text-white transition">GATE Syllabus</a></li>
-                        <li><a href="#" class="hover:text-white transition">FAQs</a></li>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Free Materials</a></li>
+                        <li><a href="#">Video Lectures</a></li>
+                        <li><a href="#">PYQ Solutions</a></li>
+                        <li><a href="#">GATE Syllabus</a></li>
+                        <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Contact Us</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
-                            <span>123 Education Street, Bangalore, Karnataka 560001</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt mt-1 mr-3"></i>
-                            <span>+91 9876543210</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope mt-1 mr-3"></i>
-                            <span>info@testurself.com</span>
-                        </li>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Education Street, Bangalore, Karnataka 560001</li>
+                        <li><i class="fas fa-phone-alt mr-2"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@testurself.com</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+            <div class="footer-bottom">
                 <p>&copy; 2023 TestUrSelf. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     
     <script>
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-        
-        // Check for saved user preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark');
-            
-            if (body.classList.contains('dark')) {
-                localStorage.setItem('darkMode', 'enabled');
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                localStorage.setItem('darkMode', 'disabled');
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        });
-        
         // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
         
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
-                mobileMenu.classList.remove('open');
-            }
-        });
-        
-        // Scroll animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { 
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        });
-        
-        fadeElements.forEach(element => {
-            fadeInObserver.observe(element);
-        });
-        
-        // Counter animation
-        const counters = document.querySelectorAll('.counter');
-        const animationDuration = 2000;
-        const frameDuration = 1000 / 60; // 60 fps
-        
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const start = 0;
-            const totalFrames = Math.round(animationDuration / frameDuration);
-            let frame = 0;
-            
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const animateCount = () => {
-                            frame++;
-                            const progress = frame / totalFrames;
-                            const current = Math.round(target * progress);
-                            
-                            if (current <= target) {
-                                counter.textContent = current;
-                                requestAnimationFrame(animateCount);
-                            } else {
-                                counter.textContent = target;
-                            }
-                        };
-                        
-                        animateCount();
-                        counterObserver.unobserve(counter);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            counterObserver.observe(counter);
-        });
-        
-        // Testimonial slider
-        let currentSlide = 0;
-        const sliderTrack = document.getElementById('sliderTrack');
-        const slides = document.querySelectorAll('.testimonial-slide');
-        const totalSlides = slides.length;
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const indicators = document.querySelectorAll('.slider-indicator');
-        let autoSlideInterval;
-        
-        function updateSlider() {
-            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            // Update slide visibility
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
-            });
-            
-            // Update indicators
-            indicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.add('bg-blue-600', 'dark:bg-blue-400');
-                    indicator.classList.remove('bg-gray-300', 'dark:bg-gray-600');
-                } else {
-                    indicator.classList.remove('bg-blue-600', 'dark:bg-blue-400');
-                    indicator.classList.add('bg-gray-300', 'dark:bg-gray-600');
-                }
-            });
-        }
-        
-        function goToSlide(index) {
-            currentSlide = (index + totalSlides) % totalSlides;
-            updateSlider();
-            resetAutoSlide();
-        }
-        
-        function nextSlide() {
-            goToSlide(currentSlide + 1);
-        }
-        
-        function prevSlide() {
-            goToSlide(currentSlide - 1);
-        }
-        
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(nextSlide, 5000);
-        }
-        
-        // Initialize slider
-        function initSlider() {
-            sliderTrack.style.width = `${totalSlides * 100}%`;
-            slides.forEach(slide => {
-                slide.style.minWidth = `${100 / totalSlides}%`;
-            });
-            
-            updateSlider();
-            
-            // Button event listeners
-            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-            
-            // Indicator event listeners
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => goToSlide(index));
-            });
-            
-            // Start auto slide
-            resetAutoSlide();
-        }
-        
-        // Initialize on load
-        window.addEventListener('load', initSlider);
         
         // FAQ accordion
         const faqQuestions = document.querySelectorAll('.faq-question');
@@ -1196,53 +1098,66 @@
                 const icon = question.querySelector('i');
                 
                 // Toggle current answer
-                answer.classList.toggle('hidden');
+                answer.classList.toggle('active');
                 icon.classList.toggle('rotate-180');
                 
                 // Close other answers
                 faqQuestions.forEach(q => {
                     if (q !== question) {
-                        q.nextElementSibling.classList.add('hidden');
+                        q.nextElementSibling.classList.remove('active');
                         q.querySelector('i').classList.remove('rotate-180');
                     }
                 });
             });
         });
         
-        // Smooth scroll for anchor links
+        // Counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const speed = 200;
+        
+        statNumbers.forEach(stat => {
+            const target = +stat.getAttribute('data-count');
+            const count = +stat.innerText;
+            const increment = target / speed;
+            
+            if (count < target) {
+                stat.innerText = Math.ceil(count + increment);
+                setTimeout(updateCounter, 1);
+            } else {
+                stat.innerText = target;
+            }
+            
+            function updateCounter() {
+                const current = +stat.innerText;
+                if (current < target) {
+                    stat.innerText = Math.ceil(current + increment);
+                    setTimeout(updateCounter, 1);
+                } else {
+                    stat.innerText = target;
+                }
+            }
+        });
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
                 
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Close mobile menu if open
-                    mobileMenu.classList.remove('open');
-                    
-                    // Scroll to target
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.style.display === 'flex') {
+                        navLinks.style.display = 'none';
+                    }
                 }
-            });
-        });
-        
-        // GSAP animations
-        gsap.registerPlugin(ScrollTrigger);
-        
-        gsap.utils.toArray('.card-hover').forEach(card => {
-            gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power2.out"
             });
         });
     </script>
