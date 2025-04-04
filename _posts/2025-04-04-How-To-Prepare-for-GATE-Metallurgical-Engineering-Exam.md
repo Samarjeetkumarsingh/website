@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comprehensive guide to prepare for GATE Metallurgical Engineering exam with expert tips, study plan, and resources from TestUrSelf - the leading GATE Metallurgy coaching platform">
+    <meta name="description" content="Comprehensive guide to prepare for GATE Metallurgical Engineering exam with expert tips, study plan, and resources from TestUrSelf">
     <title>GATE Metallurgical Engineering Exam Preparation Guide | TestUrSelf</title>
     
     <!-- Tailwind CSS -->
@@ -14,6 +14,9 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
+                    spacing: {
+                        '128': '32rem',
+                    }
                 }
             }
         }
@@ -51,6 +54,7 @@
             background-color: var(--bg);
             color: var(--text);
             transition: all 0.3s ease;
+            overflow-x: hidden;
         }
         
         .parallax {
@@ -125,6 +129,12 @@
         .testimonial-slide {
             min-width: 100%;
             padding: 0 1rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .testimonial-slide.active {
+            opacity: 1;
         }
         
         /* Hero section overlay */
@@ -135,11 +145,27 @@
         /* Section spacing */
         .section {
             padding: 5rem 0;
+            position: relative;
+            z-index: 20;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
         }
         
         @media (max-width: 768px) {
             .section {
                 padding: 3rem 0;
+            }
+            
+            .parallax {
+                background-attachment: scroll;
             }
         }
     </style>
@@ -171,17 +197,19 @@
         </div>
         
         <!-- Mobile menu -->
-        <div class="md:hidden hidden bg-white dark:bg-gray-800 px-4 py-2" id="mobileMenu">
-            <a href="#introduction" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Introduction</a>
-            <a href="#preparation" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Preparation Guide</a>
-            <a href="#testimonials" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Testimonials</a>
-            <a href="#why-us" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Why Us</a>
-            <a href="#resources" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Resources</a>
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-white dark:bg-gray-800 px-4">
+            <div class="flex flex-col space-y-2 py-4">
+                <a href="#introduction" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Introduction</a>
+                <a href="#preparation" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Preparation Guide</a>
+                <a href="#testimonials" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Testimonials</a>
+                <a href="#why-us" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Why Us</a>
+                <a href="#resources" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Resources</a>
+            </div>
         </div>
     </nav>
     
     <!-- Hero Section with Parallax -->
-    <section class="parallax bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] py-20 md:py-32 relative">
+    <section class="parallax bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] py-20 md:py-32 relative flex items-center min-h-[80vh]">
         <div class="absolute inset-0 hero-overlay"></div>
         <div class="container mx-auto px-4 sm:px-6 relative z-10 text-center">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 fade-in">Master GATE Metallurgical Engineering</h1>
@@ -557,7 +585,7 @@
                 <div class="testimonial-slider">
                     <div class="slider-track" id="sliderTrack">
                         <!-- Testimonial 1 -->
-                        <div class="testimonial-slide">
+                        <div class="testimonial-slide active">
                             <div class="bg-white dark:bg-gray-700 p-6 md:p-8 rounded-xl shadow-lg">
                                 <div class="flex flex-col md:flex-row items-center mb-6">
                                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="w-16 h-16 rounded-full object-cover mb-4 md:mb-0 md:mr-4 border-4 border-blue-100 dark:border-blue-900">
@@ -637,9 +665,9 @@
                 
                 <!-- Slider Indicators -->
                 <div class="flex justify-center mt-6 space-x-2" id="sliderIndicators">
-                    <button class="w-3 h-3 rounded-full bg-blue-600 dark:bg-blue-400 slider-indicator"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 slider-indicator"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 slider-indicator"></button>
+                    <button class="w-3 h-3 rounded-full bg-blue-600 dark:bg-blue-400 slider-indicator active" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 slider-indicator" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 slider-indicator" data-index="2"></button>
                 </div>
             </div>
         </div>
@@ -1017,7 +1045,14 @@
         const mobileMenu = document.getElementById('mobileMenu');
         
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+                mobileMenu.classList.remove('open');
+            }
         });
         
         // Scroll animations
@@ -1029,7 +1064,10 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
         
         fadeElements.forEach(element => {
             fadeInObserver.observe(element);
@@ -1037,29 +1075,158 @@
         
         // Counter animation
         const counters = document.querySelectorAll('.counter');
-        const speed = 200;
+        const animationDuration = 2000;
+        const frameDuration = 1000 / 60; // 60 fps
         
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const increment = target / speed;
+            const start = 0;
+            const totalFrames = Math.round(animationDuration / frameDuration);
+            let frame = 0;
             
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCounter, 1);
-            } else {
-                counter.innerText = target;
-            }
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animateCount = () => {
+                            frame++;
+                            const progress = frame / totalFrames;
+                            const current = Math.round(target * progress);
+                            
+                            if (current <= target) {
+                                counter.textContent = current;
+                                requestAnimationFrame(animateCount);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        animateCount();
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
             
-            function updateCounter() {
-                const current = +counter.innerText;
-                if (current < target) {
-                    counter.innerText = Math.ceil(current + increment);
-                    setTimeout(updateCounter, 1);
+            counterObserver.observe(counter);
+        });
+        
+        // Testimonial slider
+        let currentSlide = 0;
+        const sliderTrack = document.getElementById('sliderTrack');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const totalSlides = slides.length;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.querySelectorAll('.slider-indicator');
+        let autoSlideInterval;
+        
+        function updateSlider() {
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update slide visibility
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
                 } else {
-                    counter.innerText = target;
+                    slide.classList.remove('active');
                 }
-            }
+            });
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('bg-blue-600', 'dark:bg-blue-400');
+                    indicator.classList.remove('bg-gray-300', 'dark:bg-gray-600');
+                } else {
+                    indicator.classList.remove('bg-blue-600', 'dark:bg-blue-400');
+                    indicator.classList.add('bg-gray-300', 'dark:bg-gray-600');
+                }
+            });
+        }
+        
+        function goToSlide(index) {
+            currentSlide = (index + totalSlides) % totalSlides;
+            updateSlider();
+            resetAutoSlide();
+        }
+        
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        // Initialize slider
+        function initSlider() {
+            sliderTrack.style.width = `${totalSlides * 100}%`;
+            slides.forEach(slide => {
+                slide.style.minWidth = `${100 / totalSlides}%`;
+            });
+            
+            updateSlider();
+            
+            // Button event listeners
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            
+            // Indicator event listeners
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Start auto slide
+            resetAutoSlide();
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', initSlider);
+        
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle current answer
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('open');
+                    
+                    // Scroll to target
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
         
         // GSAP animations
@@ -1078,101 +1245,6 @@
                 ease: "power2.out"
             });
         });
-        
-        // FAQ accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                
-                // Toggle answer
-                answer.classList.toggle('hidden');
-                
-                // Rotate icon
-                icon.classList.toggle('transform');
-                icon.classList.toggle('rotate-180');
-                
-                // Close other open answers
-                faqQuestions.forEach(q => {
-                    if (q !== question) {
-                        q.nextElementSibling.classList.add('hidden');
-                        q.querySelector('i').classList.remove('transform', 'rotate-180');
-                    }
-                });
-            });
-        });
-        
-        // Testimonial slider
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.testimonial-slide');
-        const totalSlides = slides.length;
-        const sliderTrack = document.getElementById('sliderTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const indicators = document.querySelectorAll('.slider-indicator');
-        
-        function goToSlide(index) {
-            // Ensure index stays within bounds
-            if (index < 0) {
-                index = totalSlides - 1;
-            } else if (index >= totalSlides) {
-                index = 0;
-            }
-            
-            sliderTrack.style.transform = `translateX(-${index * 100}%)`;
-            currentSlide = index;
-            
-            // Update indicators
-            indicators.forEach((indicator, i) => {
-                if (i === index) {
-                    indicator.classList.remove('bg-gray-300', 'dark:bg-gray-600');
-                    indicator.classList.add('bg-blue-600', 'dark:bg-blue-400');
-                } else {
-                    indicator.classList.add('bg-gray-300', 'dark:bg-gray-600');
-                    indicator.classList.remove('bg-blue-600', 'dark:bg-blue-400');
-                }
-            });
-        }
-        
-        // Next slide
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                goToSlide(currentSlide + 1);
-            });
-        }
-        
-        // Previous slide
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                goToSlide(currentSlide - 1);
-            });
-        }
-        
-        // Indicator clicks
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                goToSlide(index);
-            });
-        });
-        
-        // Auto slide change
-        setInterval(() => {
-            goToSlide(currentSlide + 1);
-        }, 5000);
-        
-        // Initialize slider
-        function initSlider() {
-            sliderTrack.style.width = `${totalSlides * 100}%`;
-            slides.forEach(slide => {
-                slide.style.width = `${100 / totalSlides}%`;
-            });
-            goToSlide(0);
-        }
-        
-        // Initialize on load
-        window.addEventListener('load', initSlider);
     </script>
 </body>
 </html>
