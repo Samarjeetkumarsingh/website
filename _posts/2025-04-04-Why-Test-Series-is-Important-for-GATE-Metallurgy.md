@@ -147,6 +147,13 @@
             100% { transform: scale(1.2); opacity: 0.1; }
         }
         
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
@@ -218,6 +225,24 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         
+        /* Student Illustration */
+        .student-illustration {
+            position: absolute;
+            bottom: 0;
+            right: 5%;
+            width: 400px;
+            height: 300px;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        
+        .student-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+        
         /* Floating Shapes */
         .floating-shape {
             position: absolute;
@@ -243,6 +268,16 @@
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             background: var(--purple);
             animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        .shape-3 {
+            bottom: 15%;
+            left: 10%;
+            width: 120px;
+            height: 120px;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+            background: var(--accent-green);
+            animation: float 9s ease-in-out infinite 2s;
         }
         
         @keyframes float {
@@ -435,6 +470,13 @@
             position: relative;
             width: 100%;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pie-chart-wrapper {
+            flex: 1;
+            position: relative;
         }
         
         .pie-chart-legend {
@@ -449,6 +491,9 @@
             display: flex;
             align-items: center;
             font-size: 0.9rem;
+            background: rgba(0,0,0,0.03);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
         }
         
         .legend-color {
@@ -592,6 +637,12 @@
                 font-size: 2.8rem;
             }
             
+            .student-illustration {
+                width: 300px;
+                right: 0;
+                opacity: 0.7;
+            }
+            
             .chart-container {
                 grid-template-columns: 1fr;
             }
@@ -609,6 +660,10 @@
             
             .hero h1 {
                 font-size: 2.4rem;
+            }
+            
+            .student-illustration {
+                display: none;
             }
             
             .section {
@@ -642,6 +697,11 @@
             h2 {
                 font-size: 2rem;
             }
+            
+            .pie-chart-legend {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -654,6 +714,7 @@
     <!-- Floating Shapes -->
     <div class="floating-shape shape-1"></div>
     <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
 
     <!-- Navigation -->
     <nav>
@@ -662,26 +723,33 @@
                 <i class="fas fa-atom"></i> TestUrSelf
             </a>
             <div class="nav-links">
-                <a href="#importance">Importance</a>
-                <a href="#data">Data Insights</a>
-                <a href="#comparison">Comparison</a>
-                <a href="#advantage">Our Edge</a>
-                <a href="#cta">Get Started</a>
+                <a href="#importance" class="nav-link">Importance</a>
+                <a href="#data" class="nav-link">Data Insights</a>
+                <a href="#comparison" class="nav-link">Comparison</a>
+                <a href="#advantage" class="nav-link">Our Edge</a>
+                <a href="#cta" class="nav-link">Get Started</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Master GATE Metallurgy with Strategic Test Series</h1>
-        <p>Data shows students who complete 20+ test series improve their rank by 200+ positions on average</p>
-        <div class="cta-buttons">
-            <a href="#cta" class="btn btn-primary">
-                <i class="fas fa-rocket"></i> Enroll Now
-            </a>
-            <a href="#data" class="btn btn-secondary">
-                <i class="fas fa-chart-bar"></i> View Statistics
-            </a>
+        <div class="hero-content">
+            <h1>Master GATE Metallurgy with Strategic Test Series</h1>
+            <p>Data shows students who complete 20+ test series improve their rank by 200+ positions on average</p>
+            <div class="cta-buttons">
+                <a href="#cta" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Enroll Now
+                </a>
+                <a href="#data" class="btn btn-secondary">
+                    <i class="fas fa-chart-bar"></i> View Statistics
+                </a>
+            </div>
+        </div>
+        
+        <!-- Student Illustration -->
+        <div class="student-illustration">
+            <img src="https://img.freepik.com/free-vector/online-test-concept-illustration_114360-8206.jpg" alt="Student preparing online" class="student-image">
         </div>
     </section>
 
@@ -767,24 +835,26 @@
                 <h3>Test Series Participation</h3>
                 <div class="chart-wrapper">
                     <div class="pie-chart-container">
-                        <canvas id="participationChart"></canvas>
-                    </div>
-                    <div class="pie-chart-legend">
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #2962ff;"></span>
-                            <span>1-5 Tests (28%)</span>
+                        <div class="pie-chart-wrapper">
+                            <canvas id="participationChart"></canvas>
                         </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #00bfa5;"></span>
-                            <span>6-10 Tests (35%)</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #7c4dff;"></span>
-                            <span>11-15 Tests (25%)</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #00c853;"></span>
-                            <span>16-20 Tests (12%)</span>
+                        <div class="pie-chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #2962ff;"></span>
+                                <span>1-5 Tests (28%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #00bfa5;"></span>
+                                <span>6-10 Tests (35%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #7c4dff;"></span>
+                                <span>11-15 Tests (25%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #00c853;"></span>
+                                <span>16-20 Tests (12%)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -927,20 +997,22 @@
                 <h3>Question Match Rate</h3>
                 <div class="chart-wrapper">
                     <div class="pie-chart-container">
-                        <canvas id="matchRateChart"></canvas>
-                    </div>
-                    <div class="pie-chart-legend">
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #2962ff;"></span>
-                            <span>Direct Match (22%)</span>
+                        <div class="pie-chart-wrapper">
+                            <canvas id="matchRateChart"></canvas>
                         </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #00bfa5;"></span>
-                            <span>Concept Match (63%)</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #7c4dff;"></span>
-                            <span>No Match (15%)</span>
+                        <div class="pie-chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #2962ff;"></span>
+                                <span>Direct Match (22%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #00bfa5;"></span>
+                                <span>Concept Match (63%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #7c4dff;"></span>
+                                <span>No Match (15%)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1406,6 +1478,14 @@
                 ease: 'power3.out'
             });
             
+            gsap.from('.student-illustration', {
+                duration: 1.5,
+                x: 100,
+                opacity: 0,
+                delay: 0.4,
+                ease: 'elastic.out(1, 0.5)'
+            });
+            
             // Animate section headings
             gsap.utils.toArray('h2').forEach((heading, i) => {
                 gsap.from(heading, {
@@ -1449,17 +1529,10 @@
                     ease: 'power3.out'
                 });
             });
-        }
-        
-        // Initialize everything when DOM loads
-        document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
-            initCharts();
-            initAnimations();
             
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+            // Make navigation links clickable with smooth scroll
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
@@ -1473,9 +1546,22 @@
                             },
                             ease: 'power3.inOut'
                         });
+                        
+                        // Update active state
+                        document.querySelectorAll('.nav-link').forEach(navLink => {
+                            navLink.classList.remove('active');
+                        });
+                        this.classList.add('active');
                     }
                 });
             });
+        }
+        
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            initCharts();
+            initAnimations();
         });
     </script>
 </body>
