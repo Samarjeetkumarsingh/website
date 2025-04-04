@@ -51,12 +51,58 @@
             padding: 0 1rem;
         }
         
+        .toc-container {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .toc-title {
+            color: var(--primary);
+            border-bottom: 2px solid var(--highlight);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+        
+        .toc-item {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        
+        .toc-item::before {
+            content: "•";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .toc-link {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .toc-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
         .section {
             background: white;
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            scroll-margin-top: 20px;
         }
         
         h2 {
@@ -132,7 +178,7 @@
                 padding: 0 0.5rem;
             }
             
-            .section {
+            .section, .toc-container {
                 padding: 1rem;
             }
         }
@@ -148,7 +194,18 @@
     </header>
     
     <div class="container">
-        <section class="section">
+        <div class="toc-container">
+            <h2 class="toc-title">Table of Contents</h2>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#binary-iso" class="toc-link">Binary Isomorphous System</a></li>
+                <li class="toc-item"><a href="#volume-fractions" class="toc-link">Volume Fractions</a></li>
+                <li class="toc-item"><a href="#binary-eutectic" class="toc-link">Binary Eutectic System</a></li>
+                <li class="toc-item"><a href="#fec-system" class="toc-link">Fe–C Alloy System</a></li>
+                <li class="toc-item"><a href="#thermodynamics" class="toc-link">Thermodynamics</a></li>
+            </ul>
+        </div>
+        
+        <section id="binary-iso" class="section">
             <h2>Binary Isomorphous System</h2>
             
             <div class="equation-card iso">
@@ -164,7 +221,7 @@
             </div>
         </section>
         
-        <section class="section">
+        <section id="volume-fractions" class="section">
             <h2>Volume Fractions</h2>
             
             <div class="equation-card vol">
@@ -186,7 +243,7 @@
             </div>
         </section>
         
-        <section class="section">
+        <section id="binary-eutectic" class="section">
             <h2>Binary Eutectic System</h2>
             
             <div class="equation-card eutectic">
@@ -214,7 +271,7 @@
             </div>
         </section>
         
-        <section class="section">
+        <section id="fec-system" class="section">
             <h2>Fe–C Alloy System</h2>
             
             <div class="equation-card fec">
@@ -242,7 +299,7 @@
             </div>
         </section>
         
-        <section class="section">
+        <section id="thermodynamics" class="section">
             <h2>Thermodynamics</h2>
             
             <div class="equation-card thermo">
@@ -264,6 +321,17 @@
                 inlineMath: [['$', '$'], ['\\(', '\\)']]
             }
         };
+        
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
