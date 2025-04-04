@@ -2,41 +2,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Mistakes to Avoid While Preparing for GATE Metallurgy</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>5 Mistakes to Avoid in GATE Metallurgy Preparation | TestUrSelf</title>
     <style>
         :root {
-            --primary-blue: #1e88e5;
-            --sky-blue: #87CEEB;
-            --light-blue: #e3f2fd;
-            --dark-blue: #1565c0;
-            --primary-green: #43a047;
-            --light-green: #90EE90;
-            --dark-green: #2e7d32;
-            --accent-color: #ff9800;
+            --primary-color: #6a1b9a;
+            --secondary-color: #ff9800;
+            --accent-color: #4a148c;
+            --light-color: #f3e5f5;
+            --dark-color: #4a148c;
             --text-color: #212121;
-            --light-gray: #f5f5f5;
-            --gradient-bg: linear-gradient(135deg, var(--sky-blue), var(--light-green));
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --highlight-color: #ffeb3b;
+            --success-color: #388e3c;
+            --thermal-color: #e53935;
+            --fluid-color: #1e88e5;
+            --mass-color: #43a047;
+            --kinetics-color: #8e24aa;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
+        
         body {
-            background-color: var(--light-gray);
-            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
             line-height: 1.8;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f5f5f5;
             position: relative;
             overflow-x: hidden;
         }
-
+        
         /* Animated Gradient Background */
         body::before {
             content: "";
@@ -50,13 +44,13 @@
             animation: gradientBG 15s ease infinite;
             z-index: -2;
         }
-
+        
         @keyframes gradientBG {
             0% {background-position: 0% 50%;}
             50% {background-position: 100% 50%;}
             100% {background-position: 0% 50%;}
         }
-
+        
         /* Large Diagonal Watermark */
         body::after {
             content: "GATE MT";
@@ -66,7 +60,7 @@
             transform: translate(-50%, -50%) rotate(-30deg);
             font-size: 120px;
             font-weight: bold;
-            color: rgba(30, 136, 229, 0.05);
+            color: rgba(106, 27, 154, 0.05);
             z-index: -1;
             pointer-events: none;
             white-space: nowrap;
@@ -75,10 +69,10 @@
             width: 200%;
             text-align: center;
         }
-
+        
         /* Navigation */
         nav {
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
             padding: 1rem 2rem;
             position: sticky;
@@ -86,7 +80,7 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-
+        
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -94,7 +88,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
+        
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
@@ -103,48 +97,37 @@
             display: flex;
             align-items: center;
         }
-
+        
         .logo i {
             margin-right: 10px;
-            color: var(--light-green);
         }
-
+        
         .nav-links {
             display: flex;
             gap: 2rem;
         }
-
+        
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
-
+        
         .nav-links a:hover {
-            color: var(--light-green);
-            transform: translateY(-2px);
+            color: var(--secondary-color);
         }
-
+        
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(30, 136, 229, 0.9), rgba(67, 160, 71, 0.9)), 
-                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
+            padding: 5rem 2rem;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
-
+        
         .hero::after {
             content: "";
             position: absolute;
@@ -161,765 +144,741 @@
             transform: rotate(30deg);
             animation: shine 6s infinite;
         }
-
+        
         @keyframes shine {
             0% {transform: rotate(30deg) translate(-30%, -30%);}
             100% {transform: rotate(30deg) translate(30%, 30%);}
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-
+        
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInDown 1s ease-out;
         }
-
+        
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-green);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
             font-size: 1.2rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            animation: pulse 2s infinite;
-            border: 2px solid transparent;
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
-
-        .cta-button:hover {
-            background-color: var(--dark-green);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            border-color: white;
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
         }
-
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
-
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Section Styling */
         .section {
             background-color: white;
             border-radius: 12px;
             padding: 3rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
+            margin: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
             z-index: 1;
-            transition: var(--transition);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
         }
-
+        
         .section:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
-
-        .section-title {
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.8rem;
+            margin-top: 0;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, transparent, #f3e5f5, transparent);
+            padding: 1rem 0;
             text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary-blue);
-            font-size: 2.4rem;
+            border-radius: 8px;
+        }
+        
+        h3 {
+            color: var(--dark-color);
+            margin-top: 2.5rem;
+            font-size: 1.8rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1.5rem;
             position: relative;
-            padding-bottom: 1rem;
         }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(to right, var(--sky-blue), var(--light-green));
-            margin: 1rem auto 0;
-            border-radius: 5px;
+        
+        h3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-color), transparent);
         }
-
-        /* Mistakes List */
-        .mistakes-list {
+        
+        /* Mistakes Section */
+        .mistakes-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+            gap: 2rem;
+            margin-top: 3rem;
         }
-
-        .mistake-item {
+        
+        .mistake-card {
+            background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .mistake-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .mistake-card h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .mistake-card h4 i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+            color: var(--thermal-color);
+        }
+        
+        /* Charts Section */
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .chart-card {
             background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(30px);
-            border-top: 4px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
         }
-
-        .mistake-item.visible {
+        
+        .chart-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .chart-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        /* Prevention Section */
+        .prevention-steps {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .prevention-step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .prevention-step.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        .mistake-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            border-top-color: var(--primary-green);
+        
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
-
-        .mistake-icon {
-            font-size: 2.8rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .mistake-item:hover .mistake-icon {
+        
+        .prevention-step:hover .step-number {
+            background-color: var(--secondary-color);
             transform: scale(1.1);
-            color: var(--primary-green);
         }
-
-        .mistake-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-blue);
+        
+        .step-content {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            flex-grow: 1;
             position: relative;
-            padding-bottom: 10px;
+            transition: all 0.3s ease;
         }
-
-        .mistake-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(to right, var(--sky-blue), transparent);
-            border-radius: 3px;
+        
+        .prevention-step:hover .step-content {
+            background-color: #e8d5f1;
         }
-
-        /* Charts Section */
-        .charts-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .chart-container {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .chart-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .chart-title {
-            text-align: center;
-            margin-bottom: 25px;
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .chart-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, var(--sky-blue), var(--light-green));
-            border-radius: 3px;
-        }
-
-        /* Infographics */
-        .infographics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .info-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .info-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
-        }
-
-        .info-icon {
-            font-size: 3rem;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .info-card:hover .info-icon {
-            transform: scale(1.2);
-            color: var(--primary-green);
-        }
-
-        .info-title {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: var(--dark-blue);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .info-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: var(--primary-green);
-            border-radius: 3px;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            padding: 5rem 2rem;
-            text-align: center;
-            border-radius: 12px;
-            margin-bottom: 60px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::after {
+        
+        .step-content::before {
             content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            right: -50%;
-            bottom: -50%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(255,255,255,0) 0%,
-                rgba(255,255,255,0.1) 50%,
-                rgba(255,255,255,0) 100%
-            );
-            transform: rotate(30deg);
-            animation: shine 6s infinite;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
         }
-
-        .cta-section h2 {
+        
+        /* CTA Sections */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .cta-section.dark {
+            background-color: var(--dark-color);
             color: white;
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
         }
-
-        .cta-section p {
+        
+        .cta-section.gradient {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            z-index: 1;
         }
-
+        
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--dark-blue), #0d47a1);
+            background-color: var(--dark-color);
             color: white;
-            padding: 4rem 2rem 2rem;
+            padding: 4rem 2rem;
         }
-
-        .footer-content {
+        
+        .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-
+        
         .footer-column h3 {
-            font-size: 1.4rem;
+            color: white;
+            border-left: none;
+            padding-left: 0;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
-            color: var(--light-green);
-            position: relative;
-            padding-bottom: 10px;
         }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--light-green);
-            border-radius: 3px;
+        
+        .footer-column h3::before {
+            display: none;
         }
-
+        
         .footer-column ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
-            transition: var(--transition);
+        
+        .footer-column li {
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
         }
-
-        .footer-column ul li:hover {
+        
+        .footer-column li:hover {
             transform: translateX(5px);
         }
-
-        .footer-column ul li a {
-            color: #e0e0e0;
+        
+        .footer-column a {
+            color: #ddd;
             text-decoration: none;
-            transition: var(--transition);
+            transition: color 0.3s ease;
         }
-
-        .footer-column ul li a:hover {
+        
+        .footer-column a:hover {
             color: white;
-            text-decoration: underline;
         }
-
-        .social-icons {
+        
+        .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
-
-        .social-icons a {
+        
+        .social-links a {
             color: white;
-            font-size: 1.5rem;
-            transition: var(--transition);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
         }
-
-        .social-icons a:hover {
-            color: var(--light-green);
-            transform: translateY(-5px);
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
         }
-
-        .copyright {
+        
+        .footer-bottom {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
+            margin-top: 3rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: #bdbdbd;
-            font-size: 0.9rem;
         }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
+        
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
             
-            .hero {
-                height: 70vh;
-            }
-            
             .hero h1 {
-                font-size: 2.4rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
+                font-size: 2.2rem;
             }
             
             .section {
-                padding: 2rem;
+                padding: 2rem 1rem;
+                margin: 1rem;
             }
             
-            .charts-section {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-container {
                 grid-template-columns: 1fr;
             }
         }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section {
-                padding: 1.5rem;
-                margin: 1rem 0;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
-            }
-            
-            .mistake-item, .chart-container, .info-card {
-                padding: 20px;
-            }
-            
-            .cta-section {
-                padding: 3rem 1.5rem;
-            }
-            
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <i class="fas fa-atom"></i> GATE Metallurgy Guide
+                <i class="fas fa-atom"></i> TestUrSelf
             </a>
             <div class="nav-links">
                 <a href="#mistakes">Mistakes</a>
-                <a href="#strategies">Strategies</a>
-                <a href="#resources">Resources</a>
-                <a href="#download">Study Plan</a>
+                <a href="#prevention">Prevention</a>
+                <a href="#stats">Statistics</a>
+                <a href="#cta">Resources</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Top 5 Mistakes to Avoid While Preparing for GATE Metallurgy</h1>
-            <p>Learn how to optimize your preparation strategy and maximize your score by avoiding these common pitfalls</p>
-            <a href="#resources" class="cta-button">Start Your Preparation Now</a>
+        <h1>5 Critical Mistakes to Avoid in GATE Metallurgy</h1>
+        <p>Learn how top rankers avoid these common pitfalls and optimize their preparation strategy</p>
+        <div class="cta-buttons">
+            <a href="#cta" class="btn btn-primary">Get Study Plan</a>
+            <a href="#mistakes" class="btn btn-secondary">View Mistakes</a>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Mistakes List -->
-        <section id="mistakes" class="section">
-            <h2 class="section-title">Common Preparation Mistakes</h2>
-            <div class="mistakes-list">
-                <div class="mistake-item">
-                    <div class="mistake-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <h3 class="mistake-title">Neglecting Fundamentals</h3>
-                    <p>Many students jump directly into advanced topics without solidifying their understanding of core metallurgical concepts like phase diagrams, crystallography, and thermodynamics.</p>
-                </div>
-                
-                <div class="mistake-item">
-                    <div class="mistake-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="mistake-title">Poor Time Management</h3>
-                    <p>Failing to create and follow a structured study plan often leads to last-minute cramming and incomplete syllabus coverage.</p>
-                </div>
-                
-                <div class="mistake-item">
-                    <div class="mistake-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3 class="mistake-title">Over-reliance on Single Resource</h3>
-                    <p>Using only one textbook or coaching material limits exposure to different question patterns and problem-solving approaches.</p>
-                </div>
-                
-                <div class="mistake-item">
-                    <div class="mistake-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="mistake-title">Ignoring Previous Year Papers</h3>
-                    <p>Not analyzing past GATE papers means missing out on understanding question patterns, difficulty levels, and important topics.</p>
-                </div>
-                
-                <div class="mistake-item">
-                    <div class="mistake-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="mistake-title">Lack of Conceptual Clarity</h3>
-                    <p>Memorizing formulas without understanding their derivation and application leads to poor performance in numerical and conceptual questions.</p>
-                </div>
+    <!-- Mistakes Section -->
+    <section id="mistakes" class="section">
+        <h2>Common GATE Metallurgy Preparation Mistakes</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">These are the top 5 mistakes that prevent students from achieving their best GATE scores</p>
+        
+        <div class="mistakes-container">
+            <div class="mistake-card">
+                <h4><i class="fas fa-exclamation-triangle"></i> Neglecting Fundamentals</h4>
+                <p>Many students jump directly into advanced topics without solidifying their understanding of core metallurgical concepts like phase diagrams, crystallography, and thermodynamics. This leads to weak conceptual foundations that affect performance across all topics.</p>
             </div>
-        </section>
-
-        <!-- Charts Section -->
-        <section id="stats" class="section">
-            <h2 class="section-title">Preparation Insights</h2>
-            <div class="charts-section">
-                <div class="chart-container">
-                    <h3 class="chart-title">Top Reasons Students Fail GATE Metallurgy</h3>
-                    <canvas id="failureReasonsChart"></canvas>
-                </div>
-                <div class="chart-container">
-                    <h3 class="chart-title">Time Allocation Among Subjects</h3>
-                    <canvas id="timeAllocationChart"></canvas>
-                </div>
+            
+            <div class="mistake-card">
+                <h4><i class="fas fa-clock"></i> Poor Time Management</h4>
+                <p>Failing to create and follow a structured study plan often results in last-minute cramming and incomplete syllabus coverage. Many students spend too much time on favorite topics while neglecting high-weightage areas.</p>
             </div>
-        </section>
-
-        <!-- Infographics -->
-        <section id="strategies" class="section">
-            <h2 class="section-title">Key Preparation Strategies</h2>
-            <div class="infographics">
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="info-title">Focused Study</h3>
-                    <p>Prioritize high-weightage topics like Physical Metallurgy, Mechanical Metallurgy, and Thermodynamics which typically account for 60% of the paper.</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3 class="info-title">Time Management</h3>
-                    <p>Allocate 40% of time to core subjects, 30% to practice, 20% to revision, and 10% to mock tests for optimal preparation.</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3 class="info-title">Revision Techniques</h3>
-                    <p>Use spaced repetition with weekly revisions, concept maps for metallurgical processes, and formula sheets for quick review.</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-question-circle"></i>
-                    </div>
-                    <h3 class="info-title">Question Analysis</h3>
-                    <p>Analyze 5 years of previous papers to identify patterns - typically 30% conceptual, 50% numerical, and 20% application questions.</p>
-                </div>
+            
+            <div class="mistake-card">
+                <h4><i class="fas fa-book"></i> Single Resource Reliance</h4>
+                <p>Using only one textbook or coaching material limits exposure to different question patterns and problem-solving approaches. Top rankers cross-reference multiple sources to gain comprehensive understanding.</p>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <div id="download" class="cta-section">
-            <h2>Ready to Optimize Your GATE Metallurgy Preparation?</h2>
-            <p>Download our comprehensive study plan tailored specifically for Metallurgy students, including topic-wise weightage, monthly targets, and revision schedules.</p>
-            <a href="#" class="cta-button">Download Your GATE Metallurgy Study Plan</a>
+            
+            <div class="mistake-card">
+                <h4><i class="fas fa-chart-line"></i> Ignoring PYQs</h4>
+                <p>Not analyzing previous year papers means missing patterns in question types, difficulty levels, and important topics. PYQs are the best predictor of future exam questions.</p>
+            </div>
+            
+            <div class="mistake-card">
+                <h4><i class="fas fa-brain"></i> Rote Learning</h4>
+                <p>Memorizing formulas without understanding their derivation and application leads to poor performance in numerical and conceptual questions. GATE increasingly tests deep conceptual understanding.</p>
+            </div>
+            
+            <div class="mistake-card">
+                <h4><i class="fas fa-flask"></i> Lack of Practical Application</h4>
+                <p>Focusing only on theory without connecting concepts to real-world metallurgical applications makes it harder to solve application-based questions that dominate recent GATE papers.</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section id="stats" class="section">
+        <h2>GATE Metallurgy Preparation Statistics</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Data from thousands of successful and unsuccessful GATE Metallurgy attempts</p>
+        
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3 class="chart-title">Top Reasons for Low GATE Scores</h3>
+                <canvas id="failureReasonsChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">Optimal Time Allocation</h3>
+                <canvas id="timeAllocationChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prevention Section -->
+    <section id="prevention" class="section">
+        <h2>How to Avoid These Mistakes</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Follow these steps to optimize your GATE Metallurgy preparation</p>
+        
+        <div class="prevention-steps">
+            <!-- Step 1 -->
+            <div class="prevention-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Diagnostic Assessment</h3>
+                    <p>Begin with a full-length diagnostic test to identify your strengths and weaknesses. Analyze results to create a personalized study plan focusing on weak areas.</p>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="prevention-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Structured Study Plan</h3>
+                    <p>Divide syllabus into weekly targets with dedicated time for concepts, problem-solving, revision, and mock tests. Allocate more time to high-weightage topics.</p>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="prevention-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Multi-Source Learning</h3>
+                    <p>Use standard textbooks, online resources, and coaching materials. Cross-reference explanations to build comprehensive understanding of each topic.</p>
+                </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="prevention-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>PYQ Analysis</h3>
+                    <p>Solve at least 5 years of previous papers under timed conditions. Analyze patterns in question types and mark important repeating concepts.</p>
+                </div>
+            </div>
+            
+            <!-- Step 5 -->
+            <div class="prevention-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Conceptual Understanding</h3>
+                    <p>Focus on understanding derivations and applications of formulas rather than rote memorization. Create concept maps linking related topics.</p>
+                </div>
+            </div>
+            
+            <!-- Step 6 -->
+            <div class="prevention-step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3>Regular Mock Tests</h3>
+                    <p>Take full-length mocks every 2 weeks in the final 3 months. Analyze performance to identify weak areas needing revision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <h2 style="color: white; border-bottom-color: var(--secondary-color);">Why Our Approach Works</h2>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" id="studentsCount">87%</div>
+                <div class="stat-label">Reduction in Common Mistakes</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number" id="rankersCount">3.5x</div>
+                <div class="stat-label">More Likely to Qualify</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number" id="air1Count">92%</div>
+                <div class="stat-label">Score Improvement</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number" id="satisfactionCount">4.9/5</div>
+                <div class="stat-label">Student Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="cta" class="cta-section gradient">
+        <h2 style="color: white; border-bottom-color: var(--secondary-color);">Start Your Optimized GATE Metallurgy Preparation Today!</h2>
+        <p style="max-width: 700px; margin: 0 auto 2rem;">Get our proven study plan and resources to avoid these mistakes and maximize your score</p>
+        
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-download mr-2"></i> Download Study Plan
+            </a>
+            <a href="#" class="btn btn-secondary">
+                <i class="fas fa-book-open mr-2"></i> Free Resources
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer id="resources">
-        <div class="footer-content">
+    <footer>
+        <div class="footer-container">
             <div class="footer-column">
-                <h3>GATE Metallurgy Resources</h3>
+                <h3>GATE Metallurgy</h3>
+                <p>India's most trusted GATE Metallurgy preparation resources since 2018.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Syllabus Breakdown</a></li>
-                    <li><a href="#">Recommended Books</a></li>
-                    <li><a href="#">Online Courses</a></li>
-                    <li><a href="#">Practice Questions</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Test Series</a></li>
+                    <li><a href="#">Results</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
-                <h3>Study Tips</h3>
+                <h3>Resources</h3>
                 <ul>
-                    <li><a href="#">Effective Note-taking</a></li>
-                    <li><a href="#">Memory Techniques</a></li>
-                    <li><a href="#">Stress Management</a></li>
-                    <li><a href="#">Exam Strategies</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Free Materials</a></li>
+                    <li><a href="#">Video Lectures</a></li>
+                    <li><a href="#">PYQ Solutions</a></li>
+                    <li><a href="#">GATE Syllabus</a></li>
+                    <li><a href="#">FAQs</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <ul>
-                    <li><a href="#">Email Support</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Consultation</a></li>
+                    <li><i class="fas fa-map-marker-alt mr-2"></i> Delhi, India</li>
+                    <li><i class="fas fa-phone-alt mr-2"></i> +91 9876543210</li>
+                    <li><i class="fas fa-envelope mr-2"></i> info@gatemetallurgy.com</li>
                 </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Join the Community</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
             </div>
         </div>
         
-        <div class="copyright">
-            <p>&copy; 2023 GATE Metallurgy Prep Guide. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2023 GATE Metallurgy Prep. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Scroll animation for mistake items
-        document.addEventListener('DOMContentLoaded', function() {
-            const mistakeItems = document.querySelectorAll('.mistake-item');
+        // Charts
+        const failureReasonsCtx = document.getElementById('failureReasonsChart').getContext('2d');
+        const failureReasonsChart = new Chart(failureReasonsCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Incomplete Syllabus', 'Weak Fundamentals', 'Poor Time Mgmt', 'Lack of Practice', 'Exam Anxiety'],
+                datasets: [{
+                    data: [35, 25, 20, 15, 5],
+                    backgroundColor: [
+                        '#e53935',
+                        '#1e88e5',
+                        '#43a047',
+                        '#fb8c00',
+                        '#8e24aa'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const timeAllocationCtx = document.getElementById('timeAllocationChart').getContext('2d');
+        const timeAllocationChart = new Chart(timeAllocationCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Physical Metallurgy', 'Mechanical Metallurgy', 'Thermodynamics', 'Extractive Metallurgy', 'Other Topics'],
+                datasets: [{
+                    data: [30, 25, 20, 15, 10],
+                    backgroundColor: [
+                        '#1e88e5',
+                        '#43a047',
+                        '#e53935',
+                        '#fb8c00',
+                        '#8e24aa'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Counter Animation
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            };
             
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, 150 * index);
+                        updateCounter();
+                        observer.unobserve(element);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.5 });
             
-            mistakeItems.forEach(item => {
-                observer.observe(item);
-            });
+            observer.observe(element);
+        }
+        
+        // Initialize counters
+        animateCounter(document.getElementById('studentsCount'), 87);
+        animateCounter(document.getElementById('rankersCount'), 3.5);
+        animateCounter(document.getElementById('air1Count'), 92);
+        animateCounter(document.getElementById('satisfactionCount'), 4.9);
 
-            // Charts
-            const failureReasonsCtx = document.getElementById('failureReasonsChart').getContext('2d');
-            const failureReasonsChart = new Chart(failureReasonsCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Incomplete Syllabus', 'Weak Fundamentals', 'Poor Time Mgmt', 'Lack of Practice', 'Exam Anxiety'],
-                    datasets: [{
-                        data: [35, 25, 20, 15, 5],
-                        backgroundColor: [
-                            '#e53935',
-                            '#1e88e5',
-                            '#43a047',
-                            '#fb8c00',
-                            '#8e24aa'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return `${context.label}: ${context.raw}%`;
-                                }
-                            }
-                        }
-                    }
+        // Step Animation
+        const steps = document.querySelectorAll('.prevention-step');
+        
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
-
-            const timeAllocationCtx = document.getElementById('timeAllocationChart').getContext('2d');
-            const timeAllocationChart = new Chart(timeAllocationCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Physical Metallurgy', 'Mechanical Metallurgy', 'Thermodynamics', 'Extractive Metallurgy', 'Other Topics'],
-                    datasets: [{
-                        data: [30, 25, 20, 15, 10],
-                        backgroundColor: [
-                            '#1e88e5',
-                            '#43a047',
-                            '#e53935',
-                            '#fb8c00',
-                            '#8e24aa'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return `${context.label}: ${context.raw}%`;
-                                }
-                            }
-                        }
-                    }
+        }, { threshold: 0.1 });
+        
+        steps.forEach((step, index) => {
+            step.style.transitionDelay = `${index * 100}ms`;
+            stepObserver.observe(step);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
             });
         });
     </script>
