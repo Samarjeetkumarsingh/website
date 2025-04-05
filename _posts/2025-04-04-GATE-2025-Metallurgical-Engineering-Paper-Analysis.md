@@ -831,19 +831,19 @@
     <section class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--dark-color)); color: white;">
         <div class="countdown-container" style="display: flex; justify-content: space-around; text-align: center;">
             <div class="countdown-item">
-                <div class="countdown-number" id="days" style="font-size: 3rem; font-weight: bold; color: var(--accent-color);">00</div>
+                <div class="countdown-number" id="days" style="font-size: 3rem; font-weight: bold; color: var(--accent-color);">308</div>
                 <div class="countdown-label" style="font-size: 1.2rem;">Days</div>
             </div>
             <div class="countdown-item">
-                <div class="countdown-number" id="hours" style="font-size: 3rem; font-weight: bold; color: var(--accent-color);">00</div>
+                <div class="countdown-number" id="hours" style="font-size: 3rem; font-weight: bold; color: var(--accent-color);">7400</div>
                 <div class="countdown-label" style="font-size: 1.2rem;">Hours</div>
             </div>
             <div class="countdown-item">
-                <div class="countdown-number" id="minutes" style="font-size: 3rem; font-weight: bold; color: var(--accent-color);">00</div>
+                <div class="countdown-number" id="minutes" style="font-size: 3rem; font-weight: bold; color: var(--accent-color);">444414</div>
                 <div class="countdown-label" style="font-size: 1.2rem;">Minutes</div>
             </div>
             <div class="countdown-item">
-                <div class="countdown-number" id="seconds" style="font-size: 3rem; font-weight: bold; color: var(--accent-color);">00</div>
+                <div class="countdown-number" id="seconds" style="font-size: 3rem; font-weight: bold; color: var(--accent-color);">26664800</div>
                 <div class="countdown-label" style="font-size: 1.2rem;">Seconds</div>
             </div>
         </div>
