@@ -666,10 +666,12 @@
         
         /* Timeline Section */
         .timeline-section {
-            position: relative;
-            padding: 5rem 0;
-            background: linear-gradient(to bottom, #f8f9fa, white);
-        }
+    position: relative;
+    padding: 5rem 0 6rem;
+    margin-bottom: 4rem;
+    background: linear-gradient(to bottom, #f8f9fa, white);
+    z-index: 1;
+}
         
         .timeline-container {
             max-width: 1200px;
