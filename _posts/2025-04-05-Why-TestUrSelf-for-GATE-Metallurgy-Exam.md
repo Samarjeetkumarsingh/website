@@ -1501,7 +1501,7 @@
                 
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        I enrolled in the TestUrSelf Test Series and Practice Question Series (PQS) for GATE Metallurgy 2024. The quantity and quality of questions in both were exceptional. These resources helped me identify my strong and weak areas, allowing me to focus on the topics that needed improvement. The well-structured tests played a crucial role in my preparation, ultimately helping me secure AIR-1 in GATE Metallurgy 2024. I highly recommend TestUrSelf to serious aspirants.
+                        I enrolled in the TestUrSelf Test Series and Practice Question Series (PQS) for GATE MT 2024. The quantity and quality of questions in both were exceptional. These resources helped me identify my strong and weak areas, allowing me to focus on the topics that needed improvement. The well-structured tests played a crucial role in my preparation.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">HP</div>
@@ -1515,7 +1515,7 @@
                 
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        Testurself provides me amazing platform to check my GATE Metallurgical Engineering preparation at the end. The level of questions in Test series are similar to that of GATE Metallurgy level which helped me to do experiment on how to attempt a paper within given time. Overall it was a nice experience.
+                        Testurself provides me amazing platform to check my GATE MT preparation at the end. The level of questions in Test series are similar to that of GATE Metallurgy level which helped me to do experiment on how to attempt a paper within given time. Overall it was a nice experience.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">SK</div>
