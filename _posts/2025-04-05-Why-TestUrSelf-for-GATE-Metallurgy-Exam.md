@@ -4,96 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master GATE Metallurgy | TestUrSelf - India's #1 GATE Coaching</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <style>
         :root {
             --primary-blue: #176b87;
-            --primary-green: #229954;
-            --accent-yellow: #f8e71c;
+            --secondary-teal: #229954;
+            --accent-gold: #FFD700;
             --dark-blue: #0d47a1;
-            --dark-green: #2a7a52;
-            --light-bg: #f0f7ff;
-            --text-dark: #2d3436;
-            --text-light: #e8f9fd;
-            --vibrant-blue: #00a8ff;
-            --vibrant-green: #00d2d3;
-            --box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --light-blue: #e8f9fd;
+            --highlight-yellow: #f8e71c;
+            --danger-red: #ff1744;
+            --purple: #7c4dff;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.7;
-            background-color: #f5f5f5;
-            overflow-x: hidden;
+            line-height: 1.8;
+            color: #2d3436;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f0f7ff;
             position: relative;
+            overflow-x: hidden;
         }
         
-        /* Animated Gradient Background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #e8f9fd 0%, #d1f5ff 50%, #e8f9fd 100%);
-            background-size: 200% 200%;
-            animation: gradientBG 15s ease infinite;
-            z-index: -2;
-        }
-        
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-        
-        /* Watermark */
-        body::after {
-            content: "TestUrSelf";
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-30deg);
-            font-size: 20vw;
-            font-weight: bold;
-            color: rgba(23, 107, 135, 0.03);
-            z-index: -1;
-            pointer-events: none;
-            white-space: nowrap;
-            text-transform: uppercase;
-            letter-spacing: 15px;
-            width: 200%;
-            text-align: center;
-        }
-        
-        /* Navigation */
-        .navbar {
+        /* Particle Background */
+        .particles {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            color: white;
-            padding: 1rem 2rem;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: var(--transition);
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
         }
         
-        .navbar.scrolled {
-            padding: 0.5rem 2rem;
-            background: rgba(23, 107, 135, 0.98);
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-blue), transparent);
+            opacity: 0.6;
+        }
+        
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-gold);
+            opacity: 0;
+        }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Celebration Badge */
+        .celebration-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--accent-gold);
+            color: var(--dark-blue);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 10;
+            transform: rotate(15deg);
+            animation: pulse-gold 2s infinite;
+        }
+        
+        @keyframes pulse-gold {
+            0% { transform: scale(1) rotate(15deg); }
+            50% { transform: scale(1.1) rotate(15deg); }
+            100% { transform: scale(1) rotate(15deg); }
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white;
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
         }
         
@@ -106,34 +121,34 @@
         }
         
         .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 700;
             color: white;
             text-decoration: none;
             display: flex;
             align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
         }
         
         .logo i {
-            margin-right: 10px;
-            color: var(--accent-yellow);
-            transition: var(--transition);
-        }
-        
-        .logo:hover i {
-            transform: rotate(360deg);
+            margin-right: 12px;
+            color: var(--highlight-yellow);
         }
         
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
         }
@@ -141,12 +156,12 @@
         .nav-links a::after {
             content: '';
             position: absolute;
+            width: 0;
+            height: 3px;
             bottom: 0;
             left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-yellow);
-            transition: var(--transition);
+            background-color: var(--highlight-yellow);
+            transition: width 0.3s ease;
         }
         
         .nav-links a:hover::after {
@@ -154,370 +169,654 @@
         }
         
         .nav-links a:hover {
-            color: var(--accent-yellow);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+            color: var(--highlight-yellow);
         }
         
         /* Hero Section */
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 2rem 80px;
+        .hero {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white;
+            padding: 6rem 2rem 8rem;
+            text-align: center;
             position: relative;
             overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 8s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 0.1; }
         }
         
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(23, 107, 135, 0.85), rgba(34, 153, 84, 0.85)), 
-                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-        
-        .hero-bg::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 20px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23f0f7ff"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23f0f7ff"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f0f7ff"></path></svg>') no-repeat center bottom;
-            background-size: cover;
-        }
-        
-        .hero-section h1 {
+        .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            background: linear-gradient(to right, white, var(--accent-yellow));
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(to right, white, var(--accent-gold));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: fadeInUp 1s ease;
         }
         
-        .hero-section h1 span {
-            color: var(--accent-yellow);
-            background: transparent;
-            -webkit-background-clip: initial;
-            background-clip: initial;
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            bottom: -10px;
+            left: 20%;
+            background: var(--accent-gold);
+            border-radius: 2px;
         }
         
-        .hero-section p {
-            font-size: 1.4rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-            animation: fadeInUp 1s ease 0.2s forwards;
-            opacity: 0;
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
         }
         
-        .hero-buttons {
+        .achievement-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin: 1rem 0;
+            border: 2px solid var(--accent-gold);
+            font-weight: bold;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .cta-buttons {
             display: flex;
+            gap: 1.5rem;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
             margin-top: 2rem;
-            animation: fadeInUp 1s ease 0.4s forwards;
-            opacity: 0;
         }
         
         .btn {
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: var(--transition);
-            min-width: 220px;
-            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn i {
+            margin-right: 8px;
         }
         
         .btn-primary {
-            background-color: var(--accent-yellow);
-            color: var(--primary-blue);
+            background-color: var(--highlight-yellow);
+            color: var(--dark-blue);
         }
         
         .btn-primary:hover {
             background-color: #e6d41a;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(248, 231, 28, 0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(248, 231, 28, 0.3);
         }
         
         .btn-secondary {
-            background-color: rgba(255,255,255,0.15);
+            background-color: transparent;
+            border: 2px solid white;
             color: white;
-            border: 2px solid rgba(255,255,255,0.3);
         }
         
         .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.25);
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         
-        /* Stats Bar */
-        .stats-section {
-            padding: 4rem 2rem;
+        /* Floating Elements */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .shape-1 {
+            top: 20%;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background: var(--secondary-teal);
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape-2 {
+            top: 60%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background: var(--purple);
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        .shape-3 {
+            bottom: 15%;
+            left: 10%;
+            width: 120px;
+            height: 120px;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+            background: var(--accent-gold);
+            animation: float 9s ease-in-out infinite 2s;
+        }
+        
+        .floating-trophy {
+            position: absolute;
+            font-size: 3rem;
+            color: var(--accent-gold);
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        /* Section Styling */
+        .section {
             background-color: white;
+            border-radius: 16px;
+            padding: 4rem 3rem;
+            margin: 3rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             position: relative;
             z-index: 1;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: none;
+            overflow: hidden;
         }
         
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-teal));
         }
         
-        .stats-bar {
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--dark-blue);
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 2.5rem;
+            background: none;
+            padding: 0;
+            text-align: center;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, var(--primary-blue), var(--accent-gold));
+            border-radius: 2px;
+        }
+        
+        h3 {
+            color: var(--dark-blue);
+            margin-top: 2.5rem;
+            font-size: 1.8rem;
+            border-left: none;
+            padding-left: 0;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+        
+        /* Importance Points */
+        .importance-points {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
         
-        .stat-card {
+        .point-card {
             background: white;
-            padding: 30px 25px;
             border-radius: 12px;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
         }
         
-        .stat-card::before {
-            content: "";
+        .point-card::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(to right, var(--primary-blue), var(--primary-green));
-            transition: var(--transition);
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-teal));
         }
         
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        .point-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
         
-        .stat-number {
+        .point-number {
             font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            transition: var(--transition);
+            font-weight: bold;
+            color: rgba(0,0,0,0.05);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            z-index: 0;
+            font-family: 'Poppins', sans-serif;
         }
         
-        .stat-card:hover .stat-number {
-            color: var(--primary-green);
-        }
-        
-        .stat-label {
-            font-weight: 600;
-            color: var(--primary-green);
-            transition: var(--transition);
-        }
-        
-        .stat-card:hover .stat-label {
-            color: var(--primary-blue);
-        }
-        
-        /* Methodology Section */
-        .methodology-section {
-            padding: 6rem 2rem;
+        .point-content {
             position: relative;
-            background-color: white;
+            z-index: 1;
         }
         
-        .section-header {
-            text-align: center;
+        .point-card h4 {
+            color: var(--dark-blue);
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .point-card h4 i {
+            margin-right: 12px;
+            color: var(--secondary-teal);
+            font-size: 1.8rem;
+        }
+        
+        /* Chart Containers */
+        .chart-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 14px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chart-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-teal));
+        }
+        
+        .chart-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 350px;
+            width: 100%;
+        }
+        
+        /* Animated Pie Chart */
+        .pie-chart-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pie-chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        
+        .pie-chart-legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            background: rgba(0,0,0,0.03);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            margin-right: 8px;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 2rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table th {
+            background-color: var(--dark-blue);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f1f5f9;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .check-mark {
+            color: var(--secondary-teal);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .cross-mark {
+            color: var(--danger-red);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* TestUrSelf Advantage */
+        .advantage-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .advantage-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .advantage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary-teal), var(--accent-gold));
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .advantage-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+        }
+        
+        .advantage-card:hover .advantage-icon {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--secondary-teal);
+        }
+        
+        .advantage-card h4 {
+            color: var(--dark-blue);
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            position: relative;
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #f8f9fa, white);
+        }
+        
+        .timeline-container {
             max-width: 1200px;
-            margin: 0 auto 4rem;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
         }
         
-        .section-header h2 {
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .timeline-header h2 {
             font-size: 2.8rem;
             color: var(--dark-blue);
             margin-bottom: 1rem;
-            font-weight: 800;
             position: relative;
             display: inline-block;
         }
         
-        .section-header h2 span {
-            color: var(--dark-green);
+        .timeline-header h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, var(--primary-blue), var(--accent-gold));
+            border-radius: 2px;
         }
         
-        .section-header p {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            max-width: 800px;
+        .timeline-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
             margin: 0 auto;
+            color: var(--dark-blue);
         }
         
-        .features-container {
+        .timeline {
+            position: relative;
             max-width: 1200px;
             margin: 0 auto;
         }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: var(--box-shadow);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-            border-top: 5px solid var(--dark-blue);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .feature-card.green {
-            border-top: 5px solid var(--dark-green);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-        }
-        
-        .feature-header {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-icon {
-            background: #e3f2fd;
-            width: 70px;
-            height: 70px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1.5rem;
-            font-size: 2rem;
-            color: var(--dark-blue);
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(10deg);
-        }
-        
-        .feature-card.green .feature-icon {
-            background: #e8f5e9;
-            color: var(--dark-green);
-        }
-        
-        .feature-title {
-            color: var(--dark-blue);
-            margin: 0;
-            font-size: 1.6rem;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover .feature-title {
-            color: var(--primary-blue);
-        }
-        
-        .feature-card.green .feature-title {
-            color: var(--dark-green);
-        }
-        
-        .feature-card.green:hover .feature-title {
-            color: var(--primary-green);
-        }
-        
-        .feature-list {
-            padding-left: 1.5rem;
-            margin: 0;
-            color: var(--text-dark);
-        }
-        
-        .feature-list li {
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: 1.05rem;
-        }
-        
-        .feature-list li::before {
-            content: "";
+        .timeline::after {
+            content: '';
             position: absolute;
-            left: 0;
-            top: 0.7rem;
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--accent-gold));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: var(--accent-gold);
+            border: 4px solid var(--primary-blue);
+            top: 15px;
             border-radius: 50%;
-            background-color: var(--dark-blue);
-            transition: var(--transition);
+            z-index: 1;
         }
         
-        .feature-card:hover .feature-list li::before {
-            transform: scale(1.5);
+        .left {
+            left: 0;
         }
         
-        .feature-card.green .feature-list li::before {
-            background-color: var(--dark-green);
+        .right {
+            left: 50%;
         }
         
-        .feature-list strong {
-            color: var(--dark-green);
-            font-weight: 600;
+        .right::after {
+            left: -12px;
         }
         
-        .feature-card.green .feature-list strong {
+        .timeline-content {
+            padding: 2rem;
+            background-color: white;
+            position: relative;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary-blue);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
             color: var(--dark-blue);
+            font-size: 1.5rem;
+        }
+        
+        .timeline-content p {
+            margin-bottom: 0;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-highlight {
+            position: absolute;
+            bottom: -15px;
+            right: 20px;
+            background: var(--accent-gold);
+            color: var(--dark-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         /* Testimonials Section */
         .testimonials-section {
+            background: linear-gradient(135deg, var(--light-blue) 0%, #e8f5ee 100%);
             padding: 6rem 0;
-            background: linear-gradient(135deg, var(--light-bg) 0%, #e8f5ee 100%);
             position: relative;
             overflow: hidden;
         }
@@ -533,71 +832,72 @@
             margin-bottom: 4rem;
         }
         
-        .testimonials-header h3 {
+        .testimonials-header h2 {
+            font-size: 2.8rem;
             color: var(--primary-blue);
-            font-size: 2.5rem;
             margin-bottom: 1rem;
-            font-weight: 800;
+            position: relative;
+            display: inline-block;
         }
         
-        .testimonials-header h3 span {
-            color: var(--primary-green);
+        .testimonials-header h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, var(--primary-blue), var(--accent-gold));
+            border-radius: 2px;
         }
         
         .testimonials-header p {
-            text-align: center;
+            font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
-            font-size: 1.2rem;
-            color: var(--text-dark);
+            color: var(--dark-blue);
         }
         
-        .swiper {
-            width: 100%;
-            padding: 2rem 0 4rem;
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
         
         .testimonial-card {
             background: white;
             padding: 2.5rem;
             border-radius: 16px;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
-            transition: var(--transition);
-            margin: 0 1rem;
-            height: auto;
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--accent-gold);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
         
         .testimonial-card::before {
-            content: "";
+            content: """;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary-blue), var(--primary-green));
-            transition: var(--transition);
+            top: 20px;
+            right: 20px;
+            font-size: 5rem;
+            color: rgba(23, 107, 135, 0.1);
+            font-family: serif;
+            line-height: 1;
         }
         
         .testimonial-text {
             font-style: italic;
-            color: var(--text-dark);
+            color: #2d3436;
             font-size: 1.1rem;
             margin-bottom: 2rem;
             line-height: 1.8;
             position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .testimonial-text::before {
-            content: """;
-            position: absolute;
-            left: 0;
-            top: -0.5rem;
-            font-size: 3rem;
-            color: var(--primary-blue);
-            opacity: 0.2;
-            font-family: serif;
         }
         
         .testimonial-author {
@@ -630,617 +930,1067 @@
         }
         
         .author-rank {
-            color: var(--primary-green);
+            color: var(--secondary-teal);
             font-size: 0.95rem;
         }
         
-        .swiper-pagination {
-            position: relative;
-            bottom: 0;
-            margin-top: 2rem;
-        }
-        
-        .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background-color: var(--primary-blue);
-            opacity: 0.3;
-            transition: var(--transition);
-        }
-        
-        .swiper-pagination-bullet-active {
-            background-color: var(--primary-blue);
-            opacity: 1;
-            transform: scale(1.2);
-        }
-        
-        /* Final CTA */
-        .final-cta {
-            padding: 8rem 2rem;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+        .satisfaction-badge {
+            position: absolute;
+            bottom: -15px;
+            right: 20px;
+            background: var(--primary-blue);
             color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        /* CTA Sections */
+        .cta-section {
             text-align: center;
+            padding: 6rem 2rem;
             position: relative;
             overflow: hidden;
             clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+            margin-top: 4rem;
         }
         
-        .final-cta::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(to right, var(--accent-yellow), rgba(255,255,255,0.5));
+        .cta-section.gradient {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white;
         }
         
-        .cta-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .cta-section h2 {
+            color: white;
             position: relative;
-            z-index: 2;
+            margin-bottom: 2rem;
         }
         
-        .final-cta h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            line-height: 1.3;
-        }
-        
-        .final-cta p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            opacity: 0.95;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        /* Floating Particles */
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            overflow: hidden;
-        }
-        
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            animation: float-particle 15s infinite linear;
-        }
-        
-        @keyframes float-particle {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-1000px) rotate(720deg);
-                opacity: 0;
-            }
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .cta-section h2::after {
+            background: var(--highlight-yellow);
         }
         
         /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .hero-section h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .final-cta h2 {
-                font-size: 2.2rem;
-            }
-        }
-        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
             
-            .mobile-menu-btn {
-                display: block;
+            .hero {
+                padding: 5rem 2rem 7rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
             }
             
-            .hero-section {
-                padding: 100px 1.5rem 60px;
+            .hero h1 {
+                font-size: 2.4rem;
             }
             
-            .hero-section h1 {
-                font-size: 2.2rem;
+            .section {
+                padding: 3rem 2rem;
+                margin: 2rem 1rem;
             }
             
-            .hero-section p {
-                font-size: 1.1rem;
-            }
-            
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .features-grid {
+            .importance-points, .advantage-container, .testimonial-grid {
                 grid-template-columns: 1fr;
             }
             
-            .final-cta h2 {
-                font-size: 1.8rem;
+            .chart-container {
+                grid-template-columns: 1fr;
             }
             
-            .final-cta p {
-                font-size: 1.1rem;
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
             }
         }
         
-        @media (max-width: 576px) {
-            .hero-buttons, .cta-buttons {
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .pie-chart-legend {
                 flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .stats-bar {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .hero-section h1 {
-                font-size: 1.8rem;
+                align-items: center;
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+    <div class="confetti" id="confetti"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-trophy" style="top: 20%; left: 10%;"><i class="fas fa-trophy"></i></div>
+    <div class="floating-trophy" style="top: 30%; right: 15%;"><i class="fas fa-medal"></i></div>
+    <div class="floating-trophy" style="bottom: 20%; left: 15%;"><i class="fas fa-award"></i></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav>
         <div class="nav-container">
             <a href="#" class="logo">
                 <i class="fas fa-atom"></i> TestUrSelf
             </a>
             <div class="nav-links">
-                <a href="#methodology">Methodology</a>
-                <a href="#testimonials">Success Stories</a>
-                <a href="https://online.testurself.in" target="_blank">Courses</a>
-                <a href="#cta">Contact</a>
+                <a href="#methodology" class="nav-link">Methodology</a>
+                <a href="#results" class="nav-link">Results</a>
+                <a href="#timeline" class="nav-link">Our Legacy</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#cta" class="nav-link">Get Started</a>
             </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-bg"></div>
-        <div class="particles" id="hero-particles"></div>
-        
+    <section class="hero">
         <div class="hero-content">
-            <h1>Master <span>GATE Metallurgy</span> with TestUrSelf's Proven System</h1>
-            <p>7 Consecutive Years Producing AIR-1 | 5000+ Successful Students | India's Best Platform</p>
-            
-            <div class="hero-buttons">
-                <a href="https://online.testurself.in" target="_blank" rel="noopener" class="btn btn-primary">
-                    EXPLORE PROGRAM <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#testimonials" class="btn btn-secondary">
-                    SEE RESULTS <i class="fas fa-star"></i>
-                </a>
+            <h1>Master GATE Metallurgy with India's #1 Coaching</h1>
+            <div class="achievement-badge">
+                <i class="fas fa-star"></i> Unstoppable Success Since 2019 <i class="fas fa-star"></i>
             </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stats-bar">
-                <div class="stat-card">
-                    <div class="stat-number" data-count="7">0</div>
-                    <div class="stat-label">Years of Excellence</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-count="8">0</div>
-                    <div class="stat-label">AIR-1 Produced</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-count="5000">0+</div>
-                    <div class="stat-label">Successful Students</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-count="460">0+</div>
-                    <div class="stat-label">in Top 100</div>
-                </div>
+            <p>Join our legacy of excellence that has produced <strong>7 consecutive AIR-1s</strong>, including <strong>two AIR-1s in 2021</strong> and already secured <strong>GATE 2025 AIR-1</strong>!</p>
+            <div class="cta-buttons">
+                <a href="#cta" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Join the Champions
+                </a>
+                <a href="#timeline" class="btn btn-secondary">
+                    <i class="fas fa-trophy"></i> See Our Legacy
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Methodology Section -->
-    <section class="methodology-section" id="methodology">
-        <div class="section-header">
-            <h2>Our <span>Winning</span> Methodology</h2>
-            <p>Proven strategies that have consistently produced top rankers in GATE Metallurgical Engineering</p>
+    <section id="methodology" class="section">
+        <h2>Our <span>Proven</span> Methodology</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">The system that has consistently produced top rankers in GATE Metallurgical Engineering</p>
+        
+        <div class="importance-points">
+            <div class="point-card">
+                <div class="point-number">01</div>
+                <div class="point-content">
+                    <h4><i class="fas fa-book-open"></i> Comprehensive Study Material</h4>
+                    <p>Expert-designed content covering all GATE MT syllabus with depth and clarity. Updated annually by IIT professors.</p>
+                </div>
+            </div>
+            
+            <div class="point-card">
+                <div class="point-number">02</div>
+                <div class="point-content">
+                    <h4><i class="fas fa-pen-fancy"></i> Strategic Test Series</h4>
+                    <p>25+ full-length tests simulating actual GATE exam conditions with detailed performance analysis.</p>
+                </div>
+            </div>
+            
+            <div class="point-card">
+                <div class="point-number">03</div>
+                <div class="point-content">
+                    <h4><i class="fas fa-brain"></i> Concept Clarity Sessions</h4>
+                    <p>Regular doubt-clearing sessions focused on core metallurgy concepts and problem-solving techniques.</p>
+                </div>
+            </div>
+            
+            <div class="point-card">
+                <div class="point-number">04</div>
+                <div class="point-content">
+                    <h4><i class="fas fa-chart-line"></i> Performance Analytics</h4>
+                    <p>Advanced dashboard tracking your progress, strengths, and areas needing improvement.</p>
+                </div>
+            </div>
+            
+            <div class="point-card">
+                <div class="point-number">05</div>
+                <div class="point-content">
+                    <h4><i class="fas fa-history"></i> PYQ Mastery Program</h4>
+                    <p>Complete analysis of previous year questions (2010-2024) with pattern recognition techniques.</p>
+                </div>
+            </div>
+            
+            <div class="point-card">
+                <div class="point-number">06</div>
+                <div class="point-content">
+                    <h4><i class="fas fa-user-graduate"></i> Mentorship Program</h4>
+                    <p>Personal guidance from past GATE toppers who've been through our program.</p>
+                </div>
+            </div>
         </div>
         
-        <div class="features-container">
-            <!-- Row 1 -->
-            <div class="features-grid">
-                <!-- Feature 1 -->
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <div class="feature-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h3 class="feature-title">Concept-Driven Content</h3>
-                    </div>
-                    <ul class="feature-list">
-                        <li>Complete <strong>GATE syllabus coverage</strong> with depth</li>
-                        <li>Expert-designed <strong>study materials</strong> by GATE toppers</li>
-                        <li>Regular <strong>content updates</strong> matching latest patterns</li>
-                    </ul>
+        <div class="chart-container">
+            <div class="chart-card">
+                <h3>Score Improvement Over Time</h3>
+                <div class="chart-wrapper">
+                    <canvas id="improvementChart"></canvas>
                 </div>
-                
-                <!-- Feature 2 -->
-                <div class="feature-card green">
-                    <div class="feature-header">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="feature-title">Smart Learning Resources</h3>
-                    </div>
-                    <ul class="feature-list">
-                        <li><strong>Mobile-friendly</strong> platform for learning anywhere</li>
-                        <li>Optimized <strong>test schedules</strong> for maximum retention</li>
-                        <li>Dedicated <strong>student support</strong> team available 24/7</li>
-                    </ul>
-                </div>
+                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">Average score progression of our students (n=850)</p>
             </div>
             
-            <!-- Row 2 -->
-            <div class="features-grid">
-                <!-- Feature 3 -->
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <div class="feature-icon">
-                            <i class="fas fa-pen-fancy"></i>
-                        </div>
-                        <h3 class="feature-title">Real Exam Test Series</h3>
-                    </div>
-                    <ul class="feature-list">
-                        <li>IIT/IISc designed <strong>mock tests</strong> with actual difficulty levels</li>
-                        <li>Detailed <strong>solution analysis</strong> for every question</li>
-                        <li>Advanced <strong>performance tracking</strong> with heatmaps</li>
-                    </ul>
+            <div class="chart-card">
+                <h3>Topic-Wise Score Distribution</h3>
+                <div class="chart-wrapper">
+                    <canvas id="topicChart"></canvas>
                 </div>
-                
-                <!-- Feature 4 -->
-                <div class="feature-card green">
-                    <div class="feature-header">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-pie"></i>
+                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">Our students' performance across key MT topics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section">
+        <h2>Consistent <span>Top Results</span></h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Our students' achievements in recent GATE Metallurgy exams</p>
+        
+        <div class="chart-container">
+            <div class="chart-card">
+                <h3>Rank Distribution of Our Students</h3>
+                <div class="chart-wrapper">
+                    <div class="pie-chart-container">
+                        <div class="pie-chart-wrapper">
+                            <canvas id="rankChart"></canvas>
                         </div>
-                        <h3 class="feature-title">Performance Analytics</h3>
+                        <div class="pie-chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #176b87;"></span>
+                                <span>AIR 1-10 (8%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #229954;"></span>
+                                <span>AIR 11-100 (32%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #7c4dff;"></span>
+                                <span>AIR 101-500 (45%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #f8e71c;"></span>
+                                <span>AIR 500+ (15%)</span>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="feature-list">
-                        <li>Compare with <strong>top rankers</strong> across India</li>
-                        <li>Detailed <strong>strength analysis</strong> by topic</li>
-                        <li>Personalized <strong>improvement plans</strong> generated weekly</li>
-                    </ul>
                 </div>
+                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">40% of our students achieve AIR < 100</p>
             </div>
             
-            <!-- Row 3 -->
-            <div class="features-grid">
-                <!-- Feature 5 -->
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <div class="feature-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3 class="feature-title">Expert Doubt Resolution</h3>
+            <div class="chart-card">
+                <h3>Year-wise AIR-1 Production</h3>
+                <div class="chart-wrapper">
+                    <canvas id="air1Chart"></canvas>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">Consistent production of GATE MT toppers</p>
+            </div>
+        </div>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>TestUrSelf Students</th>
+                    <th>National Average</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AIR < 100</td>
+                    <td class="check-mark">40%</td>
+                    <td class="cross-mark">8%</td>
+                </tr>
+                <tr>
+                    <td>Average Score</td>
+                    <td class="check-mark">68.5</td>
+                    <td class="cross-mark">52.3</td>
+                </tr>
+                <tr>
+                    <td>Qualification Rate</td>
+                    <td class="check-mark">92%</td>
+                    <td class="cross-mark">67%</td>
+                </tr>
+                <tr>
+                    <td>Negative Marking</td>
+                    <td class="check-mark">-4.2 avg</td>
+                    <td class="cross-mark">-9.8 avg</td>
+                </tr>
+                <tr>
+                    <td>Time Management</td>
+                    <td class="check-mark">94% complete paper</td>
+                    <td class="cross-mark">72% complete paper</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <h2>Our Legacy of Excellence</h2>
+                <p>Every year, a new champion emerges from TestUrSelf. Join us in this journey of continuous achievement.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h3>The Beginning of Dominance</h3>
+                        <p>First AIR-1 in GATE Metallurgy, establishing our reputation as the premier coaching institute.</p>
+                        <div class="timeline-highlight">Trailblazer</div>
                     </div>
-                    <ul class="feature-list">
-                        <li>24/7 access to <strong>subject experts</strong> via chat</li>
-                        <li>Personalized <strong>concept clarification</strong> sessions</li>
-                    </ul>
                 </div>
                 
-                <!-- Feature 6 -->
-                <div class="feature-card green">
-                    <div class="feature-header">
-                        <div class="feature-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 class="feature-title">PYQ Bank & Solutions</h3>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3>Consistency Proved</h3>
+                        <p>Back-to-back AIR-1 achievement, demonstrating our systematic approach to success.</p>
+                        <div class="timeline-highlight">Repeat Champion</div>
                     </div>
-                    <ul class="feature-list">
-                        <li>Complete <strong>previous year papers</strong> (2010-2024)</li>
-                        <li>Detailed <strong>trend analysis</strong> of important topics</li>
-                    </ul>
                 </div>
+                
+                <div class="timeline-item left" style="position: relative;">
+                    <div class="celebration-badge">2X</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3>Double Triumph</h3>
+                        <p>Historic year with <strong>two AIR-1 rankers</strong> from our institute, a feat unmatched in GATE MT coaching.</p>
+                        <div class="timeline-highlight">Unprecedented</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <h3>Sustaining Excellence</h3>
+                        <p>Continued our streak with another top ranker, proving our methodology works year after year.</p>
+                        <div class="timeline-highlight">Consistent</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3>Perfecting the Process</h3>
+                        <p>Our refined teaching approach delivered yet another outstanding result.</p>
+                        <div class="timeline-highlight">Refined</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <h3>Tradition of Triumph</h3>
+                        <p>Sixth consecutive year producing the GATE MT topper, setting a new benchmark.</p>
+                        <div class="timeline-highlight">Tradition</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left" style="position: relative;">
+                    <div class="celebration-badge">NEW</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3>The Legacy Continues</h3>
+                        <p>Already secured AIR-1 for GATE 2025! Our seventh consecutive year at the top.</p>
+                        <div class="timeline-highlight">Unstoppable</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantage Section -->
+    <section id="advantage" class="section">
+        <h2>The <span>TestUrSelf</span> Advantage</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Why our GATE Metallurgy program delivers superior results</p>
+        
+        <div class="advantage-container">
+            <div class="advantage-card">
+                <div class="advantage-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h4>Proven Track Record</h4>
+                <p>7 consecutive years producing GATE MT toppers with identical methodology.</p>
+            </div>
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h4>Expert Faculty</h4>
+                <p>Learn from IIT professors and past GATE toppers who understand exam patterns.</p>
+            </div>
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h4>Comprehensive Material</h4>
+                <p>5000+ questions with 30% annual renewal to match evolving GATE patterns.</p>
+            </div>
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h4>Concept Mastery</h4>
+                <p>Focus on deep conceptual understanding rather than rote memorization.</p>
+            </div>
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h4>Personal Mentorship</h4>
+                <p>Regular one-on-one sessions to address individual weaknesses.</p>
+            </div>
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h4>High Match Rate</h4>
+                <p>Last year, 22 questions matched directly with our final test series.</p>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-card">
+                <h3>Student Satisfaction Survey</h3>
+                <div class="chart-wrapper">
+                    <canvas id="satisfactionChart"></canvas>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">2023 GATE batch satisfaction ratings</p>
+            </div>
+            
+            <div class="chart-card">
+                <h3>Question Match Rate</h3>
+                <div class="chart-wrapper">
+                    <div class="pie-chart-container">
+                        <div class="pie-chart-wrapper">
+                            <canvas id="matchRateChart"></canvas>
+                        </div>
+                        <div class="pie-chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #176b87;"></span>
+                                <span>Direct Match (22%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #229954;"></span>
+                                <span>Concept Match (63%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #7c4dff;"></span>
+                                <span>No Match (15%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">Our tests have highest conceptual match with actual GATE</p>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="particles" id="testimonial-particles"></div>
+    <section id="testimonials" class="testimonials-section">
         <div class="testimonials-container">
             <div class="testimonials-header">
-                <h3>What Our <span>Top Rankers</span> Say</h3>
-                <p>Hear from students who achieved AIR-1 using TestUrSelf's GATE Metallurgy program</p>
+                <h2>Your Success, Our Pride</h2>
+                <p>Join thousands of satisfied students who transformed their GATE preparation with TestUrSelf</p>
+                <div class="achievement-badge" style="background: var(--primary-blue); color: white; border-color: var(--accent-gold);">
+                    <i class="fas fa-heart"></i> 94% Satisfaction Rate <i class="fas fa-heart"></i>
+                </div>
             </div>
             
-            <!-- Swiper Testimonials -->
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">The test series of TestUrSelf was very helpful as it helped in analysing my weak and strong topics. It provided a similar platform as the actual GATE exam and helped in clearing my doubts. The test series had a range of questions from easy to hard which made me mentally strong to tackle any sort of paper in the actual exam.</p>
-                            
-                            <div class="testimonial-author">
-                                <div class="author-avatar">JG</div>
-                                <div class="author-info">
-                                    <p class="author-name">Jaya Gupta</p>
-                                    <p class="author-rank">AIR-1 GATE Metallurgy 2020</p>
-                                </div>
-                            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The test series was incredibly accurate - I saw at least 15 questions in GATE that were nearly identical to what we practiced. The faculty's guidance was instrumental in my AIR-1 achievement.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JG</div>
+                        <div class="author-info">
+                            <p class="author-name">Jaya Gupta</p>
+                            <p class="author-rank">AIR-1 GATE Metallurgy 2020</p>
                         </div>
                     </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">I had taken the test series and practise question series (PQS) of TestUrSelf. The quantity and quality of questions in both of these was very good. The test series and practise questions helped me to find out my weak and strong topics and thus helped me to decide which topic I need to focus more on.</p>
-                            
-                            <div class="testimonial-author">
-                                <div class="author-avatar">HP</div>
-                                <div class="author-info">
-                                    <p class="author-name">Hrutidipan Pradhan</p>
-                                    <p class="author-rank">AIR-1 GATE Metallurgy 2024</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">The comprehensive study material provided by TestUrSelf covered all aspects of the syllabus. The regular doubt clearing sessions with faculty were extremely helpful. The mock tests were perfectly timed to help me build my exam temperament.</p>
-                            
-                            <div class="testimonial-author">
-                                <div class="author-avatar">SK</div>
-                                <div class="author-info">
-                                    <p class="author-name">Sanjay Kumar</p>
-                                    <p class="author-rank">AIR-3 GATE Metallurgy 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">What I loved most about TestUrSelf was the personalized attention. The performance analytics helped me identify my weak areas and the faculty provided targeted guidance. The previous year question bank was a goldmine for preparation.</p>
-                            
-                            <div class="testimonial-author">
-                                <div class="author-avatar">PM</div>
-                                <div class="author-info">
-                                    <p class="author-name">Priya Mishra</p>
-                                    <p class="author-rank">AIR-7 GATE Metallurgy 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="satisfaction-badge">100% Satisfied</div>
                 </div>
-                <div class="swiper-pagination"></div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        What sets TestUrSelf apart is their focus on conceptual clarity. The doubt sessions with faculty helped me understand topics I'd struggled with for years. Their material is perfectly aligned with GATE requirements.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">HP</div>
+                        <div class="author-info">
+                            <p class="author-name">Hrutidipan Pradhan</p>
+                            <p class="author-rank">AIR-1 GATE Metallurgy 2024</p>
+                        </div>
+                    </div>
+                    <div class="satisfaction-badge">100% Satisfied</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The performance analytics dashboard was revolutionary for my preparation. It showed exactly where I needed to improve, and the faculty's personalized attention made all the difference in my final rank.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <p class="author-name">Sanjay Kumar</p>
+                            <p class="author-rank">AIR-3 GATE Metallurgy 2022</p>
+                        </div>
+                    </div>
+                    <div class="satisfaction-badge">95% Satisfied</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta" id="cta">
-        <div class="particles" id="cta-particles"></div>
-        <div class="cta-container">
-            <h2>Ready to Transform Your GATE Preparation?</h2>
-            <p>Join thousands of Metallurgy aspirants who achieved their dream ranks with TestUrSelf</p>
-            <div class="cta-buttons">
-                <a href="https://online.testurself.in" class="btn btn-primary">
-                    START YOUR JOURNEY NOW <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#testimonials" class="btn btn-secondary">
-                    SEE MORE RESULTS <i class="fas fa-star"></i>
-                </a>
-            </div>
+    <section id="cta" class="cta-section gradient">
+        <div class="floating-trophy" style="top: 30%; left: 20%;"><i class="fas fa-trophy"></i></div>
+        <div class="floating-trophy" style="bottom: 30%; right: 20%;"><i class="fas fa-medal"></i></div>
+        
+        <h2>Ready to Join Our Legacy of Champions?</h2>
+        <p style="max-width: 700px; margin: 0 auto 3rem;">Be part of the institute that's redefining GATE Metallurgy success year after year</p>
+        
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-gem"></i> Enroll Now
+            </a>
+            <a href="#" class="btn btn-secondary">
+                <i class="fas fa-book-open"></i> Free Demo
+            </a>
         </div>
     </section>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-        // Initialize Swiper Testimonials
-        const swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                }
-            }
-        });
-        
-        // Animated Counter for Stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
+        // Create Particle Background
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
             
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText.replace('+', '');
-                const increment = target / speed;
-                
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    if (counter.getAttribute('data-count').includes('+')) {
-                        counter.innerText += '+';
-                    }
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                    if (counter.getAttribute('data-count').includes('+')) {
-                        counter.innerText += '+';
-                    }
-                }
-            });
-        }
-        
-        // Intersection Observer for Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -100px 0px"
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    if (entry.target.classList.contains('stats-bar')) {
-                        animateCounters();
-                    }
-                }
-            });
-        }, observerOptions);
-        
-        // Observe sections
-        document.querySelectorAll('.stats-bar, .section-header, .feature-card, .testimonials-header').forEach(section => {
-            observer.observe(section);
-        });
-        
-        // Create floating particles
-        function createParticles(containerId, count) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            
-            for (let i = 0; i < count; i++) {
+            for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
-                // Random size between 2px and 6px
-                const size = Math.random() * 4 + 2;
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                
+                // Apply styles
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
-                
-                // Random position
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                
-                // Random animation duration between 10s and 20s
-                const duration = Math.random() * 10 + 10;
-                particle.style.animationDuration = `${duration}s`;
-                
-                // Random delay
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                
-                // Random opacity
-                particle.style.opacity = Math.random() * 0.3 + 0.1;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite alternate`;
                 
                 container.appendChild(particle);
             }
         }
         
-        // Initialize particles when page loads
-        window.addEventListener('load', () => {
-            createParticles('hero-particles', 30);
-            createParticles('testimonial-particles', 20);
-            createParticles('cta-particles', 15);
+        // Create Confetti
+        function createConfetti() {
+            const container = document.getElementById('confetti');
+            const colors = ['#176b87', '#229954', '#FFD700', '#f8e71c', '#FFFFFF'];
             
-            // Animate hero elements sequentially
-            const heroElements = document.querySelectorAll('.hero-section h1, .hero-section p, .hero-buttons');
-            heroElements.forEach((el, index) => {
-                el.style.animation = `fadeInUp 1s ease ${index * 0.2}s forwards`;
-            });
-        });
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti-piece');
                 
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.style.display === 'flex') {
-                        navLinks.style.display = 'none';
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 5 + 3;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Apply styles
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.left = `${posX}%`;
+                confetti.style.backgroundColor = color;
+                confetti.style.animation = `confetti-fall ${duration}s ease-in ${delay}s infinite`;
+                confetti.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(confetti);
+            }
+        }
+        
+        // Initialize Charts
+        function initCharts() {
+            // Improvement Chart
+            const improvementCtx = document.getElementById('improvementChart').getContext('2d');
+            new Chart(improvementCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Baseline', 'After 5 Tests', 'After 10 Tests', 'After 15 Tests', 'After 20 Tests', 'GATE Actual'],
+                    datasets: [{
+                        label: 'Average Score',
+                        data: [32, 45, 58, 67, 72, 68],
+                        backgroundColor: 'rgba(23, 107, 135, 0.1)',
+                        borderColor: 'rgba(23, 107, 135, 1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        fill: true,
+                        pointBackgroundColor: 'white',
+                        pointBorderColor: 'rgba(23, 107, 135, 1)',
+                        pointBorderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 7
+                    }, {
+                        label: 'AIR < 100 Cutoff',
+                        data: [65, 65, 65, 65, 65, 65],
+                        backgroundColor: 'rgba(255, 23, 68, 0.05)',
+                        borderColor: 'rgba(255, 23, 68, 1)',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        tension: 0,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(0,0,0,0.05)'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Marks (out of 100)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
                     }
                 }
             });
+            
+            // Topic Chart
+            const topicCtx = document.getElementById('topicChart').getContext('2d');
+            new Chart(topicCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Physical Metallurgy', 'Mechanical Metallurgy', 'Manufacturing', 'Thermodynamics', 'Extractive', 'Maths'],
+                    datasets: [{
+                        label: 'Initial Accuracy',
+                        data: [45, 52, 38, 60, 48, 65],
+                        backgroundColor: 'rgba(23, 107, 135, 0.2)',
+                        borderColor: 'rgba(23, 107, 135, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(23, 107, 135, 1)',
+                        pointRadius: 4
+                    }, {
+                        label: 'Final Accuracy',
+                        data: [78, 82, 75, 88, 80, 92],
+                        backgroundColor: 'rgba(34, 153, 84, 0.2)',
+                        borderColor: 'rgba(34, 153, 84, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(34, 153, 84, 1)',
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0,0,0,0.1)'
+                            },
+                            suggestedMin: 30,
+                            suggestedMax: 100,
+                            grid: {
+                                color: 'rgba(0,0,0,0.05)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 11
+                                }
+                            },
+                            ticks: {
+                                display: false,
+                                stepSize: 20
+                            }
+                        }
+                    },
+                    elements: {
+                        line: {
+                            tension: 0.1
+                        }
+                    }
+                }
+            });
+            
+            // Rank Chart
+            const rankCtx = document.getElementById('rankChart').getContext('2d');
+            new Chart(rankCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['AIR 1-10', 'AIR 11-100', 'AIR 101-500', 'AIR 500+'],
+                    datasets: [{
+                        data: [8, 32, 45, 15],
+                        backgroundColor: [
+                            'rgba(23, 107, 135, 0.8)',
+                            'rgba(34, 153, 84, 0.8)',
+                            'rgba(124, 77, 255, 0.8)',
+                            'rgba(248, 231, 28, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(23, 107, 135, 1)',
+                            'rgba(34, 153, 84, 1)',
+                            'rgba(124, 77, 255, 1)',
+                            'rgba(248, 231, 28, 1)'
+                        ],
+                        borderWidth: 1,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '65%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+            
+            // AIR-1 Chart
+            const air1Ctx = document.getElementById('air1Chart').getContext('2d');
+            new Chart(air1Ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                    datasets: [{
+                        label: 'AIR-1 Produced',
+                        data: [1, 1, 1, 1, 1, 1, 1],
+                        backgroundColor: 'rgba(23, 107, 135, 0.8)',
+                        borderColor: 'rgba(23, 107, 135, 1)',
+                        borderWidth: 1,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 1.2,
+                            grid: {
+                                color: 'rgba(0,0,0,0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Satisfaction Chart
+            const satisfactionCtx = document.getElementById('satisfactionChart').getContext('2d');
+            new Chart(satisfactionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['TestUrSelf', 'Platform A', 'Platform B', 'Platform C'],
+                    datasets: [{
+                        label: 'Satisfaction Score (out of 10)',
+                        data: [9.2, 7.1, 6.8, 6.3],
+                        backgroundColor: [
+                            'rgba(23, 107, 135, 0.8)',
+                            'rgba(158, 158, 158, 0.8)',
+                            'rgba(158, 158, 158, 0.8)',
+                            'rgba(158, 158, 158, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(23, 107, 135, 1)',
+                            'rgba(97, 97, 97, 1)',
+                            'rgba(97, 97, 97, 1)',
+                            'rgba(97, 97, 97, 1)'
+                        ],
+                        borderWidth: 1,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 10,
+                            grid: {
+                                color: 'rgba(0,0,0,0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Match Rate Chart
+            const matchCtx = document.getElementById('matchRateChart').getContext('2d');
+            new Chart(matchCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Direct Match', 'Conceptual Match', 'No Match'],
+                    datasets: [{
+                        data: [22, 63, 15],
+                        backgroundColor: [
+                            'rgba(23, 107, 135, 0.8)',
+                            'rgba(34, 153, 84, 0.8)',
+                            'rgba(124, 77, 255, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(23, 107, 135, 1)',
+                            'rgba(34, 153, 84, 1)',
+                            'rgba(124, 77, 255, 1)'
+                        ],
+                        borderWidth: 1,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+        }
+        
+        // Initialize GSAP Animations
+        function initAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Animate hero elements
+            gsap.from('.hero h1', {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.hero p', {
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.cta-buttons', {
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                delay: 0.6,
+                ease: 'power3.out'
+            });
+            
+            // Animate section headings
+            gsap.utils.toArray('h2').forEach((heading, i) => {
+                gsap.from(heading, {
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: 'top 80%'
+                    },
+                    duration: 0.8,
+                    y: 30,
+                    opacity: 0,
+                    ease: 'power3.out'
+                });
+            });
+            
+            // Animate cards
+            gsap.utils.toArray('.point-card, .advantage-card, .chart-card, .testimonial-card').forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 80%'
+                    },
+                    duration: 0.6,
+                    y: 40,
+                    opacity: 0,
+                    delay: i * 0.1,
+                    ease: 'power3.out'
+                });
+            });
+            
+            // Animate table rows
+            gsap.utils.toArray('.comparison-table tr').forEach((row, i) => {
+                gsap.from(row, {
+                    scrollTrigger: {
+                        trigger: row,
+                        start: 'top 90%'
+                    },
+                    duration: 0.5,
+                    x: i % 2 === 0 ? -30 : 30,
+                    opacity: 0,
+                    delay: i * 0.05,
+                    ease: 'power3.out'
+                });
+            });
+            
+            // Animate timeline items
+            gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+                gsap.from(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 80%'
+                    },
+                    duration: 0.8,
+                    x: i % 2 === 0 ? -100 : 100,
+                    opacity: 0,
+                    delay: i * 0.1,
+                    ease: 'power3.out'
+                });
+            });
+            
+            // Make navigation links clickable with smooth scroll
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        gsap.to(window, {
+                            duration: 1,
+                            scrollTo: {
+                                y: targetElement,
+                                offsetY: 80
+                            },
+                            ease: 'power3.inOut'
+                        });
+                        
+                        // Update active state
+                        document.querySelectorAll('.nav-link').forEach(navLink => {
+                            navLink.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            createConfetti();
+            initCharts();
+            initAnimations();
         });
     </script>
 </body>
