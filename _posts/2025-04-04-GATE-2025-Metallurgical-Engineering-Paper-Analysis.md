@@ -55,7 +55,7 @@
         
         /* Large Diagonal Watermark */
         body::after {
-            content: "GATE MT 2025";
+            content: "TestUrSelf";
             position: fixed;
             top: 50%;
             left: 50%;
