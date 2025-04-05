@@ -990,7 +990,7 @@
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <h4>Pattern Analysis</h4>
-                <p>Our team analyzes 10+ years of GATE papers to predict question patterns accurately.</p>
+                <p>Our team analyzes 25+ years of GATE papers to predict question patterns accurately.</p>
             </div>
             
             <div class="advantage-card">
@@ -1014,7 +1014,7 @@
                     <i class="fas fa-tasks"></i>
                 </div>
                 <h4>Mock Tests</h4>
-                <p>25+ full-length tests designed by IIT professors matching GATE difficulty.</p>
+                <p>25+ full-length tests designed by Top rankers matching GATE difficulty.</p>
             </div>
             
             <div class="advantage-card">
@@ -1038,7 +1038,7 @@
     <!-- Final CTA -->
     <section id="cta" class="cta-section gradient">
         <div class="particles" id="particles-js"></div>
-        <h2 style="color: white; border-bottom-color: var(--accent-color);">Start Your GATE 2025 Metallurgy Preparation Today!</h2>
+        <h2 style="color: white; border-bottom-color: var(--accent-color);">Start Your GATE 2026 Metallurgy Preparation Today!</h2>
         <p style="max-width: 700px; margin: 0 auto 2rem;">Get our specially designed study material that covers maximum GATE questions</p>
         
         <div class="cta-buttons">
@@ -1056,7 +1056,7 @@
         <div class="footer-container">
             <div class="footer-column">
                 <h3>TestUrSelf</h3>
-                <p>India's most trusted GATE Metallurgy preparation platform since 2015.</p>
+                <p>India's most trusted GATE Metallurgy preparation platform since 2018.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1101,7 +1101,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2023 TestUrSelf. All Rights Reserved.</p>
+            <p>&copy; TestUrSelf. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -1184,7 +1184,7 @@
                 'Manufacturing Processes'
             ],
             datasets: [{
-                data: [10, 13, 15, 11, 7, 14, 18, 8],
+                data: [10, 13, 17, 11, 6, 13, 18, 8],
                 backgroundColor: [
                     '#0a4d68',
                     '#05bfdb',
