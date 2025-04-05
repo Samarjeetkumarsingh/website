@@ -611,13 +611,18 @@
             font-size: 1.1rem;
         }
         
-        /* TestUrSelf Advantage */
-        .advantage-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
+        /* Advantage Section */
+#advantage.section {
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.advantage-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* ... rest of your existing styles ... */
+}
         
         .advantage-card {
             background: white;
