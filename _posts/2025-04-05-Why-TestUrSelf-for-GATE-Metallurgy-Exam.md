@@ -1068,17 +1068,14 @@
 
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fas fa-atom"></i> TestUrSelf
-            </a>
-            <div class="nav-links">
-                <a href="#methodology" class="nav-link">Methodology</a>
-                <a href="#results" class="nav-link">Results</a>
-                <a href="#timeline" class="nav-link">Our Legacy</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#cta" class="nav-link">Get Started</a>
-            </div>
+        <div class="nav-links">
+    <a href="#methodology" class="nav-link">Methodology</a>
+    <a href="#results" class="nav-link">Results</a>
+    <a href="#legacy" class="nav-link">Our Legacy</a>
+    <a href="#advantage" class="nav-link">Our Edge</a>
+    <a href="#testimonials" class="nav-link">Testimonials</a>
+    <a href="#cta" class="nav-link">Get Started</a>
+</div>
         </div>
     </nav>
 
@@ -1176,247 +1173,135 @@
     </section>
 
     <!-- Results Section -->
-    <section id="results" class="section">
-        <h2>Consistent <span>Top Results</span></h2>
-        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Our students' achievements in recent GATE Metallurgy exams</p>
-        
-        <div class="chart-container">
-            <div class="chart-card">
-                <h3>Rank Distribution of Our Students</h3>
-                <div class="chart-wrapper">
-                    <div class="pie-chart-container">
-                        <div class="pie-chart-wrapper">
-                            <canvas id="rankChart"></canvas>
-                        </div>
-                        <div class="pie-chart-legend">
-                            <div class="legend-item">
-                                <span class="legend-color" style="background: #176b87;"></span>
-                                <span>AIR 1-10 (8%)</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="legend-color" style="background: #229954;"></span>
-                                <span>AIR 11-100 (32%)</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="legend-color" style="background: #7c4dff;"></span>
-                                <span>AIR 101-500 (45%)</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="legend-color" style="background: #f8e71c;"></span>
-                                <span>AIR 500+ (15%)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">40% of our students achieve AIR < 100</p>
-            </div>
+    <!-- Legacy of Excellence Section - Redesigned -->
+    <section id="legacy" class="section" style="background: linear-gradient(to bottom, #f8f9fa, white);">
+        <div class="container">
+            <h2>Our <span>Legacy</span> of Excellence</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem;">7 consecutive years producing GATE MT toppers with our proven methodology</p>
             
-            <div class="chart-card">
-                <h3>Year-wise AIR-1 Production</h3>
-                <div class="chart-wrapper">
-                    <canvas id="air1Chart"></canvas>
-                </div>
-                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">Consistent production of GATE MT toppers</p>
-            </div>
-        </div>
-        
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Parameter</th>
-                    <th>TestUrSelf Students</th>
-                    <th>National Average</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>AIR < 100</td>
-                    <td class="check-mark">40%</td>
-                    <td class="cross-mark">8%</td>
-                </tr>
-                <tr>
-                    <td>Average Score</td>
-                    <td class="check-mark">68.5</td>
-                    <td class="cross-mark">52.3</td>
-                </tr>
-                <tr>
-                    <td>Qualification Rate</td>
-                    <td class="check-mark">92%</td>
-                    <td class="cross-mark">67%</td>
-                </tr>
-                <tr>
-                    <td>Negative Marking</td>
-                    <td class="check-mark">-4.2 avg</td>
-                    <td class="cross-mark">-9.8 avg</td>
-                </tr>
-                <tr>
-                    <td>Time Management</td>
-                    <td class="check-mark">94% complete paper</td>
-                    <td class="cross-mark">72% complete paper</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline-section">
-        <div class="timeline-container">
-            <div class="timeline-header">
-                <h2>Our Legacy of Excellence</h2>
-                <p>Every year, a new champion emerges from TestUrSelf. Join us in this journey of continuous achievement.</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2019</div>
-                        <h3>The Beginning of Dominance</h3>
-                        <p>First AIR-1 in GATE Metallurgy, establishing our reputation as the premier coaching institute.</p>
-                        <div class="timeline-highlight">Trailblazer</div>
-                    </div>
+            <div class="legacy-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="legacy-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden; border-top: 5px solid var(--accent-gold);">
+                    <div class="legacy-year" style="position: absolute; top: -15px; left: 20px; background: var(--primary-blue); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">2019</div>
+                    <h3 style="margin-top: 2rem; color: var(--dark-blue);">The Beginning</h3>
+                    <p>First AIR-1 in GATE Metallurgy, establishing our reputation as the premier coaching institute.</p>
+                    <div class="legacy-badge" style="position: absolute; bottom: -15px; right: 20px; background: var(--accent-gold); color: var(--dark-blue); padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.8rem;">Trailblazer</div>
                 </div>
                 
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2020</div>
-                        <h3>Consistency Proved</h3>
-                        <p>Back-to-back AIR-1 achievement, demonstrating our systematic approach to success.</p>
-                        <div class="timeline-highlight">Repeat Champion</div>
-                    </div>
+                <div class="legacy-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden; border-top: 5px solid var(--accent-gold);">
+                    <div class="legacy-year" style="position: absolute; top: -15px; left: 20px; background: var(--primary-blue); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">2020</div>
+                    <h3 style="margin-top: 2rem; color: var(--dark-blue);">Consistency Proved</h3>
+                    <p>Back-to-back AIR-1 achievement, demonstrating our systematic approach to success.</p>
+                    <div class="legacy-badge" style="position: absolute; bottom: -15px; right: 20px; background: var(--accent-gold); color: var(--dark-blue); padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.8rem;">Repeat Champion</div>
                 </div>
                 
-                <div class="timeline-item left" style="position: relative;">
-                    <div class="celebration-badge">2X</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2021</div>
-                        <h3>Double Triumph</h3>
-                        <p>Historic year with <strong>two AIR-1 rankers</strong> from our institute, a feat unmatched in GATE MT coaching.</p>
-                        <div class="timeline-highlight">Unprecedented</div>
-                    </div>
+                <div class="legacy-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden; border-top: 5px solid var(--accent-gold);">
+                    <div class="celebration-badge" style="position: absolute; top: -20px; right: -20px; background: var(--accent-gold); color: var(--dark-blue); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 10; transform: rotate(15deg); animation: pulse-gold 2s infinite;">2X</div>
+                    <div class="legacy-year" style="position: absolute; top: -15px; left: 20px; background: var(--primary-blue); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">2021</div>
+                    <h3 style="margin-top: 2rem; color: var(--dark-blue);">Double Triumph</h3>
+                    <p>Historic year with two AIR-1 rankers from our institute, a feat unmatched in GATE MT coaching.</p>
+                    <div class="legacy-badge" style="position: absolute; bottom: -15px; right: 20px; background: var(--accent-gold); color: var(--dark-blue); padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.8rem;">Unprecedented</div>
                 </div>
                 
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2022</div>
-                        <h3>Sustaining Excellence</h3>
-                        <p>Continued our streak with another top ranker, proving our methodology works year after year.</p>
-                        <div class="timeline-highlight">Consistent</div>
-                    </div>
+                <div class="legacy-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden; border-top: 5px solid var(--accent-gold);">
+                    <div class="legacy-year" style="position: absolute; top: -15px; left: 20px; background: var(--primary-blue); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">2024</div>
+                    <h3 style="margin-top: 2rem; color: var(--dark-blue);">Tradition of Triumph</h3>
+                    <p>Sixth consecutive year producing the GATE MT topper, setting a new benchmark.</p>
+                    <div class="legacy-badge" style="position: absolute; bottom: -15px; right: 20px; background: var(--accent-gold); color: var(--dark-blue); padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.8rem;">Tradition</div>
                 </div>
                 
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023</div>
-                        <h3>Perfecting the Process</h3>
-                        <p>Our refined teaching approach delivered yet another outstanding result.</p>
-                        <div class="timeline-highlight">Refined</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2024</div>
-                        <h3>Tradition of Triumph</h3>
-                        <p>Sixth consecutive year producing the GATE MT topper, setting a new benchmark.</p>
-                        <div class="timeline-highlight">Tradition</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item left" style="position: relative;">
-                    <div class="celebration-badge">NEW</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2025</div>
-                        <h3>The Legacy Continues</h3>
-                        <p>Already secured AIR-1 for GATE 2025! Our seventh consecutive year at the top.</p>
-                        <div class="timeline-highlight">Unstoppable</div>
-                    </div>
+                <div class="legacy-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden; border-top: 5px solid var(--accent-gold);">
+                    <div class="celebration-badge" style="position: absolute; top: -20px; right: -20px; background: var(--accent-gold); color: var(--dark-blue); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 10; transform: rotate(15deg); animation: pulse-gold 2s infinite;">NEW</div>
+                    <div class="legacy-year" style="position: absolute; top: -15px; left: 20px; background: var(--primary-blue); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">2025</div>
+                    <h3 style="margin-top: 2rem; color: var(--dark-blue);">The Legacy Continues</h3>
+                    <p>Already secured AIR-1 for GATE 2025! Our seventh consecutive year at the top.</p>
+                    <div class="legacy-badge" style="position: absolute; bottom: -15px; right: 20px; background: var(--accent-gold); color: var(--dark-blue); padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.8rem;">Unstoppable</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Advantage Section -->
-    <section id="advantage" class="section">
+   <!-- The TestUrSelf Advantage Section - Redesigned -->
+    <section id="advantage" class="section" style="background-color: white;">
         <h2>The <span>TestUrSelf</span> Advantage</h2>
-        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Why our GATE Metallurgy program delivers superior results</p>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem;">Why thousands of students choose us for GATE Metallurgy preparation</p>
         
-        <div class="advantage-container">
-            <div class="advantage-card">
-                <div class="advantage-icon">
+        <div class="advantage-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <div class="advantage-card" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; border-top: 5px solid var(--primary-blue); transition: all 0.3s ease;">
+                <div class="advantage-icon" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1.5rem; transition: all 0.4s ease;">
                     <i class="fas fa-medal"></i>
                 </div>
-                <h4>Proven Track Record</h4>
+                <h3 style="color: var(--dark-blue); margin-top: 0; font-size: 1.5rem;">Proven Track Record</h3>
                 <p>7 consecutive years producing GATE MT toppers with identical methodology.</p>
             </div>
             
-            <div class="advantage-card">
-                <div class="advantage-icon">
+            <div class="advantage-card" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; border-top: 5px solid var(--primary-blue); transition: all 0.3s ease;">
+                <div class="advantage-icon" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1.5rem; transition: all 0.4s ease;">
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
-                <h4>Expert Faculty</h4>
+                <h3 style="color: var(--dark-blue); margin-top: 0; font-size: 1.5rem;">Expert Faculty</h3>
                 <p>Learn from IIT professors and past GATE toppers who understand exam patterns.</p>
             </div>
             
-            <div class="advantage-card">
-                <div class="advantage-icon">
+            <div class="advantage-card" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; border-top: 5px solid var(--primary-blue); transition: all 0.3s ease;">
+                <div class="advantage-icon" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1.5rem; transition: all 0.4s ease;">
                     <i class="fas fa-project-diagram"></i>
                 </div>
-                <h4>Comprehensive Material</h4>
+                <h3 style="color: var(--dark-blue); margin-top: 0; font-size: 1.5rem;">Comprehensive Material</h3>
                 <p>5000+ questions with 30% annual renewal to match evolving GATE patterns.</p>
             </div>
             
-            <div class="advantage-card">
-                <div class="advantage-icon">
+            <div class="advantage-card" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; border-top: 5px solid var(--primary-blue); transition: all 0.3s ease;">
+                <div class="advantage-icon" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1.5rem; transition: all 0.4s ease;">
                     <i class="fas fa-brain"></i>
                 </div>
-                <h4>Concept Mastery</h4>
+                <h3 style="color: var(--dark-blue); margin-top: 0; font-size: 1.5rem;">Concept Mastery</h3>
                 <p>Focus on deep conceptual understanding rather than rote memorization.</p>
             </div>
             
-            <div class="advantage-card">
-                <div class="advantage-icon">
+            <div class="advantage-card" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; border-top: 5px solid var(--primary-blue); transition: all 0.3s ease;">
+                <div class="advantage-icon" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1.5rem; transition: all 0.4s ease;">
                     <i class="fas fa-user-friends"></i>
                 </div>
-                <h4>Personal Mentorship</h4>
+                <h3 style="color: var(--dark-blue); margin-top: 0; font-size: 1.5rem;">Personal Mentorship</h3>
                 <p>Regular one-on-one sessions to address individual weaknesses.</p>
             </div>
             
-            <div class="advantage-card">
-                <div class="advantage-icon">
+            <div class="advantage-card" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; border-top: 5px solid var(--primary-blue); transition: all 0.3s ease;">
+                <div class="advantage-icon" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1.5rem; transition: all 0.4s ease;">
                     <i class="fas fa-percentage"></i>
                 </div>
-                <h4>High Match Rate</h4>
+                <h3 style="color: var(--dark-blue); margin-top: 0; font-size: 1.5rem;">High Match Rate</h3>
                 <p>Last year, 22 questions matched directly with our final test series.</p>
             </div>
         </div>
         
-        <div class="chart-container">
-            <div class="chart-card">
+        <div class="chart-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2.5rem; margin-top: 3rem;">
+            <div class="chart-card" style="background: white; border-radius: 14px; padding: 2.5rem; box-shadow: 0 8px 25px rgba(0,0,0,0.05); transition: all 0.4s ease; position: relative; overflow: hidden;">
                 <h3>Student Satisfaction Survey</h3>
-                <div class="chart-wrapper">
+                <div class="chart-wrapper" style="position: relative; height: 350px; width: 100%;">
                     <canvas id="satisfactionChart"></canvas>
                 </div>
                 <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">2023 GATE batch satisfaction ratings</p>
             </div>
             
-            <div class="chart-card">
+            <div class="chart-card" style="background: white; border-radius: 14px; padding: 2.5rem; box-shadow: 0 8px 25px rgba(0,0,0,0.05); transition: all 0.4s ease; position: relative; overflow: hidden;">
                 <h3>Question Match Rate</h3>
-                <div class="chart-wrapper">
-                    <div class="pie-chart-container">
-                        <div class="pie-chart-wrapper">
+                <div class="chart-wrapper" style="position: relative; height: 350px; width: 100%;">
+                    <div class="pie-chart-container" style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column;">
+                        <div class="pie-chart-wrapper" style="flex: 1; position: relative;">
                             <canvas id="matchRateChart"></canvas>
                         </div>
-                        <div class="pie-chart-legend">
-                            <div class="legend-item">
-                                <span class="legend-color" style="background: #176b87;"></span>
+                        <div class="pie-chart-legend" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
+                            <div class="legend-item" style="display: flex; align-items: center; font-size: 0.9rem; background: rgba(0,0,0,0.03); padding: 0.5rem 1rem; border-radius: 20px;">
+                                <span class="legend-color" style="width: 15px; height: 15px; border-radius: 3px; margin-right: 8px; background: #176b87;"></span>
                                 <span>Direct Match (22%)</span>
                             </div>
-                            <div class="legend-item">
-                                <span class="legend-color" style="background: #229954;"></span>
+                            <div class="legend-item" style="display: flex; align-items: center; font-size: 0.9rem; background: rgba(0,0,0,0.03); padding: 0.5rem 1rem; border-radius: 20px;">
+                                <span class="legend-color" style="width: 15px; height: 15px; border-radius: 3px; margin-right: 8px; background: #229954;"></span>
                                 <span>Concept Match (63%)</span>
                             </div>
-                            <div class="legend-item">
-                                <span class="legend-color" style="background: #7c4dff;"></span>
+                            <div class="legend-item" style="display: flex; align-items: center; font-size: 0.9rem; background: rgba(0,0,0,0.03); padding: 0.5rem 1rem; border-radius: 20px;">
+                                <span class="legend-color" style="width: 15px; height: 15px; border-radius: 3px; margin-right: 8px; background: #7c4dff;"></span>
                                 <span>No Match (15%)</span>
                             </div>
                         </div>
@@ -1426,64 +1311,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="testimonials-container">
-            <div class="testimonials-header">
-                <h2>Your Success, Our Pride</h2>
-                <p>Join thousands of satisfied students who transformed their GATE preparation with TestUrSelf</p>
-                <div class="achievement-badge" style="background: var(--primary-blue); color: white; border-color: var(--accent-gold);">
-                    <i class="fas fa-heart"></i> 94% Satisfaction Rate <i class="fas fa-heart"></i>
-                </div>
-            </div>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        The test series was incredibly accurate - I saw at least 15 questions in GATE that were nearly identical to what we practiced. The faculty's guidance was instrumental in my AIR-1 achievement.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JG</div>
-                        <div class="author-info">
-                            <p class="author-name">Jaya Gupta</p>
-                            <p class="author-rank">AIR-1 GATE Metallurgy 2020</p>
-                        </div>
-                    </div>
-                    <div class="satisfaction-badge">100% Satisfied</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        What sets TestUrSelf apart is their focus on conceptual clarity. The doubt sessions with faculty helped me understand topics I'd struggled with for years. Their material is perfectly aligned with GATE requirements.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">HP</div>
-                        <div class="author-info">
-                            <p class="author-name">Hrutidipan Pradhan</p>
-                            <p class="author-rank">AIR-1 GATE Metallurgy 2024</p>
-                        </div>
-                    </div>
-                    <div class="satisfaction-badge">100% Satisfied</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        The performance analytics dashboard was revolutionary for my preparation. It showed exactly where I needed to improve, and the faculty's personalized attention made all the difference in my final rank.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SK</div>
-                        <div class="author-info">
-                            <p class="author-name">Sanjay Kumar</p>
-                            <p class="author-rank">AIR-3 GATE Metallurgy 2022</p>
-                        </div>
-                    </div>
-                    <div class="satisfaction-badge">95% Satisfied</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Final CTA -->
     <section id="cta" class="cta-section gradient">
         <div class="floating-trophy" style="top: 30%; left: 20%;"><i class="fas fa-trophy"></i></div>
@@ -1873,116 +1700,64 @@
         
         // Initialize GSAP Animations
         function initAnimations() {
-            gsap.registerPlugin(ScrollTrigger);
-            
-            // Animate hero elements
-            gsap.from('.hero h1', {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: 'power3.out'
-            });
-            
-            gsap.from('.hero p', {
-                duration: 1,
-                y: 30,
-                opacity: 0,
-                delay: 0.3,
-                ease: 'power3.out'
-            });
-            
-            gsap.from('.cta-buttons', {
-                duration: 1,
-                y: 30,
-                opacity: 0,
-                delay: 0.6,
-                ease: 'power3.out'
-            });
-            
-            // Animate section headings
-            gsap.utils.toArray('h2').forEach((heading, i) => {
-                gsap.from(heading, {
-                    scrollTrigger: {
-                        trigger: heading,
-                        start: 'top 80%'
-                    },
-                    duration: 0.8,
-                    y: 30,
-                    opacity: 0,
-                    ease: 'power3.out'
-                });
-            });
-            
-            // Animate cards
-            gsap.utils.toArray('.point-card, .advantage-card, .chart-card, .testimonial-card').forEach((card, i) => {
-                gsap.from(card, {
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 80%'
-                    },
-                    duration: 0.6,
-                    y: 40,
-                    opacity: 0,
-                    delay: i * 0.1,
-                    ease: 'power3.out'
-                });
-            });
-            
-            // Animate table rows
-            gsap.utils.toArray('.comparison-table tr').forEach((row, i) => {
-                gsap.from(row, {
-                    scrollTrigger: {
-                        trigger: row,
-                        start: 'top 90%'
-                    },
-                    duration: 0.5,
-                    x: i % 2 === 0 ? -30 : 30,
-                    opacity: 0,
-                    delay: i * 0.05,
-                    ease: 'power3.out'
-                });
-            });
-            
-            // Animate timeline items
-            gsap.utils.toArray('.timeline-item').forEach((item, i) => {
-                gsap.from(item, {
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top 80%'
-                    },
-                    duration: 0.8,
-                    x: i % 2 === 0 ? -100 : 100,
-                    opacity: 0,
-                    delay: i * 0.1,
-                    ease: 'power3.out'
-                });
-            });
-            
-            // Make navigation links clickable with smooth scroll
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        gsap.to(window, {
-                            duration: 1,
-                            scrollTo: {
-                                y: targetElement,
-                                offsetY: 80
-                            },
-                            ease: 'power3.inOut'
-                        });
-                        
-                        // Update active state
-                        document.querySelectorAll('.nav-link').forEach(navLink => {
-                            navLink.classList.remove('active');
-                        });
-                        this.classList.add('active');
-                    }
-                });
-            });
+            // Animate legacy cards
+gsap.utils.toArray('.legacy-card').forEach((card, i) => {
+    gsap.from(card, {
+        scrollTrigger: {
+            trigger: card,
+            start: 'top 80%'
+        },
+        duration: 0.6,
+        y: 50,
+        opacity: 0,
+        delay: i * 0.1,
+        ease: 'power3.out'
+    });
+});
+
+// Animate advantage cards
+gsap.utils.toArray('.advantage-card').forEach((card, i) => {
+    gsap.from(card, {
+        scrollTrigger: {
+            trigger: card,
+            start: 'top 80%'
+        },
+        duration: 0.6,
+        y: 50,
+        opacity: 0,
+        delay: i * 0.1,
+        ease: 'power3.out'
+    });
+    
+    // Hover effect
+    card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+            y: -10,
+            boxShadow: '0 15px 40px rgba(0,0,0,0.15)',
+            duration: 0.3
+        });
+        gsap.to(card.querySelector('.advantage-icon'), {
+            color: 'var(--accent-gold)',
+            scale: 1.1,
+            rotate: '5deg',
+            duration: 0.3
+        });
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+            y: 0,
+            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+            duration: 0.3
+        });
+        gsap.to(card.querySelector('.advantage-icon'), {
+            color: 'var(--primary-blue)',
+            scale: 1,
+            rotate: '0deg',
+            duration: 0.3
+        });
+    });
+});
         }
         
         // Initialize everything when DOM loads
