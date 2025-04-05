@@ -1150,7 +1150,7 @@
                 <div class="point-number">01</div>
                 <div class="point-content">
                     <h4><i class="fas fa-book-open"></i> Comprehensive Study Material</h4>
-                    <p>Expert-designed content covering all GATE MT syllabus with depth and clarity. Updated annually by IIT professors.</p>
+                    <p>Expert-designed content covering all GATE MT syllabus with depth and clarity. Updated annually by GATE Top rankers.</p>
                 </div>
             </div>
             
@@ -1182,7 +1182,7 @@
                 <div class="point-number">05</div>
                 <div class="point-content">
                     <h4><i class="fas fa-history"></i> PYQ Mastery Program</h4>
-                    <p>Complete analysis of previous year questions (2010-2024) with pattern recognition techniques.</p>
+                    <p>Complete analysis of previous year questions (2000-2025) with pattern recognition techniques.</p>
                 </div>
             </div>
             
@@ -1309,7 +1309,7 @@
                 <div class="timeline-item left">
                 <div class="timeline-1"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2019</div>
+                        <div class="timeline-year">GATE 2019</div>
                         <h3>The Beginning of Dominance</h3>
                         <p>First AIR-1 in GATE Metallurgy, establishing our reputation as the premier coaching institute.</p>
                         <div class="timeline-highlight">Trailblazer</div>
@@ -1319,7 +1319,7 @@
                 <div class="timeline-item left">
                  <div class="timeline-1"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2020</div>
+                        <div class="timeline-year">GATE 2020</div>
                         <h3>Consistency Proved</h3>
                         <p>Back-to-back AIR-1 achievement, demonstrating our systematic approach to success.</p>
                         <div class="timeline-highlight">Repeat Champion</div>
@@ -1330,7 +1330,7 @@
                  <div class="timeline-1"></div>
                     <div class="celebration-badge">2X</div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2021</div>
+                        <div class="timeline-year">GATE 2021</div>
                         <h3>Double Triumph</h3>
                         <p>Historic year with <strong>two AIR-1 rankers</strong> from our institute, a feat unmatched in GATE MT coaching.</p>
                         <div class="timeline-highlight">Unprecedented</div>
@@ -1340,7 +1340,7 @@
                 <div class="timeline-item left">
                  <div class="timeline-1"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2022</div>
+                        <div class="timeline-year">GATE 2022</div>
                         <h3>Sustaining Excellence</h3>
                         <p>Continued our streak with another top ranker, proving our methodology works year after year.</p>
                         <div class="timeline-highlight">Consistent</div>
@@ -1350,7 +1350,7 @@
                 <div class="timeline-item left">
                  <div class="timeline-1"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2023</div>
+                        <div class="timeline-year">GATE 2023</div>
                         <h3>Perfecting the Process</h3>
                         <p>Our refined teaching approach delivered yet another outstanding result.</p>
                         <div class="timeline-highlight">Refined</div>
@@ -1360,7 +1360,7 @@
                 <div class="timeline-item left">
                  <div class="timeline-1"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2024</div>
+                        <div class="timeline-year">GATE 2024</div>
                         <h3>Tradition of Triumph</h3>
                         <p>Sixth consecutive year producing the GATE MT topper, setting a new benchmark.</p>
                         <div class="timeline-highlight">Tradition</div>
@@ -1371,7 +1371,7 @@
                  <div class="timeline-2"></div>
                     <div class="celebration-badge">NEW</div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2025</div>
+                        <div class="timeline-year">GATE 2025</div>
                         <h3>The Legacy Continues</h3>
                         <p>Already secured AIR-1 for GATE 2025! Our seventh consecutive year at the top.</p>
                         <div class="timeline-highlight">Unstoppable</div>
@@ -1400,7 +1400,7 @@
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
                 <h4>Expert Faculty</h4>
-                <p>Learn from IIT professors and past GATE toppers who understand exam patterns.</p>
+                <p>Learn from Samarjeet Kumar Singh and past GATE toppers who understand exam patterns.</p>
             </div>
             
             <div class="advantage-card">
@@ -1487,7 +1487,7 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        The test series was incredibly accurate - I saw at least 15 questions in GATE that were nearly identical to what we practiced. The faculty's guidance was instrumental in my AIR-1 achievement.
+                        The test series was incredibly accurate - I saw at least 30 questions in GATE that were nearly identical to what we practiced. The faculty's guidance was instrumental in my AIR-1 achievement.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">JG</div>
@@ -1501,7 +1501,7 @@
                 
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        What sets TestUrSelf apart is their focus on conceptual clarity. The doubt sessions with faculty helped me understand topics I'd struggled with for years. Their material is perfectly aligned with GATE requirements.
+                        I enrolled in the TestUrSelf Test Series and Practice Question Series (PQS) for GATE Metallurgy 2024. The quantity and quality of questions in both were exceptional. These resources helped me identify my strong and weak areas, allowing me to focus on the topics that needed improvement. The well-structured tests played a crucial role in my preparation, ultimately helping me secure AIR-1 in GATE Metallurgy 2024. I highly recommend TestUrSelf to serious aspirants.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">HP</div>
@@ -1515,16 +1515,16 @@
                 
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        The performance analytics dashboard was revolutionary for my preparation. It showed exactly where I needed to improve, and the faculty's personalized attention made all the difference in my final rank.
+                        Testurself provides me amazing platform to check my GATE Metallurgical Engineering preparation at the end. The level of questions in Test series are similar to that of GATE Metallurgy level which helped me to do experiment on how to attempt a paper within given time. Overall it was a nice experience.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">SK</div>
                         <div class="author-info">
-                            <p class="author-name">Sanjay Kumar</p>
-                            <p class="author-rank">AIR-3 GATE Metallurgy 2022</p>
+                            <p class="author-name">B Vinith Kumar</p>
+                            <p class="author-rank">AIR-1 GATE Metallurgy 2021</p>
                         </div>
                     </div>
-                    <div class="satisfaction-badge">95% Satisfied</div>
+                    <div class="satisfaction-badge">100% Satisfied</div>
                 </div>
             </div>
         </div>
@@ -1539,10 +1539,10 @@
         <p style="max-width: 700px; margin: 0 auto 3rem;">Be part of the institute that's redefining GATE Metallurgy success year after year</p>
         
         <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">
+            <a href="https://online.testurself.in" class="btn btn-primary">
                 <i class="fas fa-gem"></i> Enroll Now
             </a>
-            <a href="#" class="btn btn-secondary">
+            <a href="https://online.testurself.in" class="btn btn-secondary">
                 <i class="fas fa-book-open"></i> Free Demo
             </a>
         </div>
@@ -1786,10 +1786,10 @@
             new Chart(air1Ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                    labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                     datasets: [{
                         label: 'AIR-1 Produced',
-                        data: [1, 1, 1, 1, 1, 1, 1],
+                        data: [1, 1, 2, 1, 1, 1, 1],
                         backgroundColor: 'rgba(23, 107, 135, 0.8)',
                         borderColor: 'rgba(23, 107, 135, 1)',
                         borderWidth: 1,
