@@ -847,12 +847,12 @@
                 <div class="countdown-label" style="font-size: 1.2rem;">Seconds</div>
             </div>
         </div>
-        <h3 style="text-align: center; margin-top: 2rem; color: white; border-left: none;">Until GATE 2025 Exam</h3>
+        <h3 style="text-align: center; margin-top: 2rem; color: white; border-left: none;">Until GATE 2026 Exam</h3>
     </section>
 
     <!-- Paper Analysis Section -->
     <section id="analysis" class="section">
-        <h2>GATE 2025 Metallurgy Expected Paper Pattern</h2>
+        <h2>GATE 2026 Metallurgy Expected Paper Pattern</h2>
         <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Based on analysis of previous years' papers and expert predictions</p>
         
         <div class="analysis-container">
