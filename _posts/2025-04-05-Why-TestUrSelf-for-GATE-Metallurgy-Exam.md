@@ -611,18 +611,13 @@
             font-size: 1.1rem;
         }
         
-        /* Advantage Section */
-#advantage.section {
-    margin-top: 0;
-    position: relative;
-    z-index: 2;
-}
-
-.advantage-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    /* ... rest of your existing styles ... */
-}
+        /* TestUrSelf Advantage */
+        .advantage-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
         
         .advantage-card {
             background: white;
@@ -671,17 +666,17 @@
         
         /* Timeline Section */
         .timeline-section {
-    position: relative;
-    padding: 5rem 0 6rem;
-    margin-bottom: 4rem;
-    background: linear-gradient(to bottom, #f8f9fa, white);
-    z-index: 1;
-}
+            position: relative;
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom, #f8f9fa, white);
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
         
         .timeline-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
             position: relative;
         }
         
@@ -822,15 +817,17 @@
         /* Testimonials Section */
         .testimonials-section {
             background: linear-gradient(135deg, var(--light-blue) 0%, #e8f5ee 100%);
-            padding: 6rem 0;
+            padding: 6rem 2rem;
             position: relative;
             overflow: hidden;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .testimonials-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
         }
         
         .testimonials-header {
@@ -960,6 +957,8 @@
             overflow: hidden;
             clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
             margin-top: 4rem;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .cta-section.gradient {
