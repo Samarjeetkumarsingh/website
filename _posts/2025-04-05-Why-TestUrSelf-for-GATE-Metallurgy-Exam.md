@@ -1112,7 +1112,7 @@
                 <i class="fas fa-atom"></i> TestUrSelf
             </a>
             <div class="nav-links">
-                <a href="#methodology" class="nav-link">Methodology</a>
+                <a href="#methodology">Methodology</a>
                 <a href="#results" class="nav-link">Results</a>
                 <a href="#timeline" class="nav-link">Our Legacy</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
