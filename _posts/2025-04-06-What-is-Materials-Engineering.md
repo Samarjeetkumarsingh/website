@@ -24,7 +24,11 @@
             --dark: #1e293b;
             --light: #f8fafc;
         }
-        
+        html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
