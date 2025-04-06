@@ -971,7 +971,7 @@
                             </div>
                         </div>
                         
-                        <div class="champion-score">Topper Batch</div>
+                        <div class="champion-score">New Ranker</div>
                     </div>
                 </div>
                 
@@ -1006,10 +1006,10 @@
                 <!-- Champion 2023 -->
                 <div class="champion-card">
                     <div class="champion-header">
-                        <div class="champion-year">2023</div>
+                        <div class="champion-year">GATE 2023</div>
                         <div class="champion-rank">AIR-1</div>
                         <div class="champion-photo">
-                            <img src="https://www.testurself.in/wp-content/uploads/2023/03/Screenshot-2023-03-16-at-8.33.48-PM.png" alt="Ashutosh Kumar">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1-2023.png" alt="Ashutosh Kumar">
                         </div>
                     </div>
                     <div class="champion-body">
