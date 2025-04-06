@@ -1113,10 +1113,10 @@
             </a>
             <div class="nav-links">
                 <a href="#methodology">Methodology</a>
-                <a href="#results" class="nav-link">Results</a>
-                <a href="#timeline" class="nav-link">Our Legacy</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#cta" class="nav-link">Get Started</a>
+                <a href="#results">Results</a>
+                <a href="#timeline">Our Legacy</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#cta">Get Started</a>
             </div>
         </div>
     </nav>
