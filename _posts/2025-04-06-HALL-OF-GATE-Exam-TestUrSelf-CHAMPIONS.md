@@ -953,7 +953,7 @@
                         <div class="champion-year"> GATE 2025</div>
                         <div class="champion-rank">AIR-1</div>
                         <div class="champion-photo">
-                            <img src="https://www.testurself.in/wp-content/uploads/2025/03/1719224857470.jpeg" alt="Yogesh Sarma Sedai">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1-2025.png" alt="Yogesh Sarma Sedai">
                         </div>
                     </div>
                     <div class="champion-body">
