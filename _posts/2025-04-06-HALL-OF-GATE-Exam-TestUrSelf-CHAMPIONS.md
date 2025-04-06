@@ -1034,10 +1034,10 @@
                 <!-- Champion 2022 -->
                 <div class="champion-card">
                     <div class="champion-header">
-                        <div class="champion-year">2022</div>
+                        <div class="champion-year">GATE 2022</div>
                         <div class="champion-rank">AIR-1</div>
                         <div class="champion-photo">
-                            <img src="https://www.testurself.in/wp-content/uploads/2022/03/38EAA21F-9EC3-474A-A350-8DA3DFB0688C.png" alt="Mohit Patidar">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1-2022.png" alt="Mohit Patidar">
                         </div>
                     </div>
                     <div class="champion-body">
