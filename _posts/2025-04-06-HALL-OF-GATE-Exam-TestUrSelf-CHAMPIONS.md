@@ -1168,6 +1168,33 @@
                         <div class="champion-score">First Female Topper</div>
                     </div>
                 </div>
+                 <!-- Champion 2018 -->
+                <div class="champion-card">
+                    <div class="champion-header">
+                        <div class="champion-year">GATE 2018</div>
+                        <div class="champion-rank">AIR-5</div>
+                        <div class="champion-photo">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-5-2018.png" alt="Mohit Patidar">
+                        </div>
+                    </div>
+                    <div class="champion-body">
+                        <h3 class="champion-name">Rishabh Kumar</h3>
+                        <div class="champion-branch">Metallurgical Engineering</div>
+                        
+                        <div class="champion-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">-</div>
+                                <div class="stat-label">GATE Score</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">65+</div>
+                                <div class="stat-label">Top 100</div>
+                            </div>
+                        </div>
+                        
+                        <div class="champion-score">First Batch</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
