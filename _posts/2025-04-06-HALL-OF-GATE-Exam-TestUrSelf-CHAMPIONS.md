@@ -1059,13 +1059,13 @@
                     </div>
                 </div>
                 
-                <!-- Champion 2021 -->
+                <!-- Champion 2021-1 -->
                 <div class="champion-card">
                     <div class="champion-header">
-                        <div class="champion-year">2021</div>
+                        <div class="champion-year">GATE 2021</div>
                         <div class="champion-rank">AIR-1</div>
                         <div class="champion-photo">
-                            <img src="https://www.testurself.in/wp-content/uploads/2021/03/12.png" alt="D Laxman Rao">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1-2021-1.png" alt="D Laxman Rao">
                         </div>
                     </div>
                     <div class="champion-body">
@@ -1086,7 +1086,34 @@
                         <div class="champion-score">Concept Master</div>
                     </div>
                 </div>
-                
+
+             <!-- Champion 2021-2 -->
+                <div class="champion-card">
+                    <div class="champion-header">
+                        <div class="champion-year">GATE 2021</div>
+                        <div class="champion-rank">AIR-1</div>
+                        <div class="champion-photo">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1-2021-2.png" alt="D Laxman Rao">
+                        </div>
+                    </div>
+                    <div class="champion-body">
+                        <h3 class="champion-name">B Vinith Kumar</h3>
+                        <div class="champion-branch">Metallurgical Engineering</div>
+                        
+                        <div class="champion-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">923</div>
+                                <div class="stat-label">GATE Score</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">60+</div>
+                                <div class="stat-label">Top 100</div>
+                            </div>
+                        </div>
+                        
+                        <div class="champion-score">Concept Master</div>
+                    </div>
+                </div>
                 <!-- Champion 2020 -->
                 <div class="champion-card">
                     <div class="champion-header">
