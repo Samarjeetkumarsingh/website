@@ -967,14 +967,18 @@
                                 <span class="legend-color" style="background: #00bfa5;"></span>
                                 <span>Concept Match (63%)</span>
                             </div>
+                           
+                             
+                          
                             <div class="legend-item">
                                 <span class="legend-color" style="background: #7c4dff;"></span>
                                 <span>No Match (15%)</span>
                             </div>
                         </div>
+                          <p style="text-align: center; margin-top: 0.5rem; font-weight: 500; color: var(--dark-blue);">Our tests have highest conceptual match with actual GATE</p>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">Our tests have highest conceptual match with actual GATE</p>
+             
             </div>
         </div>
     </section>
