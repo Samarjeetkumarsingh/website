@@ -77,7 +77,7 @@
 <body class="bg-gray-50 text-gray-800">
     <!-- Sticky Navigation -->
     <nav class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="container mx-auto px-6 py-3">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="flex justify-between items-center">
                 <a href="#" class="text-2xl font-bold text-blue-500">Material<span class="text-emerald-500">Science</span></a>
                 
