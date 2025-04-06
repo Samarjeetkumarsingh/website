@@ -1120,11 +1120,38 @@
                         <div class="champion-year">2020</div>
                         <div class="champion-rank">AIR-1</div>
                         <div class="champion-photo">
-                            <img src="https://www.testurself.in/wp-content/uploads/2020/04/0752FA29-EA5B-4524-866B-4A8AB4398CFF.jpeg" alt="Jaya Gupta">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1-2020.png" alt="Jaya Gupta">
                         </div>
                     </div>
                     <div class="champion-body">
                         <h3 class="champion-name">Jaya Gupta</h3>
+                        <div class="champion-branch">Metallurgical Engineering</div>
+                        
+                        <div class="champion-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">-</div>
+                                <div class="stat-label">GATE Score</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">60+</div>
+                                <div class="stat-label">Top 100</div>
+                            </div>
+                        </div>
+                        
+                        <div class="champion-score">Problem Solving Skills</div>
+                    </div>
+                </div>
+                       <!-- Champion 2019 -->
+                <div class="champion-card">
+                    <div class="champion-header">
+                        <div class="champion-year">GATE 2019</div>
+                        <div class="champion-rank">AIR-1</div>
+                        <div class="champion-photo">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1-2019.png" alt="Dilpreet Dhanjal">
+                        </div>
+                    </div>
+                    <div class="champion-body">
+                        <h3 class="champion-name">Dilpreet Dhanjal</h3>
                         <div class="champion-branch">Metallurgical Engineering</div>
                         
                         <div class="champion-stats">
