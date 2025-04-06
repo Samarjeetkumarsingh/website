@@ -324,7 +324,7 @@
         
         h3 {
             color: var(--dark-blue);
-            margin-top: 2.5rem;
+            margin-top: 2rem;
             font-size: 1.8rem;
             border-left: none;
             padding-left: 0;
@@ -443,7 +443,7 @@
         
         .chart-wrapper {
             position: relative;
-            height: 350px;
+              height: 397px;
             width: 100%;
         }
         
@@ -814,9 +814,10 @@
                                 <span>16-20 Tests (12%)</span>
                             </div>
                         </div>
+                         <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">Only 12% complete recommended 20+ tests</p>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 1rem; font-weight: 500; color: var(--dark-blue);">Only 12% complete recommended 20+ tests</p>
+               
             </div>
             
             <div class="chart-card">
