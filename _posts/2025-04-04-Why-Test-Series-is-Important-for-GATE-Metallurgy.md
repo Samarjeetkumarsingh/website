@@ -685,11 +685,11 @@
                 <i class="fas fa-atom"></i> TestUrSelf
             </a>
             <div class="nav-links">
-                <a href="#importance" class="nav-link">Importance</a>
-                <a href="#data" class="nav-link">Data Insights</a>
-                <a href="#comparison" class="nav-link">Comparison</a>
-                <a href="#advantage" class="nav-link">Our Edge</a>
-                <a href="#cta" class="nav-link">Get Started</a>
+                <a href="#importance">Importance</a>
+                <a href="#data">Data Insights</a>
+                <a href="#comparison">Comparison</a>
+                <a href="#advantage">Our Edge</a>
+                <a href="#cta">Get Started</a>
             </div>
         </div>
     </nav>
