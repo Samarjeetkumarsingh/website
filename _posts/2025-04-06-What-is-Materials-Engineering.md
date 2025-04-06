@@ -139,7 +139,7 @@
 
     <!-- Introduction Section -->
     <section id="introduction" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">What is Materials Engineering?</h2>
                 <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
@@ -176,7 +176,7 @@
 
     <!-- Why It Matters Section -->
     <section id="importance" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Materials Engineering Matters</h2>
                 <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
@@ -237,7 +237,7 @@
 
     <!-- Benefits Section -->
     <section id="benefits" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Benefits of Studying Materials Engineering</h2>
                 <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
@@ -298,7 +298,7 @@
 
     <!-- Career Opportunities Section -->
     <section id="careers" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Career Opportunities</h2>
                 <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
@@ -375,7 +375,7 @@
 
     <!-- GATE Exam Section -->
     <section id="gate" class="py-20 bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
-        <div class="container mx-auto px-6">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">GATE (MT) - Metallurgy Exam</h2>
                 <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
@@ -434,7 +434,7 @@
 
     <!-- Elon Musk Quote Section -->
     <section class="py-20 bg-gray-800 text-white">
-        <div class="container mx-auto px-6">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Industry Perspectives</h2>
                 <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
@@ -513,7 +513,7 @@
 
     <!-- Future Trends Section -->
     <section id="future" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">The Future of Materials Engineering</h2>
                 <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
@@ -623,7 +623,7 @@
 
     <!-- Call to Action -->
     <section class="py-20 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-        <div class="container mx-auto px-6 text-center">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="max-w-3xl mx-auto" data-aos="zoom-in">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Explore Materials Engineering?</h2>
                 <p class="text-xl mb-8">Join the next generation of innovators shaping our material world.</p>
@@ -668,7 +668,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="container mx-auto px-6">
+        <div style="width: 100%; margin: 0; padding: 0;">
             <div class="grid md:grid-cols-4 gap-10">
                 <div>
                     <h3 class="text-white text-lg font-semibold mb-4">MaterialScience</h3>
