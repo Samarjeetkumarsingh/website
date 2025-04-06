@@ -981,7 +981,7 @@
                         <div class="champion-year">2024</div>
                         <div class="champion-rank">AIR-1</div>
                         <div class="champion-photo">
-                            <img src="https://www.testurself.in/wp-content/uploads/2024/05/Profile-Photo2-Hrutidipan-Pradhan-2.jpg" alt="Hrutidipan Pradhan">
+                            <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1-2024.png" alt="Hrutidipan Pradhan">
                         </div>
                     </div>
                     <div class="champion-body">
