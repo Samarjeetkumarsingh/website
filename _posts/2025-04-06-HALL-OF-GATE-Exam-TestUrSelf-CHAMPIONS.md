@@ -911,8 +911,8 @@
                     
                     <div class="performance-stats">
                         <div class="performance-stat">
-                            <h3>100%</h3>
-                            <p>Success Rate in Last 5 Years</p>
+                            <h3>5000+</h3>
+                            <p>Successful Students</p>
                         </div>
                         <div class="performance-stat">
                             <h3>460+</h3>
@@ -923,7 +923,7 @@
                             <p>Consecutive AIR-1 Rankers</p>
                         </div>
                         <div class="performance-stat">
-                            <h3>95%</h3>
+                            <h3>70%</h3>
                             <p>Selection Rate in PSUs</p>
                         </div>
                     </div>
@@ -1334,9 +1334,9 @@
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Programs</a></li>
+                        <li><a href="https://www.testurself.in"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="https://www.testurself.in/about-us/"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> Programs</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Results</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
                     </ul>
