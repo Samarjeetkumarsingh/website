@@ -1427,7 +1427,7 @@
                     <blockquote>"Education is the most powerful weapon to change the world."</blockquote>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Samarjeet at work" class="about-image-main">
+                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/1.png" alt="Samarjeet at work" class="about-image-main">
                 </div>
             </div>
         </div>
@@ -1477,7 +1477,7 @@
                     </div>
                 </div>
                 <div class="testurself-image">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="TestUrSelf Students">
+                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/2.png" alt="TestUrSelf Students">
                 </div>
             </div>
         </div>
