@@ -1433,15 +1433,21 @@
         </div>
     </section>
 
-   <!-- TestUrSelf Section -->
+  <!-- TestUrSelf Section -->
 <section id="testurself" class="section testurself">
     <div class="container">
         <div class="testurself-content">
             <div class="testurself-text">
                 <h2 class="section-heading">
                     <span>TestUrSelf - For GATE Aspirants</span>
-                    <svg class="curly-arrow" width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0,40 Q30,0 60,40 T120,40" fill="none" stroke="#4a6bff" stroke-width="2" stroke-dasharray="200" stroke-dashoffset="200"/>
+                    <svg class="curly-arrow" width="150" height="80" viewBox="0 0 150 80" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,10 C50,10 70,40 120,40 C140,40 150,30 150,20" 
+                              fill="none" 
+                              stroke="#00bfff" 
+                              stroke-width="3" 
+                              stroke-linecap="round"
+                              stroke-dasharray="200" 
+                              stroke-dashoffset="200"/>
                     </svg>
                 </h2>
                 <p class="fade-in">Founded with a vision to revolutionize exam preparation, TestUrSelf provides comprehensive resources and guidance for GATE aspirants, especially in Metallurgical and Materials Engineering.</p>
@@ -1492,8 +1498,21 @@
 </section>
 
 <style>
+    /* Base Styles */
+    .testurself {
+        background-color: #000;
+        color: #fff;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testurself h2, .testurself h3 {
+        color: #00bfff;
+    }
+    
     /* Animation Styles */
-    @keyframes draw {
+    @keyframes drawArrow {
         to { stroke-dashoffset: 0; }
     }
     
@@ -1518,23 +1537,14 @@
         to { opacity: 1; transform: scale(1); }
     }
     
-    @keyframes pulse {
-        0% { box-shadow: 0 0 0 0 rgba(74, 107, 255, 0.4); }
-        70% { box-shadow: 0 0 0 15px rgba(74, 107, 255, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(74, 107, 255, 0); }
-    }
-    
-    /* Section Styles */
-    .testurself {
-        position: relative;
-        overflow: hidden;
-    }
-    
+    /* Layout Styles */
     .testurself-content {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         gap: 40px;
+        position: relative;
+        z-index: 2;
     }
     
     .testurself-text {
@@ -1548,46 +1558,28 @@
         position: relative;
     }
     
-    .image-container {
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-    
-    .image-highlight {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(74, 107, 255, 0.2) 0%, rgba(74, 107, 255, 0) 100%);
-        z-index: 1;
-        pointer-events: none;
-    }
-    
-    .testurself-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-        position: relative;
-        z-index: 0;
-    }
-    
+    /* Curly Arrow Styles */
     .section-heading {
         position: relative;
         display: inline-block;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
+        padding-right: 60px;
     }
     
     .curly-arrow {
         position: absolute;
-        right: -100px;
+        right: -130px;
         top: 50%;
         transform: translateY(-50%);
-        animation: draw 1.5s ease-out forwards;
+        animation: drawArrow 1.5s ease-out 0.5s forwards;
     }
     
+    .curly-arrow path {
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+    }
+    
+    /* Feature Items */
     .testurself-features {
         margin: 40px 0;
     }
@@ -1596,22 +1588,23 @@
         display: flex;
         gap: 15px;
         margin-bottom: 25px;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(0, 0, 0, 0.3);
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 191, 255, 0.2);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
     .feature-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        background: rgba(0, 191, 255, 0.05);
+        border-color: rgba(0, 191, 255, 0.4);
     }
     
     .feature-icon {
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #4a6bff 0%, #6a4aff 100%);
+        background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -1621,17 +1614,33 @@
         flex-shrink: 0;
     }
     
-    .feature-content h3 {
-        margin-top: 0;
-        color: #333;
+    /* Image Container */
+    .image-container {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 191, 255, 0.1);
+        border: 1px solid rgba(0, 191, 255, 0.2);
     }
     
+    .image-highlight {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(0, 191, 255, 0) 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    /* Button Styles */
     .testurself-cta {
         margin-top: 30px;
     }
     
     .btn-primary {
-        background: linear-gradient(135deg, #4a6bff 0%, #6a4aff 100%);
+        background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
         border: none;
         padding: 12px 25px;
         border-radius: 50px;
@@ -1641,19 +1650,24 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+        box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
     .btn-primary:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(74, 107, 255, 0.4);
+        box-shadow: 0 8px 20px rgba(0, 191, 255, 0.5);
     }
     
     /* Animation Classes */
     .fade-in {
         opacity: 0;
         animation: fadeIn 1s ease forwards;
+        animation-delay: 0.3s;
+    }
+    
+    .fade-in:nth-of-type(2) {
+        animation-delay: 0.6s;
     }
     
     .pop-in {
@@ -1669,17 +1683,27 @@
     }
     
     .scale-in {
+        opacity: 0;
         animation: scaleIn 1s ease-out forwards;
+        animation-delay: 0.4s;
     }
     
     /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .curly-arrow {
+            right: -100px;
+            width: 120px;
+        }
+    }
+    
     @media (max-width: 768px) {
         .testurself-content {
             flex-direction: column;
         }
         
         .section-heading {
-            margin-bottom: 50px;
+            margin-bottom: 80px;
+            padding-right: 0;
         }
         
         .curly-arrow {
@@ -1688,7 +1712,7 @@
             top: 100%;
             transform: translateX(-50%) rotate(90deg);
             width: 60px;
-            height: 40px;
+            height: 100px;
         }
     }
 </style>
