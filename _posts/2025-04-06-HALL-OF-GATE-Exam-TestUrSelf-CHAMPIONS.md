@@ -1187,7 +1187,7 @@
                                 <div class="stat-label">GATE Score</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-value">65+</div>
+                                <div class="stat-value">35+</div>
                                 <div class="stat-label">Top 100</div>
                             </div>
                         </div>
