@@ -111,7 +111,7 @@
             background-color: #0f0e17;
             color: #fffffe;
             overflow-x: hidden;
-            margin:0 auto !important;
+            margin:0 auto;
         }
         
         h1, h2, h3, h4, h5, h6 {
