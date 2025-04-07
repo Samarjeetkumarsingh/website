@@ -1769,17 +1769,109 @@
 }
 </style>
 
-/* Guidance Section Redesign */
+<!-- Guidance Section -->
+<section id="guidance" class="section guidance">
+    <div class="container">
+        <h2 class="section-title">1:1 <span>Mentorship Program</span></h2>
+        <div class="guidance-intro">
+            <p>Personalized guidance for GATE Metallurgy/Materials Science aspirants who want structured preparation and expert insights.</p>
+        </div>
+        
+        <div class="guidance-cards">
+            <!-- Card 1 -->
+            <div class="guidance-card">
+                <div class="guidance-card-badge">Most Popular</div>
+                <div class="guidance-card-icon">
+                    <i class="fas fa-chess-knight"></i>
+                </div>
+                <h3>Strategy Blueprint</h3>
+                <div class="guidance-card-price">₹3,999 <span>/ session</span></div>
+                <div class="guidance-card-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 2-hour intensive consultation</li>
+                        <li><i class="fas fa-check"></i> Customized 3-month roadmap</li>
+                        <li><i class="fas fa-check"></i> Resource recommendations</li>
+                        <li><i class="fas fa-check"></i> Priority email support</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-secondary">Book Now</a>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="guidance-card featured">
+                <div class="guidance-card-badge">Recommended</div>
+                <div class="guidance-card-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>3-Month Accelerator</h3>
+                <div class="guidance-card-price">₹24,999 <span>/ 3 months</span></div>
+                <div class="guidance-card-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 12 sessions (1 per week)</li>
+                        <li><i class="fas fa-check"></i> Doubt resolution sessions</li>
+                        <li><i class="fas fa-check"></i> Study material recommendations</li>
+                        <li><i class="fas fa-check"></i> Mock test analysis (3 tests)</li>
+                        <li><i class="fas fa-check"></i> WhatsApp support</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-primary">Enroll Now</a>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="guidance-card">
+                <div class="guidance-card-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Elite Mentorship</h3>
+                <div class="guidance-card-price">₹49,999 <span>/ 6 months</span></div>
+                <div class="guidance-card-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 24 sessions (1 per week)</li>
+                        <li><i class="fas fa-check"></i> Comprehensive preparation plan</li>
+                        <li><i class="fas fa-check"></i> 6 mock tests with analysis</li>
+                        <li><i class="fas fa-check"></i> Personalized notes review</li>
+                        <li><i class="fas fa-check"></i> 24/7 priority support</li>
+                        <li><i class="fas fa-check"></i> Interview preparation</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-secondary">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Guidance Section Styles */
 .guidance {
     background: linear-gradient(135deg, #111827 0%, #0a0e17 100%);
+    padding: 100px 0;
+}
+
+.guidance-intro {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+    color: #AAAAAA;
+}
+
+.guidance-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .guidance-card {
     background: linear-gradient(145deg, #111827, #0a0e17);
-    border: 1px solid rgba(0, 191, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 350px;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(0, 191, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .guidance-card::after {
@@ -1805,7 +1897,7 @@
 }
 
 .guidance-card.featured {
-    border: 2px solid var(--accent);
+    border: 2px solid #00BFFF;
     transform: translateY(-10px);
 }
 
@@ -1817,8 +1909,8 @@
     position: absolute;
     top: 15px;
     right: -30px;
-    background: var(--accent);
-    color: var(--black);
+    background: #00BFFF;
+    color: #000000;
     padding: 5px 30px;
     font-size: 12px;
     font-weight: 700;
@@ -1828,20 +1920,40 @@
 }
 
 .guidance-card-icon {
+    width: 80px;
+    height: 80px;
     background: rgba(0, 191, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 30px;
+    color: #00BFFF;
     border: 2px solid rgba(0, 191, 255, 0.2);
     transition: all 0.5s ease;
 }
 
 .guidance-card:hover .guidance-card-icon {
-    background: var(--accent);
-    color: var(--black);
+    background: #00BFFF;
+    color: #000000;
     transform: rotateY(360deg);
+}
+
+.guidance-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
 }
 
 .guidance-card-price {
     font-size: 28px;
+    font-weight: 700;
+    color: #00BFFF;
     margin: 20px 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .guidance-card-price span {
@@ -1854,6 +1966,10 @@
     margin: 30px 0;
 }
 
+.guidance-card-features ul {
+    padding-left: 0;
+}
+
 .guidance-card-features li {
     list-style: none;
     margin-bottom: 12px;
@@ -1863,83 +1979,74 @@
 }
 
 .guidance-card-features li i {
-    color: var(--accent);
+    color: #00BFFF;
     position: absolute;
     left: 0;
     top: 5px;
 }
 
-.guidance-testimonials {
-    margin-top: 80px;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    width: 100%;
     text-align: center;
 }
 
-.guidance-testimonials h3 {
-    font-size: 28px;
-    margin-bottom: 40px;
-    color: var(--white);
+.btn-primary {
+    background-color: #00BFFF;
+    color: #000000;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+.btn-primary:hover {
+    background-color: #0080FF;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 191, 255, 0.2);
 }
 
-.testimonial-card {
-    background: linear-gradient(145deg, #111827, #0a0e17);
-    border: 1px solid rgba(0, 191, 255, 0.1);
-    border-radius: 15px;
-    padding: 30px;
-    transition: all 0.5s ease;
+.btn-secondary {
+    border: 2px solid #00BFFF;
+    color: #00BFFF;
+    background: transparent;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.1);
-}
-
-.testimonial-content {
-    font-style: italic;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.testimonial-content::before {
-    content: '"';
-    position: absolute;
-    top: -15px;
-    left: -10px;
-    font-size: 60px;
-    color: rgba(0, 191, 255, 0.1);
-    font-family: Georgia, serif;
-    line-height: 1;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.author-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.btn-secondary:hover {
     background-color: rgba(0, 191, 255, 0.1);
-    border: 2px solid var(--accent);
+    transform: translateY(-3px);
 }
 
-.author-info h4 {
-    margin-bottom: 5px;
-    color: var(--white);
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .guidance-card {
+        width: 300px;
+    }
 }
 
-.author-info p {
-    color: var(--accent);
-    font-size: 14px;
+@media (max-width: 992px) {
+    .guidance-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .guidance-card {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .guidance-card.featured {
+        transform: none;
+    }
+    
+    .guidance-card.featured:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
 }
+</style>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
