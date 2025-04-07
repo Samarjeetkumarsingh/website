@@ -2212,7 +2212,7 @@
         
         // Typing Animation
         const typingText = document.querySelector('.typing-text');
-        const texts = ["Turning struggles into strategies", "Helping students succeed", "GATE AIR-7 Mentor", "Founder of TestUrSelf"];
+        const texts = ["Turning struggles into strategies", "Helping students succeed", "GATE AIR-7, Mentor", "Founder of TestUrSelf"];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
