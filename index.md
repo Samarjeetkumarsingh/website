@@ -1380,7 +1380,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Samarjeet">
+                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/1.png" alt="Samarjeet">
                 </div>
             </div>
         </div>
@@ -1427,7 +1427,7 @@
                     <blockquote>"Education is the most powerful weapon to change the world."</blockquote>
                 </div>
                 <div class="about-image">
-                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/1.png" alt="Samarjeet at work" class="about-image-main">
+                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/2.png" alt="Samarjeet at work" class="about-image-main">
                 </div>
             </div>
         </div>
