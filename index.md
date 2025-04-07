@@ -1477,7 +1477,7 @@
                     </div>
                 </div>
                 <div class="testurself-image">
-                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1+rankers.png" alt="TestUrSelf Students">
+                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1+Toppers.png" alt="TestUrSelf Students">
                 </div>
             </div>
         </div>
