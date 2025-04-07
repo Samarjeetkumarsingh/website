@@ -1433,28 +1433,30 @@
         </div>
     </section>
 
-  <!-- TestUrSelf Section -->
+ <!-- TestUrSelf Section -->
 <section id="testurself" class="section testurself">
     <div class="container">
         <div class="testurself-content">
             <div class="testurself-text">
-                <h2 class="section-heading">
-                    <span>TestUrSelf - For GATE Aspirants</span>
-                    <svg class="curly-arrow" width="150" height="80" viewBox="0 0 150 80" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0,10 C50,10 70,40 120,40 C140,40 150,30 150,20" 
+                <div class="heading-container">
+                    <h2 class="section-heading">TestUrSelf - For GATE Aspirants</h2>
+                    <svg class="curly-arrow" width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5,30 C50,-20 100,80 175,30" 
                               fill="none" 
                               stroke="#00bfff" 
                               stroke-width="3" 
                               stroke-linecap="round"
-                              stroke-dasharray="200" 
-                              stroke-dashoffset="200"/>
+                              stroke-dasharray="250" 
+                              stroke-dashoffset="250"/>
                     </svg>
-                </h2>
-                <p class="fade-in">Founded with a vision to revolutionize exam preparation, TestUrSelf provides comprehensive resources and guidance for GATE aspirants, especially in Metallurgical and Materials Engineering.</p>
-                <p class="fade-in">What started as a small initiative from my room has now helped hundreds of students achieve their dreams, including producing AIR-1 rank holders.</p>
+                </div>
+                <div class="content-block">
+                    <p>Founded with a vision to revolutionize exam preparation, TestUrSelf provides comprehensive resources and guidance for GATE aspirants, especially in Metallurgical and Materials Engineering.</p>
+                    <p>What started as a small initiative from my room has now helped hundreds of students achieve their dreams, including producing AIR-1 rank holders.</p>
+                </div>
                 
                 <div class="testurself-features">
-                    <div class="feature-item pop-in" style="--delay: 0.2s">
+                    <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fas fa-book"></i>
                         </div>
@@ -1463,7 +1465,7 @@
                             <p>Curated notes, practice questions, and previous year papers with detailed solutions.</p>
                         </div>
                     </div>
-                    <div class="feature-item pop-in" style="--delay: 0.4s">
+                    <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
@@ -1472,7 +1474,7 @@
                             <p>Personal mentorship from toppers who understand the exam inside out.</p>
                         </div>
                     </div>
-                    <div class="feature-item pop-in" style="--delay: 0.6s">
+                    <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fas fa-tasks"></i>
                         </div>
@@ -1483,14 +1485,13 @@
                     </div>
                 </div>
                 
-                <div class="testurself-cta slide-in" style="--delay: 0.8s">
+                <div class="testurself-cta">
                     <a href="https://www.testurself.in" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Explore TestUrSelf</a>
                 </div>
             </div>
             <div class="testurself-image">
                 <div class="image-container">
-                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1+Toppers.png" alt="TestUrSelf Students" class="scale-in">
-                    <div class="image-highlight"></div>
+                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1+Toppers.png" alt="TestUrSelf Students">
                 </div>
             </div>
         </div>
@@ -1502,49 +1503,23 @@
     .testurself {
         background-color: #000;
         color: #fff;
-        padding: 80px 0;
+        padding: 100px 0;
         position: relative;
         overflow: hidden;
     }
     
-    .testurself h2, .testurself h3 {
-        color: #00bfff;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     
-    /* Animation Styles */
-    @keyframes drawArrow {
-        to { stroke-dashoffset: 0; }
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes popIn {
-        0% { opacity: 0; transform: scale(0.8); }
-        70% { opacity: 1; transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-    
-    @keyframes slideIn {
-        from { opacity: 0; transform: translateX(-30px); }
-        to { opacity: 1; transform: translateX(0); }
-    }
-    
-    @keyframes scaleIn {
-        from { opacity: 0; transform: scale(0.9); }
-        to { opacity: 1; transform: scale(1); }
-    }
-    
-    /* Layout Styles */
+    /* Content Layout */
     .testurself-content {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 40px;
-        position: relative;
-        z-index: 2;
+        gap: 60px;
     }
     
     .testurself-text {
@@ -1558,140 +1533,188 @@
         position: relative;
     }
     
-    /* Curly Arrow Styles */
-    .section-heading {
+    /* Heading Styles */
+    .heading-container {
         position: relative;
-        display: inline-block;
-        margin-bottom: 50px;
-        padding-right: 60px;
+        margin-bottom: 40px;
     }
     
+    .section-heading {
+        color: #00bfff;
+        font-size: 2.5rem;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+    }
+    
+    /* Curly Arrow Styles */
     .curly-arrow {
         position: absolute;
-        right: -130px;
+        right: -180px;
         top: 50%;
         transform: translateY(-50%);
-        animation: drawArrow 1.5s ease-out 0.5s forwards;
     }
     
     .curly-arrow path {
-        stroke-dasharray: 200;
-        stroke-dashoffset: 200;
+        animation: drawArrow 1.5s ease-out forwards;
+        animation-delay: 0.5s;
     }
     
-    /* Feature Items */
+    @keyframes drawArrow {
+        to { stroke-dashoffset: 0; }
+    }
+    
+    /* Content Block */
+    .content-block {
+        margin-bottom: 40px;
+    }
+    
+    .content-block p {
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .content-block p:nth-child(1) {
+        animation-delay: 0.3s;
+    }
+    
+    .content-block p:nth-child(2) {
+        animation-delay: 0.6s;
+    }
+    
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Features Section */
     .testurself-features {
-        margin: 40px 0;
+        margin: 50px 0;
     }
     
     .feature-item {
         display: flex;
-        gap: 15px;
-        margin-bottom: 25px;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 20px;
-        border-radius: 10px;
-        border: 1px solid rgba(0, 191, 255, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        gap: 20px;
+        margin-bottom: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 3px solid #00bfff;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease-out forwards;
     }
     
-    .feature-item:hover {
-        transform: translateY(-5px);
-        background: rgba(0, 191, 255, 0.05);
-        border-color: rgba(0, 191, 255, 0.4);
+    .feature-item:nth-child(1) {
+        animation-delay: 0.9s;
+    }
+    
+    .feature-item:nth-child(2) {
+        animation-delay: 1.1s;
+    }
+    
+    .feature-item:nth-child(3) {
+        animation-delay: 1.3s;
     }
     
     .feature-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #00bfff 0%, #0066cc 100%);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        font-size: 20px;
+        font-size: 24px;
         flex-shrink: 0;
+    }
+    
+    .feature-content h3 {
+        color: #00bfff;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+    }
+    
+    .feature-content p {
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+        line-height: 1.6;
     }
     
     /* Image Container */
     .image-container {
-        position: relative;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0, 191, 255, 0.1);
-        border: 1px solid rgba(0, 191, 255, 0.2);
+        box-shadow: 0 25px 50px rgba(0, 191, 255, 0.15);
+        opacity: 0;
+        transform: scale(0.95);
+        animation: fadeInScale 1s ease-out forwards;
+        animation-delay: 0.8s;
     }
     
-    .image-highlight {
-        position: absolute;
-        top: 0;
-        left: 0;
+    @keyframes fadeInScale {
+        to { opacity: 1; transform: scale(1); }
+    }
+    
+    .image-container img {
         width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(0, 191, 255, 0) 100%);
-        z-index: 1;
-        pointer-events: none;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
     }
     
-    /* Button Styles */
+    .image-container:hover img {
+        transform: scale(1.03);
+    }
+    
+    /* CTA Button */
     .testurself-cta {
-        margin-top: 30px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+        animation-delay: 1.5s;
+    }
+    
+    @keyframes fadeIn {
+        to { opacity: 1; }
     }
     
     .btn-primary {
-        background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
-        border: none;
-        padding: 12px 25px;
-        border-radius: 50px;
-        color: white;
-        font-weight: 600;
-        text-decoration: none;
         display: inline-flex;
         align-items: center;
         gap: 10px;
+        background: linear-gradient(135deg, #00bfff 0%, #0066cc 100%);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
         box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: all 0.3s ease;
     }
     
     .btn-primary:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 191, 255, 0.5);
+        box-shadow: 0 8px 25px rgba(0, 191, 255, 0.5);
     }
     
-    /* Animation Classes */
-    .fade-in {
-        opacity: 0;
-        animation: fadeIn 1s ease forwards;
-        animation-delay: 0.3s;
+    /* Responsive Design */
+    @media (max-width: 1100px) {
+        .curly-arrow {
+            right: -150px;
+            width: 150px;
+        }
     }
     
-    .fade-in:nth-of-type(2) {
-        animation-delay: 0.6s;
-    }
-    
-    .pop-in {
-        opacity: 0;
-        animation: popIn 0.6s ease-out forwards;
-        animation-delay: var(--delay);
-    }
-    
-    .slide-in {
-        opacity: 0;
-        animation: slideIn 0.8s ease-out forwards;
-        animation-delay: var(--delay);
-    }
-    
-    .scale-in {
-        opacity: 0;
-        animation: scaleIn 1s ease-out forwards;
-        animation-delay: 0.4s;
-    }
-    
-    /* Responsive Adjustments */
     @media (max-width: 992px) {
         .curly-arrow {
-            right: -100px;
+            right: -120px;
             width: 120px;
         }
     }
@@ -1701,9 +1724,8 @@
             flex-direction: column;
         }
         
-        .section-heading {
-            margin-bottom: 80px;
-            padding-right: 0;
+        .heading-container {
+            margin-bottom: 70px;
         }
         
         .curly-arrow {
@@ -1711,8 +1733,12 @@
             left: 50%;
             top: 100%;
             transform: translateX(-50%) rotate(90deg);
-            width: 60px;
-            height: 100px;
+            width: 80px;
+            height: 120px;
+        }
+        
+        .section-heading {
+            font-size: 2rem;
         }
     }
 </style>
