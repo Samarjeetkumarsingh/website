@@ -1410,28 +1410,356 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
+  <!-- About Section -->
+<section id="about" class="section about-section">
+    <div class="container">
+        <div class="section-header">
             <h2 class="section-title">About <span>Me</span></h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a materials engineer who loves memes and learning. I document my experiences and insights on topics such as the education system, exam strategies, mathematics, and the process of learning through my personal journey.</p>
+            <div class="title-decoration">
+                <div class="decoration-line"></div>
+                <div class="decoration-dot"></div>
+            </div>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <div class="intro-text animate-fade">
+                    <p>I'm a passionate materials engineer with a dedication for knowledge sharing. Through my personal journey, I document experiences and insights on education systems, exam strategies, and the science of effective learning.</p>
+                </div>
+                
+                <div class="achievements animate-slide">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Academic Excellence</h3>
+                            <p>Qualified IIT-JEE & Secured GATE AIR-7 (2016)</p>
+                        </div>
+                    </div>
                     
-                    <p>📚 Qualified IIT-JEE & Secured GATE AIR-7 (2016)<br>
-                    🎓 B.Tech in Metallurgical Engineering | Master's from IISc Bangalore<br>
-                    📝 Author of a Metallurgy Book during my M.Tech<br>
-                    💡 Founder of <a href="https://www.testurself.in" style="color: var(--accent);">TestUrSelf</a><br>
-                    🤝 Director @ <a href="https://www.instagram.com/kartavya_niamt" style="color: var(--accent);">Mission Kartavya Foundation</a></p>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Education</h3>
+                            <p>B.Tech in Metallurgical Engineering | Master's from IISc Bangalore</p>
+                        </div>
+                    </div>
                     
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Published Author</h3>
+                            <p>Authored a Metallurgy Book during my M.Tech</p>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Initiatives</h3>
+                            <p>Founder of <a href="https://www.testurself.in" class="accent-link">TestUrSelf</a> | Director at <a href="https://www.instagram.com/kartavya_niamt" class="accent-link">Mission Kartavya Foundation</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-block animate-fade">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
                     <blockquote>"Education is the most powerful weapon to change the world."</blockquote>
                 </div>
-                <div class="about-image">
+            </div>
+            
+            <div class="about-image">
+                <div class="image-wrapper animate-scale">
                     <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/2.png" alt="Samarjeet at work" class="about-image-main">
+                    <div class="image-border"></div>
+                    <div class="image-overlay"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* About Section Styles */
+    .about-section {
+        background-color: #0a0a0a;
+        color: #ffffff;
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 0;
+        color: #ffffff;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .section-title span {
+        color: #00bfff;
+        position: relative;
+    }
+    
+    .title-decoration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+    
+    .decoration-line {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #00bfff, transparent);
+    }
+    
+    .decoration-dot {
+        width: 10px;
+        height: 10px;
+        background-color: #00bfff;
+        border-radius: 50%;
+        margin: 0 15px;
+    }
+    
+    /* Content Layout */
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 60px;
+    }
+    
+    .about-text {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .about-image {
+        flex: 1;
+        min-width: 300px;
+        position: relative;
+    }
+    
+    /* Text Content */
+    .intro-text p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 40px;
+    }
+    
+    /* Achievements */
+    .achievements {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    
+    .achievement-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        border-left: 3px solid #00bfff;
+        transition: all 0.3s ease;
+    }
+    
+    .achievement-item:hover {
+        background: rgba(0, 191, 255, 0.1);
+        transform: translateY(-5px);
+    }
+    
+    .achievement-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #00bfff, #0066cc);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    
+    .achievement-content h3 {
+        color: #00bfff;
+        margin: 0 0 8px 0;
+        font-size: 1.2rem;
+    }
+    
+    .achievement-content p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+    }
+    
+    .accent-link {
+        color: #00bfff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid transparent;
+    }
+    
+    .accent-link:hover {
+        color: #ffffff;
+        border-bottom: 1px solid #00bfff;
+    }
+    
+    /* Quote Block */
+    .quote-block {
+        position: relative;
+        padding: 30px;
+        background: rgba(0, 191, 255, 0.1);
+        border-radius: 10px;
+        border-left: 4px solid #00bfff;
+    }
+    
+    .quote-icon {
+        position: absolute;
+        top: -15px;
+        left: 30px;
+        width: 40px;
+        height: 40px;
+        background: #0a0a0a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #00bfff;
+        font-size: 18px;
+    }
+    
+    .quote-block blockquote {
+        margin: 0;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+    }
+    
+    /* Image Styling */
+    .image-wrapper {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+    
+    .about-image-main {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        z-index: 1;
+        transition: transform 0.5s ease;
+    }
+    
+    .image-border {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 2px solid rgba(0, 191, 255, 0.5);
+        border-radius: 10px;
+        z-index: 2;
+        pointer-events: none;
+    }
+    
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(0, 191, 255, 0));
+        z-index: 1;
+    }
+    
+    .image-wrapper:hover .about-image-main {
+        transform: scale(1.03);
+    }
+    
+    /* Animations */
+    .animate-fade {
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .animate-slide {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slideUp 1s ease-out forwards;
+    }
+    
+    .animate-scale {
+        opacity: 0;
+        transform: scale(0.95);
+        animation: scaleIn 1s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes scaleIn {
+        to { opacity: 1; transform: scale(1); }
+    }
+    
+    /* Animation Delays */
+    .intro-text { animation-delay: 0.3s; }
+    .achievement-item:nth-child(1) { animation-delay: 0.5s; }
+    .achievement-item:nth-child(2) { animation-delay: 0.7s; }
+    .achievement-item:nth-child(3) { animation-delay: 0.9s; }
+    .achievement-item:nth-child(4) { animation-delay: 1.1s; }
+    .quote-block { animation-delay: 1.3s; }
+    .image-wrapper { animation-delay: 0.5s; }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .about-content {
+            flex-direction: column-reverse;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+        }
+        
+        .achievement-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .achievement-icon {
+            margin-bottom: 15px;
+        }
+    }
+</style>
 
  <!-- TestUrSelf Section -->
 <section id="testurself" class="section testurself">
