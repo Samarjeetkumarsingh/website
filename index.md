@@ -50,7 +50,7 @@
         /* Header */
         header {
             padding: 25px 0;
-            position: fixed;
+            position: relative;
             width: 100%;
             top: 0;
             z-index: 1000;
