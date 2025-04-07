@@ -1433,55 +1433,265 @@
         </div>
     </section>
 
-    <!-- TestUrSelf Section -->
-    <section id="testurself" class="section testurself">
-        <div class="container">
-            <div class="testurself-content">
-                <div class="testurself-text">
-                    <h2>TestUrSelf - For GATE Aspirants</h2>
-                    <p>Founded with a vision to revolutionize exam preparation, TestUrSelf provides comprehensive resources and guidance for GATE aspirants, especially in Metallurgical and Materials Engineering.</p>
-                    <p>What started as a small initiative from my room has now helped hundreds of students achieve their dreams, including producing AIR-1 rank holders.</p>
-                    
-                    <div class="testurself-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Comprehensive Study Material</h3>
-                                <p>Curated notes, practice questions, and previous year papers with detailed solutions.</p>
-                            </div>
+   <!-- TestUrSelf Section -->
+<section id="testurself" class="section testurself">
+    <div class="container">
+        <div class="testurself-content">
+            <div class="testurself-text">
+                <h2 class="section-heading">
+                    <span>TestUrSelf - For GATE Aspirants</span>
+                    <svg class="curly-arrow" width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,40 Q30,0 60,40 T120,40" fill="none" stroke="#4a6bff" stroke-width="2" stroke-dasharray="200" stroke-dashoffset="200"/>
+                    </svg>
+                </h2>
+                <p class="fade-in">Founded with a vision to revolutionize exam preparation, TestUrSelf provides comprehensive resources and guidance for GATE aspirants, especially in Metallurgical and Materials Engineering.</p>
+                <p class="fade-in">What started as a small initiative from my room has now helped hundreds of students achieve their dreams, including producing AIR-1 rank holders.</p>
+                
+                <div class="testurself-features">
+                    <div class="feature-item pop-in" style="--delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-book"></i>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Expert Guidance</h3>
-                                <p>Personal mentorship from toppers who understand the exam inside out.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-tasks"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Strategic Preparation</h3>
-                                <p>Customized study plans tailored to individual strengths and weaknesses.</p>
-                            </div>
+                        <div class="feature-content">
+                            <h3>Comprehensive Study Material</h3>
+                            <p>Curated notes, practice questions, and previous year papers with detailed solutions.</p>
                         </div>
                     </div>
-                    
-                    <div class="testurself-cta">
-                        <a href="https://www.testurself.in" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Explore TestUrSelf</a>
+                    <div class="feature-item pop-in" style="--delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Expert Guidance</h3>
+                            <p>Personal mentorship from toppers who understand the exam inside out.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item pop-in" style="--delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Strategic Preparation</h3>
+                            <p>Customized study plans tailored to individual strengths and weaknesses.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="testurself-image">
-                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1+Toppers.png" alt="TestUrSelf Students">
+                
+                <div class="testurself-cta slide-in" style="--delay: 0.8s">
+                    <a href="https://www.testurself.in" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Explore TestUrSelf</a>
+                </div>
+            </div>
+            <div class="testurself-image">
+                <div class="image-container">
+                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1+Toppers.png" alt="TestUrSelf Students" class="scale-in">
+                    <div class="image-highlight"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* Animation Styles */
+    @keyframes draw {
+        to { stroke-dashoffset: 0; }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes popIn {
+        0% { opacity: 0; transform: scale(0.8); }
+        70% { opacity: 1; transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateX(-30px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(74, 107, 255, 0.4); }
+        70% { box-shadow: 0 0 0 15px rgba(74, 107, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(74, 107, 255, 0); }
+    }
+    
+    /* Section Styles */
+    .testurself {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testurself-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .testurself-text {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .testurself-image {
+        flex: 1;
+        min-width: 300px;
+        position: relative;
+    }
+    
+    .image-container {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .image-highlight {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(74, 107, 255, 0.2) 0%, rgba(74, 107, 255, 0) 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    .testurself-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        z-index: 0;
+    }
+    
+    .section-heading {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    
+    .curly-arrow {
+        position: absolute;
+        right: -100px;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: draw 1.5s ease-out forwards;
+    }
+    
+    .testurself-features {
+        margin: 40px 0;
+    }
+    
+    .feature-item {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #4a6bff 0%, #6a4aff 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    
+    .feature-content h3 {
+        margin-top: 0;
+        color: #333;
+    }
+    
+    .testurself-cta {
+        margin-top: 30px;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #4a6bff 0%, #6a4aff 100%);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(74, 107, 255, 0.4);
+    }
+    
+    /* Animation Classes */
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+    }
+    
+    .pop-in {
+        opacity: 0;
+        animation: popIn 0.6s ease-out forwards;
+        animation-delay: var(--delay);
+    }
+    
+    .slide-in {
+        opacity: 0;
+        animation: slideIn 0.8s ease-out forwards;
+        animation-delay: var(--delay);
+    }
+    
+    .scale-in {
+        animation: scaleIn 1s ease-out forwards;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .testurself-content {
+            flex-direction: column;
+        }
+        
+        .section-heading {
+            margin-bottom: 50px;
+        }
+        
+        .curly-arrow {
+            right: auto;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%) rotate(90deg);
+            width: 60px;
+            height: 40px;
+        }
+    }
+</style>
 
     <!-- Journey Section -->
 <section id="journey" class="section journey">
