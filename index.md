@@ -1483,9 +1483,154 @@
         </div>
     </section>
 
-    /* Journey Section Redesign */
+    <!-- Journey Section -->
+<section id="journey" class="section journey">
+    <div class="container">
+        <h2 class="section-title">My <span>Journey</span></h2>
+        <div class="journey-container">
+            <div class="journey-line"></div>
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cracked Bihar Polytechnic</h3>
+                        <p>Achieved top ranks in Bihar Polytechnic entrance exam, marking my first major academic success.</p>
+                        <div class="timeline-badge">First Achievement</div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2011</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cracked IIT-JEE Advanced & Mains</h3>
+                        <p>Cleared one of India's toughest engineering entrance exams with exceptional scores.</p>
+                        <div class="timeline-badge">National Level</div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cracked IIT Mains</h3>
+                        <p>Secured admission to premier engineering institute for Metallurgical Engineering.</p>
+                        <div class="timeline-badge">Engineering Start</div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>GATE AIR-7</h3>
+                        <p>Achieved All India Rank 7 in GATE for Metallurgical Engineering.</p>
+                        <div class="timeline-badge">Top 0.1%</div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Founded TestUrSelf</h3>
+                        <p>Launched educational initiative to help students crack competitive exams.</p>
+                        <div class="timeline-badge">Entrepreneurship</div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Master's from IISc</h3>
+                        <p>Completed M.Tech from Indian Institute of Science, Bangalore.</p>
+                        <div class="timeline-badge">Research Excellence</div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Mission Kartavya</h3>
+                        <p>Became Director at Mission Kartavya Foundation to mentor students.</p>
+                        <div class="timeline-badge">Social Impact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Journey Section Styles */
 .journey {
-    background: linear-gradient(135deg, #0a0e17 0%, #111827 100%);
+    background-color: #0a0e17;
+    position: relative;
+    padding: 100px 0;
+}
+
+.journey-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.journey-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #00BFFF, rgba(0, 191, 255, 0.3));
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline {
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 80px;
+    width: calc(50% - 40px);
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: auto;
+    padding-left: 70px;
+}
+
+.timeline-item:nth-child(even) {
+    margin-right: auto;
+    padding-right: 70px;
+    text-align: right;
 }
 
 .timeline-content {
@@ -1498,27 +1643,131 @@
     transition: all 0.5s ease;
 }
 
+.timeline-item:nth-child(odd) .timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: #00BFFF;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: #00BFFF;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
 .timeline-content:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
     border-color: rgba(0, 191, 255, 0.3);
 }
 
+.timeline-year {
+    font-weight: 700;
+    color: #00BFFF;
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) .timeline-year {
+    justify-content: flex-start;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+    justify-content: flex-end;
+}
+
+.timeline-year::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background-color: #00BFFF;
+    margin: 0 15px;
+}
+
+.timeline-item:nth-child(even) .timeline-year::before {
+    order: 1;
+}
+
+.timeline-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.timeline-content p {
+    color: #CCCCCC;
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0a0e17;
+    border: 3px solid #00BFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #00BFFF;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+    left: -30px;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    right: -30px;
+}
+
 .timeline-badge {
     display: inline-block;
     padding: 5px 12px;
     background: rgba(0, 191, 255, 0.1);
-    color: var(--accent);
+    color: #00BFFF;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
     margin-top: 15px;
 }
 
-.timeline-icon {
-    background: linear-gradient(135deg, #0a0e17 0%, #111827 100%);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .journey-line {
+        left: 40px;
+    }
+    
+    .timeline-item {
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-icon {
+        right: auto;
+        left: -30px;
+    }
 }
+</style>
 
 /* Guidance Section Redesign */
 .guidance {
