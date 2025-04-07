@@ -1483,141 +1483,214 @@
         </div>
     </section>
 
-    <!-- Journey Section -->
-    <section id="journey" class="section journey">
-        <div class="container">
-            <h2 class="section-title">My <span>Journey</span></h2>
-            <div class="journey-container">
-                <div class="journey-line"></div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2010</div>
-                        <div class="timeline-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <h3>Cracked Bihar Polytechnic</h3>
-                            <p>Secured AIR-5 in Bihar Polytechnic entrance exam, marking the beginning of my academic journey.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2012</div>
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <h3>Qualified IIT-JEE</h3>
-                            <p>Cleared one of India's toughest engineering entrance exams, showcasing my dedication and perseverance.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2016</div>
-                        <div class="timeline-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <h3>GATE AIR-7</h3>
-                            <p>Achieved All India Rank 7 in GATE for Metallurgical Engineering, a testament to my strategic preparation.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2018</div>
-                        <div class="timeline-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <h3>Master's from IISc</h3>
-                            <p>Completed M.Tech from Indian Institute of Science, Bangalore, one of India's premier institutions.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <div class="timeline-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <h3>Founded TestUrSelf</h3>
-                            <p>Started educational initiative from a small room to help students crack competitive exams effectively.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <div class="timeline-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <h3>Mission Kartavya</h3>
-                            <p>Became Director at Mission Kartavya Foundation to contribute to educational initiatives at scale.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    /* Journey Section Redesign */
+.journey {
+    background: linear-gradient(135deg, #0a0e17 0%, #111827 100%);
+}
 
-    <!-- Guidance Section -->
-    <section id="guidance" class="section guidance">
-        <div class="container">
-            <h2 class="section-title">1:1 <span>Guidance Program</span></h2>
-            <div class="guidance-intro">
-                <p>Personalized mentorship for GATE Metallurgy/Materials Engineering aspirants who want structured guidance, proven strategies, and expert insights to maximize their preparation.</p>
-            </div>
-            
-            <div class="guidance-cards">
-                <div class="guidance-card">
-                    <div class="guidance-card-icon">
-                        <i class="fas fa-chess"></i>
-                    </div>
-                    <h3>Strategy Session</h3>
-                    <div class="guidance-card-price">₹2,999</div>
-                    <div class="guidance-card-features">
-                        <ul>
-                            <li>90-minute intensive consultation</li>
-                            <li>Current preparation analysis</li>
-                            <li>Customized roadmap</li>
-                            <li>Resource recommendations</li>
-                            <li>Q&A session</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="btn btn-secondary">Book Session</a>
-                </div>
-                <div class="guidance-card">
-                    <div class="guidance-card-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Monthly Mentorship</h3>
-                    <div class="guidance-card-price">₹9,999/month</div>
-                    <div class="guidance-card-features">
-                        <ul>
-                            <li>4 sessions per month</li>
-                            <li>Weekly progress tracking</li>
-                            <li>Doubt resolution</li>
-                            <li>Study plan adjustments</li>
-                            <li>Priority email support</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="btn btn-secondary">Enroll Now</a>
-                </div>
-                <div class="guidance-card">
-                    <div class="guidance-card-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Premium Package</h3>
-                    <div class="guidance-card-price">₹24,999</div>
-                    <div class="guidance-card-features">
-                        <ul>
-                            <li>Complete preparation guidance</li>
-                            <li>8 sessions (2/month)</li>
-                            <li>Mock test analysis</li>
-                            <li>Personalized notes review</li>
-                            <li>24/7 WhatsApp support</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="btn btn-primary">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </section>
+.timeline-content {
+    background: linear-gradient(145deg, #111827, #0a0e17);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 1px solid rgba(0, 191, 255, 0.1);
+    transition: all 0.5s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+    border-color: rgba(0, 191, 255, 0.3);
+}
+
+.timeline-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(0, 191, 255, 0.1);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.timeline-icon {
+    background: linear-gradient(135deg, #0a0e17 0%, #111827 100%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Guidance Section Redesign */
+.guidance {
+    background: linear-gradient(135deg, #111827 0%, #0a0e17 100%);
+}
+
+.guidance-card {
+    background: linear-gradient(145deg, #111827, #0a0e17);
+    border: 1px solid rgba(0, 191, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.guidance-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.guidance-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 191, 255, 0.15);
+    border-color: rgba(0, 191, 255, 0.3);
+}
+
+.guidance-card:hover::after {
+    opacity: 1;
+}
+
+.guidance-card.featured {
+    border: 2px solid var(--accent);
+    transform: translateY(-10px);
+}
+
+.guidance-card.featured:hover {
+    transform: translateY(-15px) scale(1.03);
+}
+
+.guidance-card-badge {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: var(--accent);
+    color: var(--black);
+    padding: 5px 30px;
+    font-size: 12px;
+    font-weight: 700;
+    transform: rotate(45deg);
+    width: 120px;
+    text-align: center;
+}
+
+.guidance-card-icon {
+    background: rgba(0, 191, 255, 0.1);
+    border: 2px solid rgba(0, 191, 255, 0.2);
+    transition: all 0.5s ease;
+}
+
+.guidance-card:hover .guidance-card-icon {
+    background: var(--accent);
+    color: var(--black);
+    transform: rotateY(360deg);
+}
+
+.guidance-card-price {
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+.guidance-card-price span {
+    font-size: 16px;
+    color: #AAAAAA;
+    font-weight: normal;
+}
+
+.guidance-card-features {
+    margin: 30px 0;
+}
+
+.guidance-card-features li {
+    list-style: none;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    color: #CCCCCC;
+}
+
+.guidance-card-features li i {
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.guidance-testimonials {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.guidance-testimonials h3 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--white);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.testimonial-card {
+    background: linear-gradient(145deg, #111827, #0a0e17);
+    border: 1px solid rgba(0, 191, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.5s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.1);
+}
+
+.testimonial-content {
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.testimonial-content::before {
+    content: '"';
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    font-size: 60px;
+    color: rgba(0, 191, 255, 0.1);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 191, 255, 0.1);
+    border: 2px solid var(--accent);
+}
+
+.author-info h4 {
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.author-info p {
+    color: var(--accent);
+    font-size: 14px;
+}
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
