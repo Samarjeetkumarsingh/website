@@ -1380,7 +1380,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/1.png" alt="Samarjeet">
+                    <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/personal.png" alt="Samarjeet">
                 </div>
             </div>
         </div>
