@@ -2634,7 +2634,30 @@
     }
 }
 </style>
+<script>
+  const form = document.getElementById('contact-form');
+  const message = document.getElementById('form-message');
 
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const response = await fetch('https://formspree.io/f/xjkypzav', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      message.innerText = "✅ Message sent successfully!";
+      form.reset();
+    } else {
+      message.innerText = "❌ Oops! Something went wrong.";
+    }
+  });
+</script>
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
@@ -2682,7 +2705,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form method="POST" action="https://formspree.io/f/xjkypzav">
+                    <form id="contact-form">
     <div class="form-group">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" class="form-control" required>
@@ -2703,6 +2726,7 @@
         <i class="fas fa-paper-plane"></i> Send Message
     </button>
 </form>
+<div id="form-message"></div>
                 </div>
             </div>
         </div>
