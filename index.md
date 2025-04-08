@@ -2682,7 +2682,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form method="POST" action="/send">
+                    <form method="POST" action="https://formspree.io/f/xjkypzav">
     <div class="form-group">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" class="form-control" required>
