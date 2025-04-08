@@ -1399,7 +1399,7 @@
                     <div class="stat-label">Students Mentored</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">5+</div>
+                    <div class="stat-number">8+</div>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-item">
@@ -1434,7 +1434,7 @@
                         </div>
                         <div class="achievement-content">
                             <h3>Academic Excellence</h3>
-                            <p>Qualified IIT-JEE & Secured GATE AIR-7 (2016)</p>
+                            <p>Cracked IIT-JEE Advanced & Mains & Secured GATE AIR-7 (2016)</p>
                         </div>
                     </div>
                     
@@ -1464,7 +1464,7 @@
                         </div>
                         <div class="achievement-content">
                             <h3>Initiatives</h3>
-                            <p>Founder of <a href="https://www.testurself.in" class="accent-link">TestUrSelf</a> | Director at <a href="https://www.instagram.com/kartavya_niamt" class="accent-link">Mission Kartavya Foundation</a></p>
+                            <p>Founder of <a href="https://www.testurself.in" class="accent-link">TestUrSelf</a> | BOD at <a href="https://www.instagram.com/kartavya_niamt" class="accent-link">Mission Kartavya Foundation</a></p>
                         </div>
                     </div>
                 </div>
