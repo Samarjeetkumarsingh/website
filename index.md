@@ -2647,20 +2647,17 @@
         const response = await fetch(form.action, {
           method: 'POST',
           body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          headers: { 'Accept': 'application/json' }
         });
 
         if (response.ok) {
           messageBox.innerText = "✅ Message sent successfully!";
           form.reset();
         } else {
-          const result = await response.json();
-          messageBox.innerText = `❌ Error: ${result.message || 'Something went wrong.'}`;
+          messageBox.innerText = "❌ Something went wrong. Try again.";
         }
-      } catch (err) {
-        messageBox.innerText = "❌ Failed to send. Please try again later.";
+      } catch (error) {
+        messageBox.innerText = "❌ Error submitting form.";
       }
     });
   });
@@ -2712,7 +2709,11 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                   <form id="contact-form" action="https://formspree.io/f/xjkypzav" method="POST">
+                   <form id="contact-form" action="https://formsubmit.co/neha@pietechsolution.com" method="POST">
+                    <input type="hidden" name="_redirect" value="false">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="#form-message">
+    <input type="text" name="_honey" style="display:none">
     <div class="form-group">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" class="form-control" required>
