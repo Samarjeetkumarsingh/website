@@ -1395,7 +1395,7 @@
                     <div class="stat-label">GATE Rank</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">1000+</div>
+                    <div class="stat-number">5000+</div>
                     <div class="stat-label">Students Mentored</div>
                 </div>
                 <div class="stat-item">
