@@ -2656,8 +2656,8 @@
         });
 
         if (response.ok) {
-          messageBox.innerText = "✅ Message sent successfully!";
-          messageBox.style.color = "green";
+          messageBox.innerText = "📩 Message received! Thanks for reaching out — I’ll get back to you shortly.";
+          messageBox.style.color = "#00bfff";
           form.reset();
         } else {
           messageBox.innerText = "❌ Something went wrong. Try again.";
