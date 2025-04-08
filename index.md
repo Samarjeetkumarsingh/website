@@ -1367,7 +1367,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Hi, I'm <span>Samarjeet</span> <br><span class="typing-text">Turning struggles into strategies</span></h1>
-                    <p class="subtitle">Materials Engineer | Founder @ TestUrSelf | Director @ Mission Kartavya</p>
+                    <p class="subtitle">Materials Engineer | Founder @ TestUrSelf | BOD @ Mission Kartavya</p>
                     <div class="cta-buttons">
                         <a href="https://www.testurself.in" class="btn btn-primary"><i class="fas fa-rocket"></i> Visit TestUrSelf</a>
                         <a href="#" class="btn btn-secondary"><i class="fas fa-book"></i> View My Notes</a>
@@ -2163,7 +2163,7 @@
                     </div>
                     <div class="timeline-content">
                         <h3>Mission Kartavya</h3>
-                        <p>Became Director at Mission Kartavya Foundation to mentor students.</p>
+                        <p>Became BOD at Mission Kartavya Foundation to mentor students.</p>
                         <div class="timeline-badge">Social Impact</div>
                     </div>
                 </div>
@@ -2714,7 +2714,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <a href="#" class="footer-logo">Samarjeet<span>.</span></a>
-                    <p>Materials Engineer | GATE AIR-7 | Founder of TestUrSelf | Director at Mission Kartavya Foundation</p>
+                    <p>Materials Engineer | GATE AIR-7 | Founder of TestUrSelf | BOD at Mission Kartavya Foundation</p>
                     <p>Turning struggles into strategies — one student at a time.</p>
                 </div>
                 <div class="footer-links">
