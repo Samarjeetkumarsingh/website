@@ -2638,9 +2638,14 @@
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById('contact-form');
     const messageBox = document.getElementById('form-message');
+    const hiddenSubject = document.getElementById('hidden-subject');
+    const subjectInput = document.getElementById('subject');
 
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
+
+      // Set the _subject value from user input
+      hiddenSubject.value = subjectInput.value;
 
       const formData = new FormData(form);
       try {
@@ -2652,12 +2657,15 @@
 
         if (response.ok) {
           messageBox.innerText = "✅ Message sent successfully!";
+          messageBox.style.color = "green";
           form.reset();
         } else {
           messageBox.innerText = "❌ Something went wrong. Try again.";
+          messageBox.style.color = "red";
         }
       } catch (error) {
         messageBox.innerText = "❌ Error submitting form.";
+        messageBox.style.color = "red";
       }
     });
   });
@@ -2710,10 +2718,11 @@
                 </div>
                 <div class="contact-form">
                    <form id="contact-form" action="https://formsubmit.co/neha@pietechsolution.com" method="POST">
-                    <input type="hidden" name="_redirect" value="false">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="#form-message">
-    <input type="text" name="_honey" style="display:none">
+                       <input type="hidden" name="_redirect" value="false">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="#form-message">
+  <input type="hidden" name="_subject" id="hidden-subject">
+  <input type="text" name="_honey" style="display:none">
     <div class="form-group">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" class="form-control" required>
