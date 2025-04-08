@@ -2657,7 +2657,7 @@
           form.reset();
         } else {
           const result = await response.json();
-          messageBox.innerText = ❌ Error: ${result.message || 'Something went wrong.'};
+          messageBox.innerText = `❌ Error: ${result.message || 'Something went wrong.'}`;
         }
       } catch (err) {
         messageBox.innerText = "❌ Failed to send. Please try again later.";
@@ -2665,7 +2665,7 @@
     });
   });
 </script>
-    <!-- Contact Section -->
+<!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title">Get In <span>Touch</span></h2>
