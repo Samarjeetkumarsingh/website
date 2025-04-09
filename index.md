@@ -1521,7 +1521,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 15px;
+        margin-top: 48px;
     }
     
     .decoration-line {
