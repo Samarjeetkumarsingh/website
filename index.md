@@ -418,8 +418,7 @@
             text-align: center;
             position: relative;
             display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
+           width:100%
         }
         
         .section-title span {
