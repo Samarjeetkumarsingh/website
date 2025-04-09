@@ -625,12 +625,12 @@
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 0;
+            padding: 0px 0;
         }
         
         .journey-line {
             position: absolute;
-            top: 0;
+            top: 12px;
             left: 50%;
             width: 4px;
             height: 100%;
