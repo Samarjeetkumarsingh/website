@@ -797,7 +797,7 @@
         
         .guidance-intro {
             max-width: 800px;
-            margin: 0 auto 60px;
+            margin: 34px auto 60px;
         }
         
         .guidance-cards {
@@ -908,6 +908,7 @@
         .contact-container {
             display: flex;
             gap: 80px;
+            margin-top:48px;
         }
         
         .contact-info {
