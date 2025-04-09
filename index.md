@@ -630,7 +630,7 @@
         
         .journey-line {
             position: absolute;
-            top: 12px;
+            top: 12px !important;
             left: 50%;
             width: 4px;
             height: 100%;
@@ -2436,7 +2436,7 @@
 
 .guidance-intro {
     max-width: 800px;
-    margin: 0 auto 60px;
+    margin: 34px auto 60px;
     text-align: center;
     color: #AAAAAA;
 }
