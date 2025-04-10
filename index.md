@@ -1771,9 +1771,11 @@
       }
     }
     .animation{
-        position:absolute;
-        top:0;
-        right:0
+       position: absolute;
+    top: 26px;
+    right: 30%;
+    width: 379px;
+    transform: rotate(185deg);
     }
 </style>
  <!-- TestUrSelf Section -->
