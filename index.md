@@ -1759,6 +1759,17 @@
             margin-bottom: 15px;
         }
     }
+     .animated-arrow path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawArrow 3s ease forwards;
+    }
+
+    @keyframes drawArrow {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
 </style>
  <!-- TestUrSelf Section -->
 <section id="testurself" class="section testurself">
@@ -1767,7 +1778,7 @@
             <div class="testurself-text">
                 <div class="heading-container">
                     <h2 class="section-heading">TestUrSelf - For GATE Aspirants</h2>
-                    <svg class="curly-arrow" width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+<!--                     <svg class="curly-arrow" width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5,30 C50,-20 100,80 175,30" 
                               fill="none" 
                               stroke="#00bfff" 
@@ -1775,7 +1786,21 @@
                               stroke-linecap="round"
                               stroke-dasharray="250" 
                               stroke-dashoffset="250"/>
-                    </svg>
+                    </svg> -->
+                      <!-- Single Combined Arrow Path (Bottom curve to top and arrowhead) -->
+  <svg class="animated-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="-90 -60 190 180" width="300" height="168">
+    <path stroke-linecap="round" stroke-linejoin="round" fill="none"
+      stroke-miterlimit="4" stroke="#00bfff" stroke-opacity="1" stroke-width="4"
+      d="M55.5,31.5 
+         C55.5,31.5 -11.319,37.178 -9.858,-2.485 
+         C-9.092,-23.274 24.405,-27.208 29.908,-5.761 
+         C31.028,-1.395 32.675,20.931 -1.75,24.5 
+         C-31.882,27.624 -52.464,-9.656 -51.5,-18.335 
+         C-51.375,-18.835 -36.25,-9.375 -36.25,-9.375 
+         L-59.969,-3.304 
+         L-51.469,-18.304
+      " />
+  </svg>
                 </div>
                 <div class="content-block">
                     <p>Founded with a vision to revolutionize exam preparation, TestUrSelf provides comprehensive resources and guidance for GATE aspirants, especially in Metallurgical and Materials Engineering.</p>
