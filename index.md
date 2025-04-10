@@ -47,95 +47,6 @@
             padding: 0 40px;
         }
         
-        /* Header */
-        header {
-            padding: 25px 0;
-            position: relative;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo span {
-            color: var(--accent);
-        }
-        
-        .logo-icon {
-            width: 30px;
-            height: 30px;
-            background-color: var(--accent);
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 35px;
-        }
-        
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -1340,7 +1251,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header id="header">
+<!--     <header id="header">
         <div class="container">
             <nav>
                 <a href="#" class="logo">
@@ -1359,7 +1270,7 @@
                 </button>
             </nav>
         </div>
-    </header>
+    </header> -->
 
     <!-- Hero Section -->
     <section class="hero">
