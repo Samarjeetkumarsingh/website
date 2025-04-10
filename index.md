@@ -1787,7 +1787,9 @@
                               stroke-dasharray="250" 
                               stroke-dashoffset="250"/>
                     </svg> -->
-                      <!-- Single Combined Arrow Path (Bottom curve to top and arrowhead) -->
+
+                </div>
+                                      <!-- Single Combined Arrow Path (Bottom curve to top and arrowhead) -->
   <svg class="animated-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="-79 -26 159 72">
     <path stroke-linecap="round" stroke-linejoin="round" fill="none" style="width:300px; height:168px;"
       stroke-miterlimit="4" stroke="#00bfff" stroke-opacity="1" stroke-width="4"
@@ -1801,7 +1803,6 @@
          L-51.469,-18.304
       " />
   </svg>
-                </div>
                 <div class="content-block">
                     <p>Founded with a vision to revolutionize exam preparation, TestUrSelf provides comprehensive resources and guidance for GATE aspirants, especially in Metallurgical and Materials Engineering.</p>
                     <p>What started as a small initiative from my room has now helped hundreds of students achieve their dreams, including producing AIR-1 rank holders.</p>
