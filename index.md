@@ -1762,13 +1762,18 @@
      .animated-arrow path {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
-      animation: drawArrow 3s ease forwards;
+      animation: drawArrow 3s ease infinite;
     }
 
     @keyframes drawArrow {
       to {
         stroke-dashoffset: 0;
       }
+    }
+    .animation{
+        position:absolute;
+        top:0;
+        right:0
     }
 </style>
  <!-- TestUrSelf Section -->
@@ -1789,20 +1794,7 @@
                     </svg> -->
 
                 </div>
-                                      <!-- Single Combined Arrow Path (Bottom curve to top and arrowhead) -->
-  <svg class="animated-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="-79 -26 159 72">
-    <path stroke-linecap="round" stroke-linejoin="round" fill="none" style="width:300px; height:168px;"
-      stroke-miterlimit="4" stroke="#00bfff" stroke-opacity="1" stroke-width="4"
-      d="M55.5,31.5 
-         C55.5,31.5 -11.319,37.178 -9.858,-2.485 
-         C-9.092,-23.274 24.405,-27.208 29.908,-5.761 
-         C31.028,-1.395 32.675,20.931 -1.75,24.5 
-         C-31.882,27.624 -52.464,-9.656 -51.5,-18.335 
-         C-51.375,-18.835 -36.25,-9.375 -36.25,-9.375 
-         L-59.969,-3.304 
-         L-51.469,-18.304
-      " />
-  </svg>
+                                    
                 <div class="content-block">
                     <p>Founded with a vision to revolutionize exam preparation, TestUrSelf provides comprehensive resources and guidance for GATE aspirants, especially in Metallurgical and Materials Engineering.</p>
                     <p>What started as a small initiative from my room has now helped hundreds of students achieve their dreams, including producing AIR-1 rank holders.</p>
@@ -1847,6 +1839,20 @@
                     <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/AIR-1+Toppers.png" alt="TestUrSelf Students">
                 </div>
             </div>
+              <!-- Single Combined Arrow Path (Bottom curve to top and arrowhead) -->
+  <svg class="animated-arrow animation" xmlns="http://www.w3.org/2000/svg" viewBox="-79 -26 159 72">
+    <path stroke-linecap="round" stroke-linejoin="round" fill="none" style="width:300px; height:168px;"
+      stroke-miterlimit="4" stroke="#00bfff" stroke-opacity="1" stroke-width="4"
+      d="M55.5,31.5 
+         C55.5,31.5 -11.319,37.178 -9.858,-2.485 
+         C-9.092,-23.274 24.405,-27.208 29.908,-5.761 
+         C31.028,-1.395 32.675,20.931 -1.75,24.5 
+         C-31.882,27.624 -52.464,-9.656 -51.5,-18.335 
+         C-51.375,-18.835 -36.25,-9.375 -36.25,-9.375 
+         L-59.969,-3.304 
+         L-51.469,-18.304
+      " />
+  </svg>
         </div>
     </div>
 </section>
