@@ -1788,7 +1788,7 @@
                               stroke-dashoffset="250"/>
                     </svg> -->
                       <!-- Single Combined Arrow Path (Bottom curve to top and arrowhead) -->
-  <svg class="animated-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="-90 -60 190 180" width="300" height="168">
+  <svg class="animated-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="-90 -60 190 180">
     <path stroke-linecap="round" stroke-linejoin="round" fill="none" style="width:300px; height:168px;"
       stroke-miterlimit="4" stroke="#00bfff" stroke-opacity="1" stroke-width="4"
       d="M55.5,31.5 
