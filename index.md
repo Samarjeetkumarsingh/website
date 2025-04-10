@@ -53,7 +53,6 @@
             min-height: 800px;
             display: flex;
             align-items: center;
-            padding-top: 80px;
             position: relative;
             overflow: hidden;
         }
