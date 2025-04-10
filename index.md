@@ -47,17 +47,17 @@
             padding: 0 40px;
         }
         
-        /* heroSection */
-        .hero{
+        /* hero1Section */
+        .hero1{
             height: 100vh;
-            min-height: 800px;
+            min-height: 700px;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
         }
         
-        .hero::before {
+        .hero1::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -80,26 +80,26 @@
             }
         }
         
-        .hero-content {
+        .hero1-content {
             display: flex;
             align-items: center;
             gap: 80px;
         }
         
-        .hero-text {
+        .hero1-text {
             flex: 1;
             position: relative;
             z-index: 2;
         }
         
-        .hero-image {
+        .hero1-image {
             flex: 1;
             display: flex;
             justify-content: center;
             position: relative;
         }
         
-        .hero-image img {
+        .hero1-image img {
             width: 400px;
             height: 400px;
             border-radius: 20px;
@@ -110,24 +110,24 @@
             transition: all 0.5s ease;
         }
         
-        .hero-image:hover img {
+        .hero1-image:hover img {
             transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(1.05);
             box-shadow: 0 30px 70px rgba(0, 191, 255, 0.3);
         }
         
-        .heroh1 {
+        .hero1 h1 {
             font-size: 60px;
             margin-bottom: 25px;
             line-height: 1.2;
         }
         
-        .heroh1 span {
+        .hero1 h1 span {
             color: var(--accent);
             position: relative;
             display: inline-block;
         }
         
-        .heroh1 span::after {
+        .hero1 h1 span::after {
             content: '';
             position: absolute;
             bottom: 5px;
@@ -139,7 +139,7 @@
             transform: skewX(-15deg);
         }
         
-        .herop.subtitle {
+        .hero 1 p.subtitle {
             font-size: 22px;
             color: #AAAAAA;
             margin-bottom: 40px;
@@ -242,13 +242,13 @@
             box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
         }
         
-        .social-links-hero{
+        .social-links-hero1{
             display: flex;
             gap: 20px;
             margin-top: 40px;
         }
         
-        .social-links-heroa {
+        .social-links-hero1 a {
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -261,7 +261,7 @@
             transition: all 0.3s;
         }
         
-        .social-links-heroa:hover {
+        .social-links-hero1 a:hover {
             background-color: var(--accent);
             color: var(--black);
             transform: translateY(-5px);
@@ -1101,11 +1101,11 @@
                 padding: 0 30px;
             }
             
-            .hero-content, .about-content, .testurself-content, .contact-container {
+            .hero1-content, .about-content, .testurself-content, .contact-container {
                 gap: 50px;
             }
             
-            .heroh1 {
+            .hero1 h1 {
                 font-size: 50px;
             }
         }
@@ -1120,24 +1120,24 @@
                 margin-bottom: 50px;
             }
             
-            .hero-content, .about-content, .testurself-content {
+            .hero1-content, .about-content, .testurself-content {
                 flex-direction: column;
             }
             
-            .hero-text, .about-text, .testurself-text {
+            .hero1-text, .about-text, .testurself-text {
                 order: 2;
             }
             
-            .hero-image, .about-image, .testurself-image {
+            .hero1-image, .about-image, .testurself-image {
                 order: 1;
                 margin-bottom: 50px;
             }
             
-            .heroh1 {
+            .hero1 h1 {
                 font-size: 42px;
             }
             
-            .herop.subtitle {
+            .hero1 p.subtitle {
                 font-size: 18px;
             }
             
@@ -1181,18 +1181,18 @@
                 display: block;
             }
             
-            .hero{
+            .hero1{
                 min-height: auto;
                 padding-top: 100px;
                 padding-bottom: 80px;
                 height: auto;
             }
             
-            .heroh1 {
+            .hero1 h1 {
                 font-size: 36px;
             }
             
-            .hero-image img {
+            .hero1-image img {
                 width: 280px;
                 height: 280px;
             }
@@ -1226,7 +1226,7 @@
         }
         
         @media (max-width: 576px) {
-            .heroh1 {
+            .hero1 h1 {
                 font-size: 32px;
             }
             
@@ -1271,25 +1271,25 @@
         </div>
     </header> -->
 
-    <!-- heroSection -->
-    <section class="hero">
+    <!-- hero1Section -->
+    <section class="hero1">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
+            <div class="hero1-content">
+                <div class="hero1-text">
                     <h1>Hi, I'm <span>Samarjeet</span> <br><span class="typing-text">Turning struggles into strategies</span></h1>
                     <p class="subtitle">Materials Engineer | Founder @ TestUrSelf | BOD @ Mission Kartavya</p>
                     <div class="cta-buttons">
                         <a href="https://www.testurself.in" class="btn btn-primary"><i class="fas fa-rocket"></i> Visit TestUrSelf</a>
                         <a href="#" class="btn btn-secondary"><i class="fas fa-book"></i> View My Notes</a>
                     </div>
-                    <div class="social-links-hero">
+                    <div class="social-links-hero1">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero1-image">
                     <img src="https://images-website-testurself.s3.us-east-1.amazonaws.com/personal.png" alt="Samarjeet">
                 </div>
             </div>
