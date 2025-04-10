@@ -47,8 +47,8 @@
             padding: 0 40px;
         }
         
-        /* Hero Section */
-        .hero {
+        /* hero-1Section */
+        .hero-1{
             height: 100vh;
             min-height: 800px;
             display: flex;
@@ -115,19 +115,19 @@
             box-shadow: 0 30px 70px rgba(0, 191, 255, 0.3);
         }
         
-        .hero h1 {
+        .hero-1h1 {
             font-size: 60px;
             margin-bottom: 25px;
             line-height: 1.2;
         }
         
-        .hero h1 span {
+        .hero-1h1 span {
             color: var(--accent);
             position: relative;
             display: inline-block;
         }
         
-        .hero h1 span::after {
+        .hero-1h1 span::after {
             content: '';
             position: absolute;
             bottom: 5px;
@@ -139,7 +139,7 @@
             transform: skewX(-15deg);
         }
         
-        .hero p.subtitle {
+        .hero-1p.subtitle {
             font-size: 22px;
             color: #AAAAAA;
             margin-bottom: 40px;
@@ -242,13 +242,13 @@
             box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
         }
         
-        .social-links-hero {
+        .social-links-hero-1{
             display: flex;
             gap: 20px;
             margin-top: 40px;
         }
         
-        .social-links-hero a {
+        .social-links-hero-1a {
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -261,7 +261,7 @@
             transition: all 0.3s;
         }
         
-        .social-links-hero a:hover {
+        .social-links-hero-1a:hover {
             background-color: var(--accent);
             color: var(--black);
             transform: translateY(-5px);
@@ -1105,7 +1105,7 @@
                 gap: 50px;
             }
             
-            .hero h1 {
+            .hero-1h1 {
                 font-size: 50px;
             }
         }
@@ -1133,11 +1133,11 @@
                 margin-bottom: 50px;
             }
             
-            .hero h1 {
+            .hero-1h1 {
                 font-size: 42px;
             }
             
-            .hero p.subtitle {
+            .hero-1p.subtitle {
                 font-size: 18px;
             }
             
@@ -1181,14 +1181,14 @@
                 display: block;
             }
             
-            .hero {
+            .hero-1{
                 min-height: auto;
                 padding-top: 100px;
                 padding-bottom: 80px;
                 height: auto;
             }
             
-            .hero h1 {
+            .hero-1h1 {
                 font-size: 36px;
             }
             
@@ -1226,7 +1226,7 @@
         }
         
         @media (max-width: 576px) {
-            .hero h1 {
+            .hero-1h1 {
                 font-size: 32px;
             }
             
@@ -1271,7 +1271,7 @@
         </div>
     </header> -->
 
-    <!-- Hero Section -->
+    <!-- hero-1Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
