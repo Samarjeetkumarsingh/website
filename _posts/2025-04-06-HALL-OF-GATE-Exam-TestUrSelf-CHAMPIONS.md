@@ -75,11 +75,11 @@
             width:100%
         }
         
-        /* Main container-1 */
-        .container-1 {
+        /* Main container */
+        .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
+          
         }
         
         /* Hero Section */
@@ -345,7 +345,7 @@
             overflow: hidden;
         }
         
-        .performance-container-1 {
+        .performance-container {
             display: flex;
             align-items: center;
             gap: 4rem;
@@ -389,7 +389,7 @@
             color: rgba(255,255,255,0.8);
         }
         
-        .chart-container-1 {
+        .chart-container {
             flex: 1;
             min-width: 300px;
             position: relative;
@@ -680,7 +680,7 @@
             background: linear-gradient(to right, var(--electric-blue), var(--neon-pink), var(--cyber-purple));
         }
         
-        .footer-container-1 {
+        .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
@@ -803,7 +803,7 @@
                 font-size: 2.5rem;
             }
             
-            .performance-container-1 {
+            .performance-container {
                 flex-direction: column;
             }
         }
@@ -853,7 +853,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .footer-container-1 {
+            .footer-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -875,7 +875,7 @@
     
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container-1">
+        <div class="container">
             <h1>HALL OF GATE CHAMPIONS</h1>
             <p>Celebrating our legacy of producing top rankers in GATE Metallurgical Engineering from 2018 to 2025</p>
             
@@ -898,13 +898,13 @@
     
     <!-- Performance Milestones Section -->
     <section class="performance-milestones">
-        <div class="container-1">
+        <div class="container">
             <div class="section-header">
                 <h2>PERFORMANCE MILESTONES</h2>
                 <p>Our track record of excellence in GATE Metallurgical Engineering</p>
             </div>
             
-            <div class="performance-container-1">
+            <div class="performance-container">
                 <div class="performance-content">
                     <h3>Dominating GATE Metallurgy Since 2018</h3>
                     <p>We've consistently produced top rankers year after year, with our students achieving remarkable results across all categories. Our comprehensive approach ensures success for students from all backgrounds.</p>
@@ -929,7 +929,7 @@
                     </div>
                 </div>
                 
-                <div class="chart-container-1">
+                <div class="chart-container">
                     <div class="chart-wrapper">
                         <canvas id="performanceChart"></canvas>
                     </div>
@@ -940,7 +940,7 @@
     
     <!-- Champions Wall -->
     <section class="champions-wall">
-        <div class="container-1">
+        <div class="container">
             <div class="section-header">
                 <h2>OUR GATE CHAMPIONS</h2>
                 <p>Meet the extraordinary students who achieved top ranks in GATE Metallurgy through our program</p>
@@ -1201,7 +1201,7 @@
     
     <!-- Winning Programs Section -->
     <section class="winning-programs">
-        <div class="container-1">
+        <div class="container">
             <div class="section-header">
                 <h2>OUR WINNING PROGRAMS</h2>
                 <p>Specialized courses designed to produce GATE champions year after year</p>
@@ -1344,8 +1344,8 @@
     
     <!-- Footer -->
     <footer class="footer">
-        <div class="container-1">
-            <div class="footer-container-1">
+        <div class="container">
+            <div class="footer-container">
                 <div class="footer-about">
                     <div class="footer-logo">TestUrSelf</div>
                     <p>Transforming GATE aspirants into top rankers since 2018. Our proven methodology and expert guidance have helped hundreds achieve their dreams in Metallurgical Engineering.</p>
