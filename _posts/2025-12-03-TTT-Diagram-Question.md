@@ -121,3 +121,41 @@ drawTTT();
 </script>
 </body>
 </html>
+
+function animatePath(targetTemp, holdTime, name) {
+  let t = 0.1;
+  let currentTemp = 1073;
+  
+  const interval = setInterval(() => {
+    drawTTT();
+    
+    ctx.strokeStyle = "red"; 
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(mapX(0.1), mapY(1073)); // Start point
+
+    // --- THE FIX IS HERE ---
+    if (currentTemp > targetTemp) {
+      // 1. Cool down
+      currentTemp -= 15; 
+      
+      // 2. Increment time slightly to create the SLOPE
+      // A rapid quench is not instantaneous!
+      t += 0.05; 
+      
+      // 3. Draw to the NEW time coordinate, not fixed 0.1
+      ctx.lineTo(mapX(t), mapY(currentTemp));
+      
+      document.getElementById('status').innerText = `Cooling... Temp: ${currentTemp}K`;
+    } else {
+      // Holding Phase Logic...
+      ctx.lineTo(mapX(t), mapY(targetTemp)); // Draw the cooling slope first
+      
+      // Now increment time for the hold
+      let holdStart = t;
+      // ... (rest of your hold logic) ...
+    }
+    ctx.stroke();
+    // ...
+  }, 30);
+}
