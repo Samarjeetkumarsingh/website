@@ -1,193 +1,225 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Corrected TTT Simulator</title>
+  <title>GATE 2025 TTT Simulator</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; padding: 20px; background: #f4f4f9; }
-    h3 { color: #333; }
-    .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; }
-    canvas { border: 1px solid #ddd; background: #fff; display: block; margin-bottom: 15px; }
-    .controls button {
-      padding: 10px 15px; cursor: pointer; background: #007bff; color: white;
-      border: none; border-radius: 4px; margin-right: 5px; font-size: 14px;
-      transition: background 0.2s;
+    body { font-family: 'Segoe UI', sans-serif; padding: 20px; background: #f0f2f5; }
+    .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    canvas { background: #fff; border: 1px solid #ccc; width: 100%; border-radius: 4px; }
+    .controls { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+    button { 
+      padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; 
+      background: #007bff; color: white; transition: all 0.2s; flex: 1;
     }
-    .controls button:hover { background: #0056b3; }
+    button:hover { background: #0056b3; transform: translateY(-1px); }
     #status { 
-      margin-top: 15px; padding: 10px; background: #e9ecef; 
-      border-left: 4px solid #007bff; font-weight: 600; color: #495057; 
+      margin-top: 20px; padding: 15px; background: #e9f5ff; border-left: 5px solid #007bff; 
+      border-radius: 4px; font-size: 1.1em; color: #333; min-height: 24px;
     }
+    .legend { font-size: 0.9em; color: #666; margin-top: 10px; text-align: center; }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h3>GATE 2025: TTT Cooling Path Simulator (Fixed Slope)</h3>
-  <canvas id="tttCanvas" width="600" height="400"></canvas>
+  <h2 style="text-align:center; color:#333;">GATE 2025: TTT Cooling Path Simulator</h2>
+  <canvas id="tttCanvas" width="800" height="500"></canvas>
   
   <div class="controls">
-    <button onclick="startSimulation('P')">Path P (Rapid Quench)</button>
-    <button onclick="startSimulation('Q')">Path Q (Pearlite)</button>
-    <button onclick="startSimulation('R')">Path R (Bainite)</button>
-    <button onclick="startSimulation('S')">Path S (The Trap)</button>
+    <button onclick="runPath('P')">Path P (Quench)</button>
+    <button onclick="runPath('Q')">Path Q (Pearlite)</button>
+    <button onclick="runPath('R')">Path R (Bainite)</button>
+    <button onclick="runPath('S')">Path S (The Trap)</button>
+    <button onclick="drawBackground()" style="background:#6c757d">Reset</button>
   </div>
+  
   <div id="status">Select a path to simulate...</div>
+  <div class="legend">X-Axis: Time (Log Scale) | Y-Axis: Temperature (K)</div>
 </div>
 
 <script>
 const canvas = document.getElementById('tttCanvas');
 const ctx = canvas.getContext('2d');
-const width = canvas.width;
-const height = canvas.height;
+// Handle High DPI displays
+const dpr = window.devicePixelRatio || 1;
+const rect = canvas.getBoundingClientRect();
+canvas.width = rect.width * dpr;
+canvas.height = rect.height * dpr;
+ctx.scale(dpr, dpr);
+const width = rect.width;
+const height = rect.height;
 
-// --- Configuration ---
 const CONFIG = {
-  Ae1: 1000,
-  Ms: 500,
-  Mf: 373,
-  NoseTemp: 823,
-  NoseTime: 1
+  Ae1: 1000, Ms: 500, Mf: 373,
+  minTemp: 300, maxTemp: 1100,
+  minTime: 0.1, maxTime: 100000
 };
 
-// --- Coordinate Mapping ---
-// X: Logarithmic Time (0.1s to 100,000s)
-// Y: Linear Temp (200K to 1100K)
+// --- Coordinate Systems ---
 function mapX(time) {
-  // Math.log10(0.1) is -1. Range is -1 to 5 (6 orders of magnitude)
-  return 50 + (Math.log10(time) + 1) * (width - 100) / 6;
-}
-function mapY(temp) {
-  // Map 200K-1100K to canvas height
-  return height - 50 - (temp - 200) * (height - 100) / 900;
+  const logTime = Math.log10(time);
+  const minLog = Math.log10(CONFIG.minTime);
+  const maxLog = Math.log10(CONFIG.maxTime);
+  return 60 + ((logTime - minLog) / (maxLog - minLog)) * (width - 100);
 }
 
-// --- Drawing Background ---
+function mapY(temp) {
+  return height - 50 - ((temp - CONFIG.minTemp) / (CONFIG.maxTemp - CONFIG.minTemp)) * (height - 100);
+}
+
 function drawBackground() {
   ctx.clearRect(0, 0, width, height);
   
-  // Axes
-  ctx.beginPath(); ctx.moveTo(50, height-50); ctx.lineTo(width-50, height-50); ctx.stroke(); // X
-  ctx.beginPath(); ctx.moveTo(50, height-50); ctx.lineTo(50, 50); ctx.stroke(); // Y
-  
-  // Labels
-  ctx.fillStyle = "#666"; ctx.font = "12px Arial";
-  ctx.fillText("Time (s) [Log Scale]", width/2 - 40, height - 15);
-  ctx.fillText("Temp (K)", 10, height/2);
-  
-  // Critical Lines
-  drawDashedLine(CONFIG.Ae1, "Ae1 (1000K)", "black");
-  drawDashedLine(CONFIG.Ms, "Ms (500K)", "purple");
-  drawDashedLine(CONFIG.Mf, "Mf (373K)", "purple");
+  // Grid & Axes
+  ctx.strokeStyle = "#e0e0e0";
+  ctx.lineWidth = 1;
+  ctx.font = "12px sans-serif";
+  ctx.fillStyle = "#666";
 
-  // C-Curves (Schematic)
-  ctx.strokeStyle = "#444"; ctx.lineWidth = 2; ctx.setLineDash([]);
+  // Time Grid (1, 10, 100...)
+  for(let i=0; i<=5; i++) {
+    let t = Math.pow(10, i);
+    if(t < CONFIG.minTime) continue;
+    let x = mapX(t);
+    ctx.beginPath(); ctx.moveTo(x, 50); ctx.lineTo(x, height-50); ctx.stroke();
+    ctx.fillText(t + "s", x-10, height-30);
+  }
+  
+  // Temp Grid
+  for(let T=300; T<=1100; T+=100) {
+    let y = mapY(T);
+    ctx.beginPath(); ctx.moveTo(60, y); ctx.lineTo(width-40, y); ctx.stroke();
+    ctx.fillText(T, 25, y+4);
+  }
+
+  // Draw Axes Lines
+  ctx.strokeStyle = "#333"; ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(60, height-50); ctx.lineTo(width-40, height-50); // X
+  ctx.moveTo(60, height-50); ctx.lineTo(60, 50); // Y
+  ctx.stroke();
+
+  // Critical Lines
+  drawLine(CONFIG.Ae1, "Ae1 (1000K)", "#333", []);
+  drawLine(CONFIG.Ms, "Ms (500K)", "purple", [5, 5]);
+  drawLine(CONFIG.Mf, "Mf (373K)", "purple", [5, 5]);
+
+  // --- Accurate C-Curves ---
+  ctx.lineWidth = 3;
+  ctx.lineCap = "round";
   
   // Start Curve (1%)
+  ctx.strokeStyle = "#28a745";
   ctx.beginPath();
-  ctx.moveTo(mapX(10), mapY(1000));
-  ctx.bezierCurveTo(mapX(0.5), mapY(900), mapX(0.5), mapY(800), mapX(10), mapY(600)); // Upper nose
-  ctx.bezierCurveTo(mapX(20), mapY(500), mapX(30), mapY(400), mapX(100), mapY(350)); // Lower bay
+  // Top to Nose
+  ctx.moveTo(mapX(100), mapY(980));
+  ctx.quadraticCurveTo(mapX(2), mapY(900), mapX(1), mapY(823)); 
+  // Nose to Bay
+  ctx.bezierCurveTo(mapX(1), mapY(700), mapX(20), mapY(600), mapX(30), mapY(500));
   ctx.stroke();
+  ctx.fillStyle = "#28a745"; ctx.fillText("Start", mapX(1)-30, mapY(823));
 
   // Finish Curve (99%)
+  ctx.strokeStyle = "#dc3545";
   ctx.beginPath();
-  ctx.moveTo(mapX(1000), mapY(1000));
-  ctx.bezierCurveTo(mapX(50), mapY(900), mapX(50), mapY(800), mapX(1000), mapY(600)); // Upper nose
-  ctx.bezierCurveTo(mapX(2000), mapY(500), mapX(3000), mapY(400), mapX(5000), mapY(350)); // Lower bay
+  ctx.moveTo(mapX(2000), mapY(980));
+  ctx.quadraticCurveTo(mapX(50), mapY(900), mapX(5), mapY(823));
+  // Nose to Bay (Wide Shelf)
+  ctx.bezierCurveTo(mapX(10), mapY(700), mapX(1000), mapY(600), mapX(3000), mapY(500));
   ctx.stroke();
+  ctx.fillStyle = "#dc3545"; ctx.fillText("Finish", mapX(10)+10, mapY(823));
 }
 
-function drawDashedLine(temp, label, color) {
-  ctx.strokeStyle = color; ctx.setLineDash([5, 5]); ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(50, mapY(temp)); ctx.lineTo(width-50, mapY(temp)); ctx.stroke();
-  ctx.fillStyle = color; ctx.fillText(label, width-120, mapY(temp)-5);
+function drawLine(temp, label, color, dash) {
+  ctx.strokeStyle = color; ctx.setLineDash(dash); ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(60, mapY(temp)); ctx.lineTo(width-40, mapY(temp)); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = color; ctx.fillText(label, width-100, mapY(temp)-5);
 }
 
-// --- Animation Logic ---
+// --- Animation Engine ---
 let animationId = null;
 
-function startSimulation(mode) {
-  if (animationId) clearInterval(animationId);
+function runPath(id) {
+  if(animationId) clearInterval(animationId);
+  drawBackground();
   
-  // Initial State
-  let state = {
-    t: 0.1,         // Current Time
-    temp: 1000,     // Current Temp
-    history: [{x: mapX(0.1), y: mapY(1000)}], // Path for drawing
-    phase: 'COOLING', // COOLING, HOLDING, QUENCHING, DONE
-    targetTemp: 0,
-    holdTime: 0,
-    elapsedHold: 0
+  let config = { target: 0, hold: 0 };
+  if(id === 'P') config = { target: 300, hold: 0 };
+  if(id === 'Q') config = { target: 873, hold: 240 };
+  if(id === 'R') config = { target: 673, hold: 1200 };
+  if(id === 'S') config = { target: 623, hold: 120 };
+  
+  let state = { 
+    t: 0.1, 
+    temp: 1073, 
+    history: [{x: mapX(0.1), y: mapY(1073)}],
+    phase: 'COOLING',
+    holdStartT: 0
   };
-
-  // Setup parameters based on mode
-  if (mode === 'P') { state.targetTemp = 300; state.holdTime = 0; }
-  if (mode === 'Q') { state.targetTemp = 873; state.holdTime = 240; }
-  if (mode === 'R') { state.targetTemp = 673; state.holdTime = 1200; }
-  if (mode === 'S') { state.targetTemp = 623; state.holdTime = 120; }
 
   const statusEl = document.getElementById('status');
 
   animationId = setInterval(() => {
     drawBackground();
-
-    // 1. Update State
+    
+    // 1. Update Physics
     if (state.phase === 'COOLING') {
-      if (state.temp > state.targetTemp) {
-        state.temp -= 10;     // Temp Drop Rate
-        state.t += 0.05;      // Time Advance (The Slope Fix!)
-        statusEl.innerText = `Status: Rapid Cooling... ${Math.round(state.temp)} K`;
+      if (state.temp > config.target) {
+        state.temp -= 8; // Cooling Rate
+        state.t += 0.05; // Time Passage (Slope)
+        statusEl.innerText = `Cooling... Temp: ${Math.round(state.temp)} K`;
       } else {
-        state.phase = state.holdTime > 0 ? 'HOLDING' : 'DONE';
-        // Special case for P (Direct Quench)
-        if (mode === 'P') state.phase = 'DONE';
+        state.phase = config.hold > 0 ? 'HOLDING' : 'DONE';
+        if(id === 'P') state.phase = 'DONE';
+        state.holdStartT = state.t;
       }
     } 
     else if (state.phase === 'HOLDING') {
-      if (state.elapsedHold < state.targetTemp * 0 + state.holdTime) { // Logic simplified
-        // Logarithmic time progression for holding
-        state.t *= 1.1;
-        state.elapsedHold = state.t; // Approximation for viz
-        statusEl.innerText = `Status: Isothermal Hold at ${state.targetTemp} K... Time: ${Math.round(state.t)}s`;
-        
-        if (state.t >= state.holdTime) {
-           state.phase = (mode === 'S') ? 'QUENCHING' : 'DONE';
-        }
-      }
+       // Logarithmic time step
+       state.t *= 1.05;
+       statusEl.innerText = `Holding at ${config.target} K... Time: ${Math.round(state.t)}s`;
+       
+       if (state.t >= config.hold) {
+         state.phase = (id === 'S') ? 'QUENCHING' : 'DONE';
+       }
     }
     else if (state.phase === 'QUENCHING') {
-       // Path S specific second quench
        if (state.temp > 300) {
-          state.temp -= 10;
-          state.t += 1; // Slower time advance on log scale at later times
-          statusEl.innerText = `Status: Final Quench to 300K...`;
+         state.temp -= 8;
+         state.t += 0.1; 
+         statusEl.innerText = "Final Quench to 300 K...";
        } else {
-          state.phase = 'DONE';
+         state.phase = 'DONE';
        }
     }
 
-    // 2. Record Path
+    // 2. Draw Path
     state.history.push({ x: mapX(state.t), y: mapY(state.temp) });
-
-    // 3. Draw Path
+    
     ctx.beginPath();
-    ctx.strokeStyle = "red"; ctx.lineWidth = 3; ctx.setLineDash([]);
+    ctx.strokeStyle = "blue"; ctx.lineWidth = 4; ctx.lineJoin = "round";
     ctx.moveTo(state.history[0].x, state.history[0].y);
-    for (let p of state.history) ctx.lineTo(p.x, p.y);
+    for(let p of state.history) ctx.lineTo(p.x, p.y);
     ctx.stroke();
+    
+    // Tracer Head
+    let last = state.history[state.history.length-1];
+    ctx.fillStyle = "blue"; ctx.beginPath(); 
+    ctx.arc(last.x, last.y, 6, 0, Math.PI*2); ctx.fill();
 
-    // 4. Check End
-    if (state.phase === 'DONE') {
+    // 3. Completion
+    if(state.phase === 'DONE') {
       clearInterval(animationId);
       let msg = "";
-      if (mode === 'P') msg = "Result: Martensite (100%)";
-      if (mode === 'Q') msg = "Result: Coarse Pearlite";
-      if (mode === 'R') msg = "Result: Bainite";
-      if (mode === 'S') msg = "Result: <span style='color:red'>Bainite + Martensite</span> (Interrupted Quench)";
-      statusEl.innerHTML = msg;
+      if(id === 'P') msg = "Result: 100% Martensite";
+      if(id === 'Q') msg = "Result: 100% Coarse Pearlite (Crossed Finish)";
+      if(id === 'R') msg = "Result: 100% Bainite (Crossed Finish)";
+      if(id === 'S') msg = "Result: Bainite (50%) + Martensite (50%) [Interrupted]";
+      statusEl.innerHTML = `<strong>${msg}</strong>`;
     }
 
-  }, 30);
+  }, 20);
 }
 
 // Init
